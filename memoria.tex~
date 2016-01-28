@@ -171,7 +171,7 @@ por sí mismo utilizando la herramienta.
 %%%Índice de tablas
 cleardoublepage
 \addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
-\renewcommand{\listtablename}{Índice de tablas} 
+\enewcommand{listtablename}{Índice de tablas} 
 \listoftables % indice de tablas
 
 
