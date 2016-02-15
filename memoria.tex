@@ -704,6 +704,8 @@ surgieron con el avance del proyecto:
     \item Implementación en el servidor para mostrar tres páginas diferentes, 
     conforme el nivel del programador fuera: bajo, medio o alto.
     \item Diseño de tres páginas distintas para cada nivel computacional.
+    \item Debido al gran número de proyectos que se analizaban diariamente teníamos numerosos problemas con las máquinas de la universidad, por lo que decidimos realizar una migración a la nube.
+    \item Utilización de algún mecanismo de analisis web para tener estadísticas de los accesos a la plataforma.
     \item Páginas con información de cómo poder pasar de un nivel a otro utilizando
     distintos bloques de Scratch que demuestran un nivel de pensamiento computacional
     mayor.
@@ -773,7 +775,7 @@ de vista cuáles eran las tareas más inmediatas.
             \item Implementación del mecanismo de traducción de la plataforma.
         \end{itemize}
         
-    En la \textit{Figura~\ref{figure:fase-inicial}} se muestra dicha fase de una
+    En la \textit{Figura~\ref{figure:fase-i}} se muestra dicha fase de una
 forma esquemática y sencilla de comprender.
 
     \begin{figure}[H]
@@ -787,32 +789,41 @@ forma esquemática y sencilla de comprender.
 
 \begin{itemize}
     \item \textbf{FASE II.} Esta etapa del proyecto es la realizada desde
-    febrero de 2015 hasta septiembre de 2015, fecha en la que tuvo lugar la 
-    Scratch Conference en la que pudimos obtener feedback.
+    febrero a julio de 2015.
 
     En esta fase del proyecto los objetivos a alcanzar fueron los siguientes:
 
         \begin{itemize}
             \item Introducir una barra de progreso del análisis del proyecto.
-            \item Analizar proyectos de las dos versiones de Scratch (1.4 y 2.0).
+            \item Corrección de errores en formularios.
             \item Análisis mediante url del proyecto de la versión online de Scratch.
+            \item Migración de SQLite a MySQL.
+            \item Creación de un archivo en el que se guardaran todos los proyectos en los que se producía algún error al ser analizados.
+            \item Personalización de las páginas de error 404 y 500.
+            \item Analizar proyectos de las dos versiones de Scratch (1.4 y 2.0).
             \item Implementación en el servidor para mostrar tres páginas diferentes, 
             conforme el nivel del programador fuera: bajo, medio o alto.
             \item Diseño de tres páginas distintas para cada nivel computacional.
             \item Introducción explicaciones de qué es una url y cómo
             descargar un proyecto en Scratch.
+            \item Migración a la nube en lugar de utilizar las máquinas de la universidad, las cuales nos dieron muchos problemas.
+            \item Uso de Google Analytics para tener estadísticas de acceso a la plataforma.
+            \item Páginas explicativas de cómo subir de nivel utilizando bloques de un mayor nivel computacional.
+            \item Nuevo diseño de los dashboards.
+            \item Cuentas de organizaciones.
+            \item Botón de ``Ayuda'' para saber cómo navegar por el dashboard.
             \item Análisis multiproyecto con un archivo .csv para organizaciones.
             \item Traducción de la información mostrada en el archivo de organizaciones.
-            \item Cuentas de organizaciones.
             \item Páginas de estadísticas de los proyectos analizados.
+            \item Generación de un archivo .csv que muestra la información obtenida con el analáisis realizado en Dr. Scratch y es el que se le devuelve a la organización.
         \end{itemize}
         
-    En la \textit{Figura~\ref{figure:fase-inicial}} podemos ver otro esquema que
+    En la \textit{Figura~\ref{figure:fase-ii}} podemos ver otro esquema que
 escenifica esta fase.
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.9\textwidth]{img/fase-ii}
+        \includegraphics[width=1.0\textwidth]{img/fase-ii}
         \caption{Fase II del proyecto Dr. Scratch}
         \label{figure:fase-ii}
     \end{figure}
@@ -821,19 +832,21 @@ escenifica esta fase.
 
 
 \begin{itemize}
-    \item \textbf{FASE III.} Abarca el periodo entre septiembre y diciembre de
-    2015.
+    \item \textbf{FASE III.} Abarca el periodo entre septiembre de 2015 y 1 de febrero de 2016, fecha en la que empecé a escribir esta memoria.
 
-    Trás la Scratch Conference a la que acudió todo el equipo de Dr. Scratch y
-    en la que realicé una presentación de la plataforma, pudimos obtener algunas
-    conclusiones gracias a la realimentación obtenida:
+    Trás la Scratch Conference en Ámsterdam a la que acudió todo el equipo de Dr. Scratch y en la que realicé una presentación de la plataforma, pudimos obtener algunas conclusiones gracias a la realimentación obtenida. Debido a ellas, marcamos los siguientes objetivos:
 
         \begin{itemize}
-            \item Modificación de 
+            \item En el análisis por URL únicamente descargar el .JSON para que se realice más rápidamente.
+            \item Traducción de los bloques pintados en las páginas para aprender cómo subir de nivel de pensamiento computacional.
+            \item Registro de usuarios.
+            \item Botón para traducir la página según la preferencia del usuario y no del navegador.
+            \item Extensión que permita analizar proyectos sin necesidad de abrir en el navegador la propia página de URL, sino que en la página del proyecto de Scratch nos facilite un botón que ya muestre directamente el análisis realizado.
+            \item Traducción de los textos que aparecen en la plataforma a más idiomas: catalán, gallego y portugués.
+            \item Formulario de registro para usuarios y organizaciones.
         \end{itemize}
         
-    En la \textit{Figura~\ref{figure:fase-iii}} podemos ver otro esquema que
-escenifica esta fase.
+    En la \textit{Figura~\ref{figure:fase-iii}} podemos observar estos objetivos detallados en el tiempo.
 
     \begin{figure}[H]
         \centering
@@ -844,42 +857,7 @@ escenifica esta fase.
   
 \end{itemize}
 
-\begin{itemize}
-    \item \textbf{FASE IV.} Es la fase actual, que ocupa el espacio entre enero 
-    de 2016 y la fecha de presentación de este Proyecto Fin de Carrera. Esta
-    fase ya no ha sido realizada trabajando en la Universidad Rey Juan Carlos, sino
-    en la Asociación sin ánimo de lucro \textbf{Programamos}, de la cual mi co-tutor, 
-    Jesús Moreno es co-fundador, junto a José Ignacio Huertas.
-
-    En esta fase del proyecto los objetivos a alcanzar fueron los siguientes:
-
-        \begin{itemize}
-            \item Introducir una barra de progreso del análisis del proyecto.
-            \item Analizar proyectos de las dos versiones de Scratch (1.4 y 2.0).
-            \item Análisis mediante url del proyecto de la versión online de Scratch.
-            \item Implementación en el servidor para mostrar tres páginas diferentes, 
-            conforme el nivel del programador fuera: bajo, medio o alto.
-            \item Diseño de tres páginas distintas para cada nivel computacional.
-            \item Introducción explicaciones de qué es una url y cómo
-            descargar un proyecto en Scratch.
-            \item Análisis multiproyecto con un archivo .csv para organizaciones.
-            \item Traducción de la información mostrada en el archivo de organizaciones.
-            \item Cuentas de organizaciones.
-            \item Páginas de estadísticas de los proyectos analizados.
-        \end{itemize}
-        
-    En la \textit{Figura~\ref{figure:fase-inicial}} podemos ver otro esquema que
-escenifica esta fase.
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.9\textwidth]{img/fase-ii}
-        \caption{Fase IV del proyecto Dr. Scratch}
-        \label{figure:fase-ii}
-    \end{figure}
-  
-\end{itemize}
-
+Actualmente, el proyecto continúa desarrollandose, pero ya no trabajando en la Universidad Rey Juan Carlos, sino en la Asociación sin ánimo de lucro \textbf{Programamos} en la que mi co-tutor, Jesús Moreno, es co-fundador junto con José Ignacio Huertas. 
 
 
 
