@@ -23,8 +23,8 @@
 % Si acaso, busca por citas en la WikiPedia (que sí ha de referenciar fuentes
 % primarias) y haz referencia a las mismas.
 
-@article{greenfeld2013two,
-  title={Two Scoops of Django},
+@book{{greenfeld2013two,
+  title={Two Scoops of Django: best practices for Django 1.8},
   author={Greenfeld, Daniel and Roy, Audrey},
   year={2013}
 }

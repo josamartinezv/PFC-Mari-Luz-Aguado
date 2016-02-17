@@ -39,11 +39,7 @@
 \end{verbatim}
 }
 
-Puedes citar libros, como el de Bonabeau et al. sobre procesos estigmérgicos~\cite{bonabeau:_swarm}. % Nota que el ~ añade un espacio en blanco, pero no deja que exista un salto de línea. Imprescindible ponerlo para las citas.
 
-También existe la posibilidad de poner notas al pie de página, por ejemplo, 
-una para indicarte que visite la página de 
-LibreSoft\footnote{\url{http://www.libresoft.es}}.)
 
 
 figura~\ref{fig:arquitectura}.

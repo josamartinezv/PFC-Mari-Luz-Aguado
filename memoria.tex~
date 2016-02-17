@@ -49,7 +49,6 @@
 \begin{titlepage}
 \begin{center}
 \begin{tabular}[c]{c c}
-%\includegraphics[bb=0 0 194 352, scale=0.25]{logo} &
 \includegraphics[scale=0.25]{img/logo_vect.png} &
 \begin{tabular}[b]{l}
 \Huge
@@ -407,7 +406,7 @@ feedback sobre los diferentes aspectos que engloban el \textit{Pensamiento Compu
 
 Tras años dedicados a la enseñanza de programación y ciencias de la computación,
 llegaron a la siguiente conclusión; era necesario tener una herramienta similiar a
-Lint -herramienta que permite \textit{detectar malas prácticas en el código del lenguaje de 
+Pylint -herramienta que permite \textit{detectar malas prácticas en el código del lenguaje de 
 programación} Python- para el nuevo lenguaje de programación Scratch.
 
 Para poder analizar un proyecto programado con Scratch necesitamos inspeccionar
@@ -482,7 +481,7 @@ en la herramienta y las razones que los han motivado.
 Intentando facilitar la lectura de esta memoria, se procede a explicar su
 estructura, detallando qué contenido tendrá cada capítulo: 
 
-\begin{enumerate}[label=\textbf{\arabic*}]
+\begin{enumerate}[label=\textbf{\arabic{*}.}]
     \item \textbf{Introducción.} Explicación del marco social en el que se
     enmarca este proyecto, así como el marco de referencia en el que se ha 
     desarrollado. Se muestra cuál ha sido la motivación para su realización
@@ -579,7 +578,7 @@ La finalidad de Dr. Scratch es analizar el proyecto realizado en Scratch y
 evaluar dichos conceptos claves de las ciencias computacionales, en concreto,
 se centra en 7 aspectos:
 
-\begin{enumerate}[label=\textbf{\arabic*}]
+\begin{enumerate}[label=\textbf{\arabic{*}.}]
     \item \textbf{Paralelismo.} Consiste en poder resolver varios problemas de manera
     simúltanea en hilos diferentes.
 
@@ -644,7 +643,7 @@ Al comienzo de este proyecto, dicho código no conseguía realizar correctamente
 el análisis del proyecto de Scratch con Hairball, por lo que partiendo de esta 
 base, los objetivos iniciales fueron los siguientes:
 
-\begin{enumerate}[label=\textbf{\arabic*}]
+\begin{enumerate}[label=\textbf{\arabic{*}.}]
     \item \textbf{Corrección de la implementación básica.} El primer objetivo y
     más importante fue conseguir tener en funcionamiento el prototipo que 
     ofrecía la funcionalidad básica. 
@@ -704,7 +703,11 @@ surgieron con el avance del proyecto:
     \item Implementación en el servidor para mostrar tres páginas diferentes, 
     conforme el nivel del programador fuera: bajo, medio o alto.
     \item Diseño de tres páginas distintas para cada nivel computacional.
-    \item Debido al gran número de proyectos que se analizaban diariamente teníamos numerosos problemas con las máquinas de la universidad, por lo que decidimos realizar una migración a la nube.
+    \item Debido al gran número de proyectos que se analizaban diariamente 
+        teníamos numerosos problemas con las máquinas de la universidad, por lo que 
+        decidimos realizar una migración a la nube.
+    \item Utilización de algún mecanismo de analisis web para tener estadísticas 
+            de los accesos a la plataforma.
     \item Páginas con información de cómo poder pasar de un nivel a otro utilizando
     distintos bloques de Scratch que demuestran un nivel de pensamiento computacional
     mayor.
@@ -776,6 +779,7 @@ de vista cuáles eran las tareas más inmediatas.
         
     En la \textit{Figura~\ref{figure:fase-i}} se muestra dicha fase de una
 forma esquemática y sencilla de comprender.
+\end{itemize}
 
     \begin{figure}[H]
         \centering
@@ -784,7 +788,7 @@ forma esquemática y sencilla de comprender.
         \label{figure:fase-i}
     \end{figure}
   
-\end{itemize}
+
 
 \begin{itemize}
     \item \textbf{FASE II.} Esta etapa del proyecto es la realizada desde
@@ -797,7 +801,8 @@ forma esquemática y sencilla de comprender.
             \item Corrección de errores en formularios.
             \item Análisis mediante url del proyecto de la versión online de Scratch.
             \item Migración de SQLite a MySQL.
-            \item Creación de un archivo en el que se guardaran todos los proyectos en los que se producía algún error al ser analizados.
+            \item Creación de un archivo en el que se guardaran todos los 
+                    proyectos en los que se producía algún error al ser analizados.
             \item Personalización de las páginas de error 404 y 500.
             \item Analizar proyectos de las dos versiones de Scratch (1.4 y 2.0).
             \item Implementación en el servidor para mostrar tres páginas diferentes, 
@@ -805,20 +810,26 @@ forma esquemática y sencilla de comprender.
             \item Diseño de tres páginas distintas para cada nivel computacional.
             \item Introducción explicaciones de qué es una url y cómo
             descargar un proyecto en Scratch.
-            \item Migración a la nube en lugar de utilizar las máquinas de la universidad, las cuales nos dieron muchos problemas.
-            \item Uso de Google Analytics para tener estadísticas de acceso a la plataforma.
-            \item Páginas explicativas de cómo subir de nivel utilizando bloques de un mayor nivel computacional.
+            \item Migración a la nube en lugar de utilizar las máquinas de la 
+                    universidad, las cuales nos dieron muchos problemas.
+            \item Uso de Google Analytics para tener estadísticas de acceso a la 
+                    plataforma.
+            \item Páginas explicativas de cómo subir de nivel utilizando bloques 
+                    de un mayor nivel computacional.
             \item Nuevo diseño de los dashboards.
             \item Cuentas de organizaciones.
             \item Botón de ``Ayuda'' para saber cómo navegar por el dashboard.
             \item Análisis multiproyecto con un archivo .csv para organizaciones.
             \item Traducción de la información mostrada en el archivo de organizaciones.
             \item Páginas de estadísticas de los proyectos analizados.
-            \item Generación de un archivo .csv que muestra la información obtenida con el analáisis realizado en Dr. Scratch y es el que se le devuelve a la organización.
+            \item Generación de un archivo .csv que muestra la información 
+                    obtenida con el analáisis realizado en Dr. Scratch y es el 
+                    que se le devuelve a la organización.
         \end{itemize}
         
     En la \textit{Figura~\ref{figure:fase-ii}} podemos ver otro esquema que
 escenifica esta fase.
+\end{itemize}
 
     \begin{figure}[H]
         \centering
@@ -827,25 +838,38 @@ escenifica esta fase.
         \label{figure:fase-ii}
     \end{figure}
   
-\end{itemize}
+
 
 
 \begin{itemize}
-    \item \textbf{FASE III.} Abarca el periodo entre septiembre de 2015 y 1 de febrero de 2016, fecha en la que empecé a escribir esta memoria.
+    \item \textbf{FASE III.} Abarca el periodo entre septiembre de 2015 y 1 de 
+                febrero de 2016, fecha en la que empecé a escribir esta memoria.
 
-    Trás la Scratch Conference en Ámsterdam a la que acudió todo el equipo de Dr. Scratch y en la que realicé una presentación de la plataforma, pudimos obtener algunas conclusiones gracias a la realimentación obtenida. Debido a ellas, marcamos los siguientes objetivos:
+    Trás la Scratch Conference en Ámsterdam a la que acudió todo el equipo de 
+        Dr. Scratch y en la que realicé una presentación de la plataforma, 
+        pudimos obtener algunas conclusiones gracias a la realimentación obtenida. 
+        Debido a ellas, marcamos los siguientes objetivos:
 
         \begin{itemize}
-            \item En el análisis por URL únicamente descargar el .JSON para que se realice más rápidamente.
-            \item Traducción de los bloques pintados en las páginas para aprender cómo subir de nivel de pensamiento computacional.
+            \item En el análisis por URL únicamente descargar el .JSON para que 
+                    se realice más rápidamente.
+            \item Traducción de los bloques pintados en las páginas para aprender 
+                    cómo subir de nivel de pensamiento computacional.
             \item Registro de usuarios.
-            \item Botón para traducir la página según la preferencia del usuario y no del navegador.
-            \item Extensión que permita analizar proyectos sin necesidad de abrir en el navegador la propia página de URL, sino que en la página del proyecto de Scratch nos facilite un botón que ya muestre directamente el análisis realizado.
-            \item Traducción de los textos que aparecen en la plataforma a más idiomas: catalán, gallego y portugués.
+            \item Botón para traducir la página según la preferencia del usuario 
+                    y no del navegador.
+            \item Extensión que permita analizar proyectos sin necesidad de abrir 
+                    en el navegador la propia página de URL, sino que en la página 
+                    del proyecto de Scratch nos facilite un botón que ya muestre 
+                    directamente el análisis realizado.
+            \item Traducción de los textos que aparecen en la plataforma a más 
+                    idiomas: catalán, gallego y portugués.
             \item Formulario de registro para usuarios y organizaciones.
         \end{itemize}
         
-    En la \textit{Figura~\ref{figure:fase-iii}} podemos observar estos objetivos detallados en el tiempo.
+    En la \textit{Figura~\ref{figure:fase-iii}} podemos observar estos objetivos 
+    detallados en el tiempo.
+\end{itemize}
 
     \begin{figure}[H]
         \centering
@@ -854,9 +878,12 @@ escenifica esta fase.
         \label{figure:fase-iii}
     \end{figure}
   
-\end{itemize}
 
-Actualmente, el proyecto continúa desarrollandose, pero ya no trabajando en la Universidad Rey Juan Carlos, sino en la Asociación sin ánimo de lucro \textbf{Programamos} en la que mi co-tutor, Jesús Moreno, es co-fundador junto con José Ignacio Huertas. 
+
+Actualmente, el proyecto continúa desarrollandose, pero ya no trabajando en la 
+Universidad Rey Juan Carlos, sino en la Asociación sin ánimo de lucro 
+\textbf{Programamos} en la que mi co-tutor, Jesús Moreno, es co-fundador 
+junto con José Ignacio Huertas. 
 
 
 
@@ -868,62 +895,331 @@ Actualmente, el proyecto continúa desarrollandose, pero ya no trabajando en la U
 \cleardoublepage
 \chapter{Estado del arte}
 
-----(Descripción de las tecnologías que utilizas en tu trabajo. Con dos o tres párrafos por cada tecnología, vale.
+En este capítulo se detallarán de forma resumida las \textbf{arquitecturas y 
+tecnologías} utilizadas en la realización de este proyecto. Únicamente se 
+realizará una presentación de las mismas, ya que en el próximo capítulo será 
+donde se detalle cómo han sido utilizadas para el desarrollo e implementación 
+de la plataforma.
 
-
-Puedes citar libros, como el de Bonabeau et al. sobre procesos estigmérgicos~\cite{bonabeau:_swarm}. % Nota que el ~ añade un espacio en blanco, pero no deja que exista un salto de línea. Imprescindible ponerlo para las citas.
-
-También existe la posibilidad de poner notas al pie de página, por ejemplo, 
-una para indicarte que visite la página de 
-LibreSoft\footnote{\url{http://www.libresoft.es}}.)
 
 %%%%%%%%%%%%%%%%%%% APLICACIONES CLIENTE-SERVIDOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Aplicaciones cliente-servidor} 
 \label{sec:aplicaciones-cliente-servidor}
 
-%%%%%%%%%%%%%%%%%%% PLATAFORMA EN LA NUBE: AZURE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Plataforma en la nube: Azure}
-\label{sec:azure}
+El paradigma \textbf{Cliente-Servidor}~\cite{liu2004computacion} es utilizado en diversos 
+contextos. Centrándonos en el patrón arquitectural para software distribuido 
+cabe indicar que es un modelo en el que existen dos tipos de elementos 
+-cliente y servidor- y un modelo de interacción basado en un diálogo -petición y respuesta-.
+
+El objetivo de esta arquitectura es \textbf{proporcionar el soporte escalable} para el 
+desarrollo de aplicaciones distribuidas.
+
+En cuanto a sus \textbf{elementos}:
+
+      \begin{itemize}
+            \item \textbf{El cliente.} Es la parte de la aplicación con la que 
+interacciona el usuario pero no es compartida entre los mismos. No tiene 
+restricciones especiales referentes a fiabilidad, ya que si falla un cliente, 
+el resto del sistema no se ve afectado. Pero sí las tiene en términos de 
+ergonomía debido a que debe adaptarse a la interacción con el usuario. 
+Este último aspecto en concreto, será tratado con profundidad en el siguiente 
+capítulo, ya que ha sido la mayor preocupación a la hora de diseñar la plataforma.
+            \item \textbf{El servidor.} Es el componente que presta servicios 
+al cliente, compartiendo sus recursos con todos ellos. Tiene una gran restricción 
+y es que si el servidor falla, los clientes no pueden continuar. Además de 
+presentar problemas de escalabilidad y debe ser seguro para no comprometer la 
+seguridad de los clientes ni de los datos.
+        \end{itemize}
+
+En la \textit{Figura~\ref{figure:cliente-servidor}} podemos observar sus
+componentes y el intercambio de mensajes. El protocolo de intercambio de mensajes
+será explicado más adelante.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.1\textwidth]{img/cliente-servidor}
+        \caption{Esquema del paradigma Cliente-Servidor}
+        \label{figure:cliente-servidor}
+    \end{figure}
+
+También es importante entender que la finalidad de una aplicación distribuida es la de 
+ofrecer funcionalidades al usuario y que su \textbf{estructura} es siempre la 
+que se muestra en la \textit{Figura~\ref{figure:aplicacion-distribuida}}.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{img/aplicacion-distribuida}
+        \caption{Capas presentes en toda aplicación distribuida}
+        \label{figure:aplicacion-distribuida}
+    \end{figure}
+
+    \begin{enumerate}[label=\textbf{\arabic{*}.}]
+        \item \textbf{Capa de presentación.} También conocida como front-end, suele
+        residir en el cliente y es con la cual el usuario interactua. 
+        Se pueden utilizar distintas tecnologías como: HTML, CSS, javascript\ldots 
+        \item \textbf{Lógica de la aplicación o negocio.} Puede residir en cualquiera
+        de los componentes -cliente y servidor- incluso en ambos.
+        Realiza acciones necesarias para desarrollar la actividad de negocio, 
+        tales como: cobro de producto, transacciones...
+        \item \textbf{Capa de servicios.} Denominada como back-end, es común que
+        resida en el servidor y realiza las actividades típicas de gestión de ficheros,
+        acceso a datos en la base de datos, procesamiento de la información\ldots
+    \end{enumerate}
+
+Podemos encontrarnos distintos \textbf{tipos de servidores}:
+    
+\begin{enumerate}[label=\textbf{\arabic{*})}]
+    \item Dependiendo de si la aplicación requiere que el servidor recuerde la 
+    historia pasada del cliente, se diferencian dos tipos:
+         \begin{enumerate}[label=\textbf{\alph{*})}]
+            \item Servidor con estados: recuerda información entre las peticiones.
+            \item Servidor sin estados: no recuerda información del cliente entre peticiones.
+          \end{enumerate}
+    \item Atendiendo al modo de procesamiento de las peticiones, encontramos dos 
+        servidores diferentes:
+         \begin{enumerate}[label=\textbf{\alph{*})}]
+            \item Servidor concurrente: se atienden las peticiones de forma 
+                paralela, gracias a la implementación multihilo.
+            \item Servidor iterativo: se atienden las peticiones de forma 
+                secuencial, existiendo una cola de peticiones.
+          \end{enumerate}
+\end{enumerate}
+
+ 
+\begin{description}
+  \item[Hypertext Transfer Protocol] \hfill \\
+  El intercambio de mensajes se realiza mediante el protocolo HTTP, el cual es 
+ un protocolo sin estado y ha tenido varias versiones. De estas versiones la más 
+utilizada es la versión 1.1 HTTP que especifica la sintaxis y semántica que utilizan
+ cliente y servidor para comunicarse.
+
+La estructura de los mensajes de petición y respuesta según el protocolo HTTP se
+muestran en la \textit{Figura~\ref{figure:mensajes-http}}. Son en texto plano lo 
+cual es una ventaja a la hora de depurar pero hace los mensajes largos.
+
+
+\end{description}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.1\textwidth]{img/mensajes-http}
+        \caption{Mensajes de petición y respuesta del protrocolo HTTP}
+        \label{figure:mensajes-http}
+    \end{figure}
+
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BACK-END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Back-end}
 \label{sec:back-end}
 
+Tal como hemos visto en la explicación de la arquitectura cliente-servidor el 
+\textit{back-end} se corresponde con la \textbf{capa de servicios o de acceso a datos}. 
+Y en esta sección vamos a ver la parte teórica de las tecnologías utilizadas en este proyecto
+para el desarrollo de dicha capa:
+
+\begin{enumerate}
+    \item El lenguaje de programación elegido: Python
+    \item El framework utilizado para la implementación del servidor: Django
+    \item Servidores HTTP utilizados: Apache y Node.js
+    \item La base de datos configurada: MySQL
+\end{enumerate}
+
 \subsection{Python}
 \label{subsec:python}
+
+El \textbf{lenguaje Python}~\cite{duque2011python}, cuyo nombre es en homenaje a la serie \textit{Monty Python's Flying 
+Circus}. Fué 
+desarrollado por \textit{Guido van Rossum} para tratar de superar las limitaciones 
+del \textit{lenguaje ABC}, que era comúnmente utilizado en el centro de investigación 
+en el que trabajaba en Ámsterdam.
+
+Desde el principio se buscó que fuera un \textit{lenguaje divertido} a la hora de ser
+utilizado y es común utilizar variables que hacen referencia a sketchs de 
+los Monty Python en lugar de variables tradicionales.
+
+En un principio iba a publicarlo bajo una licencia open source propia, pero 
+con la versión 1.6 se decidió por cambiar a \textbf{licencia GPL} (GNU General Public
+Licence). Así, es posible modificar el código fuente y desarrollar código derivado
+sin la necesidad de hacerlo open source.
+
+Existen \textbf{tres versiones} principales, con 1.6, 2.7 y 3.4 como últimas actualizaciones. 
+Es destacable indicar que las versiones 2 y 3 son incompatibles entre sí, por el
+ gran número de diferencias entre ellas.
+
+El desarrollo y promoción se realiza a través de la organización, sin ánimo de 
+lucro, \textit{Python Software Foundation}, destacando su \textbf{carácter open source}.
+
+Las \textbf{características} principales de este lenguaje son las siguientes:
+\begin{itemize}
+    \item Es un lenguaje de \textit{alto nivel}, expresando el algoritmo de forma 
+                entendible para el programador.
+    \item \textit{Interpretado}, se ejecuta mediante un intérprete y así es más 
+            flexible que un lenguaje compilado.
+    \item Su filosofía se centra en tratar de conseguir un \textit{código lo más legible
+        posible} para el ser humano. Los programas en Python parecen pseudocódigos.
+    \item Es \textit{orientado a objetos}, con sus clases, propiedades, métodos\ldots. 
+            Todo son objetos.
+    \item \textit{Dinámicamente tipado}: puede indicarse el tipo en cualquier momento,
+             no es necesario declarlos en un método. Esto reduce el ciclo 
+             editar-compilar-comprobar-depurar.
+    \item \textit{Fuertemente tipado}: una vez declarada una variable con un tipo, 
+            esta no  puede realizar una violación de tipo de datos, sino que 
+            deberá ser convertida previamente.
+    \item \textit{Case sensitive}: diferencia entre mayúsculas y minúsculas.
+\end{itemize}
+
+Ha sido el lenguaje elegido, debido principalmente a dos razones, es el
+lenguaje que me ha resultado más atractivo en mis años de aprendizaje en la universidad,
+y en segundo lugar, por su amplia utilización mundial. Las estadísticas 
+mostradas por CodeEval\footnote{\url{https://www.codeeval.com/}} para 2015 de 
+los lenguajes más utilizados pueden observarse
+en la \textit{Figura~\ref{figure:estadistica-python}}. En 2014, el dato
+para Python era de 30,3\%,
+por lo que sigue aumentando el número de programadores que se decantan por este
+lenguaje.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{img/estadistica-python}
+        \caption{Lenguajes de programación más utilizados en 2015}
+        \label{figure:estadistica-python}
+    \end{figure}
+
+Por último, destacar que Python es un \textbf{lenguaje multiplataforma} por lo que se 
+puede utilizar en diversas plataformas. Y cuenta con varios \textit{web frameworks}, 
+entre los que destaca Django, que es la tecnología que trataré a continuación. 
 
 \subsection{Django}
 \label{subsec:django}
 
+\textbf{Django} es un framework que facilita al programador la creación de sitios
+ webs complejos. 
+
+Entre sus principales \textbf{características}, destacar:
+
+\begin{itemize}
+    \item Es de \textit{código abierto}.
+    \item Todo está escrito en \textit{Python}.
+    \item Sigue el concepto \textit{DRY} -Don't Repeat Yourself- intentando
+        no duplicar código.
+    \item El programador no tiene que preocuparse de realizar las tareas
+            repetitivas que siempre hay que realizar al crear un servidor web:
+            abrir sockets, cerrar sockets, configuración de protocolos...
+    \item Puede ser utilizado con varias bases de datos, tales como MySQL, SQLite o PostgreSQL.
+    \item Su filosofía de desarrollo es MVC -Modelo Vista Controlador-, pero no 
+en sentido estricto, sino que ``hacen lo que les parece correcto''. De tal forma, 
+podemos encontrar nombres distintos a los comunmente utilizados en un framework 
+MVC puro. Se podría decir que es un modelo MTV -Modelo Template Vista-.
+\end{itemize}
+
+Para explicar esta última característica y cómo funciona el modelo de Django en concreto,
+he creado la \textit{Figura~\ref{figure:mvc-django}}\footnote{Para la creación 
+de esta figura me he apoyado en la información encontrada en 
+\url{http://es.slideshare.net/alatar/django-el-framework-web-definitivo-1362169}}. 
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{img/mvc-django}
+        \caption{MVC adaptado de Django}
+        \label{figure:mvc-django}
+    \end{figure}
+
+Al crear un proyecto nuevo, tendremos por defecto el árbol de directorios
+mostrado en la \textit{Figura~\ref{figure:arbol-django}}, donde se pueden observar
+algunos de los ficheros mencionados al describir el modelo seguido por Django.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{img/arbol-django}
+        \caption{Árbol de directorios de un proyecto en Django}
+        \label{figure:arbol-django}
+    \end{figure}
+
+
+Django tiene una gran \textbf{comunidad} de usuarios que defienden al igual que Python
+las buenas \textit{prácticas de programación y que el código sea legible}~\cite{greenfeld2013two}.
+
 \subsection{MySQL}
 \label{subsec:mysql}
 
-\subsection{Node.js}
+\subsection{Servidor HTTP Apache}
+\label{subsec:apache}
+
+El \textbf{servidor HTTP Apache} es un servidor web HTTP de \textit{software libre}. El servidor
+se desarrolla y mantiene bajo la \textit{Apache Software Foundation} dentro del proyecto 
+HTTP Server \textit{(httpd)}.
+
+La arquitectura del servidor Apache es \textbf{altamente modular}, lo cual permite añadir
+más funcionalidades de modo sencillo y ser extendido fácilmente. Esta es una 
+de las características que le hacen ser muy utilizado a la hora de poner una 
+web en producción, ya que se pueden incluir módulos de frameworks. Como es el caso
+del módulo \textit{mod\_wsgi de Django}.
+
+Algo históricamente notable es la licencia de software bajo la cual es distribuido. 
+La \textbf{Licencia Apache} es una licencia de software libre y permite al usuario la 
+libertad de uso para cualquier propósito, ya sea de distribución, para ser 
+modificado y le permite además, distribuir versiones modificadas del software.
+
+La \textbf{configuración} del mismo se realiza mediante el fichero apache2.conf 
+o \textbf{httpd.conf} y para que los cambios en él sean agregados es necesario 
+reiniciar el servidor. 
+
+
+
+\subsection{Servidor HTTP Node.js}
 \label{subsec:nodejs}
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FRONT-END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Front-end}
 \label{sec:back-front}
 
+- 
+
 \subsection{HTML}
 \label{subsec:html}
 
+- 
+
 \subsection{CSS}
 \label{subsec:css}
+-
 
 \subsection{Bootstrap}
 \label{subsec:bootstrap}
+-
 
 \subsection{JavaScript}
 \label{subsec:javascript}
+-
 
 \subsection{AJAX}
 \label{subsec:ajax}
+-
+
+%%%%%%%%%%%%%%%%%%% PLATAFORMA EN LA NUBE: AZURE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Plataforma en la nube: Azure}
+\label{sec:azure}
+-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ANALÍTICA WEB %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Analítica web: Google Analytics}
 \label{sec:analitica-web}
+-
+
+
+%%%%%%%%%%%%%%%%%%%%% LIBRERIAS y PLUGINS UTILIZADOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Librerías utilizadas}
+\label{sec:librerias}
+-
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
