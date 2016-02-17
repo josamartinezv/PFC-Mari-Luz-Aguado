@@ -880,10 +880,9 @@ escenifica esta fase.
   
 
 
-Actualmente, el proyecto continúa desarrollandose, pero ya no trabajando en la 
-Universidad Rey Juan Carlos, sino en la Asociación sin ánimo de lucro 
-\textbf{Programamos} en la que mi co-tutor, Jesús Moreno, es co-fundador 
-junto con José Ignacio Huertas. 
+Actualmente, el proyecto continúa desarrollandose, con la ayuda de la Asociación 
+sin ánimo de lucro \textbf{Programamos} en la que mi co-tutor, Jesús Moreno, 
+es co-fundador junto con José Ignacio Huertas. 
 
 
 
@@ -1031,8 +1030,8 @@ para el desarrollo de dicha capa:
 \subsection{Python}
 \label{subsec:python}
 
-El \textbf{lenguaje Python}~\cite{duque2011python}, cuyo nombre es en homenaje a la serie \textit{Monty Python's Flying 
-Circus}. Fué 
+El \textbf{lenguaje Python}~\cite{duque2011python}, cuyo nombre es en homenaje 
+a la serie \textit{Monty Python's Flying Circus}. Fué 
 desarrollado por \textit{Guido van Rossum} para tratar de superar las limitaciones 
 del \textit{lenguaje ABC}, que era comúnmente utilizado en el centro de investigación 
 en el que trabajaba en Ámsterdam.
@@ -1048,7 +1047,7 @@ sin la necesidad de hacerlo open source.
 
 Existen \textbf{tres versiones} principales, con 1.6, 2.7 y 3.4 como últimas actualizaciones. 
 Es destacable indicar que las versiones 2 y 3 son incompatibles entre sí, por el
- gran número de diferencias entre ellas.
+ gran número de \textit{diferencias entre ellas}~\cite{pilgrim2009dive}.
 
 El desarrollo y promoción se realiza a través de la organización, sin ánimo de 
 lucro, \textit{Python Software Foundation}, destacando su \textbf{carácter open source}.
@@ -1143,11 +1142,48 @@ algunos de los ficheros mencionados al describir el modelo seguido por Django.
 Django tiene una gran \textbf{comunidad} de usuarios que defienden al igual que Python
 las buenas \textit{prácticas de programación y que el código sea legible}~\cite{greenfeld2013two}.
 
+
 \subsection{MySQL}
 \label{subsec:mysql}
 
-Todo servidor web necesita una base de datos a la que consulta para salvar
-información de los usuarios registrados, ficheros...
+Todo servidor web necesita un \textit{servidor de base de datos} que administre,
+almacene y gestione los datos, para asegurar el acceso seguro a ellos.
+
+\textbf{MySQL}~\cite{suehring2002mysql} es uno de los sistemas de administración 
+de bases de datos más utilizados en la actualidad, se puede observar en la 
+\textit{Figura~\ref{figure:mysql}}\footnote{Información obtenida en 
+\url{http://db-engines.com/en/ranking_trend}} cuál es el ranking que ocupa 
+relacionado con otras bases de datos muy utilizadas en el mercado, donde se 
+puede observar que es una de las tres con más usuarios.
+
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.1\textwidth]{img/mysql}
+        \caption{Ranking de las bases de datos más utilizadas actualmente}
+        \label{figure:mysql}
+    \end{figure}
+
+
+Las principales \textbf{características} de MySQL son las siguientes:
+
+\begin{itemize}
+    \item Utiliza \textbf{tablas} para guardar los datos.
+    \item Tiene un mecanismo interno de almacenamiento el cual guarda los datos
+            salvados en dispositivos físicos.
+    \item Es \textbf{relacional}(BDR), por lo que permite establecer interconexiones
+        o relaciones entre los datos ya guardados en tablas, siguiendo el 
+        \textit{modelo relacional}.
+    \item Es \textbf{multiplataforma}.
+    \item Utiliza multihilos mediante hilos del kernel.
+    \item Los clientes se conectan al servidor MySQL usando sockets TCP/IP.
+    \item Tiene bases de datos de hasta 50 millones de registros.
+\end{itemize}
+
+
+Destacar que tiene \textbf{licenciamiento dual}: se puede utilizar bajo la GNU GPL, 
+pero si se quiere incorporar en productos privativos es necesario comprar 
+otra licencia.
 
 \subsection{Servidor HTTP Apache}
 \label{subsec:apache}
@@ -1173,18 +1209,25 @@ reiniciar el servidor.
 
 
 
+
+
 \subsection{Servidor HTTP Node.js}
 \label{subsec:nodejs}
 
+\textbf{Node.js} es un entorno de ejecución que permite trabajar sobre el intérprete de 
+\textit{JavaScript} en el lado del servidor. Utiliza el motor V8, desarrollado por
+Google para el navegador Chrome, compilando javascript en el lado del servidor
+a altas velocidades.
 
-
-
+Señalar que es de código abierto y multiplataforma. Y la característica que lo
+hace destacar es el hecho de poseer un excelente \textit{modelo de eventos}, ideal para 
+la programación asíncrona.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FRONT-END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Front-end}
 \label{sec:back-front}
 
-- 
+-
 
 \subsection{HTML}
 \label{subsec:html}
