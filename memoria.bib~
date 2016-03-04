@@ -37,6 +37,14 @@
   year={2011}
 }
 
+@book{pilgrim2009dive,
+  title={Dive Into Python 3},
+  author={Pilgrim, Mark and Willison, Simon},
+  volume={2},
+  year={2009},
+  publisher={Springer}
+}
+
 @book{liu2004computacion,
   title={Computaci{\'o}n distribuida: fundamentos y aplicaciones},
   author={Liu, Mei-Ling and S{\'a}nchez, Jos{\'e} Mar{\'\i}a Pe{\~n}a},

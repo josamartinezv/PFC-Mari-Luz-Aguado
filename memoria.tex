@@ -335,7 +335,7 @@ de programar en este lenguaje es uniendo piezas estilo \textit{LEGO}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{img/scratch}
+    \includegraphics[width=0.5\textwidth]{img/scratch}
     \textit{\caption{Logo de Scratch}}
     \label{figure:scratch}
 \end{figure}
@@ -368,7 +368,7 @@ un proyecto realizado por otro Scratcher y modificarlo a nuestro gusto.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{img/estadisticas-scratch}
+    \includegraphics[width=0.5\textwidth]{img/estadisticas-scratch}
     \caption{Estadísticas de la comunidad de Scratch}
     \label{figure:estadisticas-scratch}
 \end{figure}
@@ -419,18 +419,24 @@ cómo de bien se ha programado un proyecto, lo que nos interesa es conocer dicho
 JSON y analizar su contenido.
 
 La tarea de analizar toda la información otorgada por el fichero JSON no es fácil,
-pero encontraron en Github\footnote{\url{https://github.com/}} un plugin que ya 
+pero mis tutores encontraron en Github\footnote{\url{https://github.com/}} un plugin que ya 
 hacía dicha tarea. Este plugin es 
 \textbf{Hairball}\footnote{\url{https://github.com/ucsb-cs-education/hairball}} que ha
 sido implementado por \textit{Bryce Boe}\footnote{\url{https://github.com/bboe}}
-y únicamente presenta información sobre \textbf{los aspectos del Pensamiento Computacional}:
+y presentaba información sobre \textbf{los aspectos del Pensamiento Computacional}:
 \textit{pensamiento lógico, control de flujo, abstracción, paralelismo, interactividad 
-con el usuario, representación de la información y sincronización.}
+con el usuario, representación de la información y sincronización}. Y además también 
+tenía en cuenta dos malos hábitos de programación: 
+\textbf{código muerto y atributos no inicializados}.
 
-Jesús Moreno añadió otros cuatro plugins a \textit{Hairball} que inspeccionaban el fichero JSON buscando
-indicios de los \textbf{malos hábitos que todo programador novato tiene al principio}:
-\textit{código muerto, programas duplicados, nombres inadecuados y atributos no inicializados.}
-Su tesis explica de forma detallada cómo trabajan todos estos plugins y cuál es
+Mis tutores incluyeron otros dos plugins a \textit{Hairball} que inspeccionaban 
+el fichero JSON buscando indicios de otros dos de los 
+\textbf{malos hábitos que todo programador novato tiene al principio}:
+\textit{programas duplicados y nombres inadecuados.}
+La tesis de mi co-tutor explica de forma detallada cómo trabajan estos plugins
+\footnote{\url{ https://www.researchgate.net/publication/
+283118935_Automatic_Detection_of_Bad_Programming_Habits_in_Scratch_A_Preliminary_Study
+}} y cuál es
 la relación que tienen los distintos aspectos del Pensamiento Computacional, además
 de demostrar cómo el desarrollo del Pensamiento Computacional ayuda a desarrollar
 habilidades que son compartidas con materias recogidas en los currículos del 
@@ -450,7 +456,7 @@ con los pluguins de Hairball. La apariencia de dicha web es la mostrada en la
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{img/alpha-version-web}
+    \includegraphics[width=0.8\textwidth]{img/alpha-version-web}
     \caption{Apariencia de la versión Alpha de Dr. Scratch}
     \label{figure:alpha-version-web}
 \end{figure}
@@ -633,14 +639,14 @@ Una vez detallado el objetivo general del proyecto, necesitamos entender en qué
 momento de su desarrollo nos encontramos y cuáles son los objetivos que queremos
 alcanzar al final de este Proyecto Final de Carrera.
 
-Tal como se ha comentado en la Introducción, ya existía una versión Alpha de la 
+Tal como se ha comentado, ya existía una versión Alpha de la 
 web, en la que se tenía un código, que trataba de alcanzar el objetivo e implementación
 básica de la web. Dicho código, mostraba una web simple e intentaba analizar el 
 archivo .sb2 de Scratch para extraer conclusiones mediante el plugin Hairball y 
 mostrarlas en un dashboard.
 
 Al comienzo de este proyecto, dicho código no conseguía realizar correctamente
-el análisis del proyecto de Scratch con Hairball, por lo que partiendo de esta 
+el análisis del proyecto de Scratch, por lo que partiendo de esta 
 base, los objetivos iniciales fueron los siguientes:
 
 \begin{enumerate}[label=\textbf{\arabic{*}.}]
@@ -650,8 +656,7 @@ base, los objetivos iniciales fueron los siguientes:
 
     \item \textbf{Generación de un log.} Se quería tener información de todos los
     proyectos analizados en la web: quién lo había analizado -si estaba registrado-,
-    nombre del proyecto, hora y fecha. Más tarde, se fue añadiendo información a
-    este log según la herramienta se fue ampliando.  
+    nombre del proyecto, hora y fecha.
 
     \item \textbf{Plataforma en producción.} La idea principal, era que una vez
     el prototipo funcionase, tenerlo en producción lo antes posible para ser 
@@ -937,7 +942,7 @@ será explicado más adelante.
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=1.1\textwidth]{img/cliente-servidor}
+        \includegraphics[width=0.8\textwidth]{img/cliente-servidor}
         \caption{Esquema del paradigma Cliente-Servidor}
         \label{figure:cliente-servidor}
     \end{figure}
@@ -947,7 +952,7 @@ ofrecer funcionalidades al usuario y que su \textbf{estructura} es siempre la
 que se muestra en la \textit{Figura~\ref{figure:aplicacion-distribuida}}.
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.5\textwidth]{img/aplicacion-distribuida}
+        \includegraphics[width=0.3\textwidth]{img/aplicacion-distribuida}
         \caption{Capas presentes en toda aplicación distribuida}
         \label{figure:aplicacion-distribuida}
     \end{figure}
@@ -1001,7 +1006,7 @@ cual es una ventaja a la hora de depurar pero hace los mensajes largos.
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=1.1\textwidth]{img/mensajes-http}
+        \includegraphics[width=0.8\textwidth]{img/mensajes-http}
         \caption{Mensajes de petición y respuesta del protrocolo HTTP}
         \label{figure:mensajes-http}
     \end{figure}
@@ -1031,7 +1036,7 @@ para el desarrollo de dicha capa:
 \label{subsec:python}
 
 El \textbf{lenguaje Python}~\cite{duque2011python}, cuyo nombre es en homenaje 
-a la serie \textit{Monty Python's Flying Circus}. Fué 
+a la serie \textit{Monty Python's Flying Circus}. Fue 
 desarrollado por \textit{Guido van Rossum} para tratar de superar las limitaciones 
 del \textit{lenguaje ABC}, que era comúnmente utilizado en el centro de investigación 
 en el que trabajaba en Ámsterdam.
@@ -1063,7 +1068,7 @@ Las \textbf{características} principales de este lenguaje son las siguientes:
     \item Es \textit{orientado a objetos}, con sus clases, propiedades, métodos\ldots. 
             Todo son objetos.
     \item \textit{Dinámicamente tipado}: puede indicarse el tipo en cualquier momento,
-             no es necesario declarlos en un método. Esto reduce el ciclo 
+             no es necesario declararlos en un método. Esto reduce el ciclo 
              editar-compilar-comprobar-depurar.
     \item \textit{Fuertemente tipado}: una vez declarada una variable con un tipo, 
             esta no  puede realizar una violación de tipo de datos, sino que 
@@ -1083,7 +1088,7 @@ lenguaje.
 
      \begin{figure}[H]
         \centering
-        \includegraphics[width=0.7\textwidth]{img/estadistica-python}
+        \includegraphics[width=0.5\textwidth]{img/estadistica-python}
         \caption{Lenguajes de programación más utilizados en 2015}
         \label{figure:estadistica-python}
     \end{figure}
@@ -1111,7 +1116,7 @@ Entre sus principales \textbf{características}, destacar:
     \item Puede ser utilizado con varias bases de datos, tales como MySQL, SQLite o PostgreSQL.
     \item Su filosofía de desarrollo es MVC -Modelo Vista Controlador-, pero no 
 en sentido estricto, sino que ``hacen lo que les parece correcto''. De tal forma, 
-podemos encontrar nombres distintos a los comunmente utilizados en un framework 
+podemos encontrar nombres distintos a los comúnmente utilizados en un framework 
 MVC puro. Se podría decir que es un modelo MTV -Modelo Template Vista-.
 \end{itemize}
 
@@ -1208,9 +1213,6 @@ o \textbf{httpd.conf} y para que los cambios en él sean agregados es necesario
 reiniciar el servidor. 
 
 
-
-
-
 \subsection{Servidor HTTP Node.js}
 \label{subsec:nodejs}
 
@@ -1227,44 +1229,128 @@ la programación asíncrona.
 \section{Front-end}
 \label{sec:back-front}
 
--
+Recordar que el \textit{front-end} es la \textbf{capa de presentación} que toda 
+aplicación distribuida posee. Es la parte con la que el cliente interacciona. 
+Y en las siguientes subsecciones se van a explicar algunas de las tecnologías 
+más utilizadas actualmente en el desarrollo web y que se muestran en la 
+\textit{Figura~\ref{figure:front-end}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{img/front-end}
+        \caption{Tecnologías más utilizadas en la capa de presentación}
+        \label{figure:front-end}
+    \end{figure}
+
 
 \subsection{HTML}
 \label{subsec:html}
 
-- 
+\textbf{HTML} (HyperText Markup Language) no es un lenguaje de programación, sino
+un \textit{lenguaje de marcado} para la creación de páginas webs. Es utilizado por todos 
+los navegadores actuales.
+
+\textit{Permite dar estructura e introducir contenido en las páginas webs} a través de las 
+distintas \textbf{etiquetas} que componen el lenguaje, utilizando únicamente texto. En la
+\textit{Figura~\ref{figure:html}} se puede observar la estructura básica de un 
+código HTML.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{img/html}
+        \caption{Estructura básica de un código HTML}
+        \label{figure:html}
+    \end{figure}
+
+Para incluir un \textbf{elemento} en una página necesitamos indicar la etiqueta de inicio,
+su contenido -texto que aparecerá en la web- y la etiqueta de cierre, generalmente.
+Las etiquetas de inicio tienen \textbf{atributos} en los que se especifica mediante texto plano
+la ubicación de los contenidos(imágenes, vídeos...) que queremos introducir en 
+la página y es el navegador quien se encarga de interpretarlo y mostrar la página 
+web completa.
+
 
 \subsection{CSS}
 \label{subsec:css}
--
+\textbf{CSS} (cascading style sheets) es utilizado para dar estilo a un lenguaje
+estructurado, como puede ser HTML. Se aconseja que el código CSS se incluya en
+otro documento separado del HTML y que éste sea incluido mediante la etiqueta 
+adecuada(<link>), tratando de \textit{no mezclar lenguajes diferentes en un mismo texto}
+ para facilitar su legibilidad.
+
+Al seguir la norma de estilo anterior, el modo de indicar a un elemento de HTML
+que debe seguir una norma de estilo concreta se realiza incluyendo en la etiqueta
+de dicho elemento alguno de los dos atributos de nombre: id o class. Estos dos 
+atributos tendrán un valor determinado que será el especificado en una sección del
+código CSS que tendrá unas reglas propias.
+
+El mayor potencial de CSS es su \textbf{sintaxis simple} pero hay que tener mucho cuidado
+con las jerarquías para incluir el estilo que deseamos a los contenidos deseados.
+
 
 \subsection{Bootstrap}
 \label{subsec:bootstrap}
--
+\textbf{Bootstrap} es un framework que permite al usuario despreocuparse en gran
+medida del diseño y apariencia al realizar una aplicación web. Entre sus principales
+aportaciones están las numerosas \textbf{plantillas} que permiten tener implementado
+el diseño de una página web completa en pocas horas.
+
+Está \textit{basado en HTML y CSS} separando por completo dichos lenguajes en documentos
+diferentes lo que permite que una plantilla pueda ser modificada y ampliada 
+fácilmente por el usuario para adaptarlo al diseño deseado de un modo intuitivo. 
+
+Las plantillas generadas, normalmente incluyen también ficheros con \textit{JavaScript}
+para aportar a la página un diseño más atractivo para el usuario, en la siguiente
+subsección se explicará qué mejoras introduce este lenguaje a una página creada
+únicamente con HTML y CSS.
 
 \subsection{JavaScript}
 \label{subsec:javascript}
--
+\textbf{JavaScript} es un lenguaje de programación interpretado utilizado de forma
+extendida para poder \textit{dinamizar el lado del cliente} incluyendo así mejoras en la 
+interfaz de usuario y aumentar su seguridad.
+
+Aun que su principal uso es en el lado del cliente, también se utiliza con el 
+apoyo de otras tecnologías para enviar y recibir información al servidor.
+
 
 \subsection{AJAX}
 \label{subsec:ajax}
--
+\textbf{AJAX} (Asynchronous JavaScript And XML) es una tecnología que permite 
+enviar y recibir información desde el servidor al cliente, permitiendo diseñar
+ páginas webs más interactivas.
+
+Este envío de información se realiza gracias a una \textit{comunicación asíncrona} con el
+servidor siendo posible realizar cambios en la página siendo recargada automáticamente. 
 
 %%%%%%%%%%%%%%%%%%% PLATAFORMA EN LA NUBE: AZURE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Plataforma en la nube: Azure}
 \label{sec:azure}
--
+
+Siempre que se persigue trasladar una aplicación distribuida a producción es necesario
+una máquina o máquinas en las que implementar todas las tecnologías que han sido 
+mencionadas anteriormente. \textbf{Microsoft Azure} es una plataforma alojada en los
+Data Centers de Microsoft que permite entre otros servicios, la posibilidad de
+tener máquinas virtuales con una gran selección de sistemas operativos. 
+
+Por ello, es una herramienta  muy potente en la que alojar nuestra aplicación
+asegurando \textit{escalabilidad, seguridad y un 24x7 fiable}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ANALÍTICA WEB %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Analítica web: Google Analytics}
 \label{sec:analitica-web}
--
 
+El objetivo principal de una web en producción es que sea utilizada por el mayor
+número de usuarios posible y para poder realizar un seguimiento y medición de 
+dicho objetivo \textbf{Google Analytics} nos permite tener numerosas \textit{estadísticas}
+y herramientas que nos reportan dicha información.
 
-%%%%%%%%%%%%%%%%%%%%% LIBRERIAS y PLUGINS UTILIZADOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Librerías utilizadas}
-\label{sec:librerias}
--
+Su utilización es muy simple, al crear una cuenta, \textit{se genera un código en JavaScript
+que debe ser incluido en las distintas páginas de la web}.
+
+Además, Google Analytics incluye numerosa información en texto y vídeos de cómo 
+leer la información dada y de cómo optimizar aspectos
+tan importantes en las webs como es la segmentación del tráfico o publicidad online. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1274,31 +1360,125 @@ la programación asíncrona.
 
 \cleardoublepage
 \chapter{Diseño e implementación}
+En este capítulo se va a detallar \textit{cómo se han implementado las distintas tecnologías}
+explicadas en el capítulo anterior para lograr el desarrollo de la plataforma
+de Dr. Scratch.
+También se irá explicando cuál ha sido la \textit{evolución en la implementación de 
+las funcionalidades debido a las necesidades observadas en los test de usabilidad} 
+realizados en dos colegios de la Comunidad de Madrid con alumnos de 5º y 6º de
+primaria: CEIP Lope de Vega y CEIP Gonzalo Fernández de Córdoba.
 
 \section{Arquitectura general de Dr. Scratch} 
 \label{sec:arquitectura}
+Como toda aplicación Cliente-Servidor, Dr. Scratch tiene las 3 capas de desarrollo:
+back-end, lógica de la aplicación y front-end. 
 
-\subsection{Servidor} 
-\label{subsec:servidor}
+Pero al ser Dr. Scratch un analizador de archivos -en este caso, el JSON del proyecto
+de Scratch- la lógica o negocio de la aplicación está clara. Por ello se va a 
+prestar mayor atención a la capa de servicio y de presentación.
 
-\subsection{Modelo de datos y fichero de log} 
-\label{subsec:arquitectura}
+\subsection{Capa de servicio: back-end} 
+\label{subsec:back-end}
+\begin{description}
+  \item[Versiones utilizadas] \hfill \\
+\end{description}
+\begin{description}
+  \item[Pluguins y APIs] \hfill \\
+\end{description}
+\begin{description}
+  \item[Estructura] \hfill \\
+\end{description}
+\begin{description}
+  \item[Modelo de datos y fichero de log] \hfill \\
+\end{description}
 
-\subsection{APIs y plugins utilizados} 
-\label{subsec:apis}
 
-\subsection{Plataforma web} 
-\label{subsec:plataforma}
+\subsection{Capa de presentación: front-end} 
+\label{subsec:front-end}
 
-\subsection{Traducción} 
-\label{subsec:traduccion}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% INTERFAZ DE USUARIO %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cleardoublepage
-\chapter{Interfaz de usuario}
+
+\section{Funcionalidades y evolución de Dr. Scratch}
+\label{subsec:evolucion}
+
+Con el objetivo de describir claramente cuál ha sido mi aportación al proyecto
+de Dr. Scratch quiero recordar que este proyecto es la continuación del 
+Proyecto Fin de Carrera de Cristian
+Chusing que realizó la primera versión de Dr. Scratch, en la cual se había
+implementado la funcionalidad básica. 
+
+
+\subsection{Versión Alpha}
+\label{subsec:alpha}
+El prototipo inicial de Dr. Scratch debía implementar:
+\begin{itemize}
+ \item Una página principal en la que poder indicar qué fichero quería subirse.
+ \item Análisis del proyecto de Scratch mediante Hairball.
+ \item Obtener toda la información útil del análisis de Hairball que quería mostrarse
+al usuario.
+ \item Mostrar dicha información en un dashboard fácil de entender por el usuario.
+\end{itemize}
+
+Al comenzar este Proyecto Fin de Carrera mis tutores compartiron
+conmigo el código que Cristian les había hecho llegar, código en el cual la
+página principal tenía la apariencia mostrada en la \textit{Figura~\ref{figure:alpha-version-web}} 
+y que debía realizar dichas funciones perfectamente, porque tenía todo programado,
+pero a la hora de ejecutar mostraba error y no conseguía mostrar la información
+del análisis de Hairball.
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/alpha-version-web}
+    \caption{Apariencia de la versión Alpha de Dr. Scratch}
+    \label{figure:alpha-version-web}
+\end{figure}
+
+
+
+\subsection{Fase I}
+\label{subsec:fase-i}
+En este contexto, se fijaron mis principales objetivos a conseguir y mis primeras
+implementaciones que son las mostradas en la \textit{Figura~\ref{figure:fase-i}}  .
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{img/fase-i}
+        \caption{Fase I del proyecto Dr. Scratch}
+        \label{figure:fase-i}
+    \end{figure}
+
+\begin{description}
+  \item[Depuración del código] \hfill \\
+\end{description}
+
+\begin{description}
+  \item[Puesta en producción] \hfill \\
+    \begin {itemize}
+        \item Máquinas en la universidad
+        \item Máquina virtual en Azure
+    \end {itemize}
+\end{description}
+
+
+\subsection{Fase II}
+\label{subsec:fase-ii}
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{img/fase-ii}
+        \caption{Fase II del proyecto Dr. Scratch}
+        \label{figure:fase-ii}
+    \end{figure}
+-
+\subsection{Fase III}
+\label{subsec:fase-iii}
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{img/fase-iii}
+        \caption{Fase III del proyecto Dr. Scratch}
+        \label{figure:fase-iii}
+    \end{figure}
+-
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
