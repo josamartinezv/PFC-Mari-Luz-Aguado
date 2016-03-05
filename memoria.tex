@@ -1377,25 +1377,172 @@ Pero al ser Dr. Scratch un analizador de archivos -en este caso, el JSON del pro
 de Scratch- la lógica o negocio de la aplicación está clara. Por ello se va a 
 prestar mayor atención a la capa de servicio y de presentación.
 
-\subsection{Capa de servicio: back-end} 
+\subsection{Capa de servicio: back-end}
 \label{subsec:back-end}
+
+En la \textit{Figura~\ref{figure:arquitectura}} se puede observar la arquitectura
+de Dr. Scratch y la conexión entre las distintas tecnologías utilizadas para la 
+implementación de la capa de servicio.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{img/arquitectura}
+        \caption{Arquitectura general de Dr. Scratch}
+        \label{figure:arquitectura}
+    \end{figure}
+
 \begin{description}
-  \item[Versiones utilizadas] \hfill \\
-\end{description}
+  \item[Azure] \hfill \\
+    Todo lo que se va a proceder a explicar a continuación ha sido instalado y 
+programado en una máquina virtual en la nube mediante la plataforma Microsoft 
+Azure con un sistema operativo Ubuntu 14.04.2 LTS
+    \end{description}
 \begin{description}
-  \item[Pluguins y APIs] \hfill \\
+  \item[Apache] \hfill \\
+    Actualmente se encuentra instalada la versión 2.4.10 ya que es la compatible con
+la versión de Ubuntu de nuestra máquina. La configuración del fichero httpd.conf
+me llevó algún tiempo entenderla, ya que era necesario además incluir el módulo
+mod\_wsgi que permite enlazar Azure con Django. 
+La tarea realizada por Apache nos resuelve numerosos problemas y su funcionamiento
+es el siguiente: cuando los clientes realizan peticiones HTTP
+a nuestro dominio a través de la red, estas son escuchadas por el servidor de HTTP implementado
+bajo la licencia Apache, la cual permite utilizar Dr. Scratch de forma simúltanea
+por numerosos usuarios teniendo estos la percepción de ser los únicos usándolo.
 \end{description}
+
+
+ 
 \begin{description}
-  \item[Estructura] \hfill \\
+  \item[Django] \hfill \\
+La versión actualmente instalada de Django es la 1.7 ya que la 1.8 está aún en 
+desarrollo. 
+Como se observa, Apache se encarga de hacer llegar la petición a Django, donde tal como se puede
+ver en la \textit{Figura~\ref{figure:django-funcionamiento}} se pregunta
+en el fichero urls.py si dicho recurso es servido por nuestro servidor. El fichero
+urls.py es básicamente una lista en la que mediante expresiones regulares se
+indica qué recursos son servidos por nuestra aplicación. 
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{img/django-funcionamiento}
+        \caption{Modelo de Dr. Scratch}
+        \label{figure:django-funcionamiento}
+    \end{figure}
+
+Dr. Scratch se ha implementado de tal forma que si se realiza una petición a nuestro
+dominio con un recurso que no es servido redirija al usuario a la página principal,
+así si el usuario, que puede ser un niño pequeño, se equivoca, pueda seguir navegando
+sin mayor esfuerzo o ver alguna página de error. Internamente, la lógica de este
+funcionamiento es el mostrado en el diagrama de la \textit{Figura~\ref{figure:urls}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{img/urls}
+        \caption{Funcionamiento de la petición de recursos a Dr. Scratch: urls.py}
+        \label{figure:urls}
+    \end{figure}
+
+En el momento que urls.py nos dirige a una función -recordar que en Python no
+existen los procedimientos- las cuales se encuentran
+según el modelo de Django en el fichero views.py, se debe hacer distinción según
+si el método de la petición es: GET, POST u otro método. Así se ejecutará un código
+concreto según la función y el método. Algunos métodos únicamente servirán
+el recurso solicitado si el método que acompaña a la petición es GET y en otro 
+caso redirigirá a la página principal de Dr. Scratch para que al igual que en 
+el caso anterior el flujo de la aplicación sea lo más dinámica posible. En la
+\textit{Figura~\ref{figure:views}} se observa el funcionamiento interno.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{img/views}
+        \caption{Distinción según el método de la petición: views.py}
+        \label{figure:views}
+    \end{figure}
+
+Al ser Dr. Scratch una plataforma con numerosas funcionalidades, fue necesario
+apoyar al fichero views.py con otra serie de ficheros en los que se implementaban
+funciones auxiliares. Así se permite observar fácilmente el flujo de la plataforma
+y aumentar su modularidad.
+Los otros ficheros que apoyan a views.py se pueden ver en la 
+\textit{Figura~\ref{figure:views-modular}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{img/views-modular}
+        \caption{Modularización del fichero views.py}
+        \label{figure:views-modular}
+    \end{figure}
+
+Para realizar el código de las funciones implementadas en los ficheros anteriores
+ hay que recordar que Django está completamente programado en Python y que este 
+es un lenguaje orientado a objetos, por ello, todo lo que encontraremos en 
+nuestro código son objetos. 
+La declaración de los objetos que conforman nuestra aplicación se encuentra en 
+el fichero models.py del modelo de Django. La declaración de uno de los objetos 
+más utilizados por Dr. Scratch se muestra en la \textit{Figura~\ref{figure:models}} 
+donde se pueden observar sus campos. Las distintas clases declaradas en este 
+fichero serán instanciadas en las funciones 
+para implementar las diferentes funcionalidades de la plataforma.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth]{img/models}
+        \caption{Declaración de los objetos de Dr. Scratch: models.py}
+        \label{figure:models}
+    \end{figure}
+
+Una vez que ya sabe Dr. Scratch qué código debe ejecutar según lo visto ahora, 
+procede y según la función, deberá realizar diversas acciones: 
+consultas en la base de datos, realizar el análisis con Hairball, hacer
+una petición a otro servidor para obtener información, guardar el archivo... 
+Todo este funcionamiento se irá detallando en la siguiente subsección donde se
+explicarán las implementaciones realizadas.
+
+Tras ejecutar dicho código y procesar toda la información, se debe mostrar una
+página de respuesta para lo que se utiliza el sistema de plantillas de Django 
+llamadas templates. Estas plantillas son renderizadas con la información que se 
+ha procesado y se quiere mostrar en dichas páginas.
+
 \end{description}
+
 \begin{description}
-  \item[Modelo de datos y fichero de log] \hfill \\
+  \item[Fichero log] \hfill \\
+Con el objetivo de tener un fichero que guarde información de todos los archivos
+analizados y poder observar en qué momento se producen  problemas en nuestro 
+servidor, se añadió un fichero log.txt a nuestro modelo. Este fichero es 
+ abierto, escrito y cerrado cada vez que un proyecto de Scratch es análizado 
+agregando información relevante del mismo.
 \end{description}
+
+\begin{description}
+  \item[Base de datos] \hfill \\
+Dr. Scratch tiene para poder almacenar información una base de datos en MySQL 
+ 5.5.43 a la cual se accede para realizar consultas en las propias funciones 
+con la ayuda de Django de un modo fácil y sencillo.
+\end{description}
+
+\begin{description}
+  \item[Node.js (getSb2)] \hfill \\
+También se ha implementado con la ayuda del proyecto de un usuario de Github
+llamado Nathan\footnote{\url{https://github.com/nathan/getsb2}} un servidor 
+HTTP Node.js que se encarga de realizar peticiones al servidor de Scratch que 
+será explicado más adelante.
+\end{description}
+
+\begin{description}
+  \item[Hairball y Kurt] \hfill \\
+El análisis del proyecto de Scratch se realiza mediante Hairball, el cual tenemos
+instalado en la máquina virtual y que se ayuda de Kurt para manipular proyectos
+complejos de Scratch con comandos sencillos de Python.
+\end{description}
+
 
 
 \subsection{Capa de presentación: front-end} 
 \label{subsec:front-end}
-
+El desarrollo de la capa de presentación ha sufrido numerosas modificaciones 
+provocadas por las necesidades observadas en los usuarios en los test de usabilidad
+y por las peticiones realizadas directamente por varios docentes de todo el mundo.
 
 
 \section{Funcionalidades y evolución de Dr. Scratch}
