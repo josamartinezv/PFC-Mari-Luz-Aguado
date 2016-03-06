@@ -1395,7 +1395,24 @@ implementación de la capa de servicio.
   \item[Azure] \hfill \\
     Todo lo que se va a proceder a explicar a continuación ha sido instalado y 
 programado en una máquina virtual en la nube mediante la plataforma Microsoft 
-Azure con un sistema operativo Ubuntu 14.04.2 LTS
+Azure con un sistema operativo Ubuntu 14.04.2 LTS.
+
+    Esto ha sido posible porque Microsoft nos ha ofrecido una suscripción de 150\$
+al mes de forma gratuita. Por ello, al principio pensamos que era mejor utilizar
+la opción website de la plataforma ya que nos indicaron que esa opción consumía
+menor crédito al viajar menos tráfico. 
+Publiqué un website de Dr. Scratch con su base de datos MySQL enlazada a través
+de Visual Studio pero el problema que se encontró fue que
+en los websites de Azure no hay posibilidad de instalar otras aplicaciones y por
+ello no teníamos la posibilidad de instalar Hairball. Intentamos implementarlo
+ya que Python ofrece la posibilidad de ser ejecutado indicando el path completo 
+en el que se encuentran los ficheros importando todos los módulos que había en
+los ficheros de Hairball y sus librerías de forma absoluta, pero había librerías
+dinámicas que presentaban más problemas. En este momento, probamos a crear una 
+máquina virtual instalando absolutamente todo lo que necesitábamos dentro de ella
+y controlar el consumo del crédito. La sorpresa fue que todos los meses, aún teniendo
+miles de proyectos analizados, el crédito no se consumía en más de un 70\%. 
+
     \end{description}
 \begin{description}
   \item[Apache] \hfill \\
@@ -1495,7 +1512,7 @@ Una vez que ya sabe Dr. Scratch qué código debe ejecutar según lo visto ahora,
 procede y según la función, deberá realizar diversas acciones: 
 consultas en la base de datos, realizar el análisis con Hairball, hacer
 una petición a otro servidor para obtener información, guardar el archivo... 
-Todo este funcionamiento se irá detallando en la siguiente subsección donde se
+Todo este funcionamiento se irá detallando en la siguiente sección donde se
 explicarán las implementaciones realizadas.
 
 Tras ejecutar dicho código y procesar toda la información, se debe mostrar una
@@ -1519,6 +1536,18 @@ agregando información relevante del mismo.
 Dr. Scratch tiene para poder almacenar información una base de datos en MySQL 
  5.5.43 a la cual se accede para realizar consultas en las propias funciones 
 con la ayuda de Django de un modo fácil y sencillo.
+
+Para entender correctamente la estructura de la base de datos conviene
+fijarse en la \textit{Figura~\ref{figure:base-datos}}.
+
+  %   \begin{figure}[H]
+  %      \centering
+  %      \includegraphics[width=0.7\textwidth]{img/base-datos}
+  %      \caption{Estructura de las páginas de Dr. Scratch}
+  %      \label{figure:base-datos}
+  %  \end{figure}
+
+
 \end{description}
 
 \begin{description}
@@ -1540,9 +1569,30 @@ complejos de Scratch con comandos sencillos de Python.
 
 \subsection{Capa de presentación: front-end} 
 \label{subsec:front-end}
+
+La capa de presentación de Dr. Scratch está formada por un conjunto de plantillas
+de código HTML que utilizan hojas de estilo CSS con la ayuda del framework
+Bootstrap. Estas páginas utilizan además, código JavaScript para mejorar su 
+interactividad con el usuario y AJAX para realizar algunas funcionalidades en
+segundo plano.
+
+En la \textit{Figura~\ref{figure:templates}} podemos observar cuáles son las
+páginas de Dr. Scratch que son renderizadas y mostradas al usuario asociándolas
+a un recurso determinado.
+
+   %  \begin{figure}[H]
+   %     \centering
+   %     \includegraphics[width=0.7\textwidth]{img/templates}
+   %     \caption{Estructura de las páginas de Dr. Scratch}
+   %     \label{figure:templates}
+   % \end{figure}
+
+ 
 El desarrollo de la capa de presentación ha sufrido numerosas modificaciones 
 provocadas por las necesidades observadas en los usuarios en los test de usabilidad
 y por las peticiones realizadas directamente por varios docentes de todo el mundo.
+Dicha evolución de la plataforma se verá plasmada claramente en la siguiente 
+sección. 
 
 
 \section{Funcionalidades y evolución de Dr. Scratch}
@@ -1571,7 +1621,10 @@ conmigo el código que Cristian les había hecho llegar, código en el cual la
 página principal tenía la apariencia mostrada en la \textit{Figura~\ref{figure:alpha-version-web}} 
 y que debía realizar dichas funciones perfectamente, porque tenía todo programado,
 pero a la hora de ejecutar mostraba error y no conseguía mostrar la información
-del análisis de Hairball.
+del análisis de Hairball. Conociendo ahora completamente el funcionamiento de 
+Dr. Scratch puedo suponer que el problema residía en que se debió realizar algún
+cambio en el plugin Hairball y el código que procesaba la información de Hairball
+se había quedado obsoleto.
  
 \begin{figure}[H]
     \centering
