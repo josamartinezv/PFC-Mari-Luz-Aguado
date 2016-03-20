@@ -32,6 +32,7 @@
 \usepackage{latexsym}  %% Logo LaTeX
 \usepackage[font={footnotesize,it}]{caption}
 \usepackage{enumitem}
+\usepackage{multirow}
 
 \title{Memoria del Proyecto}
 \author{Nombre del autor}
@@ -158,12 +159,53 @@ mi familia, pareja y amigos.}
 %\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el índice
 \markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado 
 
+Me gustan demasiadas cosas y muy dispares. Y la doble 
+licenciatura que elegí lo confirma, pero echando la vista atrás creo que no 
+podría haber elegido una carrera que me defina mejor. El mérito de esto no es mío,
+sino de mis padres, que desde muy pequeña me han abierto continuamente un 
+amplio abanico de posibilidades y gracias a ellos hay mucho con lo que disfruto
+diariamente. Infinitas gracias por ello. 
 
+Quiero agradecer a mi familia -mis padres y mi hermana- el apoyo incondicional 
+y su inmensa paciencia de principio a fin, siempre pensando en mi. Aún con el 
+inmenso esfuerzo que me ha supuesto, hemos tenido momentos bonitos y disfrutado mucho, 
+porque también me habéis enseñado que hay que saber a donde se va, pero que siempre es 
+bueno mirar a los lados aunque se tarde un poquito más. Gema, en nada empezaré 
+a entrar en tu habitación y dejarás de echarlo de menos. Quien avisa no es traidor... 
 
-----(Aquí vienen los agradecimientos\ldots Aunque está bien acordarse de la pareja,
-no hay que olvidarse de dar las gracias a tu madre, que aunque a veces no lo 
-parezca disfrutará tanto de tus logros como tú\ldots Además, la pareja quizás
-no sea para siempre, pero tu madre sí.)
+También dar las gracias a mi compañero de aventuras, haces que todo sea 
+divertido. Y tu forma de afrontar las cosas me ha ayudado muchísimo en esta 
+dura recta final. Gracias por confiar en mi más que yo misma.
+
+Estos años en la universidad he conocido muchísima gente maravillosa, no con 
+todos he pasado tanto tiempo como me habría gustado, pero he disfrutado cada
+segundo y me quedan muy buenos recuerdos. Además, he ganado algunas amistades
+que sé que serán para toda la vida. Lo que ha unido el laboratorio y la
+biblioteca, que no lo separe el hombre. En especial, gracias a Cristina por 
+amenizar las noches de estudio con mucho azúcar y poder disfrutar de nuestros
+éxitos siempre juntas.
+
+Entre familia, pareja, horas de estudio y trabajar,
+ el tiempo se reduce muchísimo. Pero tengo la gran suerte de contar con muchísimos 
+amigos de la infancia, colegio, instituto, lanceros y bonitas casualidades,
+ que pese a los cambios de circunstancias siguen estando ahí. 
+Gracias por vuestra comprensión y por seguir 
+contando conmigo para todos los planes.
+
+Por último, agradecer a todo el equipo de Dr. Scratch este año y medio de 
+trabajo en el que he disfrutado muchísimo. Tengo buenos recuerdos tanto de las 
+horas de programación, como la organización de los talleres o eventos y 
+su realización. He disfrutado de absolutamente todo el proyecto, durante todo el
+ proceso.
+
+Así que quiero agradecer a mi tutor Gregorio Robles, la oportunidad de haber
+podido pertenecer a este gran equipo que me ha hecho crecer tanto profesional
+como personalmente. A mi co-tutor Jesús Moreno por su constante sonrisa y 
+predisposición a echar una mano, además de todo lo que he podido aprender 
+contigo -mucho inglés-. Y por último, a mi compitrueno Eva, por tantos viajes
+y horas de programación. Hemos pasado muchos momentos divertidos y de nervios 
+juntas, apoyándonos la una a la otra. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
@@ -453,7 +495,7 @@ el momento. A continuación se muestran las dos versiones existentes de Dr. Scrat
 tratando de explicar cuáles han sido las aportaciones de la versión anterior, para
 tener una visión del punto de partida con el que se contaba. 
 \begin{itemize}
- \item La \textit{versión Alpha} fué creada por el alumno Cristian Chusing, su principal 
+ \item La \textit{versión Alpha} fué creada por el alumno Cristian Chushig, su principal 
 aportación fue la creación de una página web inicial donde se pudiera subir un
 archivo con extensión .sb2 y mostrase un dashboard con toda la información obtenida
 con los pluguins de Hairball. La apariencia de dicha web es la mostrada en la
@@ -757,7 +799,7 @@ a los programadores poder interactuar y dinamizar la plataforma.
 Al ser un proyecto tan amplio y ser desarrollado en equipo por varias personas, 
 quiero dejar lo más detallado posible cuál ha sido el planteamiento temporal y
 la participación de todos los integrantes del equipo Dr. Scratch y aportaciones
-realizadas por Cristian Chusing en la primera versión Alpha.
+realizadas por Cristian Chushig en la primera versión Alpha.
 En este punto, únicamente desglosaré la planificación temporal, a la que en 
 próximas secciones iré incluyendo qué miembros han participado en la consecución
 de cada funcionalidad y objetivo.
@@ -775,7 +817,7 @@ de vista cuáles eran las tareas más inmediatas.
     Durante este periodo los objetivos a alcanzar fueron los siguientes:
 
         \begin{itemize}
-            \item Comprender y depurar el código realizado por Cristian Chusing
+            \item Comprender y depurar el código realizado por Cristian Chushig
             en la versión Alpha de Dr. Scratch.
             \item Actualización de la versión 1.4 de Django a la 1.7.
             \item Generación del archivo log explicado con anterioridad.
@@ -1312,7 +1354,7 @@ subsección se explicará qué mejoras introduce este lenguaje a una página creada
 extendida para poder \textit{dinamizar el lado del cliente} incluyendo así mejoras en la 
 interfaz de usuario y aumentar su seguridad.
 
-Aun que su principal uso es en el lado del cliente, también se utiliza con el 
+Aunque su principal uso es en el lado del cliente, también se utiliza con el 
 apoyo de otras tecnologías para enviar y recibir información al servidor.
 
 
@@ -1556,7 +1598,8 @@ Django de forma automática.
 Para entender correctamente la estructura de la base de datos y cuáles son
 los objetos principales, con sus respectivos campos,  conviene
 fijarse en la \textit{Figura~\ref{figure:base-datos}}. En ella, se
-detallan únicamente los modelos generados por nosotros y 
+detallan únicamente los modelos generados por mi para la realización de este
+Proyecto Fin de Carrera y 
 \texttt{auth\_user}, de la cual heredan algunas de nuestras clases.\\
 
      \begin{figure}[H]
@@ -1569,8 +1612,8 @@ detallan únicamente los modelos generados por nosotros y
 
 \textbf{Node.js (getSb2)} \\
 
-También se ha implementado con la ayuda del proyecto de un usuario de Github,
-llamado \textit{Nathan}\footnote{\url{https://github.com/nathan/getsb2}}, un servidor 
+También se ha implementado con la ayuda del proyecto de un usuario de 
+Github, llamado getSb2\footnote{\url{https://github.com/nathan/getsb2}}, un servidor 
 HTTP Node.js que \textit{se encarga de realizar peticiones al servidor de Scratch}, y que 
 será explicado más adelante.\\
 
@@ -1625,7 +1668,7 @@ Con el objetivo de describir claramente cuál ha sido mi aportación al
 proyecto, quiero recordar que \textit{Dr. Scratch ha sido desarrollado 
 por varias personas}. 
 Este Proyecto Fin de Carrera es la continuación de una primera
-implementación de Cristian Chusing (versión Alpha) pero que aún no había 
+implementación de Cristian Chushig (versión Alpha) pero que aún no había 
 terminado todo su
 desarrollo y realizaría algunas otras tareas de forma paralela.
 Y además ha sido desarrollado en paralelo con las implementaciones realizadas
@@ -3255,9 +3298,89 @@ analizar o descargar el CSV con los resultados del análisis.
 
 \cleardoublepage
 \chapter{Resultados}
+A lo largo de todo este documento se ha recalcado la importancia del trabajo
+en equipo en este proyecto. En él hemos estado trabajando varias personas
+ coordinadas a través de las herramientas \textbf{Trello} y \textbf{Github}.
 
+\textbf{Trello} nos ayudó a tener presentes cuáles eran los objetivos a 
+conseguir, clasificándolos en el largo, medio y corto plazo.
 
+\textbf{Github}, por su parte, es una plataforma de desarrollo 
+colaborativo, en la que creamos un repositorio y hemos ido gestionando las 
+diferentes versiones de Dr. Scratch. Además, creamos ramas diferentes para 
+cada entorno, lo cual ha sido muy útil. 
+Para conocer la aportación de los programadores de un 
+equipo a los repositorios de Github se puede utilizar \textbf{CVSAnalY}, 
+la cual contabiliza los \textit{commits} realizados por usuarios. Y 
+utilizándola se pueden observar la salida de la 
+\textit{Figura~\ref{figure:commits}}.
 
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.7\textwidth]{img/commits}
+                \caption{Salida del programa CVSAnalY}
+                \label{figure:commits}
+            \end{figure}
+
+Esta salida ha sido recogida en la gráfica mostrada en la 
+\textit{Figura~\ref{figure:grafica}}.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=1.0\textwidth]{img/grafica}
+                \caption{Commits por usuario en el repositorio de Dr. Scratch}
+                \label{figure:grafica}
+            \end{figure}
+
+Conociendo el proyecto por completo, es el momento de indicar cuáles han sido
+los resultados que hemos logrado con la herramienta. Y para ello es de gran 
+utilidad \textbf{Google Analytics}, donde podemos observar cuáles son el número 
+de sesiones que se han realizado, además de cuántos usuarios han visitado la 
+web. En la \textit{Figura~\ref{figure:numeros}} se pueden observar los números
+más destacables para los meses de abril a septiembre de 2015.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=1.0\textwidth]{img/numeros}
+                \caption{Algunos números de Dr. Scratch en Google Analytics}
+                \label{figure:numeros}
+            \end{figure}
+
+Además, destacar que Dr. Scratch no ha sido utilizado sólo en España, sino que
+es un proyecto internacional. Hemos recibido feedback de usuarios de todo el 
+planeta y en la \textit{Figura~\ref{figure:mapamundi}} se puede observar qué
+países son los que más utilizan la herramienta.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=1.0\textwidth]{img/mapamundi}
+                \caption{Mapa de los países que utilizan Dr. Scratch}
+                \label{figure:mapamundi}
+            \end{figure}
+
+Pero además, ha sido desarrollado para poder ser utilizado en cualquier navegador
+y se puede ver en la \textit{Figura~\ref{figure:navegadores}} cuál es el número
+de sesiones con cada uno de ellos.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\textwidth]{img/navegadores}
+                \caption{Navegadores}
+                \label{figure:navegadores}
+            \end{figure}
+ 
+
+En los talleres que hemos realizado en varios colegios, hemos podido observar
+cómo al utilizar Dr. Scratch, los alumnos mejoraban su puntuación. 
+En concreto, en la \textit{Figura~\ref{figure:mejora}} se pueden ver la mejoría
+de los alumnos de 6º de primaria del Colegio Lope de Vega de Madrid.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\textwidth]{img/mejora}
+                \caption{Mejora de los alumnos en uno de los talleres de Dr. Scratch}
+                \label{figure:mejora}
+            \end{figure}
 
 
 
@@ -3271,7 +3394,7 @@ analizar o descargar el CSV con los resultados del análisis.
 \label{chap:conclusiones}
 
 En este capítulo quiero realizar un análisis de cuáles han sido los 
-objetivos alcanzados y cuáles no han podido realizarse por algún motivo
+\textbf{objetivos alcanzados} y cuáles no han podido realizarse por algún motivo
 particular. Además, realizaré una reflexión de cómo lo aprendido durante
 mis años en la universidad me han ayudado en la realización de este PFC y
 también lo que he aprendido con el desarrollo del mismo.
@@ -3283,13 +3406,15 @@ qué es lo que me ha aportado este año y medio.
 \section{Consecución de objetivos}
 \label{sec:consecucion-objetivos}
 
-Al ser un proyecto tan grande y con tantas personas involucradas, hay que tener
-en cuenta el esfuerzo de coordinación que esto supone, además de otras tareas
+Al ser un proyecto tan grande, multidisciplinar y con tantas personas involucradas,
+ hay que tener en cuenta el esfuerzo de coordinación que esto supone, además de otras tareas
 realizadas sumadas al desarrollo de la plataforma.
 
-En primer lugar, el \textbf{objetivo general} que era tener una plataforma web en 
-producción 24x7 que no presentara problemas y realizara la funcionalidad básica
-ha sido alcanzada con creces. En los 6 meses de julio a diciembre de 2015, la
+En primer lugar, el \textbf{objetivo general} era tener una plataforma web en 
+producción 24x7 (todos los días del año, a todas horas funcionando).
+Además, era importante que no presentara problemas y realizara la funcionalidad básica.
+
+Dicho objetivo ha sido alcanzada con creces. En los 6 meses de julio a diciembre de 2015, la
 plataforma únicamente ha estado caída unas 2 horas. Y estas horas en las que
 no ha estado funcionando ha sido debido a que se estaban realizando cambios,
 para añadir implementaciones al entorno de producción.
@@ -3300,66 +3425,135 @@ específicos} que se marcaron en cada una de las diferentes fases han sido
 alcanzados, teniendo Dr. Scratch numerosas funcionalidades que lo hacen
 atractivo para el usuario.
 
-Destacar de nuevo, la importancia de los talleres y jornadas que hemos ido
+Destacar de nuevo la importancia de los talleres y jornadas que hemos ido
 realizando a lo largo del proyecto, lo cual nos ha ido haciendo pivotar según
 las necesidades reales observadas. A estas necesidades han sido a las que se
 ha ido dando prioridad una vez logrado el prototipo inicial.
 
+Señalar la importancia de colaboración para la \textbf{traducción} de la plataforma, lo
+que nos permite tener la web en varios idiomas gracias al mecanismo que implementé
+y que ha sido uno de los objetivos más destacables. 
 
 
+Y hemos podido observar, de forma muy gratificante, que Dr. Scratch es una 
+herramienta muy útil para numerosos docentes y alumnos. Han sido 
+\textbf{analizados más de 80.000 proyectos}, como puede verse en  
+\textit{Figura~\ref{figure:proyectos}}. En el caso de los 
+docentes hemos recibido inmensidad de correos dándonos las gracias por el 
+desarrollo de la herramienta y han querido participar en la traducción.
 
 
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.4\textwidth]{img/proyectos}
+                \caption{Número de proyectos analizados}
+                \label{figure:proyectos}
+            \end{figure}
 
-
-Esta sección es la sección espejo de las dos primeras del capítulo de objetivos,
-donde se planteaba el objetivo general y se elaboraban los específicos.
-
-Es aquí donde hay que debatir qué se ha conseguido y qué no. Cuando algo no
-se ha conseguido, se ha de justificar, en términos de qué problemas se han
-encontrado y qué medidas se han tomado para mitigar esos problemas.
+Aún así Dr. Scratch es aún un proyecto vivo al que estamos añadiendo más 
+funcionalidades y en el que todavía tenemos el reto de añadir gamificación para
+motivar a los usuarios.
 
 
 \section{Aplicación de lo aprendido}
 \label{sec:aplicacion}
 
-Aquí viene lo que has aprendido durante el Grado/Máster y que has aplicado
-en el TFG/TFM. Una buena idea es poner las asignaturas más relacionadas y
-comentar en un párrafo los conocimientos y habilidades puestos en práctica.
+Durante el desarrollo de este proyecto he podidio tomar conciencia de la 
+importancia de muchos \textit{conocimientos adquiridos durante la carrera} que me han
+permitido llevarlo a cabo. No me había dado cuenta de todo lo que realmente
+he aprendido estos años hasta que poco a poco he necesitado algunos de los 
+conocimientos adquiridos.
+
 
 \begin{enumerate}
-  \item a
-  \item b
+  \item \textbf{Fundamentos de programación:} Esta asignatura fue la primera que
+    cursé de programación y me permitió aprender lo que era un bucle, una condición,
+    una función... Es decir, los conceptos básicos de programación que se 
+    utilizan siempre, sea cual sea el lenguaje.
+  \item \textbf{Sistemas Telemáticos I:} Me permitió aprender conceptos básicos
+    de redes que me han sido útiles para la configuración de Apache y Azure. 
+    Además, de ser en la primera asignatura en la que necesité programar una
+    funcionalidad amplia que permitiera a un usuario obtener una ventaja utilizando
+    mi programa.
+  \item \textbf{Sistemas Telemáticos II:} Fue en esta asignatura donde dí el 
+    salto a la programación orientada a objetos y aprendí cuáles eran los distintas
+    características que debe tener un servidor, así como el paradigma 
+    Cliente-Servidor que Dr. Scratch sigue.
+  \item \textbf{IARO:} Gracias a la cual empecé a programar en Python, entendiendo
+    completamente como se pueden gestionar peticiones HTTP en el lado del servidor
+    para parsear la información, analizarla y dar una respuesta al cliente.
+  \item \textbf{SAT:} Sin duda, la más importante para la realización de este
+    Proyecto Fin de Carrera, donde aprendí a realizar páginas webs con el 
+    framework Django. Además de familiarizarme con las páginas HTML con estilo
+    mediante CSS.
 \end{enumerate}
 
+Además de todas estas asignaturas, a lo largo de mi doble titulación he adquirido
+otras aptitudes que me han ayudado, como la capacidad de análisis y observación
+de las necesidades de los usuarios. Y he podido utilizar mi capacidad comunicativa,
+que he desarrollado con la realización de numerosas presentaciones, 
+para motivar a los chicos en los talleres realizados.
 
 \section{Lecciones aprendidas}
 \label{sec:lecciones_aprendidas}
 
-Aquí viene lo que has aprendido en el Trabajo Fin de Grado/Máster.
+Con este proyecto he podido ampliar conocimientos sobre algunos de los aspectos
+mencionados anteriormente y adquirir otros nuevos.
 
 \begin{enumerate}
-  \item a
-  \item b
+  \item He aumentado mi conocimiento sobre Python, Django y el diseño de páginas
+        con HTML y CSS.
+  \item He podido aprender más tecnologías de diseño web: Bootstrap, JavaScript,
+        CSS3, AJAX y JQuery.
+  \item He probado la experiencia de poner en producción una web en la 
+        plataforma cloud Azure y la configuración de Apache. Lo cuál ha 
+        sido una de las cosas que más trabajo me ha supuesto pero también en 
+        la que más he aprendido y que ha sido más gratificante.
+  \item También he aprendido a gestionar bases de datos MySQL, que nunca antes
+        había utilizado.  
+  \item Ha sido muy importante la realización de eventos, lo cual he disfrutado
+        enormemente y me he sentido muy cómoda.
+     
 \end{enumerate}
 
 
 \section{Trabajos futuros}
 \label{sec:trabajos_futuros}
 
-Ningún software se termina, así que aquí vienen ideas y funcionalidades
-que estaría bien tener implementadas en el futuro.
+El mayor reto actual de Dr. Scratch es conseguir cuentas de usuarios diferenciadas
+que permita distinguir entre alumnos y docentes, para que estos últimos puedan
+llevar un seguimiento de sus clases. Esto es muy interesante, ya que es lo que 
+añadirá valor a la experiencia utilizando Dr. Scratch permitiendo al docente
+saber qué alumnos de sus clases están poco motivados o cuáles necesitan trabajos
+extra porque superan con mucha facilidad los que ya han realizado. Esto permitiría
+de forma fácil ayudar al maestro a poder desarrollar las aptitudes de sus alumnos
+al máximo. 
 
-Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
+En el caso de los alumnos, nos encantaría añadir aspectos de gamificación mediante
+medallas o algo similar que les permita tener un incentivo extra para programar
+y así hacer más amena la frustración que se siente hasta que el programa hace
+lo que queremos exactamente. Además de poder crear una red social en la que ellos
+interactúen para tomar conciencia que no son los únicos que lo hacen y se ayuden
+unos a otros en sus proyectos fomentando el trabajo colaborativo.
+
+También sería estupendo poder realizar una aplicación móvil que permita utilizar
+Dr. Scratch sea donde sea  desde nuestro dispositivo sin la necesidad de tener
+un ordenador delante.
+
+
 
 
 \section{Valoración personal}
 \label{sec:valoracion}
 
-Finalmente (y de manera opcional), hay gente que se anima a dar su punto de
-vista sobre el proyecto, lo que ha aprendido, lo que le gustaría haber aprendido,
-las tecnologías utilizadas y demás.
+Añadir a todo lo mostrado en el documento, que el desarrollo de Dr. Scratch me ha
+motivado personalmente muchísimo a crear aplicaciones y webs que sean utilizadas
+por personas. 
 
-
+Durante la carrera había realizado numerosas prácticas similiares
+en conceptos y otras más difíciles. Pero no había podido sentir la inmensa
+gratificación de ver utilizarlo a personas, y aún mejor a niños, para
+aprender algo que a mí me apasiona, la programación.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3368,16 +3562,76 @@ las tecnologías utilizadas y demás.
 
 \cleardoublepage
 \appendix
-\chapter{Manual de usuario}
+\chapter{Principales recursos servidos}
 \label{app:manual}
 
+
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}{| p{2.0cm}| p{3.8cm} |p{5.0cm} |p{5.0cm} |}
+\hline
+\textbf{MÉTODO} & \textbf{RECURSO} & \textbf{FUNCIÓN ASOCIADA} & \textbf{TEMPLATE} \\
+\hline \hline \hline 
+GET & / & main(request) & main/main.html\\ \hline
+GET & /i18n/setlanguage & set\_language & template actual\\ \hline
+GET & /statistics & statistics(request) & main/statistics\\ \hline
+GET & /collaborators & collaborators(request) & main/collaborators\\ \hline
+GET & /blog & \multicolumn{2}{|c|}{RedirectViews.as\_view(url='https://drscratchblog.com')}\\ 
+\hline
+GET & /contest & contest(request) & contest.html\\ \hline
+
+\multirow{3}{1cm}{GET} & \multirow{3}{1cm}{/show\_dashboard} & \multirow{3}{1cm}{show\_dashboard(request)} & dashboard\_master.html\\ \cline{4-4}
+& & & dashboard\_developing.html\\ \cline{4-4}
+& & & dashboard\_basic.html\\ \cline{1-4}
+
+
+GET/POST & /organization\_hash & organization\_hash(request) & organization/organization.html\\ \hline
+
+GET & /sign\_up\_organization & sign\_up\_organization(request) & organization/organization.html\\ \hline
+POST & /sign\_up\_organization & sign\_up\_organization(request) & organization/main.html\\ \hline
+
+GET & /analyze\_CSV & analyze\_CSV(request) & organization/main.html\\ \hline
+POST & /analyze\_CSV & analyze\_CSV(request) & organization/downloads.html\\ \hline
+GET & /change\_pwd & change\_pwd(request) & organization/password.html\\ \hline
+POST & /sign\_up\_coder & sign\_up\_coder(request) & coder/main.html\\ \hline
+GET & /[no servido] & redirect\_main(request) & main/main.html\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\cleardoublepage
+\chapter{Concurso Dr. Scratch}
+\label{app:concurso}
+
+Para poner la guinda al pastel a este gran proyecto, se realizó en los meses de
+noviembre y diciembre un concurso el primer concurso a nivel nacional de 
+programación con Scratch. Hubo dos categorías, una para alumnos de primaria y otra para 
+secundaría y se debía realizar un proyecto con Scratch en el que se explicara algún 
+concepto científico. Una vez realizado el proyecto, debía analizarse con 
+Dr. Scratch y tratar de mejorar la puntuación siguiendo los consejos para
+mejorar las diferentes habilidades relacionadas con el Pensamiento Computacional.
+
+Los proyectos fueron votados por 16 expertos, conociendo únicamente el 
+identificador del proyecto, sin conocer el nombre del concursante ni ningún
+otro dato. Y fue curioso porque en ambas categorías, las ganadoras fueron chicas.
+
+La entrega de premios se realizó el día 10 de diciembre de 2015 en Campus Madrid de Google. Como puede verse en \textit{Figura~\ref{figure:concurso}} asistieron los ganadores del concurso y además chicos de colegios que habían participado. Pasamos una 
+tarde realmente agradable y muy enriquecedora entorno a la programación.
+
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\textwidth]{img/concurso}
+                \caption{Entrega de premios del concurso Dr. Scratch}
+                \label{figure:concurso}
+            \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % BIBLIOGRAFIA %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\cleardoublepage
+
 
 % Las siguientes dos instrucciones es todo lo que necesitas
 % para incluir las citas en la memoria
