@@ -204,7 +204,9 @@ como personalmente. A mi co-tutor Jesús Moreno por su constante sonrisa y
 predisposición a echar una mano, además de todo lo que he podido aprender 
 contigo -mucho inglés-. Y por último, a mi compitrueno Eva, por tantos viajes
 y horas de programación. Hemos pasado muchos momentos divertidos y de nervios 
-juntas, apoyándonos la una a la otra. 
+juntas, apoyándonos la una a la otra.
+
+A todos vosotros, por si alguna vez no os lo he dicho suficientemente alto: GRACIAS.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3465,7 +3467,7 @@ he aprendido estos años hasta que poco a poco he necesitado algunos de los
 conocimientos adquiridos.
 
 
-\begin{enumerate}
+\begin{enumerate}[label=\textbf{\arabic{*}.}]
   \item \textbf{Fundamentos de programación:} Esta asignatura fue la primera que
     cursé de programación y me permitió aprender lo que era un bucle, una condición,
     una función... Es decir, los conceptos básicos de programación que se 
@@ -3615,7 +3617,10 @@ Los proyectos fueron votados por 16 expertos, conociendo únicamente el
 identificador del proyecto, sin conocer el nombre del concursante ni ningún
 otro dato. Y fue curioso porque en ambas categorías, las ganadoras fueron chicas.
 
-La entrega de premios se realizó el día 10 de diciembre de 2015 en Campus Madrid de Google. Como puede verse en \textit{Figura~\ref{figure:concurso}} asistieron los ganadores del concurso y además chicos de colegios que habían participado. Pasamos una 
+La entrega de premios se realizó el día 10 de diciembre de 2015 en Campus Madrid de Google. 
+Como puede verse en \textit{Figura~\ref{figure:concurso}} asistieron los 
+ganadores del concurso y además chicos de colegios que habían participado. 
+Pasamos una 
 tarde realmente agradable y muy enriquecedora entorno a la programación.
 
 
