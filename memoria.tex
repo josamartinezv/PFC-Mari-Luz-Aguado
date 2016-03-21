@@ -117,7 +117,7 @@ DR. SCRATCH: FOMENTANDO LA CREATIVIDAD \\Y VOCACIÓN CIENTÍFICA CON SCRATCH
 \end{center}
 
 \vspace{1cm}
-La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 20XX, siendo calificada por el siguiente tribunal:
+La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 20CA, siendo calificada por el siguiente tribunal:
 
 
 \vspace{0.5cm}
@@ -139,7 +139,7 @@ y habiendo obtenido la siguiente calificación:
 
 \vspace{1cm}
 \begin{flushright}
-Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 20XX
+Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 20CA
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -218,7 +218,7 @@ A todos vosotros, por si alguna vez no os lo he dicho suficientemente alto: GRAC
 
 \textbf{Dr. Scratch} es una plataforma web de software libre que permite analizar
 proyectos realizados en \textit{Scratch} -lenguaje orientado a la enseñanza-
- aportando feedback sobre determinados aspectos relacionados con el 
+ aportando \emph{feedback} sobre determinados aspectos relacionados con el 
 \textit{Pensamiento Computacional}. El \textbf{objetivo} 
 del proyecto es dar soporte tanto a maestros como estudiantes,
  en sus primeros pasos en la programación con Scratch.
@@ -231,7 +231,7 @@ desarrollado durante algo más de un año y aún está en proceso.
 Las \textbf{tecnologías} utilizadas han sido diversas debido a que es un proyecto en 
 producción, hay miles de proyectos analizados por numerosos colegios y 
 organizaciones. Para subir a producción hemos utilizado una solución
-cloud de Microsoft llamada Azure y la licencia Apache. Por debajo de ello, tenemos un servidor 
+\emph{cloud} de Microsoft llamada Azure y la licencia Apache. Por debajo de ello, tenemos un servidor 
 desarrollado en Python 2.7 con la ayuda del framework Django 1.8 que nos ha facilitado 
 multitud de tareas de la parte back-end. Además, para el registro de usuarios, 
 organizaciones y guardar toda la información de los proyectos analizados tenemos 
@@ -451,7 +451,7 @@ las habilidades de los jóvenes programadores que utilizan Scratch.
 feedback sobre los diferentes aspectos que engloban el \textit{Pensamiento Computacional}.
 
 Tras años dedicados a la enseñanza de programación y ciencias de la computación,
-llegaron a la siguiente conclusión; era necesario tener una herramienta similiar a
+llegaron a la siguiente conclusión; era necesario tener una herramienta similar a
 Pylint -herramienta que permite \textit{detectar malas prácticas en el código del lenguaje de 
 programación} Python- para el nuevo lenguaje de programación Scratch.
 
@@ -465,7 +465,7 @@ cómo de bien se ha programado un proyecto, lo que nos interesa es conocer dicho
 JSON y analizar su contenido.
 
 La tarea de analizar toda la información otorgada por el fichero JSON no es fácil,
-pero mis tutores encontraron en Github\footnote{\url{https://github.com/}} un plugin que ya 
+pero mis tutores encontraron en GitHub\footnote{\url{https://github.com/}} un plugin que ya 
 hacía dicha tarea. Este plugin es 
 \textbf{Hairball}\footnote{\url{https://github.com/ucsb-cs-education/hairball}} que ha
 sido implementado por \textit{Bryce Boe}\footnote{\url{https://github.com/bboe}}
@@ -484,23 +484,23 @@ Mis tutores incluyeron otros dos plugins a \textit{Hairball} que inspeccionaban
 el fichero JSON buscando indicios de otros dos de los 
 \textbf{malos hábitos que todo programador novato tiene al principio}:
 \textit{programas duplicados y nombres inadecuados.}
-Ambos han realizado algunos papers~\cite{moreno2014automatic} en los que explican
+Ambos han realizado algunos artículos~\cite{moreno2014automatic} en los que explican
  de forma detallada cómo trabajan estos plugins y cuál es
 la relación que tienen los distintos aspectos del Pensamiento Computacional, además
 de demostrar cómo el desarrollo del Pensamiento Computacional ayuda a desarrollar
 habilidades que son compartidas con materias recogidas en los currículos del 
 proceso Bolonia, por lo que aprender a programar puede ayudar a obtener mejores
-resultados en la enseñanza de asignaturas como Inglés, Matemásticas o Filosofía.
+resultados en la enseñanza de asignaturas como Inglés, Matemáticas o Filosofía.
 
 Dr. Scratch es un proyecto aún en desarrollo y ha tenido dos versiones hasta 
 el momento. A continuación se muestran las dos versiones existentes de Dr. Scratch,
 tratando de explicar cuáles han sido las aportaciones de la versión anterior, para
 tener una visión del punto de partida con el que se contaba. 
 \begin{itemize}
- \item La \textit{versión Alpha} fué creada por el alumno Cristian Chushig, su principal 
+ \item La \textit{versión Alpha} fue creada por el alumno Cristian Chushig, su principal 
 aportación fue la creación de una página web inicial donde se pudiera subir un
 archivo con extensión .sb2 y mostrase un dashboard con toda la información obtenida
-con los pluguins de Hairball. La apariencia de dicha web es la mostrada en la
+con los plugins de Hairball. La apariencia de dicha web es la mostrada en la
 \textit{Figura~\ref{figure:alpha-version-web}}. 
 
 \begin{figure}[H]
@@ -517,7 +517,7 @@ Rey Juan Carlos como técnicos de apoyo y difusión.
 Todo este proyecto se ha podido llevar a cabo gracias a la
 financiación otorgada por el FECyT (Fundación Española para la Ciencia y la Tecnología),
  además, de ser galardonado con un Google RISE Award en 2015 y del apoyo de la 
-asociación sin ánimo de lugro Programamos. Esta versión es 
+asociación sin ánimo de lucro Programamos. Esta versión es 
 la que se va a detallar en este documento.
 \end{itemize}
 
@@ -635,7 +635,7 @@ se centra en 7 aspectos:
 
 \begin{enumerate}[label=\textbf{\arabic{*}.}]
     \item \textbf{Paralelismo.} Consiste en poder resolver varios problemas de manera
-    simúltanea en hilos diferentes.
+    simultánea en hilos diferentes.
 
     \item \textbf{Pensamiento lógico.} Nos permite reconocer el problema que 
     queremos solucionar, buscar una solución que podamos programar y analizar 
@@ -751,7 +751,7 @@ surgieron con el avance del proyecto:
     \item Analizar proyectos de las dos versiones de Scratch (1.4 y 2.0),
     únicamente se podía analizar proyectos de la versión 2.0, si intentábamos
     analizar proyectos de la 1.4 la plataforma mostraba un error.
-    \item Análisis mediante url del proyecto de la versión online de Scratch.
+    \item Análisis mediante URL del proyecto de la versión online de Scratch.
     \item Cuentas de usuarios.
     \item Implementación en el servidor para mostrar tres páginas diferentes, 
     conforme el nivel del programador fuera: bajo, medio o alto.
@@ -759,7 +759,7 @@ surgieron con el avance del proyecto:
     \item Debido al gran número de proyectos que se analizaban diariamente 
         teníamos numerosos problemas con las máquinas de la universidad, por lo que 
         decidimos realizar una migración a la nube.
-    \item Utilización de algún mecanismo de analisis web para tener estadísticas 
+    \item Utilización de algún mecanismo de análisis web para tener estadísticas 
             de los accesos a la plataforma.
     \item Páginas con información de cómo poder pasar de un nivel a otro utilizando
     distintos bloques de Scratch que demuestran un nivel de pensamiento computacional
@@ -771,8 +771,8 @@ surgieron con el avance del proyecto:
     \item Páginas de estadísticas que permitan obtener información acerca de
     la evolución de los usuarios y poder realizar un seguimiento.
     \item Extensión para los navegadores que permitiera analizar un proyecto
-    desde la propia página web de Scratch. De forma que únicamente clicando en 
-    un botón, la extensión obtuviera la url del proyecto subido y compartido en
+    desde la propia página web de Scratch. De forma que únicamente pulsando en 
+    un botón, la extensión obtuviera la URL del proyecto subido y compartido en
     Scratch mostrado en la página actual y abriese una nueva ventana con su 
     análisis en Dr. Scratch.
     \item Además de la traducción automática detectando el idioma mediante la 
@@ -808,7 +808,7 @@ de cada funcionalidad y objetivo.
 
 Este proyecto ha sido muy bien guiado y gestionado por mi tutor y co-tutor
  mediante \textbf{Trello} -herramienta colaborativa 
-para organizar proyectos-. Y fueron marcados incialmente, cuáles eran los objetivos
+para organizar proyectos-. Y fueron marcados inicialmente, cuáles eran los objetivos
 a corto, medio y largo plazo. Según el proyecto fue evolucionando, dichas metas
 podían ser modificadas fácilmente gracias a la herramienta y jamás se perdía 
 de vista cuáles eran las tareas más inmediatas.
@@ -850,7 +850,7 @@ forma esquemática y sencilla de comprender.
         \begin{itemize}
             \item Introducir una barra de progreso del análisis del proyecto.
             \item Corrección de errores en formularios.
-            \item Análisis mediante url del proyecto de la versión online de Scratch.
+            \item Análisis mediante URL del proyecto de la versión online de Scratch.
             \item Migración de SQLite a MySQL.
             \item Creación de un archivo en el que se guardaran todos los 
                     proyectos en los que se producía algún error al ser analizados.
@@ -859,7 +859,7 @@ forma esquemática y sencilla de comprender.
             \item Implementación en el servidor para mostrar tres páginas diferentes, 
             conforme el nivel del programador fuera: bajo, medio o alto.
             \item Diseño de tres páginas distintas para cada nivel computacional.
-            \item Introducción explicaciones de qué es una url y cómo
+            \item Introducción explicaciones de qué es una URL y cómo
             descargar un proyecto en Scratch.
             \item Migración a la nube en lugar de utilizar las máquinas de la 
                     universidad, las cuales nos dieron muchos problemas.
@@ -874,7 +874,7 @@ forma esquemática y sencilla de comprender.
             \item Traducción de la información mostrada en el archivo de organizaciones.
             \item Páginas de estadísticas de los proyectos analizados.
             \item Generación de un archivo .csv que muestra la información 
-                    obtenida con el analáisis realizado en Dr. Scratch y es el 
+                    obtenida con el análisis realizado en Dr. Scratch y es el 
                     que se le devuelve a la organización.
         \end{itemize}
         
@@ -896,7 +896,7 @@ escenifica esta fase.
     \item \textbf{FASE III.} Abarca el periodo entre septiembre de 2015 y 1 de 
                 febrero de 2016, fecha en la que empecé a escribir esta memoria.
 
-    Trás la Scratch Conference en Ámsterdam a la que acudió todo el equipo de 
+    Tras la Scratch Conference en Ámsterdam a la que acudió todo el equipo de 
         Dr. Scratch y en la que realicé una presentación de la plataforma, 
         pudimos obtener algunas conclusiones gracias a la realimentación obtenida. 
         Debido a ellas, marcamos los siguientes objetivos:
@@ -931,7 +931,7 @@ escenifica esta fase.
   
 
 
-Actualmente, el proyecto continúa desarrollandose, con la ayuda de la Asociación 
+Actualmente, el proyecto continúa desarrollándose, con la ayuda de la Asociación 
 sin ánimo de lucro \textbf{Programamos} en la que mi co-tutor, Jesús Moreno, 
 es co-fundador junto con José Ignacio Huertas. 
 
@@ -1005,8 +1005,8 @@ que se muestra en la \textit{Figura~\ref{figure:aplicacion-distribuida}}.
 
     \begin{enumerate}[label=\textbf{\arabic{*}.}]
         \item \textbf{Capa de presentación.} También conocida como front-end, suele
-        residir en el cliente y es con la cual el usuario interactua. 
-        Se pueden utilizar distintas tecnologías como: HTML, CSS, javascript\ldots 
+        residir en el cliente y es con la cual el usuario interactúa. 
+        Se pueden utilizar distintas tecnologías como: HTML, CSS, JavaScript\ldots 
         \item \textbf{Lógica de la aplicación o negocio.} Puede residir en cualquiera
         de los componentes -cliente y servidor- incluso en ambos.
         Realiza acciones necesarias para desarrollar la actividad de negocio, 
@@ -1053,7 +1053,7 @@ cual es una ventaja a la hora de depurar pero hace los mensajes largos.
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{img/mensajes-http}
-        \caption{Mensajes de petición y respuesta del protrocolo HTTP}
+        \caption{Mensajes de petición y respuesta del protocolo HTTP}
         \label{figure:mensajes-http}
     \end{figure}
 
@@ -1264,7 +1264,7 @@ reiniciar el servidor.
 
 \textbf{Node.js} es un entorno de ejecución que permite trabajar sobre el intérprete de 
 \textit{JavaScript} en el lado del servidor. Utiliza el motor V8, desarrollado por
-Google para el navegador Chrome, compilando javascript en el lado del servidor
+Google para el navegador Chrome, compilando JavaScript en el lado del servidor
 a altas velocidades.
 
 Señalar que es de código abierto y multiplataforma. Y la característica que lo
@@ -1615,7 +1615,7 @@ Proyecto Fin de Carrera y
 \textbf{Node.js (getSb2)} \\
 
 También se ha implementado con la ayuda del proyecto de un usuario de 
-Github, llamado getSb2\footnote{\url{https://github.com/nathan/getsb2}}, un servidor 
+GitHub, llamado getSb2\footnote{\url{https://github.com/nathan/getsb2}}, un servidor 
 HTTP Node.js que \textit{se encarga de realizar peticiones al servidor de Scratch}, y que 
 será explicado más adelante.\\
 
@@ -1821,7 +1821,7 @@ diferentes. Aquí voy a detallar cómo se realizó en esta etapa del proyecto.
     \begin {itemize}
         \item \textbf{\textit{Entorno de pre-producción:}}\\
         En primer lugar, se utilizaron los \textit{laboratorios de la universidad donde
-se creó una máquina virtual} en la que pude aprender a instalar: hairball, Apache,
+se creó una máquina virtual} en la que pude aprender a instalar: Hairball, Apache,
 Django... y ponerlo todo en funcionamiento.
 Tras realizar la configuración del fichero httpd.conf se podía visualizar
 la plataforma en la dirección \textbf{http://drscratchpre.programamos.es} donde hemos
@@ -2034,7 +2034,7 @@ En esta etapa Cristian retomó el proyecto -el cual presentó en junio- y Eva se i
 En la
  \textit{Figura~\ref{figure:fase-ii}} se muestran las tareas que he
 desarrollado en esta etapa o en las que he realizado alguna aportación. 
-Si la implementaición no ha sido programada
+Si la implementación no ha sido programada
 completamente por mí, indicaré cuál ha sido la aportación de mis 
 compañeros y cuál la mía.\\
 
@@ -2097,9 +2097,9 @@ por varios usuarios de Dr. Scratch que mostraron la dificultad que tenían alguno
  de sus alumnos para descargarse el proyecto} de la página de Scratch.
 
 Cristian se encargó de poner el código abierto de Nathan (getSb2) en Heroku\footnote{\url{https://www.heroku.com/}}
- lo cual nos dió numerosos problemas más tarde. 
+ lo cual nos dio numerosos problemas más tarde. 
 Mediante el servidor getSb2 se realizan las peticiones de descarga al 
-servidor de Scratch, en la petición se indica el identificador númerico que 
+servidor de Scratch, en la petición se indica el identificador numérico que 
 aparece en la URL del proyecto.
 
 Y también realizó la implementación del análisis, pero repetía mucho código que
@@ -2249,7 +2249,7 @@ para enviarlo al usuario.
 Si no había error, mostraba el dashboard con toda la información del 
 diccionario.
 
-Este último paso es el que se vió modificado, mostrando ahora 3 
+Este último paso es el que se vio modificado, mostrando ahora 3 
 dashboards distintos para diferenciar tres niveles de Pensamiento 
 Computacional:
     \begin{itemize}
@@ -2293,11 +2293,11 @@ el código de colores para motivar a los alumnos.
                 \item El cuadro inferior izquierdo indica cuáles son las 
                     habilidades de programación que debemos trabajar con más
                     urgencia ya que son las que han obtenido una puntuación de
-                    0. Además añadí un link junto a un icono de una bombilla 
-                    en la que al clicar redirigiera a otra página para aprender
+                    0. Además añadí un enlace junto a un icono de una bombilla 
+                    en la que al pulsar redirigiera a otra página para aprender
                     mediante ejemplos, cómo aumentar esa puntuación.
 
-                \item En el cuadro inferior derecho se muestra en un carrousel 
+                \item En el cuadro inferior derecho se muestra en un carrusel 
                         algunos trucos que pueden ser útiles para una persona 
                         que empieza con Scratch.
             \end{enumerate}
@@ -2327,7 +2327,7 @@ el código de colores para motivar a los alumnos.
                      mostrando otra frase motivadora diferente.
                        
                 \item El cuadro inferior izquierdo muestra en este caso en 
-                        el carrousel, dos 
+                        el carrusel, dos 
                         de los malos hábitos de programación que realizan todos
                         los programadores al principio: nombres           
                         inadecuados y atributos inadecuados, por no haber sido
@@ -2339,8 +2339,8 @@ el código de colores para motivar a los alumnos.
                         han obtenido.
                         
                         Y además, si la puntuación es de 3/3 se añade
-                        una estrella y la frase de ¡¡¡Bin hecho!!! Y si la puntuación
-                        es de 0/3 se añade un link para mejorar como en el dashboard
+                        una estrella y la frase de ¡¡¡Bien hecho!!! Y si la puntuación
+                        es de 0/3 se añade un enlace para mejorar como en el dashboard
                         anterior. 
 
                         La idea de la estrella, ha sido introducida con
@@ -2375,10 +2375,10 @@ el código de colores para motivar a los alumnos.
                         las habilidades de programación, junto a la puntuación 
                         que han obtenido. 
                         Y si tienen 3/3 obtienen la estrella, mientras si la
-                        puntuación es de 0 se mantiene el link para aprender
+                        puntuación es de 0 se mantiene el enlace para aprender
                         a mejorar.
                 \item   La diferencia con el caso anterior es que ahora el 
-                        carrousel contiene todos los malos hábitos analizados 
+                        carrusel contiene todos los malos hábitos analizados 
                         por Dr. Scratch y
                         que deben corregirse al empezar a programar.   
              \end{enumerate}
@@ -2396,7 +2396,7 @@ información del diccionario que es mostrada al usuario.
 Los docentes nos sugirieron algunas implementaciones, como poder descargar el 
 un diploma y poder gestionar ellos mismos la información que se mostraba a sus
 alumnos. Y en el taller realizado con alumnos pudimos observar que no les 
-llamaba nada la atención el carrousel con los malos hábitos de programación.\\
+llamaba nada la atención el carrusel con los malos hábitos de programación.\\
 
 
 \textbf{Modales explicativos en el cuadro de análisis} \\
@@ -2416,7 +2416,7 @@ se vea claramente que son dos formas completamente distintas.
 
 Hay palabras que están resaltadas en rojo debido a
  que eran los conceptos que necesitaban explicación extra. Para ello se programaron en la plantilla \texttt{main.html} dos ventanas 
-modales, que aparecen al clicar en las palabras resaltadas en rojo.
+modales, que aparecen al pulsar en las palabras resaltadas en rojo.
 
 El resultado final del cuadro de análisis
 se puede ver en la \textit{Figura~\ref{figure:aclaraciones}}.
@@ -2429,7 +2429,7 @@ se puede ver en la \textit{Figura~\ref{figure:aclaraciones}}.
     \end{figure}
       
 
-Dichas ventanas modales, se muestran al clicar en las palabras \textbf{url} y \textbf{proyecto}, teniendo al final dos ventanas diferentes:
+Dichas ventanas modales, se muestran al pulsar en las palabras \textbf{URL} y \textbf{proyecto}, teniendo al final dos ventanas diferentes:
 
  \begin{itemize}
        \item Una ventana explicativa de qué es una URL cuya apariencia puede 
@@ -2460,7 +2460,7 @@ Dichas ventanas modales, se muestran al clicar en las palabras \textbf{url} y \t
 
 Como ya se explicó en la Fase I del proyecto tanto el entorno de producción como
 el de preproducción se encontraban alojados en máquinas de la universidad, lo 
-cual nos dió algunos problemas y debían ser solucionados. \\
+cual nos dio algunos problemas y debían ser solucionados. \\
 
 Microsoft nos concedió una suscripción de 150\$ mensual para que pudiéramos 
 alojar Dr. Scratch en la nube en su plataforma Azure. \\
@@ -2499,10 +2499,10 @@ una máquina virtual, tuve que buscar otro método.
 
 El más sencillo y más recomendado que encontré leyendo varios artículos de
 analítica web, fue \textit{Google Analytics}. Para ponerlo en marcha únicamente 
-tuve que crear una cuenta en google para el equipo de Dr. Scratch y registrarla. 
+tuve que crear una cuenta en Google para el equipo de Dr. Scratch y registrarla. 
 
 Facilitan un código de JavaScript que copié en el fichero  
-\texttt{googleAnalytics.js} y lo incluí en todas las páginas de Dr. Scratch. Destacar que este fichero no ha sido subido a Github para que no sea utilizado
+\texttt{googleAnalytics.js} y lo incluí en todas las páginas de Dr. Scratch. Destacar que este fichero no ha sido subido a GitHub para que no sea utilizado
 por otras herramientas y se alteren las métricas.
 
 Accediendo al panel se pueden observar numerosos datos como los que se
@@ -2511,7 +2511,7 @@ ven en la \textit{Figura~\ref{figure:analiticas}}.
                      \begin{figure}[H]
                         \centering
                         \includegraphics[width=1.0\textwidth]{img/analiticas}
-                        \caption{Panel de Google Analyticas para Dr. Scratch}
+                        \caption{Panel de Google Analytics para Dr. Scratch}
                         \label{figure:analiticas}
                     \end{figure} 
 
@@ -2525,7 +2525,7 @@ para conseguir aumentar la puntuación de nuestro proyecto.\\
 El diseño de dichas páginas fue realizado por mi compañera Eva. Mi aportación
 ha consistido en realizar la traducción de las palabras de las distintas habilidades:
 paralelismo, lógica, representación de la información, control de flujo...
-El mecanismo es el siguiente, cuando clicas en una de las habilidades, el servidor
+El mecanismo es el siguiente, cuando pulsas en una de las habilidades, el servidor
 trata de ir al recurso \texttt{/learn/[habilidad]} y \texttt{urls.py} le indica
  que la función que debe ejecutar es \texttt{learn(request, page)}. 
 
@@ -2559,7 +2559,7 @@ encargó mi compañera Eva. Se pueden apreciar los cambios en la
 
 
 Mi aportación ha sido la traducción de las mismas y de la funcionalidad de 
-twitter, que era diferente del resto. Para esta funcionalidad tuve que utilizar 
+Twitter, que era diferente del resto. Para esta funcionalidad tuve que utilizar 
 el mecanismo de Django: \textbf{\{\% blocktrans \%\}[contenido]\{\% endblocktrans \%}\},
  en lugar de utilizar el que venía usando desde el principio. \\
 
@@ -2572,12 +2572,12 @@ realizan numerosos campamentos de programación y tienen cientos de proyectos
 que analizar en pocos días.
 
 Presenté
-la plataforma en la conferencia e hice énfasis en la fucnionalidad. Esto nos permitió
+la plataforma en la conferencia e hice énfasis en la funcionalidad. Esto nos permitió
 lograr que varias organizaciones, además de las que habían solicitado el servicio,
 quisieran probar la funcionalidad y nos reportaran errores para seguir mejorándola.
 
 Para el desarrollo de la funcionalidad se añadió en la página principal 
-un botón rojo, en la parte superior derecha, que indica ``ORGANIZACIONES''. Al clicar en dicho enlace, nos redirige al recurso \texttt{/sign\_up\_organization}
+un botón rojo, en la parte superior derecha, que indica ``ORGANIZACIONES''. Al pulsar en dicho enlace, nos redirige al recurso \texttt{/sign\_up\_organization}
 que nos muestra la página de la \textit{Figura~\ref{figure:organizaciones}}.
 
    \begin{figure}[H]
@@ -2606,7 +2606,7 @@ base de datos para que no pudiera ser utilizada por
 otro usuario. 
 
 Así, hemos conseguido tener un control total de las organizaciones
-registradas y cononocer los errores que se han producido para 
+registradas y conocer los errores que se han producido para 
 solventarlos.
 
 Una vez que se han registrado e ingresado en Dr. Scratch para 
@@ -2640,7 +2640,7 @@ obtenida en otro fichero CSV. Se admiten archivos CSV con 4 formatos de archivo 
 
 Por si hay alguna duda o confusión de cómo debe ser este archivo, 
 programé una
-ventana  modal que se muestra en esta página al clicar sobre la palabra 
+ventana  modal que se muestra en esta página al pulsar sobre la palabra 
 \textbf{fichero CSV} y que puede verse en la 
 \textit{Figura~\ref{figure:csv}}.
 
@@ -2704,7 +2704,7 @@ ocasiones terminaba mostrando error.
 Se decidió \textit{modificar el servidor Node.js} que nos
 permitía descargar los proyectos desde la plataforma de Scratch a nuestro servidor.
 De forma, que no descargara el proyecto completo, sino únicamente el fichero JSON, 
-ya que es lo único que necesitamos para realizar el análsis con Hairball.
+ya que es lo único que necesitamos para realizar el análisis con Hairball.
 
 Comencé a estudiar el código del \textit{servidor getSb2} y conseguí
 modificarlo, para que efectivamente, únicamente se descargara el fichero JSON.
@@ -2717,12 +2717,12 @@ para el consumo del crédito de Azure.\\
 
 \textbf{Traducción de los bloques ``pintados''} \\
 
-Al empezar a traducir la plataforma a otros idiomas me encotré con un problema 
+Al empezar a traducir la plataforma a otros idiomas me encontré con un problema 
 que no se había detectado anteriormente: los bloques que se muestran en las 
 páginas para aprender más y poder mejorar en las distintas habilidades, no se
 traducían correctamente a idiomas que no fueran el español o el inglés.
 
-Esto tiene una explicación, mi compañera Eva había tratado de obtener el idoma
+Esto tiene una explicación, mi compañera Eva había tratado de obtener el idioma
 para traducir los bloques con JavaScript con la función mostrada en la
 \textit{Figura~\ref{figure:javascript-blocks}}.
 
@@ -2739,7 +2739,7 @@ vi que siempre era la misma: \textit{es(español)}.
 Lo que estaba pasando, era que cuando el idioma del navegador era inglés(en),
 Django no activaba el mecanismo de traducción, por lo que funcionaba perfectamente.
 Y cuando el idioma era español(es), se activaba el mecanismo de traducción de
-Django y dicha línea obtenia algo coherente. Pero cuando se implementó para 
+Django y dicha línea obtenía algo coherente. Pero cuando se implementó para 
 el catalán, se activaba el mecanismo de traducción pero esa línea devolvía español(es).
 
 Tuve que cambiar la función por otra que utiliza AJAX, para poder llamar 
@@ -2812,7 +2812,7 @@ Otra de las peticiones que nos realizaron fue la posibilidad de cambiar de
 idioma sin necesidad de modificar la configuración del navegador.
 
 Incluí en la página principal de Dr. Scratch el icono de una bola del mundo
-que al clicar en ella muestra un desplegable con los idomas que están disponibles
+que al pulsar en ella muestra un desplegable con los idiomas que están disponibles
 actualmente. Esto puede verse en la \textit{Figura~\ref{figure:bola-mundo}}.
 
      \begin{figure}[H]
@@ -2826,7 +2826,7 @@ actualmente. Esto puede verse en la \textit{Figura~\ref{figure:bola-mundo}}.
 Para implementar esta funcionalidad he utilizado la vista de redirección
 \texttt{set\_language}.
 
-Al elegir un idioma y clicar en el botón \textbf{``Cambiar idioma''} se pide al servidor
+Al elegir un idioma y pulsar en el botón \textbf{``Cambiar idioma''} se pide al servidor
 el recurso \texttt{/i18n/setlang/} y se observa en el fichero \texttt{urls.py} la siguiente línea:\\
 \texttt{url(r'\^i18n/', include('django.conf.urls.i18n'))}, la cual activa la vista.
 
@@ -2835,7 +2835,7 @@ ser llamada con un \textbf{método GET} y no POST como es común en los formulario
 
 El mecanismo interno que realiza la vista es el siguiente:
 \begin{enumerate}
-    \item Fija la prefencia de idioma al que se ha seleccionado en el parámetro
+    \item Fija la preferencia de idioma al que se ha seleccionado en el parámetro
             \textit{language}.
     \item La vista guarda dicho idioma en la sesión del usuario.
     \item Redirecciona al usuario a la misma página.\\
@@ -2889,7 +2889,7 @@ de utilizar la página principal. \\
 Para lograr la traducción de más idiomas, intentamos motivar a los 
 usuarios de Dr. Scratch a ser los propios traductores. A aquellos 
 usuarios que han querido participar en la traducción, se les envió 
-el fichero \textit{django.po} de su respectivo idoma, que fue 
+el fichero \textit{django.po} de su respectivo idioma, que fue 
 generado ejecutando en la shell:\\
 \textbf{\~\$ python manage.py makemessage -l [código\_idioma]}
 
@@ -3082,7 +3082,7 @@ La apariencia del formulario se puede ver en la \textit{Figura~\ref{figure:regis
         \label{figure:registro-coder}
     \end{figure}
 
-Cuando un usuario clica en el botón \textit{Regístrate} se 
+Cuando un usuario pulsa en el botón \textit{Regístrate} se 
 hace una \textbf{petición POST} con el recurso 
 \texttt{/sign\_up\_coder}. Entonces, el fichero \texttt{urls.py} enlaza con la función \texttt{sign\_up\_coder()}.
 
@@ -3092,7 +3092,7 @@ realizado en todos los formularios utilizados en la plataforma,
 pero no se ha explicado hasta ahora para no repetir información.
 Esto consiste en indicar en el fichero \texttt{forms.py} los
 campos que debe tener un formulario para ser correcto, si 
-alguno de los campos no coincide la fución \texttt{form.is\_valid()} devolverá \texttt{FALSE}.
+alguno de los campos no coincide la función \texttt{form.is\_valid()} devolverá \texttt{FALSE}.
 
 Si el formulario es válido, obtendremos la información del mismo
 para comprobar que los campos de \texttt{email} y \texttt{email\_confirm} coinciden, 
@@ -3146,7 +3146,7 @@ comprensión y evitar repetir explicaciones en las siguientes implementaciones:
 
 \begin{enumerate}
     \item La función \texttt{show\_dashboard()} es la función a la que se llama
-            cuando se elige un proyecto y se clica en el botón de analizar.            Su lógica se presenta en la \textit{Figura~\ref{figure:show-dashboard}} y se encarga de mostrar al usuario la información referente al análisis:
+            cuando se elige un proyecto y se pulsa en el botón de analizar.            Su lógica se presenta en la \textit{Figura~\ref{figure:show-dashboard}} y se encarga de mostrar al usuario la información referente al análisis:
              \begin{itemize}
                 \item Si se ha encontrado algún problema en el análisis muestra
                 páginas en las que se detalle el error.
@@ -3246,7 +3246,7 @@ log toda la información relevante.
 \textbf{Análisis de múltiples proyectos con un fichero: \_csv} \\
 
 Cuando utilizamos el cuadro de análisis específico para organizaciones, el 
-mecanismo cambia. Al clicar en el botón de análisis se llamará a la función 
+mecanismo cambia. Al pulsar en el botón de análisis se llamará a la función 
 \texttt{analyze\_CSV()} y la lógica del método es la que se muestra en 
 \textit{Figura~\ref{figure:analyze-csv}}.
 
@@ -3307,12 +3307,12 @@ en equipo en este proyecto. En él hemos estado trabajando varias personas
 \textbf{Trello} nos ayudó a tener presentes cuáles eran los objetivos a 
 conseguir, clasificándolos en el largo, medio y corto plazo.
 
-\textbf{Github}, por su parte, es una plataforma de desarrollo 
+\textbf{GitHub}, por su parte, es una plataforma de desarrollo 
 colaborativo, en la que creamos un repositorio y hemos ido gestionando las 
 diferentes versiones de Dr. Scratch. Además, creamos ramas diferentes para 
 cada entorno, lo cual ha sido muy útil. 
 Para conocer la aportación de los programadores de un 
-equipo a los repositorios de Github se puede utilizar \textbf{CVSAnalY}, 
+equipo a los repositorios de GitHub se puede utilizar \textbf{CVSAnalY}, 
 la cual contabiliza los \textit{commits} realizados por usuarios. Y 
 utilizándola se pueden observar la salida de la 
 \textit{Figura~\ref{figure:commits}}.
@@ -3460,7 +3460,7 @@ motivar a los usuarios.
 \section{Aplicación de lo aprendido}
 \label{sec:aplicacion}
 
-Durante el desarrollo de este proyecto he podidio tomar conciencia de la 
+Durante el desarrollo de este proyecto he podido tomar conciencia de la 
 importancia de muchos \textit{conocimientos adquiridos durante la carrera} que me han
 permitido llevarlo a cabo. No me había dado cuenta de todo lo que realmente
 he aprendido estos años hasta que poco a poco he necesitado algunos de los 
@@ -3477,7 +3477,7 @@ conocimientos adquiridos.
     Además, de ser en la primera asignatura en la que necesité programar una
     funcionalidad amplia que permitiera a un usuario obtener una ventaja utilizando
     mi programa.
-  \item \textbf{Sistemas Telemáticos II:} Fue en esta asignatura donde dí el 
+  \item \textbf{Sistemas Telemáticos II:} Fue en esta asignatura donde di el 
     salto a la programación orientada a objetos y aprendí cuáles eran los distintas
     características que debe tener un servidor, así como el paradigma 
     Cliente-Servidor que Dr. Scratch sigue.
@@ -3552,7 +3552,7 @@ Añadir a todo lo mostrado en el documento, que el desarrollo de Dr. Scratch me h
 motivado personalmente muchísimo a crear aplicaciones y webs que sean utilizadas
 por personas. 
 
-Durante la carrera había realizado numerosas prácticas similiares
+Durante la carrera había realizado numerosas prácticas similares
 en conceptos y otras más difíciles. Pero no había podido sentir la inmensa
 gratificación de ver utilizarlo a personas, y aún mejor a niños, para
 aprender algo que a mí me apasiona, la programación.
