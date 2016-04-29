@@ -420,20 +420,20 @@ un proyecto realizado por otro Scratcher y modificarlo a nuestro gusto.
 \end{figure}
 
 En la \textit{Figura~\ref{figure:estadisticas-scratch}} se muestran las estadísticas
-de la comunidad de Scratch en enero de 2016.
+de la comunidad de Scratch de enero de 2016.
 
 Este lenguaje de programación es \textit{utilizado en más de 150 países y en los más
 diversos entornos} -museos, bibliotecas, escuelas o universidades son algunos-
 principalmente, por jóvenes entre los 8 y 16 años. El único requisito para 
 utilizarlo es saber leer.
 
-Actualmente la versión es Scratch 2.0 pero hubo una versión anterior (1.4) que
+Actualmente la versión de Scratch es la 2.0, pero hay una versión anterior (1.4) que
 aún está siendo utilizada, sobre todo en su \textbf{versión offline}. Porque pensando
 en las dificultades de conexión que se tiene en algunos centros, Scratch posee
 una versión descargable que puede ser utilizada sin conexión a la red.
 
 Scratch se  ha convertido en un movimiento mundial con su propio día -Scratch Day-
-y una conferencia que se realiza cada verano -Scratch Conference- en la que 
+y una conferencia que se realiza cada verano -Scratch Conference- y en la que 
 el equipo de Dr. Scratch participó en 2015. Se organizó en Ámsterdam, donde 
 pudimos observar las tendencias e ideas mundiales desarrolladas para potenciar 
 las habilidades de los jóvenes programadores que utilizan Scratch.
@@ -451,13 +451,13 @@ las habilidades de los jóvenes programadores que utilizan Scratch.
 realimentación sobre los diferentes aspectos que engloban el \textit{Pensamiento Computacional}.
 
 Tras años dedicados a la enseñanza de programación y ciencias de la computación,
-llegaron a la siguiente conclusión; era necesario tener una herramienta similar a
+llegaron a la siguiente conclusión: era necesario tener una herramienta similar a
 Pylint -herramienta que permite \textit{detectar malas prácticas en el código del lenguaje de 
 programación} Python- para el nuevo lenguaje de programación Scratch.
 
 Para poder analizar un proyecto programado con Scratch necesitamos inspeccionar
-su archivo. Los archivos generados en Scratch para cada proyecto, tienen un 
-formato comprimido concreto con extensión \textit{.sb2} cuyo
+su archivo. Los archivos generados en Scratch para cada proyecto tienen un 
+formato comprimido concreto, con extensión \textit{.sb2}, cuyo
 contenido está conformado por las distintas imágenes y sonidos utilizados en el
 proyecto y un \textit{fichero JSON que contiene la información relevante} a los bloques
 de Scratch que se han utilizado. Es decir, para evaluar
@@ -465,18 +465,16 @@ cómo de bien se ha programado un proyecto, lo que nos interesa es conocer dicho
 JSON y analizar su contenido.
 
 La tarea de analizar toda la información otorgada por el fichero JSON no es fácil,
-pero mis tutores encontraron en GitHub\footnote{\url{https://github.com/}} un plugin que ya 
-hacía dicha tarea. Este plugin es 
+pero mis tutores encontraron en GitHub\footnote{\url{https://github.com/}} un software que ya 
+realizaba, en parte, dicha tarea. Este software es 
 \textbf{Hairball}\footnote{\url{https://github.com/ucsb-cs-education/hairball}} que ha
-sido implementado por \textit{Bryce Boe}\footnote{\url{https://github.com/bboe}}
-y es un analizador estático de proyectos programados en Scratch.
+sido implementado por \textit{Bryce Boe}\footnote{\url{https://github.com/bboe}}, de la Universidad de Stanford, y es un analizador estático de proyectos programados en Scratch.
 
-Mis tutores partiendo de la base de Hairball, programaron el plug-in  \textbf{Mastery}
-que ofrece información de \textbf{aspectos del Pensamiento Computacional}:
+Mis tutores, partiendo de la base de Hairball, programaron inicialmente el plug-in de \textbf{Mastery} que ofrece información de \textbf{aspectos del Pensamiento Computacional}:
 \textit{pensamiento lógico, control de flujo, abstracción, paralelismo, interactividad 
 con el usuario, representación de la información y sincronización}. 
 
-Además, Hairball, devuelve mucha más información entre la que se encuentran
+Además, Hairball, devuelve mucha más información, entre la que se encuentran
 dos malos hábitos de programación: 
 \textbf{código muerto y atributos no inicializados}.
 
@@ -484,15 +482,15 @@ Mis tutores incluyeron otros dos plugins a \textit{Hairball} que inspeccionaban
 el fichero JSON buscando indicios de otros dos de los 
 \textbf{malos hábitos que todo programador novato tiene al principio}:
 \textit{programas duplicados y nombres inadecuados.}
-Ambos han realizado algunos artículos~\cite{moreno2014automatic} en los que explican
+Entre ambos han publicado algunos artículos~\cite{moreno2014automatic} en los que explican
  de forma detallada cómo trabajan estos plugins y cuál es
 la relación que tienen los distintos aspectos del Pensamiento Computacional, además
 de demostrar cómo el desarrollo del Pensamiento Computacional ayuda a desarrollar
 habilidades que son compartidas con materias recogidas en los currículos del 
 proceso Bolonia, por lo que aprender a programar puede ayudar a obtener mejores
-resultados en la enseñanza de asignaturas como Inglés, Matemáticas o Filosofía.
+resultados en la enseñanza de asignaturas como pudieran ser el inglés, las matemáticas o la filosofía.
 
-Dr. Scratch es un proyecto aún en desarrollo y ha tenido dos versiones hasta 
+Dr. Scratch es un proyecto aún en desarrollo que ha tenido dos versiones hasta 
 el momento. A continuación se muestran las dos versiones existentes de Dr. Scratch,
 tratando de explicar cuáles han sido las aportaciones de la versión anterior, para
 tener una visión del punto de partida con el que se contaba. 
@@ -522,7 +520,7 @@ la que se va a detallar en este documento.
 \end{itemize}
 
 Al ser una plataforma en producción, se han realizado distintas pruebas 
-en colegios, para comprobar el uso que realizaban los alumnos de ella,
+en colegios, para comprobar el uso que realizaban los alumnos,
 permitiéndonos observar cuáles eran las necesidades que demandaban. 
 A lo largo de esta memoria se irán comentando los cambios introducidos 
 en la herramienta y las razones que los han motivado.
@@ -533,7 +531,7 @@ en la herramienta y las razones que los han motivado.
 \section{Estructura de este documento}
 \label{sec:estructura}
 
-Intentando facilitar la lectura de esta memoria, se procede a explicar su
+Para facilitar la lectura de esta memoria, se procede a explicar su
 estructura, detallando qué contenido tendrá cada capítulo: 
 
 \begin{enumerate}[label=\textbf{\arabic{*}.}]
@@ -542,13 +540,13 @@ estructura, detallando qué contenido tendrá cada capítulo:
     desarrollado. Se muestra cuál ha sido la motivación para su realización
     y las fases iniciales del mismo.
 
-    \item \textbf{Objetivos.} Aquí se muestra cuáles han sido las metas a obtener para
+    \item \textbf{Objetivos.} Aquí se presentan cuáles han sido las metas a obtener para
     poder dar respuesta a la necesidad observada. Además, se indica cuáles han
-    sido las funcionalidades a implementar. Éstas últimas, se mostrarán también,
-    en una línea cronológica en las que se dividirá el tiempo en corto plazo,
-    medio y largo, mediante un planteamiento temporal.
+    sido las funcionalidades a implementar. Éstas últimas se mostrarán también
+    en una línea cronológica en las que se dividirá el tiempo en el corto,
+    medio y largo plazo, mediante un planteamiento temporal.
  
-    \item \textbf{Estado del arte.} En este capítulo, se hablará de las distintas
+    \item \textbf{Estado del arte.} En este capítulo, se hablará de las 
     tecnologías utilizadas para poder llevar a cabo la consecución del proyecto
     y se dará una explicación breve de las mismas.
 
@@ -594,7 +592,7 @@ El principal \textbf{objetivo} de todo proyecto es cubrir la necesidad que ha
 sido observada y que ha motivado la realización del mismo. Pero para poder 
 llegar a dicho resultado es necesario detallar concretamente y sin ambigüedad 
 qué es lo que queremos conseguir en cada etapa. En este capítulo se describen 
-dichos objetivos iniciales, con la intención de poder reflexionar más tarde
+los objetivos iniciales, con la intención de poder reflexionar más tarde
 observando los resultados, cuáles han sido alcanzados y estudiar cuáles han 
 sido los problemas o motivos que han repercutido en que no se logre alguno de ellos.
 Además, se indica el planteamiento temporal que se eligió para lograr alcanzar 
@@ -610,14 +608,15 @@ herramienta web donde poder analizar proyectos programados en el lenguaje Scratc
 El análisis nos reportará información de aspectos relacionados con el 
 \textit{Pensamiento Computacional} que debemos mejorar. 
 
-Para entender dicho objetivo es necesario comprender qué es el pensamiento
-computacional y qué aspectos son los que queremos cubrir y cómo.
+Para entender este objetivo es necesario comprender qué es el pensamiento
+computacional y qué aspectos son los que queremos cubrir y cómo pensamos hacerlo.
 
 Cuando una persona empieza en el mundo de la programación,
 necesita desarrollar ciertas habilidades y cambiar en cierta medida el modo de
 plantear los problemas a los que se enfrenta. Necesita comenzar a pensar como
 lo haría un científico, lo que conlleva abordar los problemas de un modo 
-diferente. Para ello, necesita desarrollar unas habilidades específicas que pueden
+diferente a cómo lo ha hecho con anterioridad.
+Para ello, necesita desarrollar unas habilidades específicas que pueden
 ser muy útiles en otras disciplinas. Estas habilidades son las que se deben
 trabajar para conseguir un desarrollo del pensamiento computacional.
 
@@ -631,7 +630,7 @@ conceptos fundamentales de la informática.
 
 La finalidad de Dr. Scratch es analizar el proyecto realizado en Scratch y 
 evaluar dichos conceptos claves de las ciencias computacionales, en concreto,
-se centra en 7 aspectos:
+se centra en siete aspectos:
 
 \begin{enumerate}[label=\textbf{\arabic{*}.}]
     \item \textbf{Paralelismo.} Consiste en poder resolver varios problemas de manera
@@ -673,7 +672,7 @@ co-tutor y que todo programador novel realiza en sus primeros proyectos -y últim
 si no aprende a corregirlos-.
 
 De esta forma, Dr. Scratch trata de dar una puntuación basada en el nivel 
-computacional del programador, pero además sirve de apoyo
+computacional del programador, pero sirve además de apoyo
 para aprender a programar correctamente. Esto la convierte en una herramienta 
 muy útil, tanto para docentes como para estudiantes.
 
