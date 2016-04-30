@@ -2060,23 +2060,23 @@ compañeros y cuál la mía.\\
 \textbf{Barra de progreso} \\
 
 Con el cambio de apariencia de la página principal, había conseguido
- entender como funcionaba  \textit{Bootstrap}. Y me encontraba
+ entender cómo funcionaba  \textit{Bootstrap}. Y me encontraba
  aprendiendo \textit{JavaScript}, ya que había numerosos ficheros 
 utilizados en la plantilla que estaban escritos en este lenguaje y lo 
 iba a necesitar para seguir añadiendo funcionalidades a la web. 
 
 En concreto una de las funcionalidades que se querían
-añadir y que se necesitaba JavaScript, era la implementación de una \textbf{barra de 
+añadir, y en la que se necesitaba JavaScript, era la implementación de una \textbf{barra de 
 progreso} que se mostrara mientras que se estuviera analizando el 
 proyecto de Scratch. Así el usuario no veía una página blanca que podía dar la
 impresión de que la plataforma no funcionaba o se aburriera.
 
 Esta tarea estuve trabajándola durante algún tiempo antes que mi 
-compañera Eva se incorporará. Cuando ella comenzó,
+compañera Eva se incorporara. Cuando ella comenzó,
  le mostré el código que había realizado
  y conseguimos conjuntamente llegar a la siguiente solución.
 
-Se incluyó en la página \texttt{main.html} el código HTML, que ya 
+Se incluyó en la página \texttt{main.html} el código HTML que ya 
 tenía programado con la ayuda de Bootstrap para mostrar la barra con un 
 estilo determinado, y se le asignó un id para poder diferenciar esta 
 sección de código del resto de la página.
@@ -2084,7 +2084,7 @@ sección de código del resto de la página.
 Con una función de JavaScript que se encuentra en el fichero 
 \texttt{progress-bar.js} se programó que al mostrar la página se pudiera
 visualizar todo el contenido, excepto el de la barra de progreso, que 
-puede verse en la  \textit{Figura~\ref{figure:barra-progreso}}.
+puede verse en la \textit{Figura~\ref{figure:barra-progreso}}.
 
      \begin{figure}[H]
         \centering
@@ -2106,14 +2106,14 @@ por varios usuarios de Dr. Scratch que mostraron la dificultad que tenían alguno
  de sus alumnos para descargarse el proyecto} de la página de Scratch.
 
 Cristian se encargó de poner el código abierto de Nathan (getSb2) en Heroku\footnote{\url{https://www.heroku.com/}}
- lo cual nos dio numerosos problemas más tarde. 
+ lo cual nos dió numerosos problemas más tarde. 
 Mediante el servidor getSb2 se realizan las peticiones de descarga al 
 servidor de Scratch, en la petición se indica el identificador numérico que 
 aparece en la URL del proyecto.
 
 Y también realizó la implementación del análisis, pero repetía mucho código que
 ya se estaba utilizando en el análisis por la subida del proyecto. Por este motivo,
-modifiqué lo implementado por él para incluirlo al código. 
+modifiqué lo implementado por él para incluirlo al código. FIXME: mejorar la frase anterior.
 
 Además añadí a la
 página la posibilidad de utilizar esta funcionalidad quedando el cuadro como
@@ -2133,13 +2133,13 @@ máquina de producción}.\\
 
 \textbf{Corrección de errores en el cuadro} \\
 
-El cuadro anterior permitía dar a cualquiera de los botones anteriores sin haber
-introducido ninguna información, por lo que la página nos mostraba error, ya que
+El cuadro anterior permitía dar a cualquiera de los botones sin haber
+introducido ninguna información, por lo que la página nos mostraba un error, ya que
 \textit{intentaba analizar un proyecto inexistente}. 
 
 Para solucionar el problema, se utilizó una clase de Bootstrap que se encarga
-de gestionar este tipo de situaciones, mostrando la página el cuadro mostrado
-en la \textit{Figura~\ref{figure:analisis2}} cuando se pulsa alguno de los
+de gestionar este tipo de situaciones, visualizando en la página el cuadro 
+de la \textit{Figura~\ref{figure:analisis2}} cuando se pulsa alguno de los
 botones de análisis sin ningún proyecto concretado.
 
      \begin{figure}[H]
@@ -2167,10 +2167,10 @@ de una tabla, eliminar algún usuario...\\
 
 \textbf{Carpetas para proyectos que producen error al ser analizados} \\
 
-En algunas ocasiones, bien Hairball o Kurt, \textit{no son capaces de analizar un proyecto
+En algunas ocasiones, bien Hairball o Kurt \textit{no son capaces de analizar un proyecto
 de Scratch concreto por diversos motivos que necesitan un estudio individual}.
 
-Por ello, se implementó una página que fuera mostrada al usuario en esta situación, la cual puede verse en la \textit{Figura~\ref{figure:error}}.
+Por ello, se implementó una página que fuera mostrada al usuario en esta situación, como puede verse en la \textit{Figura~\ref{figure:error}}.
 
      \begin{figure}[H]
         \centering
