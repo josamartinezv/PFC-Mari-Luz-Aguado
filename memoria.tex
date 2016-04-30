@@ -1528,11 +1528,11 @@ el caso anterior, el flujo de la aplicación sea lo más dinámica posible. En la
         \label{figure:views}
     \end{figure}
 
-Al ser Dr. Scratch una plataforma con numerosas funcionalidades, fue necesario
-apoyar al fichero \texttt{views.py} con \textit{otra serie de ficheros en los que se implementaban
+Al ser Dr. Scratch una plataforma con numerosas funcionalidades, la funcionalidad del fichero \texttt{views.py} se complementa con \textit{otra serie de ficheros en los que se implementan
 funciones auxiliares}. Así se permite observar fácilmente el flujo de la plataforma
 y \textbf{aumentar su modularidad}.
-Los otros ficheros que apoyan a \texttt{views.py} se pueden ver en la 
+
+Los ficheros que dan soporte a \texttt{views.py} pueden verse en la 
 \textit{Figura~\ref{figure:views-modular}}.
 
      \begin{figure}[H]
@@ -1542,7 +1542,7 @@ Los otros ficheros que apoyan a \texttt{views.py} se pueden ver en la
         \label{figure:views-modular}
     \end{figure}
 
-Para realizar el código de las funciones implementadas en los ficheros anteriores,
+Para realizar el código de las funciones implementadas en estos ficheros,
  hay que recordar que Django está completamente programado en Python y que este 
 es un lenguaje orientado a objetos. Por ello, todo lo que encontraremos en 
 nuestro código son objetos. 
@@ -1550,9 +1550,9 @@ nuestro código son objetos.
 La declaración de los objetos que conforman nuestra aplicación se encuentra en 
 el fichero \texttt{models.py} del modelo de Django. La declaración de uno de los objetos 
 más utilizados por Dr. Scratch se muestra en la \textit{Figura~\ref{figure:models}} 
-donde se pueden observar sus campos. \textit{Las distintas clases declaradas en este 
+donde se pueden observar sus campos. \textit{Las clases declaradas en este 
 fichero serán instanciadas en las funciones 
-para implementar las diferentes funcionalidades de la plataforma}.
+para implementar funcionalidad de la plataforma}.
 
      \begin{figure}[H]
         \centering
@@ -1561,7 +1561,7 @@ para implementar las diferentes funcionalidades de la plataforma}.
         \label{figure:models}
     \end{figure}
 
-Una vez que ya sabe Dr. Scratch qué código debe ejecutar según lo visto ahora, 
+Una vez que Dr. Scratch conoce el código que debe ejecutar, 
 procede y según la función, deberá realizar diversas acciones: 
 consultas en la base de datos, realizar el análisis con Hairball, hacer
 una petición a otro servidor para obtener información, guardar el archivo... 
@@ -1569,8 +1569,8 @@ Todo este funcionamiento se irá detallando en la siguiente sección, donde se
 explicarán las implementaciones realizadas.
 
 Tras ejecutar dicho código y procesar toda la información, se debe mostrar una
-página de respuesta, para lo que se utiliza el \textit{sistema de plantillas} de Django 
-llamadas \textbf{templates}. Estas plantillas son \textit{renderizadas} con la información que se 
+página de respuesta, para lo que se utiliza el \textit{sistema de plantillas} de Django,  
+llamado \textbf{templates}. Estas plantillas son \textit{renderizadas} con la información que se 
 ha procesado y se quiere mostrar en dichas páginas.\\
 
 \textbf{Fichero log} \\
@@ -1600,8 +1600,8 @@ de todas las tablas creadas en la base de datos por la plataforma.
 Como se observa, hay algunas tablas que comienzan por \textit{app\_ }, 
 otras por \textit{auth\_} y finalmente otras por \textit{django\_ }. 
 Únicamente las que empiezan por \textit{app\_} son las que creamos 
-nosotros en el fichero \texttt{models.py}, las demás son definidas por
-Django de forma automática.
+nosotros en el fichero \texttt{models.py}. Las demás son definidas por
+Django de forma automática e implementan funcionalidades que vienen en Django como la autenticación, la gestión de sesiones, etc.
 
 
 Para entender correctamente la estructura de la base de datos y cuáles son
@@ -1621,16 +1621,17 @@ Proyecto Fin de Carrera y
 
 \textbf{Node.js (getSb2)} \\
 
-También se ha implementado con la ayuda del proyecto de un usuario de 
+También se ha implementado, basándonos en un proyecto de 
 GitHub, llamado getSb2\footnote{\url{https://github.com/nathan/getsb2}}, un servidor 
 HTTP Node.js que \textit{se encarga de realizar peticiones al servidor de Scratch}, y que 
-será explicado más adelante.\\
+será explicado más adelante FIXME- ¿dónde? Poner sección.\\
 
 \textbf{Hairball y Kurt} \\
 El análisis del proyecto de Scratch se realiza mediante Hairball, el cual tenemos
 \textit{instalado en la máquina virtual}, y que se ayuda de \textit{Kurt} 
 para manipular proyectos complejos de Scratch, con comandos sencillos de Python.\\
 
+FIXME - Más explicación aquí.
 
 \subsection{Capa de presentación: front-end} 
 \label{subsec:front-end}
@@ -1648,7 +1649,7 @@ a un \textbf{recurso} determinado.
      \begin{figure}[H]
         
         \includegraphics[width=1.1\textwidth]{img/templates}
-        \caption{Estructura de las páginas de Dr. Scratch:\texttt{templates}}
+        \caption{Estructura de las páginas de Dr. Scratch: \texttt{templates}}
         \label{figure:templates}
     \end{figure}
 
@@ -1673,14 +1674,11 @@ siguiente sección.
 \section{Funcionalidades y evolución de Dr. Scratch}
 \label{subsec:evolucion}
 
-Con el objetivo de describir claramente cuál ha sido mi aportación al 
-proyecto, quiero recordar que \textit{Dr. Scratch ha sido desarrollado 
-por varias personas}. 
-Este Proyecto Fin de Carrera es la continuación de una primera
-implementación de Cristian Chushig (versión Alpha) pero que aún no había 
-terminado todo su
-desarrollo y realizaría algunas otras tareas de forma paralela.
-Y además ha sido desarrollado en paralelo con las implementaciones realizadas
+\textit{Dr. Scratch ha sido desarrollado 
+por varias personas}, así que en esta sección me centraré en describir claramente cuál ha sido mi aportación al 
+proyecto. Ha de tenerse en cuenta que este Proyecto Fin de Carrera es la continuación de una primera
+implementación de Cristian Chushig (versión Alpha).
+Además ha sido desarrollado en paralelo a las implementaciones realizadas
 por mi compañera Eva Hu.
 
 Para comprender cuál ha sido el proceso de implementación, he dividido 
@@ -1700,7 +1698,11 @@ esta sección en 4 apartados:
 
 \subsection{Versión Alpha}
 \label{subsec:alpha}
+
 El \textbf{prototipo inicial} de Dr. Scratch debía implementar:
+
+FIXME: objetivos en infinitivo
+
 \begin{itemize}
  \item Una página principal en la que poder indicar qué fichero quería subirse.
  \item Análisis del proyecto de Scratch mediante Hairball.
@@ -1717,7 +1719,7 @@ pero a la hora de ejecutar se producía un error y no conseguía mostrar la inform
 del análisis de Hairball. Conociendo ahora completamente el funcionamiento de 
 Dr. Scratch, puedo suponer que el problema residía en que se debió realizar algún
 cambio en el plugin Hairball y el código que procesaba la información de Hairball
-se había quedado obsoleto.
+había quedado obsoleto.
  
 \begin{figure}[H]
     \centering
@@ -1730,9 +1732,10 @@ se había quedado obsoleto.
 
 \subsection{Fase I}
 \label{subsec:fase-i}
+
 En el contexto anterior, se fijaron mis principales objetivos a conseguir 
 y mis primeras implementaciones que son las mostradas en la 
-\textit{Figura~\ref{figure:fase-i}}. Señalar que en esta fase del proyecto, 
+\textit{Figura~\ref{figure:fase-i}}. Cabe señalar que en esta fase del proyecto, 
 no se encontraban realizando el proyecto ninguno de mis dos compañeros.\\
 
      \begin{figure}[H]
@@ -1746,11 +1749,11 @@ no se encontraban realizando el proyecto ninguno de mis dos compañeros.\\
 \textbf{Estudio, depuración y modificación del código de la versión Alpha} \\
 
     Aunque el código estaba bastante bien estructurado y comentado y aún no 
-había demasiada cantidad, esta primera tarea fue muy dura. Es complicado 
+había demasiada cantidad --FIXME: indicar el número de líneas, p.ej.-, esta primera tarea fue muy dura. Es complicado 
 enfrentarse al código de otra persona añadido a que el código \textbf{presentaba errores a la hora de 
 ejecutar} y al principio no pude ver el resultado final.
     Con la ayuda de trazas detecté que el error se producía a la hora de 
-procesar las salidas de Hairball las cuales se pueden observar en la
+procesar las salidas de Hairball, tal y como se puede observar en la
 \textit{Figura~\ref{figure:hairball}}.
 
      \begin{figure}[H]
@@ -1760,7 +1763,7 @@ procesar las salidas de Hairball las cuales se pueden observar en la
         \label{figure:hairball}
     \end{figure}
 
-Como se puede observar, las salidas no están normalizadas y tuve que
+De esta manera, las salidas no están normalizadas y tuve que
 programar métodos distintos para cada una de ellas y guardar toda la información
 relevante en un diccionario.
 
@@ -1791,8 +1794,8 @@ espacios o caracteres raros, el análisis mediante Hairball no se podía realizar}
 Se solucionó guardando el proyecto de Scratch en lugar de con el nombre original
 con el \textbf{id}.
 
-Para implementar el análisis de Hairball, se necesitó la programación de una función 
-llamada \texttt{analyze\_project}, cuya tarea es abrir un pipe por cada plugin de
+Para implementar el análisis de Hairball, se implementó una función 
+llamada \texttt{analyze\_project}, cuya tarea es abrir un \emph{pipe} por cada plugin de
 Hairball que se ejecuta y guardar la información del plugin en una variable
 llamada \texttt{result[Nombre del plugin]}. Después, esa variable se procesa en cada 
 una de las funciones creadas para cada plugin llamadas \texttt{proc\_[Nombre del plugin]},
@@ -1813,7 +1816,7 @@ log. Al principio únicamente \textbf{guardaba el nombre del fichero analizado y 
 Poco a poco se ha ido añadiendo más información: hora del análisis, método utilizado,
 el tipo de usuario, el resultado del análisis, si ha habido algún error en el
 análisis... Cada vez que se analiza un proyecto este fichero es abierto, 
-escrito en él la información indicada y cerrado.
+se escribe en él la información indicada y se cierra.
 
 \textit{Este fichero es muy útil para tener un resumen rápido de lo que está sucediendo
 en Dr. Scratch sin necesidad de consultar la base de datos.}\\
@@ -1821,8 +1824,7 @@ en Dr. Scratch sin necesidad de consultar la base de datos.}\\
 
 \textbf{Primera puesta en producción} \\
 
-        Indico ``primera'' ya que se ha realizado en dos ocasiones de formas 
-diferentes. Aquí voy a detallar cómo se realizó en esta etapa del proyecto.
+Se han realizado dos puestas en producción. Aquí voy a detallar cómo se realizó en esta etapa del proyecto.
 
 
     \begin {itemize}
@@ -1852,10 +1854,10 @@ estado funcionando}.
 
 La dirección de Dr. Scratch era 
 \textbf{http://drscratch.programamos.es}, pero actualmente se encuentra en 
-\textbf{www.drscratch.org}.
+\textbf{http://www.drscratch.org}.
 
-En esta etapa, mientras producción estaba alojada en las máquinas de la universidad
-\textit{se produjeron numerosos problemas, por algún corte y sobre todo por falta de
+En esta etapa, mientras el sistema en producción estaba alojado en las máquinas de la universidad
+\textit{se produjeron numerosos problemas, por algún corte de luz y, sobre todo, por falta de
 memoria}.\\
 \end {itemize}
 
@@ -1863,7 +1865,7 @@ memoria}.\\
 \textbf{Cambio de apariencia} \\
 
     El diseño gráfico del logo de Dr. Scratch fue subcontratado por Programamos
-a una empresa externa, \textit{TheLogoCompany}, pero la idea estaba clara: debía ser 
+a una empresa externa, \textit{TheLogoCompany}, con una idea clara: debía ser 
 con una tipografía atractiva para niños y que tuviera una bombilla. El motivo 
 de la \textbf{bombilla} es porque \textit{la idea esencial de Dr. Scratch es despertar la 
 curiosidad por aprender a programar y además poder hacerlo aprendiendo con la 
@@ -1871,8 +1873,8 @@ filosofía de código abierto utilizando las ideas de otros para generar nuevas
 ideas y aprender de forma dinámica e interactiva}.\\
 
 
-    En este momento, ya que teníamos un logo, empecé a estudiar el \emph{front-end} que
-existía hasta el momento y empecé a tomar contacto con Bootstrap, para incluir
+    Con el nuevo logo empecé a estudiar el \emph{front-end} que
+existía hasta el momento y a tomar contacto con Bootstrap, para incluir
 el logo y cambiar los colores de la web acorde al mismo. Siendo ahora la página 
 principal de la web la mostrada en la \textit{Figura~\ref{figure:main-version-beta1}}.
 
@@ -1911,9 +1913,9 @@ que es la que a día de hoy se conserva con algunas pequeñas modificaciones.\\
         \label{figure:main-version-beta2}
     \end{figure}
 
-Esta página, además de la sección principal, donde se podía subir el fichero 
+En esta página, además de la sección principal, donde se puede subir el fichero 
 del proyecto de Scratch, quisimos ser más cercanos al usuario y se incluyeron
-4 secciones más, que mostraban información en inglés sobre los siguientes aspectos:
+cuatro secciones más, que mostraban información en inglés sobre los siguientes aspectos:
 
 
 \begin{enumerate}[label=\textbf{\arabic{*}.}]
@@ -1956,13 +1958,13 @@ del proyecto de Scratch, quisimos ser más cercanos al usuario y se incluyeron
     \end{figure}
 
         Al terminar de leer este documento, se verá que muchas de ellas han sido
-        implementadas ya y deben ser actualizadas.
+        implementadas ya y que deben ser actualizadas.
 
 	\item {\bfseries Contacto}
         Esta sección incluye todas las vías que tiene el usuario de ponerse en 
         contacto con nosotros, ya que nos parece indispensable tener información 
-        de nuestros usuarios, para poder hacer una herramienta que realmente sea 
-        útil. Dicha información es mostrada por la 
+        de nuestros usuarios para poder hacer una herramienta que realmente sea 
+        útil. Dicha información es mostrada en la 
         \textit{Figura~\ref{figure:contact-us}}.
 
     
