@@ -2106,7 +2106,7 @@ por varios usuarios de Dr. Scratch que mostraron la dificultad que tenían alguno
  de sus alumnos para descargarse el proyecto} de la página de Scratch.
 
 Cristian se encargó de poner el código abierto de Nathan (getSb2) en Heroku\footnote{\url{https://www.heroku.com/}}
- lo cual nos dió numerosos problemas más tarde. 
+ lo cual nos dio numerosos problemas más tarde. 
 Mediante el servidor getSb2 se realizan las peticiones de descarga al 
 servidor de Scratch, en la petición se indica el identificador numérico que 
 aparece en la URL del proyecto.
@@ -2188,7 +2188,7 @@ error por no ser posible su análisis mediante Hairball.\\
 
 \textbf{Personalización de las páginas 404 y 500} \\
 
-A veces, se producen errores, porque el usuario solicita un recurso que no es 
+A veces se producen errores, porque el usuario solicita un recurso que no es 
 servido por nuestro servidor. Como  ya se ha explicado en Dr. Scratch esto está
 gestionado mediante redirección a la página principal para facilitar la usabilidad.
 Aún así se diseñó una página por si en algún momento era necesaria y puede
@@ -2200,10 +2200,10 @@ verse en la \textit{Figura~\ref{figure:error404}}
         \label{figure:error404}
     \end{figure}
 
-Otra página que es más útil en nuestra plataforma es la página de error que
+Otra página que es más útil en nuestra plataforma es la página de error  que
 se muestra cuando se produce algún error en el servidor. Es muy desconcertante 
-ver una página HTML sin estilo que le indica \textit{``500 Server error''}. Por
-ello se diseño la siguiente página personalizada de error 500 que permite
+ver una página HTML sin estilo que indica \textit{``500 Server error''}. Por
+ello, se diseñó la siguiente página personalizada de error 500 que permite
 fácilmente volver a la página de inicio. Dicha página es la mostrada por la 
 \textit{Figura~\ref{figure:error500}}.
 
@@ -2219,7 +2219,7 @@ fácilmente volver a la página de inicio. Dicha página es la mostrada por la
 
 Al realizar el análisis subiendo el proyecto desde el propio 
 ordenador, \textit{algunos usuarios continúan utilizando la versión 1.4
-offline de Scratch}. El JSON de estos proyectos es algo diferente al 
+offline de Scratch}. Los datos JSON de estos proyectos son diferentes al 
 de la versión 2.0 y el análisis de Hairball devolvía error.
 
 
@@ -2236,7 +2236,7 @@ el tipo de versión de Scratch, lo cual se hizo en la función
 Y si la extensión corresponde a la versión 1.4 se
 realiza el cambio
 de versión, realizado en la función \texttt{change\_version()}. Esto se consiguió
- gracias a una función de Kurt sencilla, \texttt{convert()}.\\ 
+ gracias a una función de Kurt: \texttt{convert()}.\\ 
 
 
 \textbf{Servir páginas diferentes según el nivel computacional} \\
@@ -2246,13 +2246,13 @@ nos aconsejaron que tratáramos de \textit{simplificar de algún modo el
 cuadro de resumen con las puntuaciones mostradas en el dashboard}. 
 Consideraban que eran demasiado complicados para algunos alumnos.
 
-El equipo de Dr.Scratch consideró oportuno probar a mostrar un 
+El equipo de Dr. Scratch consideró oportuno probar a mostrar un 
 resumen de la información diferente en función del nivel de Pensamiento 
 Computacional obtenido. 
 
 Para ello, se modificó la función \texttt{show\_dashboard()}, que hasta 
 ahora únicamente comprobaba si había algún error en la subida del 
-proyecto de Scratch o en la url. Si había algún error, activaba el flag 
+proyecto de Scratch o en la URL. Si había algún error, activaba el flag 
 concreto del error y lo renderizaba con el template \texttt{main.html} 
 para enviarlo al usuario. 
 Si no había error, mostraba el dashboard con toda la información del 
@@ -2289,7 +2289,7 @@ como alumnos, pudieran realizar los análisis en castellano.
 
 Como se va a ver a continuación, se me ocurrió además de hacer la distinción
 mediante el nivel, añadir colores diferentes ya que en muchos colegios utilizan
-el código de colores para motivar a los alumnos.
+códigos de colores para motivar a los alumnos.
 
     \begin{itemize}
         \item \textbf{Dashboard si el pensamiento computacional es bajo:}
@@ -2398,19 +2398,19 @@ el código de colores para motivar a los alumnos.
  \end{itemize}
 
 El resultado fue poco atractivo porque me centré en la programación de las 
-plantillas de forma que cada una mostrará únicamente la información que
+plantillas de forma que cada una mostrara únicamente la información que
 deseábamos, ya que en la propia plantilla es donde se gestiona cuál es la 
 información del diccionario que es mostrada al usuario.
 
 Los docentes nos sugirieron algunas implementaciones, como poder descargar el 
 un diploma y poder gestionar ellos mismos la información que se mostraba a sus
-alumnos. Y en el taller realizado con alumnos pudimos observar que no les 
+alumnos. En el taller realizado con alumnos pudimos observar que no les 
 llamaba nada la atención el carrusel con los malos hábitos de programación.\\
 
 
 \textbf{Modales explicativos en el cuadro de análisis} \\
 
-En estos talleres, notamos que muchos de los alumnos no sabían cómo utilizar
+En estos talleres notamos que muchos de los alumnos no sabían cómo utilizar
 el cuadro de análisis y que tenían los siguientes problemas:
 
  \begin{itemize}
@@ -2421,7 +2421,7 @@ el cuadro de análisis y que tenían los siguientes problemas:
  \end{itemize}
 
 Actualizamos el cuadro al que se encuentra actualmente en producción. En él se añadió una breve explicación de cómo funciona cada análisis para que 
-se vea claramente que son dos formas completamente distintas. 
+se viera claramente que son dos formas completamente distintas. 
 
 Hay palabras que están resaltadas en rojo debido a
  que eran los conceptos que necesitaban explicación extra. Para ello se programaron en la plantilla \texttt{main.html} dos ventanas 
@@ -2469,13 +2469,13 @@ Dichas ventanas modales, se muestran al pulsar en las palabras \textbf{URL} y \t
 
 Como ya se explicó en la Fase I del proyecto tanto el entorno de producción como
 el de preproducción se encontraban alojados en máquinas de la universidad, lo 
-cual nos dio algunos problemas y debían ser solucionados. \\
+que nos dio algunos problemas y debían ser solucionados. \\
 
 Microsoft nos concedió una suscripción de 150\$ mensual para que pudiéramos 
 alojar Dr. Scratch en la nube en su plataforma Azure. \\
 
 Tras asistir a varios cursos de la plataforma en las instalaciones de Microsoft
-y de Plain Concepts, empezamos a tratar de buscar nuestra mejor solución.
+y de Plain Concepts, empezamos a tratar de buscar la mejor solución.
 Ya que el crédito era limitado, al principio pensamos que era mejor utilizar
 la opción \textit{website} de la plataforma. Esta decisión se tomó porque nos 
 indicaron que esa opción consumía menos crédito. \\
@@ -2484,11 +2484,11 @@ Publiqué un website de Dr. Scratch con su base de datos MySQL enlazada a través
 de \textit{Visual Studio} pero el problema que se encontró fue que
 \textbf{en los websites de Azure no hay posibilidad de instalar otras aplicaciones}
  y por
-ello no teníamos la posibilidad de instalar Hairball. Intentamos implementarlo
+ello no teníamos la posibilidad de instalar Hairball. Intentamos implementarlo,
 ya que Python ofrece la posibilidad de ser ejecutado indicando el path completo 
 en el que se encuentran los ficheros importando todos los módulos que había en
 los ficheros de Hairball y sus librerías de forma absoluta, pero había librerías
-dinámicas que presentaban más problemas. 
+dinámicas que presentaban más problemas. FIXME: aclarar la última frase
 
 En este momento, probamos a crear una 
 máquina virtual instalando absolutamente todo lo que necesitábamos dentro de ella
@@ -2501,13 +2501,13 @@ por falta de memoria.\\
 
 \textbf{Google Analytics} \\
 
-Una de las tareas pendientes, era conseguir llevar un seguimiento de los usuarios
+Una de las tareas pendientes era conseguir llevar un seguimiento de los usuarios
 que visitaban la plataforma. La opción website de Azure nos habría resuelto este
 problema ya que ofrece este tipo de estadísticas. Pero al alojar Dr. Scratch en
 una máquina virtual, tuve que buscar otro método. 
 
 El más sencillo y más recomendado que encontré leyendo varios artículos de
-analítica web, fue \textit{Google Analytics}. Para ponerlo en marcha únicamente 
+analítica web fue usar \textit{Google Analytics}. Para ponerlo en marcha únicamente 
 tuve que crear una cuenta en Google para el equipo de Dr. Scratch y registrarla. 
 
 Facilitan un código de JavaScript que copié en el fichero  
@@ -2575,7 +2575,7 @@ el mecanismo de Django: \textbf{\{\% blocktrans \%\}[contenido]\{\% endblocktran
 \textbf{Cuenta de organizaciones} \\
 
 La implementación que quisimos tener realizada antes de llegar a la 
-\textit{2015ScratchConference} fue ofrecer la posibilidad de registrar organizaciones.
+\textit{2015 Scratch Conference} fue ofrecer la posibilidad de registrar organizaciones.
 Esta iniciativa surgió de la petición de varias organizaciones que
 realizan numerosos campamentos de programación y tienen cientos de proyectos 
 que analizar en pocos días.
@@ -2596,7 +2596,7 @@ que nos muestra la página de la \textit{Figura~\ref{figure:organizaciones}}.
        \label{figure:organizaciones}
    \end{figure} 
 
-Haciendo scroll, tenemos un formulario para poder registrarnos
+Haciendo scroll tenemos un formulario para poder registrarnos
 y las instrucciones que debemos seguir para poder
 hacerlo. Todo esto se muestra en la \textit{Figura~\ref{figure:registro-organizaciones}}.
 
@@ -2660,7 +2660,7 @@ ventana  modal que se muestra en esta página al pulsar sobre la palabra
        \label{figure:csv}
    \end{figure}
 
-Señalar que se tuvo en cuenta para la implementación, que \textit{podía producirse error
+Cabe señalar que se tuvo en cuenta para la implementación, que \textit{podía producirse error
 en alguno de los proyectos al ser analizados por Hairball y podía hacer que el
 análisis de todo el fichero se detuviera y mostrara error}. Por ello, se trató 
 dicha situación como una \textbf{excepción} y en el fichero CSV que se devuelve, muestra
@@ -2681,7 +2681,7 @@ con Hairball.\\
        \label{figure:fichero-csv}
    \end{figure}
 
-Se puede ver cómo, algunos proyectos han sufrido algún error durante
+Se puede ver cómo algunos proyectos han sufrido algún error durante
 el análisis y por ello muestran la frase ``Error analizando el proyecto'', pero
 se ha podido seguir analizando el resto de proyectos.
 
@@ -2692,9 +2692,9 @@ es debido a algún problema con Kurt.
 \subsection{Fase III}
 \label{subsec:fase-iii}
 
-Después de la Scratch Conference, pudimos obtener muchísima realimentación gracias 
+Después de la Scratch Conference obtuvimos muchísima realimentación gracias 
 a todas las organizaciones y usuarios que quisieron probar la plataforma. Y 
-realizamos nuevas implementaciones, gracias a las observaciones que nos 
+realizamos nuevas implementaciones gracias a las observaciones que nos 
 realizaron y otras que aún teníamos pendientes y que pueden verse en la 
 \textit{Figura~\ref{figure:fase-iii}}.\\
      \begin{figure}[H]
@@ -2716,7 +2716,7 @@ De forma, que no descargara el proyecto completo, sino únicamente el fichero JSO
 ya que es lo único que necesitamos para realizar el análisis con Hairball.
 
 Comencé a estudiar el código del \textit{servidor getSb2} y conseguí
-modificarlo, para que efectivamente, únicamente se descargara el fichero JSON.
+modificarlo para que, efectivamente, únicamente se descargara el fichero JSON.
 
 La velocidad de análisis mediante esta opción aumentó enormemente y desaparecieron los errores.
 
@@ -2728,10 +2728,10 @@ para el consumo del crédito de Azure.\\
 
 Al empezar a traducir la plataforma a otros idiomas me encontré con un problema 
 que no se había detectado anteriormente: los bloques que se muestran en las 
-páginas para aprender más y poder mejorar en las distintas habilidades, no se
+páginas para aprender más y poder mejorar en las distintas habilidades no se
 traducían correctamente a idiomas que no fueran el español o el inglés.
 
-Esto tiene una explicación, mi compañera Eva había tratado de obtener el idioma
+Esto tiene una explicación: mi compañera Eva había tratado de obtener el idioma
 para traducir los bloques con JavaScript con la función mostrada en la
 \textit{Figura~\ref{figure:javascript-blocks}}.
 
@@ -2742,14 +2742,14 @@ para traducir los bloques con JavaScript con la función mostrada en la
         \label{figure:javascript-blocks}
     \end{figure}
  
-Al observar por consola, cuál era la salida de la línea que detecta el idioma
+Al observar por consola cuál era la salida de la línea que detecta el idioma
 vi que siempre era la misma: \textit{es(español)}.
 
-Lo que estaba pasando, era que cuando el idioma del navegador era inglés(en),
+Lo que estaba pasando era que cuando el idioma del navegador era inglés(en),
 Django no activaba el mecanismo de traducción, por lo que funcionaba perfectamente.
-Y cuando el idioma era español(es), se activaba el mecanismo de traducción de
+Y cuando el idioma era español (es), se activaba el mecanismo de traducción de
 Django y dicha línea obtenía algo coherente. Pero cuando se implementó para 
-el catalán, se activaba el mecanismo de traducción pero esa línea devolvía español(es).
+el catalán, se activaba el mecanismo de traducción pero esa línea devolvía español (es).
 
 Tuve que cambiar la función por otra que utiliza AJAX, para poder llamar 
 en segundo plano a una función que implementé en nuestro servidor. Esta
@@ -2777,10 +2777,10 @@ registro de usuarios iba a ser fácil. Y lo que es el registro es idéntico al
 de organizaciones. Por lo que ahora mismo en nuestro servidor tenemos \textbf{organizations}
 y \textbf{coders}. Se eligió la palabra \textit{coder} en lugar de \textit{user}, porque en Django ya 
 hay un objeto user que nos ha sido muy útil. Ya que tanto organizaciones como 
-programadores, extienden de este objeto usuario con campos extras mediante 
+programadores extienden de este objeto usuario con campos extras mediante 
 \textbf{herencia}. 
 
-Pero además, tuve que añadir más código en todo el servidor,
+Pero además tuve que añadir más código en todo el servidor
 para controlar constantemente si el usuario que estaba registrado era 
 una organización
 o un programador. Esto lo he hecho mediante una función que se llama
@@ -2878,7 +2878,7 @@ derecha del navegador con el símbolo característico de Dr. Scratch:
 Al pulsar en el icono, nos muestra el desplegable que vemos en la 
 \textit{Figura~\ref{figure:plugin-desplegable}}, en el cual ya se ha insertado
 la URL actual sin la parte final (\#editor). Nos permite pulsar 
-directamente en el botón ANALYZE! que abrirá otra pestaña y nos mostrará el 
+directamente en el botón \texttt{ANALYZE!} que abrirá otra pestaña y nos mostrará el 
 resultado del análisis.
 
      \begin{figure}[H]
@@ -2980,7 +2980,7 @@ agradecimientos, con las siguientes secciones:
 \textbf{Botones en la página principal: estadísticas, colaboradores y blog} \\
 
 Debido a que se implementaron nuevas páginas y no había forma de acceder a ellas.
-Se añadieron a la página principal, en la sección de contacto, 3 botones para
+Se añadieron a la página principal, en la sección de contacto, tres botones para
 poder visualizarlas. La \textit{Figura~\ref{figure:botones}} 
 muestra como queda dicha sección tras la modificación.
 
@@ -2998,8 +2998,8 @@ encuentran enlazadas con las funciones \texttt{statistics()} y
 \texttt{collaborators()} que muestran las páginas
 \texttt{statics.html} y \texttt{collaborators}.
 
-Pero la redirección al blog se realiza mediante un mecanismo especial de Django,
-para ello se añadió al fichero \texttt{urls.py} la siguiente línea:\\
+Pero la redirección al blog se realiza mediante un mecanismo especial de Django.
+Para ello se añadió al fichero \texttt{urls.py} la siguiente línea:\\
 
     \texttt{url(r'\^} \texttt{blog\$',}
  
@@ -3008,8 +3008,8 @@ para ello se añadió al fichero \texttt{urls.py} la siguiente línea:\\
 
 \textbf{Modificación del procesador del plugin Dead Code} \\
 
-Como comenté, en la Fase I se reprogramaron todos los procesadores
-de los plugins de Hairball. Recordar que entonces, la salida
+Como ya he comentado, en la Fase I se reprogramaron todos los procesadores
+de los plugins de Hairball. Cabe recordar que entonces la salida
 del plugin Dead Code era la mostrada en la \textit{Figura~\ref{figure:dead-code1}}. 
 
      \begin{figure}[H]
@@ -3034,10 +3034,10 @@ Por este motivo, el procesamiento que realicé en la función
 
 Mi compañera Eva
 intentó solucionarlo, pero para ello hizo uso de la función
-\texttt{ast.literal eval()}. Esta función, lo que hace es convertir
+\texttt{ast.literal eval()}. Esta función lo que hace es convertir
 líneas en conjuntos \textbf{clave:valor} de un diccionario. Esto estaría 
-bien, si la salida de Dead Code pudiera convertirse en todos los
-casos, pero no es así. Cuando un en un mismo objeto, hay varios 
+bien si la salida de Dead Code pudiera convertirse en todos los
+casos, pero no es así. Cuando en un mismo objeto hay varios 
 conjuntos de bloques que no se ejecutan nunca, hay líneas en la
 salida que no muestran el objeto, tal como puede verse en el 
 caso del \textit{Contenedor verde}. \\
@@ -3047,7 +3047,7 @@ contabilizar los bloques que no se ejecutaban era haciendo
 uso de la función \texttt{split()} pasándole como parámetros
 las cadenas claves \texttt{kurt.Block} y \texttt{kurt.Script}.\\
 
-Como estas cadenas ya no aparecen en la salida, he tenido que modificar el procedimiento inicial, diferenciando entre:
+Como estas cadenas ya no aparecen en la salida he tenido que modificar el procedimiento inicial, diferenciando entre:
 
 \begin{itemize}
     \item Líneas en las que aparece el caracter \textbf{:} en las
@@ -3070,7 +3070,7 @@ que muestra cada uno de los 3 dashboards.\\
 
 \textbf{Formulario de registro para usuarios} \\
 
-La forma de registro de las organizaciones, fue muy controlada 
+La forma de registro de las organizaciones fue muy controlada 
 mediante un \textbf{hashkey} que debían solicitarnos por correo 
 electrónico y que nosotros introducíamos en la base de datos con 
 la ayuda de una página muy primitiva.
@@ -3123,8 +3123,8 @@ recurso \texttt{/coder/(username)} que será su propio espacio que puede verse en
         \label{figure:dashboard-coder}
     \end{figure}
 
-Este dashboard, aún está en desarrollo. La idea es que el usuario
-pueda ver más información de la mostrada, sobre los proyectos que 
+Este dashboard aún está en desarrollo. La idea es que el usuario
+pueda ver más información de la mostrada sobre los proyectos que 
 ha analizado con anterioridad, además de incluir mecanismos de
 gamificación.
 
@@ -3133,7 +3133,7 @@ gamificación.
 
 Con el objetivo de clarificar cómo es el interior del servidor y
 cuál es el flujo entre las distintas funciones implementadas, voy a
-mostrar 3 diagramas de flujo para explicar los distintos tipos de análisis.
+mostrar tres diagramas de flujo para explicar los distintos tipos de análisis.
 
 \textbf{Análisis subiendo el proyecto: \_upload} \\
 
@@ -3223,8 +3223,8 @@ comprensión y evitar repetir explicaciones en las siguientes implementaciones:
 
 \textbf{Análisis con la URL: \_url} \\
 
-En este caso, nos vamos a centrar en la función \texttt{show\_dashboard()},
-ya que como se puede entender, \texttt{analyze\_project()} sigue teniendo
+En este caso nos vamos a centrar en la función \texttt{show\_dashboard()},
+ya que, como se puede entender, \texttt{analyze\_project()} sigue teniendo
 la misma forma.
 
 En este análisis hay algunas modificaciones en la
@@ -3309,6 +3309,7 @@ analizar o descargar el CSV con los resultados del análisis.
 
 \cleardoublepage
 \chapter{Resultados}
+
 A lo largo de todo este documento se ha recalcado la importancia del trabajo
 en equipo en este proyecto. En él hemos estado trabajando varias personas
  coordinadas a través de las herramientas \textbf{Trello} y \textbf{Github}.
@@ -3357,7 +3358,7 @@ más destacables para los meses de abril a septiembre de 2015.
                 \label{figure:numeros}
             \end{figure}
 
-Además, destacar que Dr. Scratch no ha sido utilizado sólo en España, sino que
+Además, se ha de destacar que Dr. Scratch no ha sido utilizado sólo en España, sino que
 es un proyecto internacional. Hemos recibido realimentación de usuarios de todo el 
 planeta y en la \textit{Figura~\ref{figure:mapamundi}} se puede observar qué
 países son los que más utilizan la herramienta.
@@ -3436,22 +3437,21 @@ específicos} que se marcaron en cada una de las diferentes fases han sido
 alcanzados, teniendo Dr. Scratch numerosas funcionalidades que lo hacen
 atractivo para el usuario.
 
-Destacar de nuevo la importancia de los talleres y jornadas que hemos ido
-realizando a lo largo del proyecto, lo cual nos ha ido haciendo pivotar según
+Cabe destacar de nuevo la importancia de los talleres y jornadas que hemos ido
+realizando a lo largo del proyecto, lo que nos ha ido haciendo pivotar según
 las necesidades reales observadas. A estas necesidades han sido a las que se
 ha ido dando prioridad una vez logrado el prototipo inicial.
 
-Señalar la importancia de colaboración para la \textbf{traducción} de la plataforma, lo
+Se ha de señalar la importancia de colaboración para la \textbf{traducción} de la plataforma, lo
 que nos permite tener la web en varios idiomas gracias al mecanismo que implementé
 y que ha sido uno de los objetivos más destacables. 
 
-
 Y hemos podido observar, de forma muy gratificante, que Dr. Scratch es una 
-herramienta muy útil para numerosos docentes y alumnos. Han sido 
-\textbf{analizados más de 80.000 proyectos}, como puede verse en  
+herramienta muy útil para numerosos docentes y alumnos. Se han  
+\textbf{analizado más de 80.000 proyectos}, como puede verse en  
 \textit{Figura~\ref{figure:proyectos}}. En el caso de los 
-docentes hemos recibido inmensidad de correos dándonos las gracias por el 
-desarrollo de la herramienta y han querido participar en la traducción.
+docentes hemos recibido una gran cantidad de correos dándonos las gracias por el 
+desarrollo de la herramienta, y algunos han querido participar en la traducción.
 
 
             \begin{figure}[H]
@@ -3557,14 +3557,14 @@ un ordenador delante.
 \section{Valoración personal}
 \label{sec:valoracion}
 
-Añadir a todo lo mostrado en el documento, que el desarrollo de Dr. Scratch me ha
+Me gustaría añadir a todo lo comentado en este documento, que el desarrollo de Dr. Scratch me ha
 motivado personalmente muchísimo a crear aplicaciones y webs que sean utilizadas
 por personas. 
 
 Durante la carrera había realizado numerosas prácticas similares
 en conceptos y otras más difíciles. Pero no había podido sentir la inmensa
-gratificación de ver utilizarlo a personas, y aún mejor a niños, para
-aprender algo que a mí me apasiona, la programación.
+gratificación de ver utilizarlo a personas, especialmente a niños, para
+aprender algo que a mí me apasiona: la programación.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
