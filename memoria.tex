@@ -688,12 +688,12 @@ alcanzar al final de este Proyecto Final de Carrera.
 
 Tal como se ha comentado, ya existía una versión Alpha de la 
 web, en la que se tenía un código, que trataba de alcanzar el objetivo e implementación
-básica de la web. Dicho código, mostraba una web simple e intentaba analizar el 
+básica de la web. Dicho código mostraba una web simple e intentaba analizar el 
 archivo .sb2 de Scratch para extraer conclusiones mediante el plugin Hairball y 
 mostrarlas en un dashboard.
 
-Al comienzo de este proyecto, dicho código no conseguía realizar correctamente
-el análisis del proyecto de Scratch, por lo que partiendo de esta 
+Al comienzo de este proyecto, Dr. Scratch no conseguía realizar completamente el
+análisis del proyecto de Scratch de manera correcta, por lo que partiendo de esta 
 base, los objetivos iniciales fueron los siguientes:
 
 \begin{enumerate}[label=\textbf{\arabic{*}.}]
@@ -705,14 +705,14 @@ base, los objetivos iniciales fueron los siguientes:
     proyectos analizados en la web: quién lo había analizado -si estaba registrado-,
     nombre del proyecto, hora y fecha.
 
-    \item \textbf{Plataforma en producción.} La idea principal, era que una vez
+    \item \textbf{Plataforma en producción.} La idea principal era que una vez
     el prototipo funcionase, tenerlo en producción lo antes posible para ser 
     utilizado y poder tener realimentación de cuáles eran las necesidades de los
     usuarios. 
 
     \item \textbf{Cambio de apariencia de la web.} La web funcionaba, pero no era
-    demasiado atractiva y se buscaba tener el máximo número de usuarios posibles,
-    por lo que era necesario realizar un cambio. Teníamos además, que buscar
+    demasiado atractiva. Se buscaba tener el máximo número de usuarios posibles,
+    por lo que era necesario realizar un cambio. Teníamos, además, que buscar
     algún logotipo que mostrase la esencia de Dr. Scratch.
 
     \item \textbf{Implementación del mecanismo de traducción de la plataforma.}
@@ -724,15 +724,17 @@ base, los objetivos iniciales fueron los siguientes:
 \end{enumerate}
 
 Dr. Scratch ha sido un proyecto que ha obtenido financiación por parte del \textbf{FECyT}
-(Fundación Española para la Ciencia y la Tecnología) y por tanto, hay una serie
+(Fundación Española para la Ciencia y la Tecnología) y, por tanto, hay una serie
 de objetivos iniciales que fueron fijados en la memoria de solicitud de la
 ayuda. Tenía objetivos referentes tanto a la plataforma web como a otros subobjetivos,
 tales como la realización de talleres para garantizar la difusión de la plataforma y
 la creación de materiales docentes, entre otros. En este documento únicamente nos centraremos
 en los objetivos específicos relacionados con la plataforma web:
 
+FIXME: los objetivos hay que ponerlos en infinitivo
+
 \begin{itemize}
-    \item Llegar a conseguir más de 5.000 proyectos analizados.
+    \item Número de proyectos analizados ($>${5.000})
     \item Número de alumnos registrados ($>${1.500})
     \item Número de docentes registrados ($>$120)
     \item Número de visitantes únicos diarios de la web $>$ 25.000
@@ -744,6 +746,8 @@ en los objetivos específicos relacionados con la plataforma web:
 Nada más tener el prototipo en producción, nos llegaron las primeras peticiones
 de los usuarios, y por tanto, más objetivos para nosotros y algunos más que 
 surgieron con el avance del proyecto:
+
+FIXME: los objetivos hay que ponerlos en infinitivo
 
 \begin{itemize}
     \item Barra de progreso del análisis del proyecto.
@@ -805,10 +809,10 @@ En este punto, únicamente desglosaré la planificación temporal, a la que en
 próximas secciones iré incluyendo qué miembros han participado en la consecución
 de cada funcionalidad y objetivo.
 
-Este proyecto ha sido muy bien guiado y gestionado por mi tutor y co-tutor
- mediante \textbf{Trello} -herramienta colaborativa 
-para organizar proyectos-. Y fueron marcados inicialmente, cuáles eran los objetivos
-a corto, medio y largo plazo. Según el proyecto fue evolucionando, dichas metas
+Este proyecto ha sido guiado y gestionado por mi tutor y mi co-tutor
+ mediante \textbf{Trello}, una herramienta colaborativa 
+para organizar proyectos. Inicialmente se marcaron cuáles eran los objetivos
+a corto, medio y largo plazo. Según el proyecto fue evolucionando, estas metas
 podían ser modificadas fácilmente gracias a la herramienta y jamás se perdía 
 de vista cuáles eran las tareas más inmediatas.
 
@@ -845,6 +849,8 @@ forma esquemática y sencilla de comprender.
     febrero, cuando se incorporó al proyecto mi compañera Eva Hu, a julio de 2015.
 
     En esta fase del proyecto los objetivos a alcanzar fueron los siguientes:
+
+    FIXME: objetivos en infinitivo
 
         \begin{itemize}
             \item Introducir una barra de progreso del análisis del proyecto.
@@ -892,13 +898,15 @@ escenifica esta fase.
 
 
 \begin{itemize}
-    \item \textbf{FASE III.} Abarca el periodo entre septiembre de 2015 y 1 de 
+    \item \textbf{FASE III.} Abarca el periodo entre septiembre de 2015 y el 1 de 
                 febrero de 2016, fecha en la que empecé a escribir esta memoria.
 
     Tras la Scratch Conference en Ámsterdam a la que acudió todo el equipo de 
         Dr. Scratch y en la que realicé una presentación de la plataforma, 
         pudimos obtener algunas conclusiones gracias a la realimentación obtenida. 
         Debido a ellas, marcamos los siguientes objetivos:
+
+        FIXME: objetivos en infinitivo
 
         \begin{itemize}
             \item En el análisis por URL únicamente descargar el .JSON para que 
@@ -959,7 +967,7 @@ de la plataforma.
 El paradigma \textbf{Cliente-Servidor}~\cite{liu2004computacion} es utilizado en diversos 
 contextos. Centrándonos en el patrón arquitectural para software distribuido 
 cabe indicar que es un modelo en el que existen dos tipos de elementos 
--cliente y servidor- y un modelo de interacción basado en un diálogo -petición y respuesta-.
+-cliente y servidor- y un modelo de interacción basado en un diálogo -petición y respuesta.
 
 El objetivo de esta arquitectura es \textbf{proporcionar el soporte escalable} para el 
 desarrollo de aplicaciones distribuidas.
@@ -1003,11 +1011,11 @@ que se muestra en la \textit{Figura~\ref{figure:aplicacion-distribuida}}.
     \end{figure}
 
     \begin{enumerate}[label=\textbf{\arabic{*}.}]
-        \item \textbf{Capa de presentación.} También conocida como front-end, suele
-        residir en el cliente y es con la cual el usuario interactúa. 
+        \item \textbf{Capa de presentación.} También conocida como front-end, se 
+        ejecuta en el cliente y es con la cual el usuario interactúa. 
         Se pueden utilizar distintas tecnologías como: HTML, CSS, JavaScript\ldots 
         \item \textbf{Lógica de la aplicación o negocio.} Puede residir en cualquiera
-        de los componentes -cliente y servidor- incluso en ambos.
+        de los componentes -cliente o servidor- incluso en ambos.
         Realiza acciones necesarias para desarrollar la actividad de negocio, 
         tales como: cobro de producto, transacciones...
         \item \textbf{Capa de servicios.} Denominada como \emph{back-end}, es común que
@@ -1021,8 +1029,8 @@ Podemos encontrarnos distintos \textbf{tipos de servidores}:
     \item Dependiendo de si la aplicación requiere que el servidor recuerde la 
     historia pasada del cliente, se diferencian dos tipos:
          \begin{enumerate}[label=\textbf{\alph{*})}]
-            \item Servidor con estados: recuerda información entre las peticiones.
-            \item Servidor sin estados: no recuerda información del cliente entre peticiones.
+            \item Servidor con estado: recuerda información entre las peticiones.
+            \item Servidor sin estado: no recuerda información del cliente entre peticiones.
           \end{enumerate}
     \item Atendiendo al modo de procesamiento de las peticiones, encontramos dos 
         servidores diferentes:
@@ -1037,13 +1045,12 @@ Podemos encontrarnos distintos \textbf{tipos de servidores}:
  
 \begin{description}
   \item[Hypertext Transfer Protocol] \hfill \\
-  El intercambio de mensajes se realiza mediante el protocolo HTTP, el cual es 
- un protocolo sin estado y ha tenido varias versiones. De estas versiones la más 
-utilizada es la versión 1.1 HTTP que especifica la sintaxis y semántica que utilizan
- cliente y servidor para comunicarse.
+  El intercambio de mensajes se realiza mediante el protocolo HTTP, 
+ un protocolo sin estado que ha tenido varias versiones, en las que se especifica la sintaxis y semántica que han de utilizar cliente y servidor para comunicarse. De estas versiones la más 
+utilizada es la versión 1.1.
 
 La estructura de los mensajes de petición y respuesta según el protocolo HTTP se
-muestran en la \textit{Figura~\ref{figure:mensajes-http}}. Son en texto plano lo 
+muestran en la \textit{Figura~\ref{figure:mensajes-http}}. Son en texto plano, lo 
 cual es una ventaja a la hora de depurar pero hace los mensajes largos.
 
 
@@ -1065,9 +1072,9 @@ cual es una ventaja a la hora de depurar pero hace los mensajes largos.
 \section{Back-end}
 \label{sec:back-end}
 
-Tal como hemos visto en la explicación de la arquitectura cliente-servidor el 
+Tal como hemos visto en la explicación de la arquitectura cliente-servidor, el 
 \textit{back-end} se corresponde con la \textbf{capa de servicios o de acceso a datos}. 
-Y en esta sección vamos a ver la parte teórica de las tecnologías utilizadas en este proyecto
+En esta sección vamos a ver la parte teórica de las tecnologías utilizadas en este proyecto
 para el desarrollo de dicha capa:
 
 \begin{enumerate}
@@ -1081,21 +1088,20 @@ para el desarrollo de dicha capa:
 \label{subsec:python}
 
 El \textbf{lenguaje Python}~\cite{duque2011python}, cuyo nombre es en homenaje 
-a la serie \textit{Monty Python's Flying Circus}. Fue 
+a la serie \textit{Monty Python's Flying Circus}, fue 
 desarrollado por \textit{Guido van Rossum} para tratar de superar las limitaciones 
 del \textit{lenguaje ABC}, que era comúnmente utilizado en el centro de investigación 
 en el que trabajaba en Ámsterdam.
 
 Desde el principio se buscó que fuera un \textit{lenguaje divertido} a la hora de ser
-utilizado y es común utilizar variables que hacen referencia a sketchs de 
+utilizado y es común utilizar variables que hacen referencia a \emph{sketchs} de 
 los Monty Python en lugar de variables tradicionales.
 
-En un principio iba a publicarlo bajo una licencia open source propia, pero 
-con la versión 1.6 se decidió por cambiar a \textbf{licencia GPL} (GNU General Public
-Licence). Así, es posible modificar el código fuente y desarrollar código derivado
-sin la necesidad de hacerlo open source.
+En un principio, Python se publicaba bajo las condiciones de una licencia open source propia, pero 
+con la versión 1.6 se decidieron cambiar las condiciones a las de la \textbf{licencia GPL} (GNU General Public
+Licence). Así, es posible modificar el código fuente del intérprete. Por otro lado, esta licencia permite desarrollar código Python sin la necesidad de hacerlo open source.
 
-Existen \textbf{tres versiones} principales, con 1.6, 2.7 y 3.4 como últimas actualizaciones. 
+Existen \textbf{tres versiones} principales, con 1.6, 2.7 y 3.4 como las últimas actualizaciones. 
 Es destacable indicar que las versiones 2 y 3 son incompatibles entre sí, por el
  gran número de \textit{diferencias entre ellas}~\cite{pilgrim2009dive}.
 
@@ -1125,7 +1131,7 @@ Ha sido el lenguaje elegido, debido principalmente a dos razones: es el
 lenguaje que me ha resultado más atractivo en mis años de aprendizaje en la universidad,
 y en segundo lugar, por su amplia utilización mundial. Las estadísticas 
 mostradas por CodeEval\footnote{\url{https://www.codeeval.com/}} para 2015 de 
-los lenguajes más utilizados pueden observarse
+los lenguajes más utilizados pueden verse
 en la \textit{Figura~\ref{figure:estadistica-python}}. En 2014, el dato
 para Python era de 30,3\%,
 por lo que sigue aumentando el número de programadores que se decantan por este
@@ -1148,7 +1154,7 @@ entre los que destaca Django, que es la tecnología que trataré a continuación.
 \textbf{Django} es un framework que facilita al programador la creación de sitios
  webs complejos. 
 
-Entre sus principales \textbf{características}, destacar:
+Entre sus principales \textbf{características}, cabe destacar:
 
 \begin{itemize}
     \item Es de \textit{código abierto}.
@@ -1196,15 +1202,13 @@ las buenas \textit{prácticas de programación y que el código sea legible}~\cite{
 \subsection{MySQL}
 \label{subsec:mysql}
 
-Todo servidor web necesita un \textit{servidor de base de datos} que administre,
-almacene y gestione los datos, para asegurar el acceso seguro a ellos.
-
-\textbf{MySQL}~\cite{suehring2002mysql} es uno de los sistemas de administración 
-de bases de datos más utilizados en la actualidad, se puede observar en la 
+Casi todo servidor web necesita un \textit{servidor de base de datos} que administre,
+almacene y gestione los datos. \textbf{MySQL}~\cite{suehring2002mysql} es uno de los sistemas de administración 
+de bases de datos más utilizados en la actualidad. Se puede observar en la 
 \textit{Figura~\ref{figure:mysql}}\footnote{Información obtenida en 
 \url{http://db-engines.com/en/ranking_trend}} cuál es el ranking que ocupa 
 relacionado con otras bases de datos muy utilizadas en el mercado, donde se 
-puede observar que es una de las tres con más usuarios.
+puede ver que es una de las tres con más usuarios.
 
 
      \begin{figure}[H]
@@ -1231,7 +1235,7 @@ Las principales \textbf{características} de MySQL son las siguientes:
 \end{itemize}
 
 
-Destacar que tiene \textbf{licenciamiento dual}: se puede utilizar bajo la GNU GPL, 
+Cabe destacar que MySQL tiene \textbf{licenciamiento dual}: se puede utilizar bajo la GNU GPL, 
 pero si se quiere incorporar en productos privativos es necesario comprar 
 otra licencia.
 
@@ -1239,22 +1243,22 @@ otra licencia.
 \label{subsec:apache}
 
 El \textbf{servidor HTTP Apache} es un servidor web HTTP de \textit{software libre}. El servidor
-se desarrolla y mantiene bajo la \textit{Apache Software Foundation} dentro del proyecto 
+se desarrolla y mantiene bajo el paraguas de la \textit{Apache Software Foundation} dentro del proyecto 
 HTTP Server \textit{(httpd)}.
 
 La arquitectura del servidor Apache es \textbf{altamente modular}, lo cual permite añadir
-más funcionalidades de modo sencillo y ser extendido fácilmente. Esta es una 
+funcionalidades de modo sencillo y ser extendido fácilmente. Esta es una 
 de las características que le hacen ser muy utilizado a la hora de poner una 
 web en producción, ya que se pueden incluir módulos de frameworks. Como es el caso
 del módulo \textit{mod\_wsgi de Django}.
 
-Algo históricamente notable es la licencia de software bajo la cual es distribuido. 
-La \textbf{Licencia Apache} es una licencia de software libre y permite al usuario la 
+Algo históricamente notable de Apache es la licencia de software bajo la cual es distribuido. 
+La \textbf{Licencia Apache} es una licencia de software libre que permite al usuario la 
 libertad de uso para cualquier propósito, ya sea de distribución, para ser 
-modificado y le permite además, distribuir versiones modificadas del software.
+modificado. Además, ofrece la posibilidad de distribuir versiones modificadas del software, pudiendo tener estas obras derivadas una licencia diferente a la Licencia Apache (incluso que no sea open source).
 
 La \textbf{configuración} del mismo se realiza mediante el fichero apache2.conf 
-o \textbf{httpd.conf} y para que los cambios en él sean agregados es necesario 
+o \textbf{httpd.conf}, y para que los cambios en él sean agregados es necesario 
 reiniciar el servidor. 
 
 
@@ -1266,7 +1270,7 @@ reiniciar el servidor.
 Google para el navegador Chrome, compilando JavaScript en el lado del servidor
 a altas velocidades.
 
-Señalar que es de código abierto y multiplataforma. Y la característica que lo
+Cabe señalar que es de código abierto y multiplataforma. Y la característica que lo
 hace destacar es el hecho de poseer un excelente \textit{modelo de eventos}, ideal para 
 la programación asíncrona.
 
@@ -1274,7 +1278,7 @@ la programación asíncrona.
 \section{Front-end}
 \label{sec:back-front}
 
-Recordar que el \textit{front-end} es la \textbf{capa de presentación} que toda 
+Se ha de recordar que el \textit{front-end} es la \textbf{capa de presentación} que toda 
 aplicación distribuida posee. Es la parte con la que el cliente interacciona. 
 Y en las siguientes subsecciones se van a explicar algunas de las tecnologías 
 más utilizadas actualmente en el desarrollo web y que se muestran en la 
@@ -1308,7 +1312,7 @@ código HTML.
     \end{figure}
 
 Para incluir un \textbf{elemento} en una página necesitamos indicar la etiqueta de inicio,
-su contenido -texto que aparecerá en la web- y la etiqueta de cierre, generalmente.
+su contenido -texto que aparecerá en la web- y, generalmente, la etiqueta de cierre (hay algunas etiquetas que no tienen etiqueta de cierre, como por ejemplo, el salto de línea).
 Las etiquetas de inicio tienen \textbf{atributos} en los que se especifica mediante texto plano
 la ubicación de los contenidos(imágenes, vídeos...) que queremos introducir en 
 la página y es el navegador quien se encarga de interpretarlo y mostrar la página 
@@ -1317,10 +1321,11 @@ web completa.
 
 \subsection{CSS}
 \label{subsec:css}
-\textbf{CSS} (cascading style sheets) es utilizado para dar estilo a un lenguaje
+
+Las hojas de estilo en cascada, \textbf{CSS} (cascading style sheets), son utilizadas para dar estilo a un lenguaje
 estructurado, como puede ser HTML. Se aconseja que el código CSS se incluya en
 otro documento separado del HTML y que éste sea incluido mediante la etiqueta 
-adecuada(<link>), tratando de \textit{no mezclar lenguajes diferentes en un mismo texto}
+adecuada ($<link>$), tratando de \textit{no mezclar lenguajes diferentes en un mismo texto}
  para facilitar su legibilidad.
 
 Al seguir la norma de estilo anterior, el modo de indicar a un elemento de HTML
@@ -1335,6 +1340,7 @@ con las jerarquías para incluir el estilo que deseamos a los contenidos deseados
 
 \subsection{Bootstrap}
 \label{subsec:bootstrap}
+
 \textbf{Bootstrap} es un framework que permite al usuario despreocuparse en gran
 medida del diseño y apariencia al realizar una aplicación web. Entre sus principales
 aportaciones están las numerosas \textbf{plantillas} que permiten tener implementado
@@ -1351,6 +1357,7 @@ subsección se explicará qué mejoras introduce este lenguaje a una página creada
 
 \subsection{JavaScript}
 \label{subsec:javascript}
+
 \textbf{JavaScript} es un lenguaje de programación interpretado utilizado de forma
 extendida para poder \textit{dinamizar el lado del cliente} incluyendo así mejoras en la 
 interfaz de usuario y aumentar su seguridad.
@@ -1390,7 +1397,7 @@ número de usuarios posible y para poder realizar un seguimiento y medición de
 dicho objetivo \textbf{Google Analytics} nos permite tener numerosas \textit{estadísticas}
 y herramientas que nos reportan dicha información.
 
-Su utilización es muy simple, al crear una cuenta, \textit{se genera un código en JavaScript
+Su utilización es muy simple: al crear una cuenta, \textit{se genera un código en JavaScript
 que debe ser incluido en las distintas páginas de la web}.
 
 Además, Google Analytics incluye numerosa información en texto y vídeos de cómo 
@@ -1405,13 +1412,14 @@ tan importantes en las webs como es la segmentación del tráfico o publicidad onl
 
 \cleardoublepage
 \chapter{Diseño e implementación}
-En este capítulo se va a detallar \textit{cómo se han implementado las distintas tecnologías}
-explicadas en el capítulo anterior. 
+
+En este capítulo se va a detallar \textit{cómo se han usado las distintas tecnologías}
+explicadas en el capítulo anterior para implementar Dr. Scratch.
 
 También se irá explicando cuál ha sido la \textit{evolución en la implementación de 
 las funcionalidades, debido a las necesidades observadas en los test de usabilidad}, 
 realizados en dos colegios de la Comunidad de Madrid, con alumnos de 5º y 6º de
-primaria: CEIP Lope de Vega y CEIP Gonzalo Fernández de Córdoba.
+primaria, en particular, CEIP Lope de Vega y CEIP Gonzalo Fernández de Córdoba.
 
 Y en el último apartado, una vez entendidas la estructura general y el objetivo
 de cada funcionalidad, se mostrarán algunos \textit{diagramas de flujo para explicar
@@ -1419,14 +1427,15 @@ el código de las implementaciones principales}.
 
 \section{Arquitectura general de Dr. Scratch} 
 \label{sec:arquitectura}
-Como toda aplicación \textit{Cliente-Servidor}, Dr. Scratch tiene las 3 capas de desarrollo:
+
+Como muchas aplicaciones \textit{Cliente-Servidor}, Dr. Scratch tiene las 3 capas de desarrollo:
 back-end, lógica de la aplicación y front-end. 
 
 Pero al ser Dr. Scratch un analizador de archivos -en este caso, el JSON del proyecto
 de Scratch- la lógica o negocio de la aplicación está clara. Por ello se va a 
 prestar mayor atención a la capa de servicio y de presentación.
 
-Señalar que esta sección no trata de explicar cómo se han implementado las
+Cabe señalar que esta sección no trata de explicar cómo se han implementado las
 diferentes tecnologías, cosa que se hará en la siguiente, sino de \textit{mostrar
 una idea general de cómo todas las tecnologías han sido utilizadas en conjunto}.
 Busco mostrar cuál es la arquitectura final de Dr. Scratch para después poder
@@ -1464,19 +1473,18 @@ me llevó algún tiempo entenderla, y además, tuve algún problema para incluir el 
 mod\_wsgi} que permite enlazar Azure con Django. 
 La tarea realizada por Apache nos resuelve numerosos problemas y su funcionamiento
 es el siguiente: cuando los clientes realizan peticiones HTTP
-a nuestro dominio a través de la red, estas son escuchadas por el servidor de HTTP implementado
-bajo la licencia Apache, la cual permite utilizar Dr. Scratch de forma simultánea
+a nuestro dominio a través de la red, éstas son escuchadas por el servidor de HTTP, que nos  permite utilizar Dr. Scratch de forma simultánea
 por numerosos usuarios, teniendo estos la percepción de ser los únicos usándolo.\\
 
 
 
 \textbf{Django} \\
 
-La \textit{versión actualmente instalada de Django es la 1.7}, ya que la 1.8 está aún en 
+La \textit{versión actualmente instalada de Django es la 1.7}, ya que la 1.9 está aún en 
 desarrollo. 
 Como se observa, Apache se encarga de hacer llegar la petición a Django, donde tal como se puede
 ver en la \textit{Figura~\ref{figure:django-funcionamiento}} se pregunta
-en el fichero \texttt{urls.py}, si dicho recurso es servido por nuestro servidor. El fichero
+en el fichero \texttt{urls.py} si dicho recurso es servido por nuestro servidor. El fichero
 \texttt{urls.py} es básicamente una lista, en la que mediante expresiones regulares, se
 indica qué recursos son servidos por nuestra aplicación. 
 
@@ -1487,9 +1495,9 @@ indica qué recursos son servidos por nuestra aplicación.
         \label{figure:django-funcionamiento}
     \end{figure}
 
-Dr. Scratch se ha implementado de tal forma, que si se realiza una \textit{petición a nuestro
+Dr. Scratch se ha implementado de tal forma que si se realiza una \textit{petición a nuestro
 dominio con un recurso que no es servido, redirija al usuario a la página principal}.
-Así si el usuario, que puede ser un niño pequeño, se equivoca, pueda seguir navegando
+Así si el usuario, que puede ser un niño pequeño, se equivoca, puede seguir navegando
 sin mayor esfuerzo o ver alguna página de error. Internamente, la lógica de este
 funcionamiento es el mostrado en el diagrama de la \textit{Figura~\ref{figure:urls}}.
 
@@ -1501,8 +1509,8 @@ funcionamiento es el mostrado en el diagrama de la \textit{Figura~\ref{figure:ur
         \label{figure:urls}
     \end{figure}
 
-En el momento que \texttt{urls.py} nos dirige a una función -recordar que en Python no
-existen los procedimientos- las cuales se encuentran,
+En el momento que \texttt{urls.py} nos dirige a una función -se ha de recordar que en Python no
+existen los procedimientos- que se encuentra,
 según el modelo de Django, en el fichero \texttt{views.py}, se debe hacer distinción según
 si el método de la petición es: \textit{GET, POST u otro método}. Con esto, se ejecutará un código
 concreto según la función y el método. 
