@@ -230,7 +230,12 @@ es que un alumno con un nivel de comprensión lectora media, sea capaz de aprende
 por sí mismo utilizando la herramienta. 
 
 El \textbf{objetivo} del proyecto es dar soporte tanto a maestros como estudiantes,
- en sus primeros pasos en la programación con Scratch. {\bf FIXME: añadir más información sobre los objetivos, al menos más concreta. Lo que viene en la frase anterior es demasiado general.}
+ en sus primeros pasos en la programación con Scratch. Motivar la difusión y 
+comprensión de la utilidad de la
+programación mientrás se muestra cuáles son 
+los errores cometidos desde el punto de vista del pensamiento computacional y 
+ayudar así a desarrollar habilidades relacionadas con este campo, como pueden
+ser la abstracción o lógica.
 
 Este \textbf{proyecto} es el resultado del trabajo de cinco personas, no sólo el mío. Por 
 lo que iré indicando durante toda la memoria cuál ha sido mi aportación de la 
@@ -731,62 +736,52 @@ tales como la realización de talleres para garantizar la difusión de la platafor
 la creación de materiales docentes, entre otros. En este documento únicamente nos centraremos
 en los objetivos específicos relacionados con la plataforma web:
 
-FIXME: los objetivos hay que ponerlos en infinitivo
 
 \begin{itemize}
-    \item Número de proyectos analizados ($>${5.000})
-    \item Número de alumnos registrados ($>${1.500})
-    \item Número de docentes registrados ($>$120)
-    \item Número de visitantes únicos diarios de la web $>$ 25.000
-    \item Número de descargas de la aplicación móvil ($>$ 150)
-    \item Número de horas del servidor caído en los últimos 6 meses de proyecto ($<$ 100h)
-    \item Número de lenguas de la plataforma web ($\geq$5)
+    \item Conseguir un número de proyectos analizados mayor que 5.000 proyectos.
+    \item Alcanzar un número de alumnos registrados en la plataforma superior a 1.500 en total.
+    \item Lograr que supere los 120 el número de docentes registrados.
+    \item La cifra a superar para visitantes a la web será de 25.000 usuarios únicos.
+    \item El número de descargas de la aplicación móvil debe superar las 150.
+    \item Reducir las horas del servidor caído a menos de 100.
+    \item Traducir la plataforma a al menos 5 lenguas.
 \end{itemize}
 
 Nada más tener el prototipo en producción, nos llegaron las primeras peticiones
 de los usuarios, y por tanto, más objetivos para nosotros y algunos más que 
 surgieron con el avance del proyecto:
 
-FIXME: los objetivos hay que ponerlos en infinitivo
-
 \begin{itemize}
-    \item Barra de progreso del análisis del proyecto.
-    \item Analizar proyectos de las dos versiones de Scratch (1.4 y 2.0),
-    únicamente se podía analizar proyectos de la versión 2.0, si intentábamos
-    analizar proyectos de la 1.4 la plataforma mostraba un error.
-    \item Análisis mediante URL del proyecto de la versión online de Scratch.
-    \item Cuentas de usuarios.
-    \item Implementación en el servidor para mostrar tres páginas diferentes, 
-    conforme el nivel del programador fuera: bajo, medio o alto.
-    \item Diseño de tres páginas distintas para cada nivel computacional.
-    \item Debido al gran número de proyectos que se analizaban diariamente 
-        teníamos numerosos problemas con las máquinas de la universidad, por lo que 
-        decidimos realizar una migración a la nube.
-    \item Utilización de algún mecanismo de análisis web para tener estadísticas 
+    \item Mostrar una barra de progreso del análisis del proyecto.
+    \item Analizar proyectos de las dos versiones de Scratch (1.4 y 2.0).
+    \item Realizar el análisis mediante URL del proyecto de la versión online de Scratch.
+    \item Introducir cuentas de usuarios.
+    \item Implementar el servidor para mostrar tres páginas diferentes, 
+    conforme el nivel del programador: bajo, medio o alto.
+    \item Diseñar tres páginas distintas para cada nivel computacional.
+    \item Migrar a la nube.
+    \item Utilizar algún mecanismo de análisis web para tener estadísticas 
             de los accesos a la plataforma.
-    \item Páginas con información de cómo poder pasar de un nivel a otro utilizando
+    \item Programar páginas con información de cómo poder pasar de un nivel a otro utilizando
     distintos bloques de Scratch que demuestran un nivel de pensamiento computacional
     mayor.
-    \item Análisis para organizaciones, permitiéndoles analizar varios proyectos
-    de Scratch simultáneamente a través de un fichero .csv y le devolviera toda
+    \item Programar una funcionalidad de análisis para organizaciones, permitiéndoles analizar varios proyectos
+    de Scratch simultáneamente a través de un fichero .csv y le devuelva toda
     la información del análisis.
-    \item Cuentas de organizaciones.
-    \item Páginas de estadísticas que permitan obtener información acerca de
+    \item Introducir cuentas de organizaciones.
+    \item Mostrar páginas de estadísticas que permitan obtener información acerca de
     la evolución de los usuarios y poder realizar un seguimiento.
-    \item Extensión para los navegadores que permitiera analizar un proyecto
+    \item Programar una extensión para los navegadores que permita analizar un proyecto
     desde la propia página web de Scratch. De forma que únicamente pulsando en 
-    un botón, la extensión obtuviera la URL del proyecto subido y compartido en
-    Scratch mostrado en la página actual y abriese una nueva ventana con su 
+    un botón, la extensión obtenga la URL del proyecto subido y compartido en
+    Scratch mostrado en la página actual y abra una nueva ventana con su 
     análisis en Dr. Scratch.
-    \item Además de la traducción automática detectando el idioma mediante la 
-    configuración del navegador, tener un botón que permita al usuario modificar
-    el idioma.
-    \item Página de agradecimiento a los colaboradores: personas que han
+    \item Incluir un botón que permita al usuario modificar
+    el idioma de forma dinámica.
+    \item Añadir una página de agradecimiento a los colaboradores: personas que han
     traducido los textos de la web a distintos idiomas, colegios que nos han
     permitido realizar talleres en sus aulas...
-    \item Un foro donde los usuarios pudieran expresas sus opiniones y sugerencias
-    para poder obtener realimentación.
-    \item Dashboard para docentes, que mostraran información al maestro sobre
+    \item Diseñar un dashboard para docentes, que muestre información al maestro sobre
     sus alumnos.
 
 \end{itemize}
@@ -794,7 +789,7 @@ FIXME: los objetivos hay que ponerlos en infinitivo
 
 En última instancia, se tiene en mente que la web incluya mecanismos de gamificación
 para conseguir motivar a los usuarios a seguir aprendiendo utilizando la herramienta,
-y además, al más estilo del lenguaje Scratch, tener una red social, que permitiera
+y además, al más estilo del lenguaje Scratch, tener una red social, que permita
 a los programadores poder interactuar y dinamizar la plataforma.
 
 %%%%%%%%%%%%%%%%%%%%%%% PLANIFICACIÓN TEMPORAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -850,7 +845,6 @@ forma esquemática y sencilla de comprender.
 
     En esta fase del proyecto los objetivos a alcanzar fueron los siguientes:
 
-    FIXME: objetivos en infinitivo
 
         \begin{itemize}
             \item Introducir una barra de progreso del análisis del proyecto.
@@ -906,23 +900,23 @@ escenifica esta fase.
         pudimos obtener algunas conclusiones gracias a la realimentación obtenida. 
         Debido a ellas, marcamos los siguientes objetivos:
 
-        FIXME: objetivos en infinitivo
 
         \begin{itemize}
-            \item En el análisis por URL únicamente descargar el .JSON para que 
+            \item Descargar únicamen el .JSON en el análisis por URL para que 
                     se realice más rápidamente.
-            \item Traducción de los bloques pintados en las páginas para aprender 
+            \item Traducir los bloques pintados en las páginas para aprender 
                     cómo subir de nivel de pensamiento computacional.
-            \item Registro de usuarios.
-            \item Botón para traducir la página según la preferencia del usuario 
+            \item Registrar usuarios.
+            \item Incluir un botón para traducir la página según la preferencia del usuario 
                     y no del navegador.
-            \item Extensión que permita analizar proyectos sin necesidad de abrir 
+            \item Programar una extensión que permita analizar proyectos sin necesidad de 
+                    abrir 
                     en el navegador la propia página de URL, sino que en la página 
                     del proyecto de Scratch nos facilite un botón que ya muestre 
                     directamente el análisis realizado.
-            \item Traducción de los textos que aparecen en la plataforma a más 
+            \item Traducir los textos que aparecen en la plataforma a más 
                     idiomas: catalán, gallego y portugués.
-            \item Formulario de registro para usuarios y organizaciones.
+            \item Diseñar un formulario de registro para usuarios y organizaciones.
         \end{itemize}
         
     En la \textit{Figura~\ref{figure:fase-iii}} podemos observar estos objetivos 
@@ -1613,7 +1607,7 @@ Proyecto Fin de Carrera y
 
      \begin{figure}[H]
         \centering
-        \includegraphics[width=0.9\textwidth]{img/base-datos}
+        \includegraphics[width=1.0\textwidth]{img/base-datos}
         \caption{Modelos de Dr. Scratch:\texttt{models.py}}
         \label{figure:base-datos}
     \end{figure}
@@ -1624,14 +1618,28 @@ Proyecto Fin de Carrera y
 También se ha implementado, basándonos en un proyecto de 
 GitHub, llamado getSb2\footnote{\url{https://github.com/nathan/getsb2}}, un servidor 
 HTTP Node.js que \textit{se encarga de realizar peticiones al servidor de Scratch}, y que 
-será explicado más adelante FIXME- ¿dónde? Poner sección.\\
+será explicado más adelante en el capítulo 4, donde se explica el diseño e implementación, 
+para comentar qué problemas nos encontramos con la programación inicial y qué cambios
+realizamos para solventarlos.\\
+
+
 
 \textbf{Hairball y Kurt} \\
 El análisis del proyecto de Scratch se realiza mediante Hairball, el cual tenemos
 \textit{instalado en la máquina virtual}, y que se ayuda de \textit{Kurt} 
 para manipular proyectos complejos de Scratch, con comandos sencillos de Python.\\
 
-FIXME - Más explicación aquí.
+Hairball es un analizador estático de proyectos programados en Scratch. Lo que 
+utiliza para analizar el proyecto, es el fichero .JSON incluido en todo archivo
+.SB2 -que es la extensión que tienen todos los proyectos realizados en la interfaz
+de Scratch- en el que también se incluyen los sonidos e imágenes que conforma el 
+proyecto. 
+
+El citado .JSON, contiene el código del usuario y hairball
+puede extraer a través de diferentes plugins información tal como los bloques 
+que han sido utilizados y si hay algunos que nunca se llegan a ejecutar. Se 
+pueden añadir más plugins para poder analizar otros hábitos de programación de los
+usuarios de forma modular. 
 
 \subsection{Capa de presentación: front-end} 
 \label{subsec:front-end}
@@ -1699,13 +1707,11 @@ esta sección en 4 apartados:
 \subsection{Versión Alpha}
 \label{subsec:alpha}
 
-El \textbf{prototipo inicial} de Dr. Scratch debía implementar:
-
-FIXME: objetivos en infinitivo
+El \textbf{prototipo inicial} de Dr. Scratch debía:
 
 \begin{itemize}
- \item Una página principal en la que poder indicar qué fichero quería subirse.
- \item Análisis del proyecto de Scratch mediante Hairball.
+ \item Diseñar una página principal en la que poder indicar qué fichero quería subirse.
+ \item Programar en el servidor el análisis del proyecto de Scratch mediante Hairball.
  \item Obtener toda la información útil del análisis de Hairball que quería mostrarse
 al usuario.
  \item Mostrar dicha información en un dashboard fácil de entender por el usuario.
@@ -1749,7 +1755,7 @@ no se encontraban realizando el proyecto ninguno de mis dos compañeros.\\
 \textbf{Estudio, depuración y modificación del código de la versión Alpha} \\
 
     Aunque el código estaba bastante bien estructurado y comentado y aún no 
-había demasiada cantidad --FIXME: indicar el número de líneas, p.ej.-, esta primera tarea fue muy dura. Es complicado 
+había demasiada cantidad -contaba con 403 líneas de código cuando actualmente tiene más de 2000-  esta primera tarea fue muy dura. Es complicado 
 enfrentarse al código de otra persona añadido a que el código \textbf{presentaba errores a la hora de 
 ejecutar} y al principio no pude ver el resultado final.
     Con la ayuda de trazas detecté que el error se producía a la hora de 
@@ -2105,15 +2111,14 @@ La idea de incluir también el análisis por URL surgió de la \textit{petición rea
 por varios usuarios de Dr. Scratch que mostraron la dificultad que tenían algunos
  de sus alumnos para descargarse el proyecto} de la página de Scratch.
 
-Cristian se encargó de poner el código abierto de Nathan (getSb2) en Heroku\footnote{\url{https://www.heroku.com/}}
- lo cual nos dio numerosos problemas más tarde. 
+Cristian se encargó de poner el código abierto de Nathan (getSb2) en Heroku\footnote{\url{https://www.heroku.com/}},
+ lo cual nos dio numerosos problemas más tarde y tuvimos que migrarlo. 
 Mediante el servidor getSb2 se realizan las peticiones de descarga al 
 servidor de Scratch, en la petición se indica el identificador numérico que 
 aparece en la URL del proyecto.
 
-Y también realizó la implementación del análisis, pero repetía mucho código que
-ya se estaba utilizando en el análisis por la subida del proyecto. Por este motivo,
-modifiqué lo implementado por él para incluirlo al código. FIXME: mejorar la frase anterior.
+Y también realizó la implementación inicial del código, el cual me encargué de 
+integrar con el resto del código.
 
 Además añadí a la
 página la posibilidad de utilizar esta funcionalidad quedando el cuadro como
@@ -2129,7 +2134,6 @@ se observa en la \textit{Figura~\ref{figure:analisis1}}.
 Como la aplicación getSb2 subida a Heroku se caía cuando se realizaban numerosas
 peticiones simultáneas, tuve que \textbf{migrar el servidor Node.js a nuestra propia
 máquina de producción}.\\
-
 
 \textbf{Corrección de errores en el cuadro} \\
 
@@ -2488,13 +2492,20 @@ ello no teníamos la posibilidad de instalar Hairball. Intentamos implementarlo,
 ya que Python ofrece la posibilidad de ser ejecutado indicando el path completo 
 en el que se encuentran los ficheros importando todos los módulos que había en
 los ficheros de Hairball y sus librerías de forma absoluta, pero había librerías
-dinámicas que presentaban más problemas. FIXME: aclarar la última frase
+dinámicas que no podían ser importadas del mismo modo y no tenía los conocimientos
+necesarios para solucionar el problema. Me puse en contacto con los desarrolladores de
+Microsoft que me indicaron que el problema es que era necesario incluir la versión de Windows
+de las librerias utilizadas ya que los websites de Azure, ahora llamados Web Apps
+corren en máquinas Windows.
 
-En este momento, probamos a crear una 
+Pero en ese momento necesitábamos una solución segura para realizar un test de
+usabilidad y decidimos crear una
 máquina virtual instalando absolutamente todo lo que necesitábamos dentro de ella
 y controlar el consumo del crédito. La sorpresa fue que todos los meses, aún teniendo
 miles de proyectos analizados, el crédito \textit{no se consumía en más de un 70\% 
 del total}. 
+
+
 
 Gracias a esta migración Dr. Scratch no ha vuelto a sufrir problemas por cortes o
 por falta de memoria.\\
@@ -2511,7 +2522,8 @@ analítica web fue usar \textit{Google Analytics}. Para ponerlo en marcha únicame
 tuve que crear una cuenta en Google para el equipo de Dr. Scratch y registrarla. 
 
 Facilitan un código de JavaScript que copié en el fichero  
-\texttt{googleAnalytics.js} y lo incluí en todas las páginas de Dr. Scratch. Destacar que este fichero no ha sido subido a GitHub para que no sea utilizado
+\texttt{googleAnalytics.js} y lo incluí en todas las páginas de Dr. Scratch. 
+Destacar que este fichero no ha sido subido a GitHub para que no sea utilizado
 por otras herramientas y se alteren las métricas.
 
 Accediendo al panel se pueden observar numerosos datos como los que se
