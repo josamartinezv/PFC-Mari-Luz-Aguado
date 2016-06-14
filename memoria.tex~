@@ -1,0 +1,3681 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Plantilla de memoria en LaTeX para la ETSIT - Universidad Rey Juan Carlos
+%%
+%% Por Gregorio Robles <grex arroba gsyc.urjc.es>
+%%     Grupo de Sistemas y Comunicaciones
+%%     Escuela Técnica Superior de Ingenieros de Telecomunicación
+%%     Universidad Rey Juan Carlos
+%% (muchas ideas tomadas de Internet, colegas del GSyC, antiguos alumnos...
+%%  etc. Muchas gracias a todos)
+%%
+%% La última versión de esta plantilla está siempre disponible en:
+%%     https://github.com/gregoriorobles/plantilla-memoria
+%%
+%% Para obtener PDF, ejecuta en la shell:
+%%   make
+%% (las imágenes deben ir en PNG o JPG)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper, 12pt]{book}
+%\usepackage[T1]{fontenc}
+
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
+\usepackage{times}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel} % Comenta esta línea si tu memoria es en inglés
+\usepackage{url}
+%\usepackage[dvipdfm]{graphicx}
+\usepackage{graphicx}
+\usepackage{float}  %% H para posicionar figuras
+\usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
+\usepackage{latexsym}  %% Logo LaTeX
+\usepackage[font={footnotesize,it}]{caption}
+\usepackage{enumitem}
+\usepackage{multirow}
+
+\title{Memoria del Proyecto}
+\author{Nombre del autor}
+
+\renewcommand{\baselinestretch}{1.5}  %% Interlineado
+
+\begin{document}
+
+\renewcommand{\refname}{Bibliografía}  %% Renombrando
+\renewcommand{\appendixname}{Apéndice}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PORTADA
+
+\begin{titlepage}
+\begin{center}
+\begin{tabular}[c]{c c}
+\includegraphics[scale=0.25]{img/logo_vect.png} &
+\begin{tabular}[b]{l}
+\Huge
+\textsf{UNIVERSIDAD} \\
+\Huge
+\textsf{REY JUAN CARLOS} \\
+\end{tabular}
+\\
+\end{tabular}
+
+\vspace{3cm}
+
+\Large
+DOBLE TITULACIÓN EN INGENIERÍA DE TELECOMUNICACIÓN Y LICENCIATURA EN \\
+ADMINISTRACIÓN Y DIRECCIÓN DE EMPRESAS
+
+\vspace{0.4cm}
+
+\large
+Curso Académico 2015/2016
+
+\vspace{0.8cm}
+
+Proyecto Fin de Carrera
+
+\vspace{2cm}
+
+\LARGE
+DR. SCRATCH: FOMENTANDO LA CREATIVIDAD Y VOCACIÓN CIENTÍFICA \\CON SCRATCH
+
+\vspace{2.5cm}
+
+\large
+Autor : Mari Luz Aguado Jiménez \\
+Tutor : Dr. Gregorio Robles Martínez \\
+Co-Tutor : Jesús Moreno León
+\end{center}
+\end{titlepage}
+
+\newpage
+\mbox{}
+\thispagestyle{empty} % para que no se numere esta pagina
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Para firmar
+\clearpage
+\pagenumbering{gobble}
+\chapter*{}
+
+\vspace{-4cm}
+\begin{center}
+\LARGE
+\textbf{Proyecto Fin de Carrera}
+
+\vspace{1cm}
+\large
+DR. SCRATCH: FOMENTANDO LA CREATIVIDAD \\Y VOCACIÓN CIENTÍFICA CON SCRATCH
+
+\vspace{1cm}
+\large
+\textbf{Autor :} Mari Luz Aguado Jiménez \\
+\textbf{Tutor :} Dr. Gregorio Robles Martínez \\
+\textbf{Co-Tutor :} Jesús Moreno León
+
+\end{center}
+
+\vspace{1cm}
+La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 2016, siendo calificada por el siguiente tribunal:
+
+
+\vspace{0.5cm}
+\textbf{Presidente:}
+
+\vspace{1.2cm}
+\textbf{Secretario:}
+
+\vspace{1.2cm}
+\textbf{Vocal:}
+
+
+\vspace{1.2cm}
+y habiendo obtenido la siguiente calificación:
+
+\vspace{1cm}
+\textbf{Calificación:}
+
+
+\vspace{1cm}
+\begin{flushright}
+Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2016
+\end{flushright}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Dedicatoria
+
+\chapter*{}
+\pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
+\begin{flushright}
+\textit{Dedicado a \\
+mi familia, pareja y amigos.}
+\end{flushright}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Agradecimientos
+
+\chapter*{Agradecimientos}
+%\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el índice
+\markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado 
+
+Me gustan demasiadas cosas y muy dispares. Y la doble 
+licenciatura que elegí lo confirma, pero echando la vista atrás creo que no 
+podría haber elegido una carrera que me defina mejor. El mérito de esto no es mío,
+sino de mis padres, que desde muy pequeña me han abierto continuamente un 
+amplio abanico de posibilidades y gracias a ellos hay mucho con lo que disfruto
+diariamente. Infinitas gracias por ello. 
+
+Quiero agradecer a mi familia -mis padres y mi hermana- el apoyo incondicional 
+y su inmensa paciencia de principio a fin, siempre pensando en mi. Aún con el 
+inmenso esfuerzo que me ha supuesto, hemos tenido momentos bonitos y disfrutado mucho, 
+porque también me habéis enseñado que hay que saber a donde se va, pero que siempre es 
+bueno mirar a los lados aunque se tarde un poquito más. Gema, en nada empezaré 
+a entrar en tu habitación y dejarás de echarlo de menos. Quien avisa no es traidor... 
+
+También dar las gracias a mi compañero de aventuras, haces que todo sea 
+divertido. Y tu forma de afrontar las cosas me ha ayudado muchísimo en esta 
+dura recta final. Gracias por confiar en mi más que yo misma.
+
+Estos años en la universidad he conocido muchísima gente maravillosa, no con 
+todos he pasado tanto tiempo como me habría gustado, pero he disfrutado cada
+segundo y me quedan muy buenos recuerdos. Además, he ganado algunas amistades
+que sé que serán para toda la vida. Lo que ha unido el laboratorio y la
+biblioteca, que no lo separe el hombre. En especial, gracias a Cristina por 
+amenizar las noches de estudio con mucho azúcar y poder disfrutar de nuestros
+éxitos siempre juntas.
+
+Entre familia, pareja, horas de estudio y trabajar,
+ el tiempo se reduce muchísimo. Pero tengo la gran suerte de contar con muchísimos 
+amigos de la infancia, colegio, instituto, lanceros y bonitas casualidades,
+ que pese a los cambios de circunstancias siguen estando ahí. 
+Gracias por vuestra comprensión y por seguir 
+contando conmigo para todos los planes.
+
+Por último, agradecer a todo el equipo de Dr. Scratch este año y medio de 
+trabajo en el que he disfrutado muchísimo. Tengo buenos recuerdos tanto de las 
+horas de programación, como la organización de los talleres o eventos y 
+su realización. He disfrutado de absolutamente todo el proyecto, durante todo el
+ proceso.
+
+Así que quiero agradecer a mi tutor Gregorio Robles la oportunidad de haber
+podido pertenecer a este gran equipo que me ha hecho crecer tanto profesional
+como personalmente. A mi co-tutor Jesús Moreno por su constante sonrisa y 
+predisposición a echar una mano, además de todo lo que he podido aprender 
+contigo -mucho inglés-. Y por último, a mi compitrueno Eva, por tantos viajes
+y horas de programación. Hemos pasado muchos momentos divertidos y de nervios 
+juntas, apoyándonos la una a la otra.
+
+A todos vosotros, por si alguna vez no os lo he dicho suficientemente alto: GRACIAS.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Resumen
+
+\chapter*{Resumen}
+%\addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el índice
+\markboth{RESUMEN}{RESUMEN} % encabezado
+
+\textbf{Dr. Scratch} es una plataforma web de software libre que permite analizar
+proyectos realizados en \textit{Scratch} -lenguaje orientado a la enseñanza-
+ aportando realimentación sobre determinados aspectos relacionados con el 
+\textit{Pensamiento Computacional}. 
+
+Actualmente, se está introduciendo la programación en las aulas de numerosos 
+colegios de nuestro país. Pero existe la \textbf{problemática} de falta de formación 
+en esta materia de la mayoría de maestros de educación obligatoria. El proyecto
+trata de suplir esta deficiencia y guiar a dicho colectivo en sus primeros pasos. 
+Además, sus dashboards han sido diseñados de un modo tan sencillo, que la idea 
+es que un alumno con un nivel de comprensión lectora media, sea capaz de aprender 
+por sí mismo utilizando la herramienta. 
+
+El \textbf{objetivo} del proyecto es dar soporte tanto a maestros como estudiantes,
+ en sus primeros pasos en la programación con Scratch. Motivar la difusión y 
+comprensión de la utilidad de la
+programación mientrás se muestra cuáles son 
+los errores cometidos desde el punto de vista del pensamiento computacional y 
+ayudar así a desarrollar habilidades relacionadas con este campo, como pueden
+ser la abstracción o lógica.
+
+Este \textbf{proyecto} es el resultado del trabajo de cinco personas, no sólo el mío. Por 
+lo que iré indicando durante toda la memoria cuál ha sido mi aportación de la 
+forma más concreta posible. Cabe destacar que se trata de un proyecto amplio, ya que ha sido 
+desarrollado durante algo más de un año, y aún está en proceso.
+
+Las \textbf{tecnologías} utilizadas han sido diversas debido a que es un proyecto en 
+producción, hay miles de proyectos analizados por numerosos colegios y 
+organizaciones. Para subir a producción hemos utilizado una solución
+\emph{cloud} de Microsoft llamada \texttt{Azure} y la licencia Apache. Por debajo de ello, tenemos un servidor 
+desarrollado en Python 2.7 con la ayuda del framework Django 1.8 que nos ha facilitado 
+multitud de tareas de la parte \emph{back-end}. Además, para el registro de usuarios, 
+organizaciones y guardar toda la información de los proyectos analizados tenemos 
+una base de datos en MySQL. Pero el \emph{front-end} es lo que más trabajo nos ha 
+supuesto ya que hemos tratado de adaptar la plataforma a las necesidades
+observadas en docentes y alumnos en varias jornadas que hemos organizado
+a lo largo del año. De este modo, HTML, CSS con la ayuda de Bootstrap, Javascript y 
+AJAX han sido utilizados diariamente. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ÍNDICES %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Las buenas noticias es que los índices se generan automáticamente.
+% Lo único que tienes que hacer es elegir cuáles quieren que se generen,
+% y comentar/descomentar esa instrucción de LaTeX.
+
+%%%Índice de contenidos
+\tableofcontents 
+%%%Índice de figuras
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Lista de figuras} % para que aparezca en el indice de contenidos
+\listoffigures % indice de figuras
+%%%Índice de tablas
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
+%\renewcommand{\listtablename}{Índice de tablas} 
+%\listoftables % indice de tablas
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INTRODUCCIÓN %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\chapter{Introducción}
+\label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
+\pagenumbering{arabic} % para empezar la numeración de página con números
+
+La forma más eficaz de interesar a una persona por un tema es hacer que se 
+\textbf{involucre}. Y las formas de conseguir ese compromiso, dependen en gran 
+medida, de nuestras aptitudes personales, tales como la capacidad de 
+comunicación, creatividad, innovación y liderazgo. \textit{Pero hoy en día 
+tenemos un gran aliado, las nuevas tecnologías}. 
+
+En este capítulo se trata la situación actual de la educación y cómo 
+aprender a programar en \textit{Scratch} puede ayudar a desarrollar aptitudes 
+relacionadas con el \textit{Pensamiento Computacional}.
+
+%%%%%%%%%%%%%%%%%%%%%%% MARCO GENERAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Marco general}
+\label{sec:marco-general}
+
+Uno de los sectores más gratificantes en los que se puede trabajar es
+la \textbf{educación}. Pero también es a la vez todo un reto. Por descontado, 
+hay que tener en cuenta que no todo estudiante es igual; además los estudiantes cambian junto con 
+la \textit{evolución de la sociedad} y hoy en día la sociedad está cambiando a un ritmo 
+vertiginoso, ligada al \textit{desarrollo de la tecnología}. Ya no hacemos
+ -casi- nada como hace veinte años, y por tanto, tampoco aprendemos de la misma forma.
+
+
+Como siempre en la evolución del ser humano, lo único que es seguro 
+es el \textbf{cambio}. Es nuestra capacidad de adaptación a dichos cambios, lo 
+que nos hace tener éxito, o no, en los retos que nos proponemos. La educación no 
+iba a ser diferente y en los últimos años, los currículos españoles han sufrido 
+muchas modificaciones con el \textit{proceso de Bolonia}. Ahora toca ponerse 
+manos a la obra, para tratar de adaptarnos a lo que la sociedad está demandando, 
+para poder seguir dando una educación de calidad. Es el momento de incorporar 
+\textit{nuevas herramientas} y metodologías, que permitan desarrollar las 
+habilidades que el mercado laboral está demandando.
+
+
+\textit{En unos años, la mayoría de las ofertas de trabajo serán para puestos
+cualificados}~\cite{gareis2014skills}, en los que se demandará en muchos de ellos, tener nociones de
+\textbf{programación}. La programación, esa gran desconocida, que muchas veces tiene
+connotaciones negativas, sobre todo, entre la sección femenina. 
+
+
+Pero el mayor problema es el siguiente: \textit{la programación no se conoce.} No se ha tratado de 
+involucrar a la sociedad en dicha materia hasta ahora que el día a día ha 
+empezado a exigirlo. Todo funciona a través de Internet; si no tienes tu comercio
+en la red estás anticuado, así que necesitas aprender sobre \emph{e-commerce}. Y necesitas
+una web en la que se muestren tus productos, porque la gente no tiene tanto tiempo para
+desplazarse, o si lo tiene, ¿para qué ir a tu tienda si puede ver los productos 
+de otro desde su casa? Necesitas alguien que te \emph{programe} una página web propia. 
+
+
+Y este es el caso más sencillo, ya que la programación está tomando también un gran
+protagonismo en muchísimos otros sectores, tales como la industria, muchísimas
+fábricas poseen robots programados. Así pues, se está convirtiendo en una \textit{tarea 
+obligatoria a la hora de entrar en el mercado laboral.} 
+
+
+Pero, \textbf{¿y sí empezamos a enseñar a programar desde la infancia?} Numerosos estudios
+están demostrando que aprendiendo a programar se desarrolla el \textit{Pensamiento 
+Computacional}, el cual consta de ciertas habilidades, tales como la abstracción o la 
+lógica. Estas no son útiles únicamente para aprender a programar, sino que \textit{pueden servir para involucrar al alumnado en muchísimas
+de las demás asignaturas del currículo}~\cite{calao2015developing}, ya que el alumno puede tocar y modificar a su gusto un proyecto a través de la programación.
+\textit{Puede aprender mientras experimenta}. 
+
+Un ejemplo claro es el de la abstracción, que se ve directamente relacionada con
+las matemáticas. Si se enseña a dividir un problema grande en otros más pequeños,
+ es más fácil reconocer cada parte del problema. Así, el alumno sabrá 
+identificar cuándo tiene que sumar o cuándo multiplicar, cuando tiene un 
+problema con varias operaciones. 
+
+
+Hace años aprender a programar era una tarea compleja, la información para 
+empezar a hacer tu propio programa, sólo se podía encontrar en libros 
+complicadísimos de entender. Y los lenguajes de programación que existían no eran
+los más intuitivos. Hoy en día, no hay excusas.
+
+
+En la siguiente sección se va a presentar un lenguaje de programación muy 
+apropiado para iniciarse en el mundo de la programación, de un modo simple, 
+motivador y divertido.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% SCRATCH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Programación con Scratch}
+\label{sec:scratch}
+
+\textbf{Scratch}\footnote{\url{https://scratch.mit.edu/}} es un lenguaje de 
+programación orientado a la enseñanza. Ha sido diseñado por el 
+\textit{Grupo Lifelong Kindergarten del Laboratorio de 
+Medios del MIT}, dirigido por \textit{Mitchel Resnick}~\cite{resnick2009scratch}. 
+Su principal 
+\textbf{objetivo} es ayudar a los más jóvenes a pensar  e forma creativa, 
+razonar sistemáticamente, y trabajar de forma colaborativa, aptitudes tan necesarias para la vida en el siglo XXI.
+
+La mayor \textbf{fortaleza} de Scratch es permitir crear historias, juegos y
+animaciones \textit{sin tener conocimientos previos de programación}. La forma 
+de programar en este lenguaje es uniendo piezas estilo \textit{LEGO}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/scratch}
+    \textit{\caption{Logo de Scratch}}
+    \label{figure:scratch}
+\end{figure}
+
+\textit{No es necesario escribir código}, con su respectiva sintaxis y todo lo que ello conlleva. 
+En lugar de utilizar tiempo en aprender los detalles específicos que 
+tiene cada lenguaje de programación, Scratch tiene una serie de \textbf{bloques} agrupados
+por categorías -cada una con un color, para que sean claramente identificables- dentro
+de la cual tenemos las piezas del puzzle que arrastraremos para ir indicándole a
+nuestro videojuego o historia, cuáles son las instrucciones a seguir. En la 
+\textit{Figura~\ref{figure:bloques}} podemos observar cuáles son los principales
+bloques que pueden ser utilizados en Scratch y apreciar todo su potencial.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/bloques}
+    \caption{Bloques en Scratch}
+    \label{figure:bloques}
+\end{figure}
+
+
+
+Pero no se queda ahí, Scratch es además una \textbf{comunidad} donde se pueden
+\textit{compartir} los proyectos realizados y se pueden exponer dudas en su 
+\textit{foro}. De esta forma, se puede aprender de forma dinámica con la ayuda 
+de otros programadores y observando lo realizado en otros proyectos. También 
+tenemos la opción de \textit{reinventar} otros proyectos, es decir, coger 
+un proyecto realizado por otro Scratcher y modificarlo a nuestro gusto.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/estadisticas-scratch}
+    \caption{Estadísticas de la comunidad de Scratch}
+    \label{figure:estadisticas-scratch}
+\end{figure}
+
+En la \textit{Figura~\ref{figure:estadisticas-scratch}} se muestran las estadísticas
+de la comunidad de Scratch de enero de 2016.
+
+Este lenguaje de programación es \textit{utilizado en más de 150 países y en los más
+diversos entornos} -museos, bibliotecas, escuelas o universidades son algunos-
+principalmente, por jóvenes entre los 8 y 16 años. El único requisito para 
+utilizarlo es saber leer.
+
+Actualmente la versión de Scratch es la 2.0, pero hay una versión anterior (1.4) que
+aún está siendo utilizada, sobre todo en su \textbf{versión offline}. Porque pensando
+en las dificultades de conexión que se tiene en algunos centros, Scratch posee
+una versión descargable que puede ser utilizada sin conexión a la red.
+
+Scratch se  ha convertido en un movimiento mundial con su propio día -Scratch Day-
+y una conferencia que se realiza cada verano -Scratch Conference- y en la que 
+el equipo de Dr. Scratch participó en 2015. Se organizó en Ámsterdam, donde 
+pudimos observar las tendencias e ideas mundiales desarrolladas para potenciar 
+las habilidades de los jóvenes programadores que utilizan Scratch.
+
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%% MARCO DE REFERENCIA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Marco de referencia}
+\label{sec:marco-referencia}
+
+\textbf{Dr. Scratch}\footnote{\url{http://www.drscratch.org/}}
+ surge de la observación de mi tutor en este proyecto -Dr. Gregorio Robles- y del doctorando
+-Jesús Moreno- de la necesidad de una herramienta para Scratch que otorgue 
+realimentación sobre los diferentes aspectos que engloban el \textit{Pensamiento Computacional}.
+
+Tras años dedicados a la enseñanza de programación y ciencias de la computación,
+llegaron a la siguiente conclusión: era necesario tener una herramienta similar a
+Pylint -herramienta que permite \textit{detectar malas prácticas en el código del lenguaje de 
+programación} Python- para el nuevo lenguaje de programación Scratch.
+
+Para poder analizar un proyecto programado con Scratch necesitamos inspeccionar
+su archivo. Los archivos generados en Scratch para cada proyecto tienen un 
+formato comprimido concreto, con extensión \textit{.sb2}, cuyo
+contenido está conformado por las distintas imágenes y sonidos utilizados en el
+proyecto y un \textit{fichero JSON que contiene la información relevante} a los bloques
+de Scratch que se han utilizado. Es decir, para evaluar
+cómo de bien se ha programado un proyecto, lo que nos interesa es conocer dicho
+JSON y analizar su contenido.
+
+La tarea de analizar toda la información otorgada por el fichero JSON no es fácil,
+pero mis tutores encontraron en GitHub\footnote{\url{https://github.com/}} un software que ya 
+realizaba, en parte, dicha tarea. Este software es 
+\textbf{Hairball}\footnote{\url{https://github.com/ucsb-cs-education/hairball}} que ha
+sido implementado por \textit{Bryce Boe}\footnote{\url{https://github.com/bboe}}, de la Universidad de Stanford, y es un analizador estático de proyectos programados en Scratch.
+
+Mis tutores, partiendo de la base de Hairball, programaron inicialmente el plug-in de \textbf{Mastery} que ofrece información de \textbf{aspectos del Pensamiento Computacional}:
+\textit{pensamiento lógico, control de flujo, abstracción, paralelismo, interactividad 
+con el usuario, representación de la información y sincronización}. 
+
+Además, Hairball, devuelve mucha más información, entre la que se encuentran
+dos malos hábitos de programación: 
+\textbf{código muerto y atributos no inicializados}.
+
+Mis tutores incluyeron otros dos plugins a \textit{Hairball} que inspeccionaban 
+el fichero JSON buscando indicios de otros dos de los 
+\textbf{malos hábitos que todo programador novato tiene al principio}:
+\textit{programas duplicados y nombres inadecuados.}
+Entre ambos han publicado algunos artículos~\cite{moreno2014automatic} en los que explican
+ de forma detallada cómo trabajan estos plugins y cuál es
+la relación que tienen los distintos aspectos del Pensamiento Computacional, además
+de demostrar cómo el desarrollo del Pensamiento Computacional ayuda a desarrollar
+habilidades que son compartidas con materias recogidas en los currículos del 
+proceso Bolonia, por lo que aprender a programar puede ayudar a obtener mejores
+resultados en la enseñanza de asignaturas como pudieran ser el inglés, las matemáticas o la filosofía.
+
+Dr. Scratch es un proyecto aún en desarrollo que ha tenido dos versiones hasta 
+el momento. A continuación se muestran las dos versiones existentes de Dr. Scratch,
+tratando de explicar cuáles han sido las aportaciones de la versión anterior, para
+tener una visión del punto de partida con el que se contaba. 
+\begin{itemize}
+ \item La \textit{versión Alpha} fue creada por el alumno Cristian Chushig, su principal 
+aportación fue la creación de una página web inicial donde se pudiera subir un
+archivo con extensión .sb2 y mostrase un dashboard con toda la información obtenida
+con los plugins de Hairball. La apariencia de dicha web es la mostrada en la
+\textit{Figura~\ref{figure:alpha-version-web}}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{img/alpha-version-web}
+    \caption{Apariencia de la versión Alpha de Dr. Scratch}
+    \label{figure:alpha-version-web}
+\end{figure}
+
+ \item La \textit{versión Beta} es la que he estado programando desde noviembre de 2014 con
+la ayuda de mi compañera Eva Hu Garres desde febrero de 2015. Ha sido realizado 
+durante el periodo en el que fuimos contratadas a media jornada en la Universidad 
+Rey Juan Carlos como técnicos de apoyo y difusión. 
+Todo este proyecto se ha podido llevar a cabo gracias a la
+financiación otorgada por el FECyT (Fundación Española para la Ciencia y la Tecnología),
+ además, de ser galardonado con un Google RISE Award en 2015 y del apoyo de la 
+asociación sin ánimo de lucro Programamos. Esta versión es 
+la que se va a detallar en este documento.
+\end{itemize}
+
+Al ser una plataforma en producción, se han realizado distintas pruebas 
+en colegios, para comprobar el uso que realizaban los alumnos,
+permitiéndonos observar cuáles eran las necesidades que demandaban. 
+A lo largo de esta memoria se irán comentando los cambios introducidos 
+en la herramienta y las razones que los han motivado.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ESTRUCTURA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Estructura de este documento}
+\label{sec:estructura}
+
+Para facilitar la lectura de esta memoria, se procede a explicar su
+estructura, detallando qué contenido tendrá cada capítulo: 
+
+\begin{enumerate}[label=\textbf{\arabic{*}.}]
+    \item \textbf{Introducción.} Explicación del marco social en el que se
+    enmarca este proyecto, así como el marco de referencia en el que se ha 
+    desarrollado. Se muestra cuál ha sido la motivación para su realización
+    y las fases iniciales del mismo.
+
+    \item \textbf{Objetivos.} Aquí se presentan cuáles han sido las metas a obtener para
+    poder dar respuesta a la necesidad observada. Además, se indica cuáles han
+    sido las funcionalidades a implementar. Éstas últimas se mostrarán también
+    en una línea cronológica en las que se dividirá el tiempo en el corto,
+    medio y largo plazo, mediante un planteamiento temporal.
+ 
+    \item \textbf{Estado del arte.} En este capítulo, se hablará de las 
+    tecnologías utilizadas para poder llevar a cabo la consecución del proyecto
+    y se dará una explicación breve de las mismas.
+
+    \item \textbf{Diseño e implementación.} Tras conocer las tecnologías, entraremos
+    a ver cómo las hemos utilizado para diseñar nuestra plataforma. Se explicará
+    detalladamente cuál es la arquitectura de Dr. Scratch y todas sus funcionalidades.
+
+    \item \textbf{Interfaz de usuario.} Repaso rápido de la web y cuáles han sido
+    sus modificaciones. Se indicará cuáles han sido las razones para los cambios en
+    la mismas, mostrando así la evolución de la web según las necesidades del usuario
+    recalcando las diferencias entre el prototipo inicial y el que está ahora mismo
+    en producción.
+
+    \item \textbf{Resultados.} Al ser un proyecto en producción, conviene observar
+    cuáles han sido los resultados obtenidos: número de proyectos analizados, 
+    número de organizaciones registradas e impacto en general.
+
+    \item \textbf{Conclusiones.} Capítulo en el que se realiza una reflexión 
+    general de los resultados obtenidos y cuál ha sido la consecución de los 
+    objetivos marcados inicialmente. Se indicará lo
+    aprendido durante la formación en la Universidad Rey Juan Carlos y que ha 
+    sido aplicado en la realización de este Proyecto Fin de Carrera. Así mismo,
+    también se presentarán cuáles son los conocimientos adquiridos durante la 
+    realización del proyecto Dr. Scratch y cuáles serían los siguientes pasos 
+    que se podrían dar en el mismo. Y para terminar, expresar mi valoración 
+    personal de todo lo que  me ha aportado Dr. Scratch.
+
+\end{enumerate}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OBJETIVOS %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\chapter{Objetivos}
+\label{chap:objetivos}
+
+El principal \textbf{objetivo} de todo proyecto es cubrir la necesidad que ha 
+sido observada y que ha motivado la realización del mismo. Pero para poder 
+llegar a dicho resultado es necesario detallar concretamente y sin ambigüedad 
+qué es lo que queremos conseguir en cada etapa. En este capítulo se describen 
+los objetivos iniciales, con la intención de poder reflexionar más tarde
+observando los resultados, cuáles han sido alcanzados y estudiar cuáles han 
+sido los problemas o motivos que han repercutido en que no se logre alguno de ellos.
+Además, se indica el planteamiento temporal que se eligió para lograr alcanzar 
+su consecución.
+
+%%%%%%%%%%%%%%%%%%%%%%% OBJETIVO GENERAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Objetivo general}
+\label{sec:objetivo-general}
+
+El \textbf{objetivo} de este proyecto es el diseño y desarrollo de una 
+herramienta web donde poder analizar proyectos programados en el lenguaje Scratch. 
+El análisis nos reportará información de aspectos relacionados con el 
+\textit{Pensamiento Computacional} que debemos mejorar. 
+
+Para entender este objetivo es necesario comprender qué es el pensamiento
+computacional y qué aspectos son los que queremos cubrir y cómo pensamos hacerlo.
+
+Cuando una persona empieza en el mundo de la programación,
+necesita desarrollar ciertas habilidades y cambiar en cierta medida el modo de
+plantear los problemas a los que se enfrenta. Necesita comenzar a pensar como
+lo haría un científico, lo que conlleva abordar los problemas de un modo 
+diferente a cómo lo ha hecho con anterioridad.
+Para ello, necesita desarrollar unas habilidades específicas que pueden
+ser muy útiles en otras disciplinas. Estas habilidades son las que se deben
+trabajar para conseguir un desarrollo del pensamiento computacional.
+
+\textit{Jeannette Wing}\footnote{\url{http://www.cs.cmu.edu/~wing/}} 
+en su artículo 
+\textit{Computational thinking}~\cite{wing2006computational} 
+indicó que el pensamiento computacional implica resolver problemas, 
+diseñar sistemas y comprender el comportamiento humano, haciendo uso de los 
+conceptos fundamentales de la informática.
+
+
+La finalidad de Dr. Scratch es analizar el proyecto realizado en Scratch y 
+evaluar dichos conceptos claves de las ciencias computacionales, en concreto,
+se centra en siete aspectos:
+
+\begin{enumerate}[label=\textbf{\arabic{*}.}]
+    \item \textbf{Paralelismo.} Consiste en poder resolver varios problemas de manera
+    simultánea en hilos diferentes.
+
+    \item \textbf{Pensamiento lógico.} Nos permite reconocer el problema que 
+    queremos solucionar, buscar una solución que podamos programar y analizar 
+    las salidas que obtengamos para formarnos conclusiones.
+ 
+    \item \textbf{Control de flujo.} Es la capacidad de poder coordinar el 
+    orden en que se ejecutan las instrucciones que tenemos en el programa.
+
+    \item \textbf{Interactividad con el usuario.} Habilidad que permite crear
+    proyectos interactivos, que permitan que el usuario que ejecuta el programa,
+    pueda realizar acciones que provoquen nuevas situaciones en el proyecto.
+
+    \item \textbf{Representación de la información.} Capacidad de un programador
+    de detectar los datos que el programa necesita, para poder ejecutarse
+    correctamente.
+
+    \item \textbf{Abstracción.} Concepto que ayuda a dividir un problema en 
+    partes más pequeñas que serán más fáciles de comprender, programar y depurar.
+
+    \item \textbf{Sincronización.} Es la comunicación entre las distintas partes
+    del programa que permite la planificación de la ejecución de las instrucciones,
+    en un orden determinado que ha sido elegido con anterioridad. 
+
+\end{enumerate}
+
+
+Todos estos conceptos han de ser evaluados de forma que el usuario al final 
+obtenga una \textbf{puntuación total que califique el nivel de desarrollo del pensamiento
+computacional del programador de proyectos en Scratch}. La evaluación se realiza 
+conforme a los bloques de Scratch utilizados. 
+
+Pero Dr. Scratch va más allá. Incluye además información sobre malas \textbf{prácticas
+realizadas en programación} observadas en sus años de educación de mi tutor y
+co-tutor y que todo programador novel realiza en sus primeros proyectos -y últimos
+si no aprende a corregirlos-.
+
+De esta forma, Dr. Scratch trata de dar una puntuación basada en el nivel 
+computacional del programador, pero sirve además de apoyo
+para aprender a programar correctamente. Esto la convierte en una herramienta 
+muy útil, tanto para docentes como para estudiantes.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%% OBJETIVOS ESPECÍFICOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objetivos específicos}
+\label{sec:objetivos-especificos}
+
+Una vez detallado el objetivo general del proyecto, necesitamos entender en qué
+momento de su desarrollo nos encontramos y cuáles son los objetivos que queremos
+alcanzar al final de este Proyecto Final de Carrera.
+
+Tal como se ha comentado, ya existía una versión Alpha de la 
+web, en la que se tenía un código, que trataba de alcanzar el objetivo e implementación
+básica de la web. Dicho código mostraba una web simple e intentaba analizar el 
+archivo .sb2 de Scratch para extraer conclusiones mediante el plugin Hairball y 
+mostrarlas en un dashboard.
+
+Al comienzo de este proyecto, Dr. Scratch no conseguía realizar completamente el
+análisis del proyecto de Scratch de manera correcta, por lo que partiendo de esta 
+base, los objetivos iniciales fueron los siguientes:
+
+\begin{enumerate}[label=\textbf{\arabic{*}.}]
+    \item \textbf{Corrección de la implementación básica.} El primer objetivo y
+    más importante fue conseguir tener en funcionamiento el prototipo que 
+    ofrecía la funcionalidad básica. 
+
+    \item \textbf{Generación de un log.} Se quería tener información de todos los
+    proyectos analizados en la web: quién lo había analizado -si estaba registrado-,
+    nombre del proyecto, hora y fecha.
+
+    \item \textbf{Plataforma en producción.} La idea principal era que una vez
+    el prototipo funcionase, tenerlo en producción lo antes posible para ser 
+    utilizado y poder tener realimentación de cuáles eran las necesidades de los
+    usuarios. 
+
+    \item \textbf{Cambio de apariencia de la web.} La web funcionaba, pero no era
+    demasiado atractiva. Se buscaba tener el máximo número de usuarios posibles,
+    por lo que era necesario realizar un cambio. Teníamos, además, que buscar
+    algún logotipo que mostrase la esencia de Dr. Scratch.
+
+    \item \textbf{Implementación del mecanismo de traducción de la plataforma.}
+    Se busca llegar con Dr. Scratch al mayor número de personas y para ello el 
+    idioma no debe ser un impedimento. Por ello un objetivo inmediato fue la 
+    configuración del servidor para que fuera capaz de traducir la web al idioma
+    del navegador que hiciera la petición. 
+
+\end{enumerate}
+
+Dr. Scratch ha sido un proyecto que ha obtenido financiación por parte del \textbf{FECyT}
+(Fundación Española para la Ciencia y la Tecnología) y, por tanto, hay una serie
+de objetivos iniciales que fueron fijados en la memoria de solicitud de la
+ayuda. Tenía objetivos referentes tanto a la plataforma web como a otros subobjetivos,
+tales como la realización de talleres para garantizar la difusión de la plataforma y
+la creación de materiales docentes, entre otros. En este documento únicamente nos centraremos
+en los objetivos específicos relacionados con la plataforma web:
+
+
+\begin{itemize}
+    \item Conseguir un número de proyectos analizados mayor que 5.000 proyectos.
+    \item Alcanzar un número de alumnos registrados en la plataforma superior a 1.500 en total.
+    \item Lograr que supere los 120 el número de docentes registrados.
+    \item La cifra a superar para visitantes a la web será de 25.000 usuarios únicos.
+    \item El número de descargas de la aplicación móvil debe superar las 150.
+    \item Reducir las horas del servidor caído a menos de 100.
+    \item Traducir la plataforma a al menos 5 lenguas.
+\end{itemize}
+
+Nada más tener el prototipo en producción, nos llegaron las primeras peticiones
+de los usuarios, y por tanto, más objetivos para nosotros y algunos más que 
+surgieron con el avance del proyecto:
+
+\begin{itemize}
+    \item Mostrar una barra de progreso del análisis del proyecto.
+    \item Analizar proyectos de las dos versiones de Scratch (1.4 y 2.0).
+    \item Realizar el análisis mediante URL del proyecto de la versión online de Scratch.
+    \item Introducir cuentas de usuarios.
+    \item Implementar el servidor para mostrar tres páginas diferentes, 
+    conforme el nivel del programador: bajo, medio o alto.
+    \item Diseñar tres páginas distintas para cada nivel computacional.
+    \item Migrar a la nube.
+    \item Utilizar algún mecanismo de análisis web para tener estadísticas 
+            de los accesos a la plataforma.
+    \item Programar páginas con información de cómo poder pasar de un nivel a otro utilizando
+    distintos bloques de Scratch que demuestran un nivel de pensamiento computacional
+    mayor.
+    \item Programar una funcionalidad de análisis para organizaciones, permitiéndoles analizar varios proyectos
+    de Scratch simultáneamente a través de un fichero .csv y le devuelva toda
+    la información del análisis.
+    \item Introducir cuentas de organizaciones.
+    \item Mostrar páginas de estadísticas que permitan obtener información acerca de
+    la evolución de los usuarios y poder realizar un seguimiento.
+    \item Programar una extensión para los navegadores que permita analizar un proyecto
+    desde la propia página web de Scratch. De forma que únicamente pulsando en 
+    un botón, la extensión obtenga la URL del proyecto subido y compartido en
+    Scratch mostrado en la página actual y abra una nueva ventana con su 
+    análisis en Dr. Scratch.
+    \item Incluir un botón que permita al usuario modificar
+    el idioma de forma dinámica.
+    \item Añadir una página de agradecimiento a los colaboradores: personas que han
+    traducido los textos de la web a distintos idiomas, colegios que nos han
+    permitido realizar talleres en sus aulas...
+    \item Diseñar un dashboard para docentes, que muestre información al maestro sobre
+    sus alumnos.
+
+\end{itemize}
+
+
+En última instancia, se tiene en mente que la web incluya mecanismos de gamificación
+para conseguir motivar a los usuarios a seguir aprendiendo utilizando la herramienta,
+y además, al más estilo del lenguaje Scratch, tener una red social, que permita
+a los programadores poder interactuar y dinamizar la plataforma.
+
+%%%%%%%%%%%%%%%%%%%%%%% PLANIFICACIÓN TEMPORAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Planificación temporal}
+\label{sec:planificacion-temporal}
+
+Al ser un proyecto tan amplio y ser desarrollado en equipo por varias personas, 
+quiero dejar lo más detallado posible cuál ha sido el planteamiento temporal y
+la participación de todos los integrantes del equipo Dr. Scratch y aportaciones
+realizadas por Cristian Chushig en la primera versión Alpha.
+En este punto, únicamente desglosaré la planificación temporal, a la que en 
+próximas secciones iré incluyendo qué miembros han participado en la consecución
+de cada funcionalidad y objetivo.
+
+Este proyecto ha sido guiado y gestionado por mi tutor y mi co-tutor
+ mediante \textbf{Trello}, una herramienta colaborativa 
+para organizar proyectos. Inicialmente se marcaron cuáles eran los objetivos
+a corto, medio y largo plazo. Según el proyecto fue evolucionando, estas metas
+podían ser modificadas fácilmente gracias a la herramienta y jamás se perdía 
+de vista cuáles eran las tareas más inmediatas.
+
+\begin{itemize}
+    \item \textbf{FASE I.} Esta etapa del proyecto es la realizada desde
+    noviembre de 2014, fecha de comienzo, y febrero de 2015, cuando comenzó Eva Hu.
+    Durante este periodo los objetivos a alcanzar fueron los siguientes:
+
+        \begin{itemize}
+            \item Comprender y depurar el código realizado por Cristian Chushig
+            en la versión Alpha de Dr. Scratch.
+            \item Actualización de la versión 1.4 de Django a la 1.7.
+            \item Generación del archivo log explicado con anterioridad.
+            \item Puesta en producción del prototipo.
+            \item Cambio de apariencia de la web.
+            \item Implementación del mecanismo de traducción de la plataforma.
+        \end{itemize}
+        
+    En la \textit{Figura~\ref{figure:fase-i}} se muestra dicha fase de una
+forma esquemática y sencilla de comprender.
+\end{itemize}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth]{img/fase-i}
+        \caption{Fase I del proyecto Dr. Scratch}
+        \label{figure:fase-i}
+    \end{figure}
+  
+
+
+\begin{itemize}
+    \item \textbf{FASE II.} Esta etapa del proyecto es la realizada desde
+    febrero, cuando se incorporó al proyecto mi compañera Eva Hu, a julio de 2015.
+
+    En esta fase del proyecto los objetivos a alcanzar fueron los siguientes:
+
+
+        \begin{itemize}
+            \item Introducir una barra de progreso del análisis del proyecto.
+            \item Corrección de errores en formularios.
+            \item Análisis mediante URL del proyecto de la versión online de Scratch.
+            \item Migración de SQLite a MySQL.
+            \item Creación de un archivo en el que se guardaran todos los 
+                    proyectos en los que se producía algún error al ser analizados.
+            \item Personalización de las páginas de error 404 y 500.
+            \item Analizar proyectos de las dos versiones de Scratch (1.4 y 2.0).
+            \item Implementación en el servidor para mostrar tres páginas diferentes, 
+            conforme el nivel del programador fuera: bajo, medio o alto.
+            \item Diseño de tres páginas distintas para cada nivel computacional.
+            \item Introducción explicaciones de qué es una URL y cómo
+            descargar un proyecto en Scratch.
+            \item Migración a la nube en lugar de utilizar las máquinas de la 
+                    universidad, las cuales nos dieron muchos problemas.
+            \item Uso de Google Analytics para tener estadísticas de acceso a la 
+                    plataforma.
+            \item Páginas explicativas de cómo subir de nivel utilizando bloques 
+                    de un mayor nivel computacional.
+            \item Nuevo diseño de los dashboards.
+            \item Cuentas de organizaciones.
+            \item Botón de ``Ayuda'' para saber cómo navegar por el dashboard.
+            \item Análisis multiproyecto con un archivo .csv para organizaciones.
+            \item Traducción de la información mostrada en el archivo de organizaciones.
+            \item Páginas de estadísticas de los proyectos analizados.
+            \item Generación de un archivo .csv que muestra la información 
+                    obtenida con el análisis realizado en Dr. Scratch y es el 
+                    que se le devuelve a la organización.
+        \end{itemize}
+        
+    En la \textit{Figura~\ref{figure:fase-ii}} podemos ver otro esquema que
+escenifica esta fase.
+\end{itemize}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{img/fase-ii}
+        \caption{Fase II del proyecto Dr. Scratch}
+        \label{figure:fase-ii}
+    \end{figure}
+  
+
+
+
+\begin{itemize}
+    \item \textbf{FASE III.} Abarca el periodo entre septiembre de 2015 y el 1 de 
+                febrero de 2016, fecha en la que empecé a escribir esta memoria.
+
+    Tras la Scratch Conference en Ámsterdam a la que acudió todo el equipo de 
+        Dr. Scratch y en la que realicé una presentación de la plataforma, 
+        pudimos obtener algunas conclusiones gracias a la realimentación obtenida. 
+        Debido a ellas, marcamos los siguientes objetivos:
+
+
+        \begin{itemize}
+            \item Descargar únicamen el .JSON en el análisis por URL para que 
+                    se realice más rápidamente.
+            \item Traducir los bloques pintados en las páginas para aprender 
+                    cómo subir de nivel de pensamiento computacional.
+            \item Registrar usuarios.
+            \item Incluir un botón para traducir la página según la preferencia del usuario 
+                    y no del navegador.
+            \item Programar una extensión que permita analizar proyectos sin necesidad de 
+                    abrir 
+                    en el navegador la propia página de URL, sino que en la página 
+                    del proyecto de Scratch nos facilite un botón que ya muestre 
+                    directamente el análisis realizado.
+            \item Traducir los textos que aparecen en la plataforma a más 
+                    idiomas: catalán, gallego y portugués.
+            \item Diseñar un formulario de registro para usuarios y organizaciones.
+        \end{itemize}
+        
+    En la \textit{Figura~\ref{figure:fase-iii}} podemos observar estos objetivos 
+    detallados en el tiempo.
+\end{itemize}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth]{img/fase-iii}
+        \caption{Fase III del proyecto Dr. Scratch}
+        \label{figure:fase-iii}
+    \end{figure}
+  
+
+
+Actualmente, el proyecto continúa desarrollándose, con la ayuda de la Asociación 
+sin ánimo de lucro \textbf{Programamos} en la que mi co-tutor, Jesús Moreno, 
+es co-fundador junto con José Ignacio Huertas. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ESTADO DEL ARTE %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\chapter{Estado del arte}
+
+En este capítulo se detallarán de forma resumida las \textbf{arquitecturas y 
+tecnologías} utilizadas en la realización de este proyecto. Únicamente se 
+realizará una presentación de las mismas, ya que en el próximo capítulo será 
+donde se detalle cómo han sido utilizadas para el desarrollo e implementación 
+de la plataforma.
+
+
+%%%%%%%%%%%%%%%%%%% APLICACIONES CLIENTE-SERVIDOR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Aplicaciones cliente-servidor} 
+\label{sec:aplicaciones-cliente-servidor}
+
+El paradigma \textbf{Cliente-Servidor}~\cite{liu2004computacion} es utilizado en diversos 
+contextos. Centrándonos en el patrón arquitectural para software distribuido 
+cabe indicar que es un modelo en el que existen dos tipos de elementos 
+-cliente y servidor- y un modelo de interacción basado en un diálogo -petición y respuesta.
+
+El objetivo de esta arquitectura es \textbf{proporcionar el soporte escalable} para el 
+desarrollo de aplicaciones distribuidas.
+
+En cuanto a sus \textbf{elementos}:
+
+      \begin{itemize}
+            \item \textbf{El cliente.} Es la parte de la aplicación con la que 
+interacciona el usuario pero no es compartida entre los mismos. No tiene 
+restricciones especiales referentes a fiabilidad, ya que si falla un cliente, 
+el resto del sistema no se ve afectado. Pero sí las tiene en términos de 
+ergonomía debido a que debe adaptarse a la interacción con el usuario. 
+Este último aspecto en concreto, será tratado con profundidad en el siguiente 
+capítulo, ya que ha sido la mayor preocupación a la hora de diseñar la plataforma.
+            \item \textbf{El servidor.} Es el componente que presta servicios 
+al cliente, compartiendo sus recursos con todos ellos. Tiene una gran restricción 
+y es que si el servidor falla, los clientes no pueden continuar. Además de 
+presentar problemas de escalabilidad y debe ser seguro para no comprometer la 
+seguridad de los clientes ni de los datos.
+        \end{itemize}
+
+En la \textit{Figura~\ref{figure:cliente-servidor}} podemos observar sus
+componentes y el intercambio de mensajes. El protocolo de intercambio de mensajes
+será explicado más adelante.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{img/cliente-servidor}
+        \caption{Esquema del paradigma Cliente-Servidor}
+        \label{figure:cliente-servidor}
+    \end{figure}
+
+También es importante entender que la finalidad de una aplicación distribuida es la de 
+ofrecer funcionalidades al usuario y que su \textbf{estructura} es siempre la 
+que se muestra en la \textit{Figura~\ref{figure:aplicacion-distribuida}}.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\textwidth]{img/aplicacion-distribuida}
+        \caption{Capas presentes en toda aplicación distribuida}
+        \label{figure:aplicacion-distribuida}
+    \end{figure}
+
+    \begin{enumerate}[label=\textbf{\arabic{*}.}]
+        \item \textbf{Capa de presentación.} También conocida como front-end, se 
+        ejecuta en el cliente y es con la cual el usuario interactúa. 
+        Se pueden utilizar distintas tecnologías como: HTML, CSS, JavaScript\ldots 
+        \item \textbf{Lógica de la aplicación o negocio.} Puede residir en cualquiera
+        de los componentes -cliente o servidor- incluso en ambos.
+        Realiza acciones necesarias para desarrollar la actividad de negocio, 
+        tales como: cobro de producto, transacciones...
+        \item \textbf{Capa de servicios.} Denominada como \emph{back-end}, es común que
+        resida en el servidor y realiza las actividades típicas de gestión de ficheros,
+        acceso a datos en la base de datos, procesamiento de la información\ldots
+    \end{enumerate}
+
+Podemos encontrarnos distintos \textbf{tipos de servidores}:
+    
+\begin{enumerate}[label=\textbf{\arabic{*})}]
+    \item Dependiendo de si la aplicación requiere que el servidor recuerde la 
+    historia pasada del cliente, se diferencian dos tipos:
+         \begin{enumerate}[label=\textbf{\alph{*})}]
+            \item Servidor con estado: recuerda información entre las peticiones.
+            \item Servidor sin estado: no recuerda información del cliente entre peticiones.
+          \end{enumerate}
+    \item Atendiendo al modo de procesamiento de las peticiones, encontramos dos 
+        servidores diferentes:
+         \begin{enumerate}[label=\textbf{\alph{*})}]
+            \item Servidor concurrente: se atienden las peticiones de forma 
+                paralela, gracias a la implementación multihilo.
+            \item Servidor iterativo: se atienden las peticiones de forma 
+                secuencial, existiendo una cola de peticiones.
+          \end{enumerate}
+\end{enumerate}
+
+ 
+\begin{description}
+  \item[Hypertext Transfer Protocol] \hfill \\
+  El intercambio de mensajes se realiza mediante el protocolo HTTP, 
+ un protocolo sin estado que ha tenido varias versiones, en las que se especifica la sintaxis y semántica que han de utilizar cliente y servidor para comunicarse. De estas versiones la más 
+utilizada es la versión 1.1.
+
+La estructura de los mensajes de petición y respuesta según el protocolo HTTP se
+muestran en la \textit{Figura~\ref{figure:mensajes-http}}. Son en texto plano, lo 
+cual es una ventaja a la hora de depurar pero hace los mensajes largos.
+
+
+\end{description}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{img/mensajes-http}
+        \caption{Mensajes de petición y respuesta del protocolo HTTP}
+        \label{figure:mensajes-http}
+    \end{figure}
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BACK-END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Back-end}
+\label{sec:back-end}
+
+Tal como hemos visto en la explicación de la arquitectura cliente-servidor, el 
+\textit{back-end} se corresponde con la \textbf{capa de servicios o de acceso a datos}. 
+En esta sección vamos a ver la parte teórica de las tecnologías utilizadas en este proyecto
+para el desarrollo de dicha capa:
+
+\begin{enumerate}
+    \item El lenguaje de programación elegido: Python
+    \item El framework utilizado para la implementación del servidor: Django
+    \item Servidores HTTP utilizados: Apache y Node.js
+    \item La base de datos configurada: MySQL
+\end{enumerate}
+
+\subsection{Python}
+\label{subsec:python}
+
+El \textbf{lenguaje Python}~\cite{duque2011python}, cuyo nombre es en homenaje 
+a la serie \textit{Monty Python's Flying Circus}, fue 
+desarrollado por \textit{Guido van Rossum} para tratar de superar las limitaciones 
+del \textit{lenguaje ABC}, que era comúnmente utilizado en el centro de investigación 
+en el que trabajaba en Ámsterdam.
+
+Desde el principio se buscó que fuera un \textit{lenguaje divertido} a la hora de ser
+utilizado y es común utilizar variables que hacen referencia a \emph{sketchs} de 
+los Monty Python en lugar de variables tradicionales.
+
+En un principio, Python se publicaba bajo las condiciones de una licencia open source propia, pero 
+con la versión 1.6 se decidieron cambiar las condiciones a las de la \textbf{licencia GPL} (GNU General Public
+Licence). Así, es posible modificar el código fuente del intérprete. Por otro lado, esta licencia permite desarrollar código Python sin la necesidad de hacerlo open source.
+
+Existen \textbf{tres versiones} principales, con 1.6, 2.7 y 3.4 como las últimas actualizaciones. 
+Es destacable indicar que las versiones 2 y 3 son incompatibles entre sí, por el
+ gran número de \textit{diferencias entre ellas}~\cite{pilgrim2009dive}.
+
+El desarrollo y promoción se realiza a través de la organización, sin ánimo de 
+lucro, \textit{Python Software Foundation}, destacando su \textbf{carácter open source}.
+
+Las \textbf{características} principales de este lenguaje son las siguientes:
+\begin{itemize}
+    \item Es un lenguaje de \textit{alto nivel}, expresando el algoritmo de forma 
+                entendible para el programador.
+    \item \textit{Interpretado}, se ejecuta mediante un intérprete y así es más 
+            flexible que un lenguaje compilado.
+    \item Su filosofía se centra en tratar de conseguir un \textit{código lo más legible
+        posible} para el ser humano. Los programas en Python parecen pseudocódigos.
+    \item Es \textit{orientado a objetos}, con sus clases, propiedades, métodos\ldots. 
+            Todo son objetos.
+    \item \textit{Dinámicamente tipado}: puede indicarse el tipo en cualquier momento,
+             no es necesario declararlos en un método. Esto reduce el ciclo 
+             editar-compilar-comprobar-depurar.
+    \item \textit{Fuertemente tipado}: una vez declarada una variable con un tipo, 
+            esta no  puede realizar una violación de tipo de datos, sino que 
+            deberá ser convertida previamente.
+    \item \textit{Case sensitive}: diferencia entre mayúsculas y minúsculas.
+\end{itemize}
+
+Ha sido el lenguaje elegido, debido principalmente a dos razones: es el
+lenguaje que me ha resultado más atractivo en mis años de aprendizaje en la universidad,
+y en segundo lugar, por su amplia utilización mundial. Las estadísticas 
+mostradas por CodeEval\footnote{\url{https://www.codeeval.com/}} para 2015 de 
+los lenguajes más utilizados pueden verse
+en la \textit{Figura~\ref{figure:estadistica-python}}. En 2014, el dato
+para Python era de 30,3\%,
+por lo que sigue aumentando el número de programadores que se decantan por este
+lenguaje.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{img/estadistica-python}
+        \caption{Lenguajes de programación más utilizados en 2015}
+        \label{figure:estadistica-python}
+    \end{figure}
+
+Por último, destacar que Python es un \textbf{lenguaje multiplataforma} por lo que se 
+puede utilizar en diversas plataformas. Y cuenta con varios \textit{web frameworks}, 
+entre los que destaca Django, que es la tecnología que trataré a continuación. 
+
+\subsection{Django}
+\label{subsec:django}
+
+\textbf{Django} es un framework que facilita al programador la creación de sitios
+ webs complejos. 
+
+Entre sus principales \textbf{características}, cabe destacar:
+
+\begin{itemize}
+    \item Es de \textit{código abierto}.
+    \item Todo está escrito en \textit{Python}.
+    \item Sigue el concepto \textit{DRY} -Don't Repeat Yourself- intentando
+        no duplicar código.
+    \item El programador no tiene que preocuparse de realizar las tareas
+            repetitivas que siempre hay que realizar al crear un servidor web:
+            abrir sockets, cerrar sockets, configuración de protocolos...
+    \item Puede ser utilizado con varias bases de datos, tales como MySQL, SQLite o PostgreSQL.
+    \item Su filosofía de desarrollo es MVC -Modelo Vista Controlador-, pero no 
+en sentido estricto, sino que ``hacen lo que les parece correcto''. De tal forma, 
+podemos encontrar nombres distintos a los comúnmente utilizados en un framework 
+MVC puro. Se podría decir que es un modelo MTV -Modelo Template Vista-.
+\end{itemize}
+
+Para explicar esta última característica y cómo funciona el modelo de Django en concreto,
+he creado la \textit{Figura~\ref{figure:mvc-django}}\footnote{Para la creación 
+de esta figura me he apoyado en la información encontrada en 
+\url{http://es.slideshare.net/alatar/django-el-framework-web-definitivo-1362169}}. 
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{img/mvc-django}
+        \caption{MVC adaptado de Django}
+        \label{figure:mvc-django}
+    \end{figure}
+
+Al crear un proyecto nuevo, tendremos por defecto el árbol de directorios
+mostrado en la \textit{Figura~\ref{figure:arbol-django}}, donde se pueden observar
+algunos de los ficheros mencionados al describir el modelo seguido por Django.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{img/arbol-django}
+        \caption{Árbol de directorios de un proyecto en Django}
+        \label{figure:arbol-django}
+    \end{figure}
+
+
+Django tiene una gran \textbf{comunidad} de usuarios que defienden al igual que Python
+las buenas \textit{prácticas de programación y que el código sea legible}~\cite{greenfeld2013two}.
+
+
+\subsection{MySQL}
+\label{subsec:mysql}
+
+Casi todo servidor web necesita un \textit{servidor de base de datos} que administre,
+almacene y gestione los datos. \textbf{MySQL}~\cite{suehring2002mysql} es uno de los sistemas de administración 
+de bases de datos más utilizados en la actualidad. Se puede observar en la 
+\textit{Figura~\ref{figure:mysql}}\footnote{Información obtenida en 
+\url{http://db-engines.com/en/ranking_trend}} cuál es el ranking que ocupa 
+relacionado con otras bases de datos muy utilizadas en el mercado, donde se 
+puede ver que es una de las tres con más usuarios.
+
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.1\textwidth]{img/mysql}
+        \caption{Ranking de las bases de datos más utilizadas actualmente}
+        \label{figure:mysql}
+    \end{figure}
+
+
+Las principales \textbf{características} de MySQL son las siguientes:
+
+\begin{itemize}
+    \item Utiliza \textbf{tablas} para guardar los datos.
+    \item Tiene un mecanismo interno de almacenamiento el cual guarda los datos
+            salvados en dispositivos físicos.
+    \item Es \textbf{relacional}(BDR), por lo que permite establecer interconexiones
+        o relaciones entre los datos ya guardados en tablas, siguiendo el 
+        \textit{modelo relacional}.
+    \item Es \textbf{multiplataforma}.
+    \item Utiliza multihilos mediante hilos del kernel.
+    \item Los clientes se conectan al servidor MySQL usando sockets TCP/IP.
+    \item Tiene bases de datos de hasta 50 millones de registros.
+\end{itemize}
+
+
+Cabe destacar que MySQL tiene \textbf{licenciamiento dual}: se puede utilizar bajo la GNU GPL, 
+pero si se quiere incorporar en productos privativos es necesario comprar 
+otra licencia.
+
+\subsection{Servidor HTTP Apache}
+\label{subsec:apache}
+
+El \textbf{servidor HTTP Apache} es un servidor web HTTP de \textit{software libre}. El servidor
+se desarrolla y mantiene bajo el paraguas de la \textit{Apache Software Foundation} dentro del proyecto 
+HTTP Server \textit{(httpd)}.
+
+La arquitectura del servidor Apache es \textbf{altamente modular}, lo cual permite añadir
+funcionalidades de modo sencillo y ser extendido fácilmente. Esta es una 
+de las características que le hacen ser muy utilizado a la hora de poner una 
+web en producción, ya que se pueden incluir módulos de frameworks. Como es el caso
+del módulo \textit{mod\_wsgi de Django}.
+
+Algo históricamente notable de Apache es la licencia de software bajo la cual es distribuido. 
+La \textbf{Licencia Apache} es una licencia de software libre que permite al usuario la 
+libertad de uso para cualquier propósito, ya sea de distribución, para ser 
+modificado. Además, ofrece la posibilidad de distribuir versiones modificadas del software, pudiendo tener estas obras derivadas una licencia diferente a la Licencia Apache (incluso que no sea open source).
+
+La \textbf{configuración} del mismo se realiza mediante el fichero apache2.conf 
+o \textbf{httpd.conf}, y para que los cambios en él sean agregados es necesario 
+reiniciar el servidor. 
+
+
+\subsection{Servidor HTTP Node.js}
+\label{subsec:nodejs}
+
+\textbf{Node.js} es un entorno de ejecución que permite trabajar sobre el intérprete de 
+\textit{JavaScript} en el lado del servidor. Utiliza el motor V8, desarrollado por
+Google para el navegador Chrome, compilando JavaScript en el lado del servidor
+a altas velocidades.
+
+Cabe señalar que es de código abierto y multiplataforma. Y la característica que lo
+hace destacar es el hecho de poseer un excelente \textit{modelo de eventos}, ideal para 
+la programación asíncrona.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FRONT-END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Front-end}
+\label{sec:back-front}
+
+Se ha de recordar que el \textit{front-end} es la \textbf{capa de presentación} que toda 
+aplicación distribuida posee. Es la parte con la que el cliente interacciona. 
+Y en las siguientes subsecciones se van a explicar algunas de las tecnologías 
+más utilizadas actualmente en el desarrollo web y que se muestran en la 
+\textit{Figura~\ref{figure:front-end}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{img/front-end}
+        \caption{Tecnologías más utilizadas en la capa de presentación}
+        \label{figure:front-end}
+    \end{figure}
+
+
+\subsection{HTML}
+\label{subsec:html}
+
+\textbf{HTML} (HyperText Markup Language) no es un lenguaje de programación, sino
+un \textit{lenguaje de marcado} para la creación de páginas webs. Es utilizado por todos 
+los navegadores actuales.
+
+\textit{Permite dar estructura e introducir contenido en las páginas webs} a través de las 
+distintas \textbf{etiquetas} que componen el lenguaje, utilizando únicamente texto. En la
+\textit{Figura~\ref{figure:html}} se puede observar la estructura básica de un 
+código HTML.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{img/html}
+        \caption{Estructura básica de un código HTML}
+        \label{figure:html}
+    \end{figure}
+
+Para incluir un \textbf{elemento} en una página necesitamos indicar la etiqueta de inicio,
+su contenido -texto que aparecerá en la web- y, generalmente, la etiqueta de cierre (hay algunas etiquetas que no tienen etiqueta de cierre, como por ejemplo, el salto de línea).
+Las etiquetas de inicio tienen \textbf{atributos} en los que se especifica mediante texto plano
+la ubicación de los contenidos(imágenes, vídeos...) que queremos introducir en 
+la página y es el navegador quien se encarga de interpretarlo y mostrar la página 
+web completa.
+
+
+\subsection{CSS}
+\label{subsec:css}
+
+Las hojas de estilo en cascada, \textbf{CSS} (cascading style sheets), son utilizadas para dar estilo a un lenguaje
+estructurado, como puede ser HTML. Se aconseja que el código CSS se incluya en
+otro documento separado del HTML y que éste sea incluido mediante la etiqueta 
+adecuada ($<link>$), tratando de \textit{no mezclar lenguajes diferentes en un mismo texto}
+ para facilitar su legibilidad.
+
+Al seguir la norma de estilo anterior, el modo de indicar a un elemento de HTML
+que debe seguir una norma de estilo concreta se realiza incluyendo en la etiqueta
+de dicho elemento alguno de los dos atributos de nombre: id o class. Estos dos 
+atributos tendrán un valor determinado que será el especificado en una sección del
+código CSS que tendrá unas reglas propias.
+
+El mayor potencial de CSS es su \textbf{sintaxis simple} pero hay que tener mucho cuidado
+con las jerarquías para incluir el estilo que deseamos a los contenidos deseados.
+
+
+\subsection{Bootstrap}
+\label{subsec:bootstrap}
+
+\textbf{Bootstrap} es un framework que permite al usuario despreocuparse en gran
+medida del diseño y apariencia al realizar una aplicación web. Entre sus principales
+aportaciones están las numerosas \textbf{plantillas} que permiten tener implementado
+el diseño de una página web completa en pocas horas.
+
+Está \textit{basado en HTML y CSS} separando por completo dichos lenguajes en documentos
+diferentes lo que permite que una plantilla pueda ser modificada y ampliada 
+fácilmente por el usuario para adaptarlo al diseño deseado de un modo intuitivo. 
+
+Las plantillas generadas, normalmente incluyen también ficheros con \textit{JavaScript}
+para aportar a la página un diseño más atractivo para el usuario, en la siguiente
+subsección se explicará qué mejoras introduce este lenguaje a una página creada
+únicamente con HTML y CSS.
+
+\subsection{JavaScript}
+\label{subsec:javascript}
+
+\textbf{JavaScript} es un lenguaje de programación interpretado utilizado de forma
+extendida para poder \textit{dinamizar el lado del cliente} incluyendo así mejoras en la 
+interfaz de usuario y aumentar su seguridad.
+
+Aunque su principal uso es en el lado del cliente, también se utiliza con el 
+apoyo de otras tecnologías para enviar y recibir información al servidor.
+
+
+\subsection{AJAX}
+\label{subsec:ajax}
+\textbf{AJAX} (Asynchronous JavaScript And XML) es una tecnología que permite 
+enviar y recibir información desde el servidor al cliente, permitiendo diseñar
+ páginas webs más interactivas.
+
+Este envío de información se realiza gracias a una \textit{comunicación asíncrona} con el
+servidor siendo posible realizar cambios en la página siendo recargada automáticamente. 
+
+%%%%%%%%%%%%%%%%%%% PLATAFORMA EN LA NUBE: AZURE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Plataforma en la nube: Azure}
+\label{sec:azure}
+
+Siempre que se persigue trasladar una aplicación distribuida a producción es necesario
+una máquina o máquinas en las que implementar todas las tecnologías que han sido 
+mencionadas anteriormente. \textbf{Microsoft Azure} es una plataforma alojada en los
+Data Centers de Microsoft que permite, entre otros servicios, la posibilidad de
+tener máquinas virtuales con una gran selección de sistemas operativos. 
+
+Por ello, es una herramienta  muy potente en la que alojar nuestra aplicación
+asegurando \textit{escalabilidad, seguridad y un 24x7 fiable}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ANALÍTICA WEB %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analítica web: Google Analytics}
+\label{sec:analitica-web}
+
+El objetivo principal de una web en producción es que sea utilizada por el mayor
+número de usuarios posible y para poder realizar un seguimiento y medición de 
+dicho objetivo \textbf{Google Analytics} nos permite tener numerosas \textit{estadísticas}
+y herramientas que nos reportan dicha información.
+
+Su utilización es muy simple: al crear una cuenta, \textit{se genera un código en JavaScript
+que debe ser incluido en las distintas páginas de la web}.
+
+Además, Google Analytics incluye numerosa información en texto y vídeos de cómo 
+leer la información dada y de cómo optimizar aspectos
+tan importantes en las webs como es la segmentación del tráfico o publicidad online. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DISEÑO E IMPLEMENTACIÓN %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\chapter{Diseño e implementación}
+
+En este capítulo se va a detallar \textit{cómo se han usado las distintas tecnologías}
+explicadas en el capítulo anterior para implementar Dr. Scratch.
+
+También se irá explicando cuál ha sido la \textit{evolución en la implementación de 
+las funcionalidades, debido a las necesidades observadas en los test de usabilidad}, 
+realizados en dos colegios de la Comunidad de Madrid, con alumnos de 5º y 6º de
+primaria, en particular, CEIP Lope de Vega y CEIP Gonzalo Fernández de Córdoba.
+
+Y en el último apartado, una vez entendidas la estructura general y el objetivo
+de cada funcionalidad, se mostrarán algunos \textit{diagramas de flujo para explicar
+el código de las implementaciones principales}.
+
+\section{Arquitectura general de Dr. Scratch} 
+\label{sec:arquitectura}
+
+Como muchas aplicaciones \textit{Cliente-Servidor}, Dr. Scratch tiene las 3 capas de desarrollo:
+back-end, lógica de la aplicación y front-end. 
+
+Pero al ser Dr. Scratch un analizador de archivos -en este caso, el JSON del proyecto
+de Scratch- la lógica o negocio de la aplicación está clara. Por ello se va a 
+prestar mayor atención a la capa de servicio y de presentación.
+
+Cabe señalar que esta sección no trata de explicar cómo se han implementado las
+diferentes tecnologías, cosa que se hará en la siguiente, sino de \textit{mostrar
+una idea general de cómo todas las tecnologías han sido utilizadas en conjunto}.
+Busco mostrar cuál es la arquitectura final de Dr. Scratch para después poder
+profundizar teniendo claras cada una de sus partes.
+
+\subsection{Capa de servicio: back-end}
+\label{subsec:back-end}
+
+En la \textit{Figura~\ref{figure:arquitectura}} se puede observar la arquitectura
+de Dr. Scratch y la \textit{conexión entre las distintas tecnologías utilizadas para la 
+implementación de la capa de servicio}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{img/arquitectura}
+        \caption{Arquitectura general de Dr. Scratch}
+        \label{figure:arquitectura}
+    \end{figure}
+
+
+\textbf{Azure} \\
+
+    Todo lo que se va a proceder a explicar a continuación, ha sido instalado y 
+programado en una máquina virtual en la nube, mediante la plataforma \textbf{Microsoft 
+Azure} con un \textit{sistema operativo Ubuntu 14.04.2 LTS}.
+
+    Esto ha sido posible, porque Microsoft nos ha ofrecido una \textit{suscripción de 
+150\$} al mes, de forma gratuita.\\
+
+\textbf{Apache} \\
+
+    Actualmente, se encuentra instalada la \textit{versión 2.4.10}, ya que es la compatible con
+la versión de Ubuntu de nuestra máquina. La \textit{configuración del fichero httpd.conf}
+me llevó algún tiempo entenderla, y además, tuve algún problema para incluir el \textbf{módulo
+mod\_wsgi} que permite enlazar Azure con Django. 
+La tarea realizada por Apache nos resuelve numerosos problemas y su funcionamiento
+es el siguiente: cuando los clientes realizan peticiones HTTP
+a nuestro dominio a través de la red, éstas son escuchadas por el servidor de HTTP, que nos  permite utilizar Dr. Scratch de forma simultánea
+por numerosos usuarios, teniendo estos la percepción de ser los únicos usándolo.\\
+
+
+
+\textbf{Django} \\
+
+La \textit{versión actualmente instalada de Django es la 1.7}, ya que la 1.9 está aún en 
+desarrollo. 
+Como se observa, Apache se encarga de hacer llegar la petición a Django, donde tal como se puede
+ver en la \textit{Figura~\ref{figure:django-funcionamiento}} se pregunta
+en el fichero \texttt{urls.py} si dicho recurso es servido por nuestro servidor. El fichero
+\texttt{urls.py} es básicamente una lista, en la que mediante expresiones regulares, se
+indica qué recursos son servidos por nuestra aplicación. 
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{img/django-funcionamiento}
+        \caption{Modelo de Django en Dr. Scratch}
+        \label{figure:django-funcionamiento}
+    \end{figure}
+
+Dr. Scratch se ha implementado de tal forma que si se realiza una \textit{petición a nuestro
+dominio con un recurso que no es servido, redirija al usuario a la página principal}.
+Así si el usuario, que puede ser un niño pequeño, se equivoca, puede seguir navegando
+sin mayor esfuerzo o ver alguna página de error. Internamente, la lógica de este
+funcionamiento es el mostrado en el diagrama de la \textit{Figura~\ref{figure:urls}}.
+
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{img/urls}
+        \caption{Funcionamiento de la petición de recursos a Dr. Scratch: \texttt{urls.py}}
+        \label{figure:urls}
+    \end{figure}
+
+En el momento que \texttt{urls.py} nos dirige a una función -se ha de recordar que en Python no
+existen los procedimientos- que se encuentra,
+según el modelo de Django, en el fichero \texttt{views.py}, se debe hacer distinción según
+si el método de la petición es: \textit{GET, POST u otro método}. Con esto, se ejecutará un código
+concreto según la función y el método. 
+
+Algunos métodos únicamente servirán
+el recurso solicitado, si el método que acompaña a la petición es GET, y en otro 
+caso redirigirá a la página principal de Dr. Scratch, para que al igual que en 
+el caso anterior, el flujo de la aplicación sea lo más dinámica posible. En la
+\textit{Figura~\ref{figure:views}} se observa el funcionamiento interno.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{img/views}
+        \caption{Distinción según el método de la petición: \texttt{views.py}}
+        \label{figure:views}
+    \end{figure}
+
+Al ser Dr. Scratch una plataforma con numerosas funcionalidades, la funcionalidad del fichero \texttt{views.py} se complementa con \textit{otra serie de ficheros en los que se implementan
+funciones auxiliares}. Así se permite observar fácilmente el flujo de la plataforma
+y \textbf{aumentar su modularidad}.
+
+Los ficheros que dan soporte a \texttt{views.py} pueden verse en la 
+\textit{Figura~\ref{figure:views-modular}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.4\textwidth]{img/views-modular}
+        \caption{Modularización del fichero \texttt{views.py}}
+        \label{figure:views-modular}
+    \end{figure}
+
+Para realizar el código de las funciones implementadas en estos ficheros,
+ hay que recordar que Django está completamente programado en Python y que este 
+es un lenguaje orientado a objetos. Por ello, todo lo que encontraremos en 
+nuestro código son objetos. 
+
+La declaración de los objetos que conforman nuestra aplicación se encuentra en 
+el fichero \texttt{models.py} del modelo de Django. La declaración de uno de los objetos 
+más utilizados por Dr. Scratch se muestra en la \textit{Figura~\ref{figure:models}} 
+donde se pueden observar sus campos. \textit{Las clases declaradas en este 
+fichero serán instanciadas en las funciones 
+para implementar funcionalidad de la plataforma}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.75\textwidth]{img/models}
+        \caption{Declaración de los objetos de Dr. Scratch: \texttt{models.py}}
+        \label{figure:models}
+    \end{figure}
+
+Una vez que Dr. Scratch conoce el código que debe ejecutar, 
+procede y según la función, deberá realizar diversas acciones: 
+consultas en la base de datos, realizar el análisis con Hairball, hacer
+una petición a otro servidor para obtener información, guardar el archivo... 
+Todo este funcionamiento se irá detallando en la siguiente sección, donde se
+explicarán las implementaciones realizadas.
+
+Tras ejecutar dicho código y procesar toda la información, se debe mostrar una
+página de respuesta, para lo que se utiliza el \textit{sistema de plantillas} de Django,  
+llamado \textbf{templates}. Estas plantillas son \textit{renderizadas} con la información que se 
+ha procesado y se quiere mostrar en dichas páginas.\\
+
+\textbf{Fichero log} \\
+
+Con el objetivo de tener un fichero que guarde información de todos los archivos
+analizados y poder \textit{observar en qué momento se producen problemas} en nuestro 
+servidor, se añadió un fichero \textit{logFile.txt} a nuestro modelo. Este fichero es 
+ abierto, escrito y cerrado cada vez que un proyecto de Scratch es analizado 
+agregando información relevante del mismo.\\
+
+\textbf{Base de datos} \\
+
+Dr. Scratch tiene para poder almacenar información una base de datos en \textbf{MySQL 
+ 5.5.43} a la cual se accede para realizar consultas en las propias funciones 
+con la ayuda de Django de un modo fácil y sencillo.
+
+En la \textit{Figura~\ref{figure:tables}} se muestra una captura de pantalla
+de todas las tablas creadas en la base de datos por la plataforma.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\textwidth]{img/tables}
+        \caption{Captura de pantalla de la base de datos}
+        \label{figure:tables}
+    \end{figure}
+
+Como se observa, hay algunas tablas que comienzan por \textit{app\_ }, 
+otras por \textit{auth\_} y finalmente otras por \textit{django\_ }. 
+Únicamente las que empiezan por \textit{app\_} son las que creamos 
+nosotros en el fichero \texttt{models.py}. Las demás son definidas por
+Django de forma automática e implementan funcionalidades que vienen en Django como la autenticación, la gestión de sesiones, etc.
+
+
+Para entender correctamente la estructura de la base de datos y cuáles son
+los objetos principales, con sus respectivos campos,  conviene
+fijarse en la \textit{Figura~\ref{figure:base-datos}}. En ella, se
+detallan únicamente los modelos generados por mi para la realización de este
+Proyecto Fin de Carrera y 
+\texttt{auth\_user}, de la cual heredan algunas de nuestras clases.\\
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{img/base-datos}
+        \caption{Modelos de Dr. Scratch:\texttt{models.py}}
+        \label{figure:base-datos}
+    \end{figure}
+
+
+\textbf{Node.js (getSb2)} \\
+
+También se ha implementado, basándonos en un proyecto de 
+GitHub, llamado getSb2\footnote{\url{https://github.com/nathan/getsb2}}, un servidor 
+HTTP Node.js que \textit{se encarga de realizar peticiones al servidor de Scratch}, y que 
+será explicado más adelante en el capítulo 4, donde se explica el diseño e implementación, 
+para comentar qué problemas nos encontramos con la programación inicial y qué cambios
+realizamos para solventarlos.\\
+
+
+
+\textbf{Hairball y Kurt} \\
+El análisis del proyecto de Scratch se realiza mediante Hairball, el cual tenemos
+\textit{instalado en la máquina virtual}, y que se ayuda de \textit{Kurt} 
+para manipular proyectos complejos de Scratch, con comandos sencillos de Python.\\
+
+Hairball es un analizador estático de proyectos programados en Scratch. Lo que 
+utiliza para analizar el proyecto, es el fichero .JSON incluido en todo archivo
+.SB2 -que es la extensión que tienen todos los proyectos realizados en la interfaz
+de Scratch- en el que también se incluyen los sonidos e imágenes que conforma el 
+proyecto. 
+
+El citado .JSON, contiene el código del usuario y hairball
+puede extraer a través de diferentes plugins información tal como los bloques 
+que han sido utilizados y si hay algunos que nunca se llegan a ejecutar. Se 
+pueden añadir más plugins para poder analizar otros hábitos de programación de los
+usuarios de forma modular. 
+
+\subsection{Capa de presentación: front-end} 
+\label{subsec:front-end}
+
+La capa de presentación de Dr. Scratch está formada por un \textbf{conjunto de plantillas}
+de código HTML, que utilizan hojas de estilo CSS con la ayuda del framework
+Bootstrap. Estas páginas utilizan además, código JavaScript para mejorar su 
+interactividad con el usuario, y AJAX para realizar algunas funcionalidades en
+segundo plano.
+
+En la \textit{Figura~\ref{figure:templates}} podemos observar cuáles son las
+\textbf{páginas de Dr. Scratch} que son renderizadas y mostradas al usuario asociándolas
+a un \textbf{recurso} determinado.
+
+     \begin{figure}[H]
+        
+        \includegraphics[width=1.1\textwidth]{img/templates}
+        \caption{Estructura de las páginas de Dr. Scratch: \texttt{templates}}
+        \label{figure:templates}
+    \end{figure}
+
+Se decidió realizar una clasificación de las páginas en varias carpetas
+para facilitar su comprensión y tenerlas organizadas de una forma útil
+para nuevas implementaciones.
+
+Además, en algunas de las secciones hay páginas denominadas 
+\texttt{base.html}, que contienen el diseño básico del conjunto de 
+páginas que se encuentran en la misma carpeta. Las demás páginas 
+\textit{extienden} de su respectivo \texttt{base.html} e introducen contenido específico.
+
+La capa de presentación ha sufrido \textit{numerosas modificaciones 
+provocadas por las necesidades observadas en los usuarios en los test de
+ usabilidad,
+y por las peticiones realizadas directamente por varios docentes de todo
+ el mundo}.
+Dicha evolución de la plataforma, se verá plasmada claramente en la 
+siguiente sección. 
+
+
+\section{Funcionalidades y evolución de Dr. Scratch}
+\label{subsec:evolucion}
+
+\textit{Dr. Scratch ha sido desarrollado 
+por varias personas}, así que en esta sección me centraré en describir claramente cuál ha sido mi aportación al 
+proyecto. Ha de tenerse en cuenta que este Proyecto Fin de Carrera es la continuación de una primera
+implementación de Cristian Chushig (versión Alpha).
+Además ha sido desarrollado en paralelo a las implementaciones realizadas
+por mi compañera Eva Hu.
+
+Para comprender cuál ha sido el proceso de implementación, he dividido 
+esta sección en 4 apartados:
+
+\begin{enumerate}[label=\textbf{\arabic{*}.}]
+    \item \textbf{Versión Alpha:} Muestra cuáles eran las implementaciones que debía contener el prototipo inicial. 
+    \item \textbf{Fase I:} Se detallan las implementaciones realizadas en
+           los primeros meses, cuando aún Cristian y Eva no se habían
+            incorporado al proyecto.
+    \item \textbf{Fase II:} Implementaciones realizadas entre el momento 
+            en el que mis compañeros retoman o se incorporan al proyecto
+            y la 2015 Scratch Conference.
+    \item \textbf{Fase III:} Últimas funcionalidades desarrolladas antes
+            de la presentación de este documento.
+\end{enumerate}
+
+\subsection{Versión Alpha}
+\label{subsec:alpha}
+
+El \textbf{prototipo inicial} de Dr. Scratch debía:
+
+\begin{itemize}
+ \item Diseñar una página principal en la que poder indicar qué fichero quería subirse.
+ \item Programar en el servidor el análisis del proyecto de Scratch mediante Hairball.
+ \item Obtener toda la información útil del análisis de Hairball que quería mostrarse
+al usuario.
+ \item Mostrar dicha información en un dashboard fácil de entender por el usuario.
+\end{itemize}
+
+Al comenzar este Proyecto Fin de Carrera mis tutores compartieron
+conmigo el código que Cristian les había hecho llegar, código en el cual la
+página principal tenía la apariencia mostrada en la \textit{Figura~\ref{figure:alpha-version-web}} 
+y que debía realizar dichas funciones perfectamente, porque tenía todo programado,
+pero a la hora de ejecutar se producía un error y no conseguía mostrar la información
+del análisis de Hairball. Conociendo ahora completamente el funcionamiento de 
+Dr. Scratch, puedo suponer que el problema residía en que se debió realizar algún
+cambio en el plugin Hairball y el código que procesaba la información de Hairball
+había quedado obsoleto.
+ 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/alpha-version-web}
+    \caption{Apariencia de la versión Alpha de Dr. Scratch}
+    \label{figure:alpha-version-web}
+\end{figure}
+
+
+
+\subsection{Fase I}
+\label{subsec:fase-i}
+
+En el contexto anterior, se fijaron mis principales objetivos a conseguir 
+y mis primeras implementaciones que son las mostradas en la 
+\textit{Figura~\ref{figure:fase-i}}. Cabe señalar que en esta fase del proyecto, 
+no se encontraban realizando el proyecto ninguno de mis dos compañeros.\\
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.05\textwidth]{img/fase-i}
+        \caption{Fase I del proyecto Dr. Scratch}
+        \label{figure:fase-i}
+    \end{figure}
+
+
+\textbf{Estudio, depuración y modificación del código de la versión Alpha} \\
+
+    Aunque el código estaba bastante bien estructurado y comentado y aún no 
+había demasiada cantidad -contaba con 403 líneas de código cuando actualmente tiene más de 2000-  esta primera tarea fue muy dura. Es complicado 
+enfrentarse al código de otra persona añadido a que el código \textbf{presentaba errores a la hora de 
+ejecutar} y al principio no pude ver el resultado final.
+    Con la ayuda de trazas detecté que el error se producía a la hora de 
+procesar las salidas de Hairball, tal y como se puede observar en la
+\textit{Figura~\ref{figure:hairball}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth]{img/hairball}
+        \caption{Salidas de los plugins de Hairball}
+        \label{figure:hairball}
+    \end{figure}
+
+De esta manera, las salidas no están normalizadas y tuve que
+programar métodos distintos para cada una de ellas y guardar toda la información
+relevante en un diccionario.
+
+Una vez que tuve el diccionario, modifiqué la plantilla de la versión Alpha,
+para mostrar la información de este nuevo diccionario. Únicamente modifiqué
+cómo mostrar la información, el resto de la plantilla y apariencia es la heredada
+de la versión Alpha y que puede verse en la \textit{Figura~\ref{figure:dashboard-version-alpha}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.1\textwidth]{img/dashboard-version-alpha}
+        \caption{Primer dashboard de Dr. Scratch}
+        \label{figure:dashboard-version-alpha}
+    \end{figure}
+
+En la primera sección donde pone \textit{``CT Score: 17/21''} se mostraba la puntuación
+total del plugin mastery como resultado de las obtenidas en las distintas
+habilidades de Pensamiento Computacional que están detalladas en la sección que
+indica \textit{``CT Score in detail''}, puntuando cada habilidad de 0 a 3.
+En la tercera sección llamada \textit{``Possible issues to watch out''} tenemos aquellos
+malos hábitos que también analiza Hairball, en orden de izquierda a derecha:
+ código duplicado, objetos con nombres inadecuados, código muerto o que nunca 
+se utiliza y objetos que no han sido inicializados. 
+
+La gestión de subida del fichero ya estaba implementada en la versión Alpha,
+pero presentaba un problema: si el \textbf{nombre del proyecto de Scratch contenía
+espacios o caracteres raros, el análisis mediante Hairball no se podía realizar}.
+Se solucionó guardando el proyecto de Scratch en lugar de con el nombre original
+con el \textbf{id}.
+
+Para implementar el análisis de Hairball, se implementó una función 
+llamada \texttt{analyze\_project}, cuya tarea es abrir un \emph{pipe} por cada plugin de
+Hairball que se ejecuta y guardar la información del plugin en una variable
+llamada \texttt{result[Nombre del plugin]}. Después, esa variable se procesa en cada 
+una de las funciones creadas para cada plugin llamadas \texttt{proc\_[Nombre del plugin]},
+y va guardando en el diccionario la información que se muestra en el dashboard.
+
+Además de lo descrito hasta ahora, en este momento también \textbf{se mejoró el flujo
+de la página web}, ya que en numerosas ocasiones el código mostraba páginas de
+error con páginas HTML sin estilo. Todas estas páginas fueron eliminadas
+realizando redirecciones para mejorar la experiencia del usuario. Y con ello
+se controló el flujo de la plataforma web.\\
+
+
+\textbf{Generación del fichero log} \\
+
+    Una vez que el prototipo funcionaba perfectamente y con un flujo entre 
+páginas aceptable, procedí a generar un fichero \texttt{logFile.txt} dentro de la carpeta
+log. Al principio únicamente \textbf{guardaba el nombre del fichero analizado y su id}.
+Poco a poco se ha ido añadiendo más información: hora del análisis, método utilizado,
+el tipo de usuario, el resultado del análisis, si ha habido algún error en el
+análisis... Cada vez que se analiza un proyecto este fichero es abierto, 
+se escribe en él la información indicada y se cierra.
+
+\textit{Este fichero es muy útil para tener un resumen rápido de lo que está sucediendo
+en Dr. Scratch sin necesidad de consultar la base de datos.}\\
+
+
+\textbf{Primera puesta en producción} \\
+
+Se han realizado dos puestas en producción. Aquí voy a detallar cómo se realizó en esta etapa del proyecto.
+
+
+    \begin {itemize}
+        \item \textbf{\textit{Entorno de pre-producción:}}\\
+        En primer lugar, se utilizaron los \textit{laboratorios de la universidad donde
+se creó una máquina virtual} en la que pude aprender a instalar: Hairball, Apache,
+Django... y ponerlo todo en funcionamiento.
+Tras realizar la configuración del fichero httpd.conf se podía visualizar
+la plataforma en la dirección \textbf{http://drscratchpre.programamos.es} donde hemos
+estado realizando las pruebas de Dr. Scratch antes de ponerlo en producción.
+
+Actualmente esta dirección no está disponible, ya que la máquina en la que se
+alojaba ha sufrido problemas.\\
+
+
+        \item \textbf{\textit{Entorno de producción:}}\\
+    En esta etapa del proyecto, el entorno de producción estaba alojado en otra
+\textit{máquina virtual en la universidad, idéntica a la de pre-producción}. Así, 
+una vez que aprendí de los errores cometidos, repetir las instalaciones 
+y configuraciones en esta máquina fue mucho más fácil.
+
+El proceso de puesta en producción durante todo el proyecto ha sido el mismo: 
+primero se comprobaba y aprendía a subir todo al entorno de pre-producción y
+después se repetían los mismos pasos en el entorno de producción. 
+Con esto \textit{se han acortado inmensamente los momentos en los que la plataforma no ha 
+estado funcionando}.
+
+La dirección de Dr. Scratch era 
+\textbf{http://drscratch.programamos.es}, pero actualmente se encuentra en 
+\textbf{http://www.drscratch.org}.
+
+En esta etapa, mientras el sistema en producción estaba alojado en las máquinas de la universidad
+\textit{se produjeron numerosos problemas, por algún corte de luz y, sobre todo, por falta de
+memoria}.\\
+\end {itemize}
+
+
+\textbf{Cambio de apariencia} \\
+
+    El diseño gráfico del logo de Dr. Scratch fue subcontratado por Programamos
+a una empresa externa, \textit{TheLogoCompany}, con una idea clara: debía ser 
+con una tipografía atractiva para niños y que tuviera una bombilla. El motivo 
+de la \textbf{bombilla} es porque \textit{la idea esencial de Dr. Scratch es despertar la 
+curiosidad por aprender a programar y además poder hacerlo aprendiendo con la 
+filosofía de código abierto utilizando las ideas de otros para generar nuevas 
+ideas y aprender de forma dinámica e interactiva}.\\
+
+
+    Con el nuevo logo empecé a estudiar el \emph{front-end} que
+existía hasta el momento y a tomar contacto con Bootstrap, para incluir
+el logo y cambiar los colores de la web acorde al mismo. Siendo ahora la página 
+principal de la web la mostrada en la \textit{Figura~\ref{figure:main-version-beta1}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{img/main-version-beta1}
+        \caption{Primera apariencia de la página principal con logo}
+        \label{figure:main-version-beta1}
+    \end{figure}
+
+Y quedando la apariencia del dashboard como puede verse en la 
+\textit{Figura~\ref{figure:dashboard-version-beta1}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{img/dashboard-version-beta1}
+        \caption{Dashboard con misma gama de colores que el logo}
+        \label{figure:dashboard-version-beta1}
+    \end{figure}
+
+La web ahora se veía algo más alegre y atractiva para niños, pero mi conocimiento
+de Bootstrap aún era limitado. José Ignacio de Programamos me envió una 
+plantilla de Bootstrap que consideró que tenía todas las características
+que estábamos buscando para Dr. Scratch y la web cambió por completo. 
+Trabajé sobre esta plantilla, llamada \textit{main.html},
+ incluyendo los textos y botones que necesitábamos y 
+dejando las secciones que vi que nos eran más útiles siendo
+su apariencia final la mostrada en la \textit{Figura~\ref{figure:main-version-beta2}},
+que es la que a día de hoy se conserva con algunas pequeñas modificaciones.\\
+
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth]{img/main-version-beta2}
+        \caption{Página principal de Dr. Scratch}
+        \label{figure:main-version-beta2}
+    \end{figure}
+
+En esta página, además de la sección principal, donde se puede subir el fichero 
+del proyecto de Scratch, quisimos ser más cercanos al usuario y se incluyeron
+cuatro secciones más, que mostraban información en inglés sobre los siguientes aspectos:
+
+
+\begin{enumerate}[label=\textbf{\arabic{*}.}]
+		\item {\bfseries ¿Por qué?}
+        Explicamos brevemente cuáles son los puntos fuertes de Dr.Scratch y 
+        porque podría ser de utilidad para el usuario.Puede verse en la 
+        \textit{Figura~\ref{figure:why}}.
+
+    \begin{figure}[H]
+       	\centering
+       	\includegraphics[width=0.8\textwidth]{img/why}
+       	\caption{¿Por qué te encantará Dr. Scratch?}
+       	\label{figure:why}
+    \end{figure}
+
+   	\item {\bfseries ¿Cómo?}
+        Mostramos mediante un vídeo y algo de texto cómo pueden empezar a probar 
+        Dr. Scratch analizando sus proyectos de Scratch.
+        La \textit{Figura~\ref{figure:how}} muestra esta sección.
+
+    \begin{figure}[H]
+       	\centering
+       	\includegraphics[width=0.8\textwidth]{img/how}
+       	\caption{¿Cómo funciona Dr. Scratch?}
+        \label{figure:how}
+    \end{figure}
+
+	\item {\bfseries Próximamente}
+        Indicamos cuáles eran las nuevas características que teníamos pensado 
+        incluir en la plataforma, mostrando nuestro deseo de querer recibir 
+        consejos, sugerencias y peticiones. Estas nuevas funcionalidades eran
+        las que se pueden ver en la \textit{Figura~\ref{figure:working-on}}.  
+
+
+    \begin{figure}[H]
+       	\centering
+       	\includegraphics[width=1.0\textwidth]{img/working-on.png}
+       	\caption{Nuevas funcionalidades de Dr.Scratch.}
+        \label{figure:working-on}
+    \end{figure}
+
+        Al terminar de leer este documento, se verá que muchas de ellas han sido
+        implementadas ya y que deben ser actualizadas.
+
+	\item {\bfseries Contacto}
+        Esta sección incluye todas las vías que tiene el usuario de ponerse en 
+        contacto con nosotros, ya que nos parece indispensable tener información 
+        de nuestros usuarios para poder hacer una herramienta que realmente sea 
+        útil. Dicha información es mostrada en la 
+        \textit{Figura~\ref{figure:contact-us}}.
+
+    
+    \begin{figure}[H]
+       	\centering
+       	\includegraphics[width=0.76\textwidth]{img/contact-us.png}
+       	\caption{Contacta con el equipo de Dr.Scratch.}
+        \label{figure:contact-us}
+    \end{figure}
+
+\end{enumerate}
+
+
+
+\textbf{Mecanismo de traducción de Django} \\
+
+En este momento la página se mostraba por completo en inglés.
+Era necesario implementar la \textbf{traducción utilizando el mecanismo de Django} para
+tener la web en otros idiomas, en concreto, en español lo antes posible. 
+
+Este objetivo era bastante urgente porque queríamos empezar a utilizar la herramienta con docentes españoles y en colegios de Madrid.
+
+Para lograr la traducción fue necesario realizar varias modificaciones en 
+distintos ficheros del modelo de Django:
+
+\begin{itemize}
+    \item Templates:
+    \begin{enumerate}
+        \item Incluir en todos los templates la línea de código \textbf{\{\% load i18n \%\}}
+        \item Introducir todo el contenido de la página que se quisiera traducir
+                entre los caracteres \textbf{\{\% trans ``[contenido]'' \%\}}, tal y como se 
+                realiza en el ejemplo: \textit{\{\% trans ``Analyze your Scratch projects''  \%\}}
+
+    \end{enumerate}
+    \item Settings.py: \\
+    Para realizar la configuración de la traducción fue necesario incluir en
+    el fichero settings.py las líneas mostradas en la \textit{Figura~\ref{figure:settings}}.
+
+    \begin{figure}[H]
+       	\centering
+       	\includegraphics[width=0.4\textwidth]{img/settings}
+       	\caption{Configuración para la traducción de Dr.Scratch.}
+        \label{figure:settings}
+    \end{figure}
+
+
+    \item Crear una carpeta llamada ``locale'' dentro de nuestro proyecto.
+    \item Ejecutar en la shell:\\
+         \textbf{~\$ python manage.py makemessages -l es} \\
+        Con esto se generan dos ficheros django.po y django.mo y debemos 
+        modificar el primero. Este fichero contendrá varias líneas como las 
+        siguientes y en las que se debe incluir el texto traducido:
+            \begin {itemize}
+                \item msgid ``Analyze my project''
+                \item msgstr ``Analizar mi proyecto''
+            \end {itemize}
+        Una vez traducidos todos los contenidos, se ejecuta: \\
+        \textbf{~\$ python manage.py compilemessages}     
+\end{itemize}
+
+En esta etapa del proyecto, los únicos idiomas que estaban disponibles
+eran inglés y español. Más tarde se añadirían el catalán, gallego, griego,
+portugués y actualmente se está trabajando en el vasco.
+
+Con las modificaciones detalladas,
+ Django es capaz de detectar el idioma del navegador y nos mostrará la 
+página de Dr. Scratch traducida si nuestro navegador está configurado en 
+español y en inglés para cualquier otro idioma que detecte.
+
+
+
+\subsection{Fase II}
+\label{subsec:fase-ii}
+
+En esta etapa Cristian retomó el proyecto -el cual presentó en junio- y Eva se incorporó.
+En la
+ \textit{Figura~\ref{figure:fase-ii}} se muestran las tareas que he
+desarrollado en esta etapa o en las que he realizado alguna aportación. 
+Si la implementación no ha sido programada
+completamente por mí, indicaré cuál ha sido la aportación de mis 
+compañeros y cuál la mía.\\
+
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{img/fase-ii}
+        \caption{Fase II del proyecto Dr. Scratch}
+        \label{figure:fase-ii}
+    \end{figure}
+
+
+
+\textbf{Barra de progreso} \\
+
+Con el cambio de apariencia de la página principal, había conseguido
+ entender cómo funcionaba  \textit{Bootstrap}. Y me encontraba
+ aprendiendo \textit{JavaScript}, ya que había numerosos ficheros 
+utilizados en la plantilla que estaban escritos en este lenguaje y lo 
+iba a necesitar para seguir añadiendo funcionalidades a la web. 
+
+En concreto una de las funcionalidades que se querían
+añadir, y en la que se necesitaba JavaScript, era la implementación de una \textbf{barra de 
+progreso} que se mostrara mientras que se estuviera analizando el 
+proyecto de Scratch. Así el usuario no veía una página blanca que podía dar la
+impresión de que la plataforma no funcionaba o se aburriera.
+
+Esta tarea estuve trabajándola durante algún tiempo antes que mi 
+compañera Eva se incorporara. Cuando ella comenzó,
+ le mostré el código que había realizado
+ y conseguimos conjuntamente llegar a la siguiente solución.
+
+Se incluyó en la página \texttt{main.html} el código HTML que ya 
+tenía programado con la ayuda de Bootstrap para mostrar la barra con un 
+estilo determinado, y se le asignó un id para poder diferenciar esta 
+sección de código del resto de la página.
+
+Con una función de JavaScript que se encuentra en el fichero 
+\texttt{progress-bar.js} se programó que al mostrar la página se pudiera
+visualizar todo el contenido, excepto el de la barra de progreso, que 
+puede verse en la \textit{Figura~\ref{figure:barra-progreso}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{img/barra-progreso}
+        \caption{Barra de progreso mostrada durante el análisis}
+        \label{figure:barra-progreso}
+    \end{figure}
+
+Al botón de análisis se le añadió también un id determinado, 
+que estaría asociado a la función de JavaScript que se encargaría de 
+ocultar el contenido de la página al hacer click en el botón y mostraría 
+el contenido de la barra de progreso.\\
+
+
+\textbf{Análisis por URL} \\
+
+La idea de incluir también el análisis por URL surgió de la \textit{petición realizada 
+por varios usuarios de Dr. Scratch que mostraron la dificultad que tenían algunos
+ de sus alumnos para descargarse el proyecto} de la página de Scratch.
+
+Cristian se encargó de poner el código abierto de Nathan (getSb2) en Heroku\footnote{\url{https://www.heroku.com/}},
+ lo cual nos dio numerosos problemas más tarde y tuvimos que migrarlo. 
+Mediante el servidor getSb2 se realizan las peticiones de descarga al 
+servidor de Scratch, en la petición se indica el identificador numérico que 
+aparece en la URL del proyecto.
+
+Y también realizó la implementación inicial del código, el cual me encargué de 
+integrar con el resto del código.
+
+Además añadí a la
+página la posibilidad de utilizar esta funcionalidad quedando el cuadro como
+se observa en la \textit{Figura~\ref{figure:analisis1}}.
+
+     \begin{figure}[H]
+        \centering
+        \fbox{\includegraphics[width=0.35\textwidth]{img/analisis1}}
+        \caption{Cuadro con las dos posibilidades de análisis}
+        \label{figure:analisis1}
+    \end{figure}
+
+Como la aplicación getSb2 subida a Heroku se caía cuando se realizaban numerosas
+peticiones simultáneas, tuve que \textbf{migrar el servidor Node.js a nuestra propia
+máquina de producción}.\\
+
+\textbf{Corrección de errores en el cuadro} \\
+
+El cuadro anterior permitía dar a cualquiera de los botones sin haber
+introducido ninguna información, por lo que la página nos mostraba un error, ya que
+\textit{intentaba analizar un proyecto inexistente}. 
+
+Para solucionar el problema, se utilizó una clase de Bootstrap que se encarga
+de gestionar este tipo de situaciones, visualizando en la página el cuadro 
+de la \textit{Figura~\ref{figure:analisis2}} cuando se pulsa alguno de los
+botones de análisis sin ningún proyecto concretado.
+
+     \begin{figure}[H]
+        \centering
+        \fbox{\includegraphics[width=0.35\textwidth]{img/analisis2}}
+        \caption{Gestión de errores en el cuadro de análisis}
+        \label{figure:analisis2}
+    \end{figure}
+
+En el servidor esto se controla en la función 
+\texttt{show\_dashboard}, en ella se añade un flag según 
+el error detectado y se renderiza con la plantilla \texttt{main.html} que se devuelve
+al cliente en la respuesta.\\
+
+\textbf{Migración de SQLite a MySQL} \\
+
+\textbf{SQLite} es la base de datos que viene por defecto al crear un proyecto en Django,
+pero MySQL es más profesional y más potente. Por este motivo, ahora que empezábamos
+a tener mayor número de usuarios, fue necesario realizar el cambio.
+
+Para ello necesité realizar cambios en el fichero \texttt{settings.py} y aprender 
+a utilizar las bases de datos de MySQL. Puede accederse desde la shell y 
+se pueden realizar diversas acciones desde la misma: borrar tablas, ver el contenido
+de una tabla, eliminar algún usuario...\\
+
+\textbf{Carpetas para proyectos que producen error al ser analizados} \\
+
+En algunas ocasiones, bien Hairball o Kurt \textit{no son capaces de analizar un proyecto
+de Scratch concreto por diversos motivos que necesitan un estudio individual}.
+
+Por ello, se implementó una página que fuera mostrada al usuario en esta situación, como puede verse en la \textit{Figura~\ref{figure:error}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.78\textwidth]{img/error}
+        \caption{Página mostrada al producirse un error en el análisis}
+        \label{figure:error}
+    \end{figure}
+
+Además, se gestionó la \textit{copia del archivo a otra carpeta} diferente a la que es
+utilizada para guardar todos los proyectos analizados. 
+
+Así tenemos a mano, sin
+que el usuario nos lo indique, todos los proyectos que han provocado
+error por no ser posible su análisis mediante Hairball.\\
+
+\textbf{Personalización de las páginas 404 y 500} \\
+
+A veces se producen errores, porque el usuario solicita un recurso que no es 
+servido por nuestro servidor. Como  ya se ha explicado en Dr. Scratch esto está
+gestionado mediante redirección a la página principal para facilitar la usabilidad.
+Aún así se diseñó una página por si en algún momento era necesaria y puede
+verse en la \textit{Figura~\ref{figure:error404}}
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.78\textwidth]{img/error404}
+        \caption{Página de error 404}
+        \label{figure:error404}
+    \end{figure}
+
+Otra página que es más útil en nuestra plataforma es la página de error  que
+se muestra cuando se produce algún error en el servidor. Es muy desconcertante 
+ver una página HTML sin estilo que indica \textit{``500 Server error''}. Por
+ello, se diseñó la siguiente página personalizada de error 500 que permite
+fácilmente volver a la página de inicio. Dicha página es la mostrada por la 
+\textit{Figura~\ref{figure:error500}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.78\textwidth]{img/error500}
+        \caption{Página de error 500}
+        \label{figure:error500}
+    \end{figure}
+
+
+\textbf{Análisis de proyectos de la versión 1.4 de Scratch} \\
+
+Al realizar el análisis subiendo el proyecto desde el propio 
+ordenador, \textit{algunos usuarios continúan utilizando la versión 1.4
+offline de Scratch}. Los datos JSON de estos proyectos son diferentes al 
+de la versión 2.0 y el análisis de Hairball devolvía error.
+
+
+Fue necesario en el análisis por subida de fichero revisar
+el tipo de versión de Scratch, lo cual se hizo en la función
+\texttt{check\_version()}, es muy simple porque:
+
+    \begin{itemize}
+        \item Los proyectos de la versión 2.0 tienen extensión .sb2
+        \item Los proyectos de la versión 1.4 tienen extensión .sb
+    \end{itemize}
+
+
+Y si la extensión corresponde a la versión 1.4 se
+realiza el cambio
+de versión, realizado en la función \texttt{change\_version()}. Esto se consiguió
+ gracias a una función de Kurt: \texttt{convert()}.\\ 
+
+
+\textbf{Servir páginas diferentes según el nivel computacional} \\
+
+Algunos docentes que estaban utilizando la herramienta en este momento,
+nos aconsejaron que tratáramos de \textit{simplificar de algún modo el 
+cuadro de resumen con las puntuaciones mostradas en el dashboard}. 
+Consideraban que eran demasiado complicados para algunos alumnos.
+
+El equipo de Dr. Scratch consideró oportuno probar a mostrar un 
+resumen de la información diferente en función del nivel de Pensamiento 
+Computacional obtenido. 
+
+Para ello, se modificó la función \texttt{show\_dashboard()}, que hasta 
+ahora únicamente comprobaba si había algún error en la subida del 
+proyecto de Scratch o en la URL. Si había algún error, activaba el flag 
+concreto del error y lo renderizaba con el template \texttt{main.html} 
+para enviarlo al usuario. 
+Si no había error, mostraba el dashboard con toda la información del 
+diccionario.
+
+Este último paso es el que se vio modificado, mostrando ahora 3 
+dashboards distintos para diferenciar tres niveles de Pensamiento 
+Computacional:
+    \begin{itemize}
+        \item Si el número de puntos devueltos por el plugin mastery de Hairball
+                es mayor o igual a 15, muestra el \texttt{dashboard\_master.html}
+        \item En el caso en el que los puntos devueltos por el plugin mastery
+                es mayor a 7 y menor que 15, la función nos muestra el 
+                \texttt{dashboard\_developing.html}
+        \item Y si la puntuación es menor o igual que 7, devuelve el \texttt{dashboard\_basic.html}
+    \end{itemize}
+
+La idea era mostrar diferentes dashboards, donde si el nivel obtenido 
+era básico se mostraría muchísima menos información que si el nivel 
+obtenido era alto, siendo el nivel medio algo intermedio.\\
+
+\textbf{Diseño de los dashboards} \\
+
+En producción se siguió manteniendo el resumen mostrado en 
+la versión Alpha. Pero en preproducción, \textit{se diseñaron tres dashboards distintos
+para cada nivel de Pensamiento Computacional}. De esta forma pudimos ver cuál era su 
+aceptación en dos talleres que fueron realizados, uno con docentes y otro con 
+niños de 5º de primaria. 
+
+El diseño de los dashboards fue realizado con poco tiempo, ya que queríamos 
+probarlo para comprobar su aceptación y sacar conclusiones que fueron de gran
+utilidad. Además, era necesario realizar su traducción, para que tanto docentes
+como alumnos, pudieran realizar los análisis en castellano. 
+
+Como se va a ver a continuación, se me ocurrió además de hacer la distinción
+mediante el nivel, añadir colores diferentes ya que en muchos colegios utilizan
+códigos de colores para motivar a los alumnos.
+
+    \begin{itemize}
+        \item \textbf{Dashboard si el pensamiento computacional es bajo:}
+            se muestra, como se observa en la
+            \textit{Figura~\ref{figure:basico}} tres secciones en la página.
+            \begin{enumerate}
+                \item Muestra el nivel de pensamiento computacional, con una
+                        frase motivadora y la puntuación total adquirida.
+                       
+                \item El cuadro inferior izquierdo indica cuáles son las 
+                    habilidades de programación que debemos trabajar con más
+                    urgencia ya que son las que han obtenido una puntuación de
+                    0. Además añadí un enlace junto a un icono de una bombilla 
+                    en la que al pulsar redirigiera a otra página para aprender
+                    mediante ejemplos, cómo aumentar esa puntuación.
+
+                \item En el cuadro inferior derecho se muestra en un carrusel 
+                        algunos trucos que pueden ser útiles para una persona 
+                        que empieza con Scratch.
+            \end{enumerate}
+
+                 \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=1.0\textwidth]{img/basico}
+                    \caption{Dashboard de Pensamiento Computacional bajo}
+                    \label{figure:basico}
+                \end{figure}
+
+
+        \item \textbf{Dashboard si el pensamiento computacional es medio:}
+               muestra otras tres secciones con algunos cambios que pueden 
+                verse en la 
+                \textit{Figura~\ref{figure:medio}}.
+
+             \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=1.05\textwidth]{img/medio}
+                        \caption{Dashboard de Pensamiento Computacional medio}
+                        \label{figure:medio}
+                    \end{figure}
+
+             \begin{enumerate}
+                \item La primera sección es idéntica al dashboard para nivel básico pero
+                     mostrando otra frase motivadora diferente.
+                       
+                \item El cuadro inferior izquierdo muestra en este caso en 
+                        el carrusel, dos 
+                        de los malos hábitos de programación que realizan todos
+                        los programadores al principio: nombres           
+                        inadecuados y atributos inadecuados, por no haber sido
+                        inicializados correctamente. Y debajo del concepto 
+                        se muestra el número de errores de cada tipo cometidos.
+
+                \item En el cuadro inferior derecho muestra ahora, todas las 
+                        habilidades de programación, junto a la puntuación que
+                        han obtenido.
+                        
+                        Y además, si la puntuación es de 3/3 se añade
+                        una estrella y la frase de ¡¡¡Bien hecho!!! Y si la puntuación
+                        es de 0/3 se añade un enlace para mejorar como en el dashboard
+                        anterior. 
+
+                        La idea de la estrella, ha sido introducida con
+                        la intención de ser utilizada más adelante como un elemento
+                        de gamificación.\\
+
+
+
+                 \end{enumerate}
+ 
+
+  
+
+
+        \item \textbf{Dashboard si el pensamiento computacional es alto:} 
+                la información mostrada es la que se ve en la
+                \textit{Figura~\ref{figure:alto}}.
+
+                     \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=1.0\textwidth]{img/alto}
+                        \caption{Dashboard de Pensamiento Computacional alto}
+                        \label{figure:alto}
+                    \end{figure}
+
+             \begin{enumerate}
+                \item Como en los casos anteriores, lo primero que se 
+                        muestra es el nivel alcanzado, con una frase 
+                        motivacional y la puntuación total.
+                       
+                \item   Y al igual que el caso anterior, se pueden ver todas 
+                        las habilidades de programación, junto a la puntuación 
+                        que han obtenido. 
+                        Y si tienen 3/3 obtienen la estrella, mientras si la
+                        puntuación es de 0 se mantiene el enlace para aprender
+                        a mejorar.
+                \item   La diferencia con el caso anterior es que ahora el 
+                        carrusel contiene todos los malos hábitos analizados 
+                        por Dr. Scratch y
+                        que deben corregirse al empezar a programar.   
+             \end{enumerate}
+
+
+
+
+ \end{itemize}
+
+El resultado fue poco atractivo porque me centré en la programación de las 
+plantillas de forma que cada una mostrara únicamente la información que
+deseábamos, ya que en la propia plantilla es donde se gestiona cuál es la 
+información del diccionario que es mostrada al usuario.
+
+Los docentes nos sugirieron algunas implementaciones, como poder descargar el 
+un diploma y poder gestionar ellos mismos la información que se mostraba a sus
+alumnos. En el taller realizado con alumnos pudimos observar que no les 
+llamaba nada la atención el carrusel con los malos hábitos de programación.\\
+
+
+\textbf{Modales explicativos en el cuadro de análisis} \\
+
+En estos talleres notamos que muchos de los alumnos no sabían cómo utilizar
+el cuadro de análisis y que tenían los siguientes problemas:
+
+ \begin{itemize}
+       \item En el análisis mediante la URL no sabían qué es una URL.
+        \item En el análisis subiendo el proyecto de Scratch desde
+            su ordenador, ocurría que no sabían cómo descargar el proyecto
+            en la plataforma de Scratch.
+ \end{itemize}
+
+Actualizamos el cuadro al que se encuentra actualmente en producción. En él se añadió una breve explicación de cómo funciona cada análisis para que 
+se viera claramente que son dos formas completamente distintas. 
+
+Hay palabras que están resaltadas en rojo debido a
+ que eran los conceptos que necesitaban explicación extra. Para ello se programaron en la plantilla \texttt{main.html} dos ventanas 
+modales, que aparecen al pulsar en las palabras resaltadas en rojo.
+
+El resultado final del cuadro de análisis
+se puede ver en la \textit{Figura~\ref{figure:aclaraciones}}.
+
+\begin{figure}[H]
+        \centering
+        \fbox{\includegraphics[width=0.35\textwidth]{img/aclaraciones}}
+        \caption{Aclaración de los métodos de análisis}
+        \label{figure:aclaraciones}
+    \end{figure}
+      
+
+Dichas ventanas modales, se muestran al pulsar en las palabras \textbf{URL} y \textbf{proyecto}, teniendo al final dos ventanas diferentes:
+
+ \begin{itemize}
+       \item Una ventana explicativa de qué es una URL cuya apariencia puede 
+            verse en la \textit{Figura~\ref{figure:url}}.
+
+                     \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=0.7\textwidth]{img/url}
+                        \caption{Ventana modal de qué es una URL}
+                        \label{figure:url}
+                    \end{figure} 
+
+        \item Otra ventana que muestra cómo se puede descargar un proyecto
+                a nuestro propio ordenador desde la plataforma de Scratch y
+                así poder subirlo a Dr. Scratch para analizarlo. Esta ventana
+                se muestra en la \textit{Figura~\ref{figure:proyecto}}.
+
+                     \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=0.75\textwidth]{img/proyecto}
+                        \caption{Ventana modal de cómo descargar un proyecto en Scratch}
+                        \label{figure:proyecto}
+                    \end{figure} 
+ \end{itemize}
+
+
+\textbf{Migración a la nube: Microsoft Azure} \\
+
+Como ya se explicó en la Fase I del proyecto tanto el entorno de producción como
+el de preproducción se encontraban alojados en máquinas de la universidad, lo 
+que nos dio algunos problemas y debían ser solucionados. \\
+
+Microsoft nos concedió una suscripción de 150\$ mensual para que pudiéramos 
+alojar Dr. Scratch en la nube en su plataforma Azure. \\
+
+Tras asistir a varios cursos de la plataforma en las instalaciones de Microsoft
+y de Plain Concepts, empezamos a tratar de buscar la mejor solución.
+Ya que el crédito era limitado, al principio pensamos que era mejor utilizar
+la opción \textit{website} de la plataforma. Esta decisión se tomó porque nos 
+indicaron que esa opción consumía menos crédito. \\
+
+Publiqué un website de Dr. Scratch con su base de datos MySQL enlazada a través
+de \textit{Visual Studio} pero el problema que se encontró fue que
+\textbf{en los websites de Azure no hay posibilidad de instalar otras aplicaciones}
+ y por
+ello no teníamos la posibilidad de instalar Hairball. Intentamos implementarlo,
+ya que Python ofrece la posibilidad de ser ejecutado indicando el path completo 
+en el que se encuentran los ficheros importando todos los módulos que había en
+los ficheros de Hairball y sus librerías de forma absoluta, pero había librerías
+dinámicas que no podían ser importadas del mismo modo y no tenía los conocimientos
+necesarios para solucionar el problema. Me puse en contacto con los desarrolladores de
+Microsoft que me indicaron que el problema es que era necesario incluir la versión de Windows
+de las librerias utilizadas ya que los websites de Azure, ahora llamados Web Apps
+corren en máquinas Windows.
+
+Pero en ese momento necesitábamos una solución segura para realizar un test de
+usabilidad y decidimos crear una
+máquina virtual instalando absolutamente todo lo que necesitábamos dentro de ella
+y controlar el consumo del crédito. La sorpresa fue que todos los meses, aún teniendo
+miles de proyectos analizados, el crédito \textit{no se consumía en más de un 70\% 
+del total}. 
+
+
+
+Gracias a esta migración Dr. Scratch no ha vuelto a sufrir problemas por cortes o
+por falta de memoria.\\
+
+\textbf{Google Analytics} \\
+
+Una de las tareas pendientes era conseguir llevar un seguimiento de los usuarios
+que visitaban la plataforma. La opción website de Azure nos habría resuelto este
+problema ya que ofrece este tipo de estadísticas. Pero al alojar Dr. Scratch en
+una máquina virtual, tuve que buscar otro método. 
+
+El más sencillo y más recomendado que encontré leyendo varios artículos de
+analítica web fue usar \textit{Google Analytics}. Para ponerlo en marcha únicamente 
+tuve que crear una cuenta en Google para el equipo de Dr. Scratch y registrarla. 
+
+Facilitan un código de JavaScript que copié en el fichero  
+\texttt{googleAnalytics.js} y lo incluí en todas las páginas de Dr. Scratch. 
+Destacar que este fichero no ha sido subido a GitHub para que no sea utilizado
+por otras herramientas y se alteren las métricas.
+
+Accediendo al panel se pueden observar numerosos datos como los que se
+ven en la \textit{Figura~\ref{figure:analiticas}}.
+
+                     \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=1.0\textwidth]{img/analiticas}
+                        \caption{Panel de Google Analytics para Dr. Scratch}
+                        \label{figure:analiticas}
+                    \end{figure} 
+
+
+\textbf{Páginas para mejorar el nivel computacional} \\
+
+En el diseño de los dashboard se explicó que eran necesarias la implementación
+de algunas páginas que mostrasen, mediante ejemplos, cómo mejorar en cada aspecto,
+para conseguir aumentar la puntuación de nuestro proyecto.\\
+
+El diseño de dichas páginas fue realizado por mi compañera Eva. Mi aportación
+ha consistido en realizar la traducción de las palabras de las distintas habilidades:
+paralelismo, lógica, representación de la información, control de flujo...
+El mecanismo es el siguiente, cuando pulsas en una de las habilidades, el servidor
+trata de ir al recurso \texttt{/learn/[habilidad]} y \texttt{urls.py} le indica
+ que la función que debe ejecutar es \texttt{learn(request, page)}. 
+
+Esta función lo que hace es ver en la petición, cuál es el idioma del navegador,
+si el idioma es uno de los traducidos por Dr. Scratch, crea un diccionario en 
+el que incluimos como llave los nombres de las habilidades en el idioma que sea
+y como valor su traducción al inglés. 
+
+Al llamar a la función se le pasa como parámetro la página que queremos mostrar,
+que será una de las habilidades en cualquier idioma de los traducidos por Dr. Scratch,
+entonces se recorre el diccionario anterior y se obtiene su traducción al inglés
+y se redirige al usuario a dicha página.
+
+Todas las plantillas HTML de aprendizaje se encuentran nombradas en inglés, por 
+ello es necesario su traducción, sino tendríamos tantas plantillas repetidas
+como idiomas implementados para cada habilidad.\\
+
+\textbf{Nuevo diseño de los dashboards} \\
+
+Ya se ha mencionado que había que realizar cambios en las páginas mostradas
+al usuario tras realizar el análisis y que pudieron observarse con la implementación
+anterior. Por ello se decidió cambiar el diseño de la apariencia de lo cual se
+encargó mi compañera Eva. Se pueden apreciar los cambios en la 
+\textit{Figura~\ref{figure:dashboards}}.
+
+   \begin{figure}[H]
+       \includegraphics[width=1.0\textwidth]{img/dashboards}
+       \caption{Dashboards actuales de Dr. Scratch}
+       \label{figure:dashboards}
+   \end{figure} 
+
+
+Mi aportación ha sido la traducción de las mismas y de la funcionalidad de 
+Twitter, que era diferente del resto. Para esta funcionalidad tuve que utilizar 
+el mecanismo de Django: \textbf{\{\% blocktrans \%\}[contenido]\{\% endblocktrans \%}\},
+ en lugar de utilizar el que venía usando desde el principio. \\
+
+\textbf{Cuenta de organizaciones} \\
+
+La implementación que quisimos tener realizada antes de llegar a la 
+\textit{2015 Scratch Conference} fue ofrecer la posibilidad de registrar organizaciones.
+Esta iniciativa surgió de la petición de varias organizaciones que
+realizan numerosos campamentos de programación y tienen cientos de proyectos 
+que analizar en pocos días.
+
+Presenté
+la plataforma en la conferencia e hice énfasis en la funcionalidad. Esto nos permitió
+lograr que varias organizaciones, además de las que habían solicitado el servicio,
+quisieran probar la funcionalidad y nos reportaran errores para seguir mejorándola.
+
+Para el desarrollo de la funcionalidad se añadió en la página principal 
+un botón rojo, en la parte superior derecha, que indica ``ORGANIZACIONES''. Al pulsar en dicho enlace, nos redirige al recurso \texttt{/sign\_up\_organization}
+que nos muestra la página de la \textit{Figura~\ref{figure:organizaciones}}.
+
+   \begin{figure}[H]
+       \centering
+       \includegraphics[width=0.71\textwidth]{img/organizaciones}
+       \caption{Página principal para organizaciones en Dr. Scratch}
+       \label{figure:organizaciones}
+   \end{figure} 
+
+Haciendo scroll tenemos un formulario para poder registrarnos
+y las instrucciones que debemos seguir para poder
+hacerlo. Todo esto se muestra en la \textit{Figura~\ref{figure:registro-organizaciones}}.
+
+   \begin{figure}[H]
+       \centering
+       \includegraphics[width=0.71\textwidth]{img/registro-organizaciones}
+       \caption{Formulario de registro para organizaciones}
+       \label{figure:registro-organizaciones}
+   \end{figure}
+
+El mecanismo que hemos seguido para registrar organizaciones, ha sido 
+muy controlado. Cuando nos escribían, introducíamos en la base de datos, 
+con una página muy primitiva, los \textit{hashkeys} que les indicábamos 
+en el correo. Así podían registrarse y dicha hashkey se eliminaba de la 
+base de datos para que no pudiera ser utilizada por
+otro usuario. 
+
+Así, hemos conseguido tener un control total de las organizaciones
+registradas y conocer los errores que se han producido para 
+solventarlos.
+
+Una vez que se han registrado e ingresado en Dr. Scratch para 
+organizaciones, se les muestra la página de la 
+\textit{Figura~\ref{figure:dashboard-organizaciones}} y como se puede ver,
+además de los dos análisis por URL y por subida de proyecto, hay otro más.
+
+
+   \begin{figure}[H]
+       \centering
+       \includegraphics[width=0.85\textwidth]{img/dashboard-organizaciones}
+       \caption{Dashboard de organizaciones}
+       \label{figure:dashboard-organizaciones}
+   \end{figure}
+
+Este otro análisis permite subir un fichero CSV con un listado de proyectos Scratch
+a analizar. Se realiza el análisis de todos los proyectos y se devuelve la información
+obtenida en otro fichero CSV. Se admiten archivos CSV con 4 formatos de archivo diferentes:
+
+\begin{itemize}
+    \item Archivo en el que se puede poner en una misma columna el número de 
+            identificador de los proyectos de Scratch.
+    \item Otro que permite poner en una columna la URL completa de 
+            los proyectos.
+    \item Fichero en el que hubiera una primera columna en la que 
+            hubiera un
+            identificador para el alumno que ha creado el proyecto y otra
+            columna para el identificador del proyecto.
+    \item La misma idea anterior, pero con la URL completa del proyecto.  
+\end{itemize}
+
+Por si hay alguna duda o confusión de cómo debe ser este archivo, 
+programé una
+ventana  modal que se muestra en esta página al pulsar sobre la palabra 
+\textbf{fichero CSV} y que puede verse en la 
+\textit{Figura~\ref{figure:csv}}.
+
+   \begin{figure}[H]
+       \centering
+       \includegraphics[width=0.75\textwidth]{img/csv}
+       \caption{Ventana modal que explica cómo debe ser el fichero CSV}
+       \label{figure:csv}
+   \end{figure}
+
+Cabe señalar que se tuvo en cuenta para la implementación, que \textit{podía producirse error
+en alguno de los proyectos al ser analizados por Hairball y podía hacer que el
+análisis de todo el fichero se detuviera y mostrara error}. Por ello, se trató 
+dicha situación como una \textbf{excepción} y en el fichero CSV que se devuelve, muestra
+qué proyectos han tenido problemas para ser analizados, pero permitiendo tener
+una salida para el resto de proyectos.\\
+
+El fichero que se devuelve y que el usuario puede descargarse tiene la 
+estructura que se muestra en la 
+\textit{Figura~\ref{figure:fichero-csv}}, con una columna para el identificador
+del alumno -si es que se indicó esta columna-, otra para el identificador
+del proyecto y después el resto de columnas con toda la información obtenida
+con Hairball.\\
+
+   \begin{figure}[H]
+       \centering
+       \includegraphics[width=1.0\textwidth]{img/fichero-csv}
+       \caption{Fichero CSV con toda la información del análisis}
+       \label{figure:fichero-csv}
+   \end{figure}
+
+Se puede ver cómo algunos proyectos han sufrido algún error durante
+el análisis y por ello muestran la frase ``Error analizando el proyecto'', pero
+se ha podido seguir analizando el resto de proyectos.
+
+Estos proyectos que sufren error son guardados en una carpeta diferente, para
+poder estudiar cuál es el error que se produce en el análisis con Hairball o si
+es debido a algún problema con Kurt.
+
+\subsection{Fase III}
+\label{subsec:fase-iii}
+
+Después de la Scratch Conference obtuvimos muchísima realimentación gracias 
+a todas las organizaciones y usuarios que quisieron probar la plataforma. Y 
+realizamos nuevas implementaciones gracias a las observaciones que nos 
+realizaron y otras que aún teníamos pendientes y que pueden verse en la 
+\textit{Figura~\ref{figure:fase-iii}}.\\
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{img/fase-iii}
+        \caption{Fase III del proyecto Dr. Scratch}
+        \label{figure:fase-iii}
+    \end{figure}
+
+\textbf{Cambio en getSb2: descargar únicamente el JSON} \\
+
+Una de las primeras observaciones que nos hicieron llegar las organizaciones,
+fue que \textit{el análisis del CSV tardaba mucho tiempo} en realizarse y en algunas
+ocasiones terminaba mostrando error.
+
+Se decidió \textit{modificar el servidor Node.js} que nos
+permitía descargar los proyectos desde la plataforma de Scratch a nuestro servidor.
+De forma, que no descargara el proyecto completo, sino únicamente el fichero JSON, 
+ya que es lo único que necesitamos para realizar el análisis con Hairball.
+
+Comencé a estudiar el código del \textit{servidor getSb2} y conseguí
+modificarlo para que, efectivamente, únicamente se descargara el fichero JSON.
+
+La velocidad de análisis mediante esta opción aumentó enormemente y desaparecieron los errores.
+
+Al modificar el getSb2 se afectó también al análisis mediante URL el 
+cual se realiza a mayor velocidad y con menor tráfico. Esto es perfecto
+para el consumo del crédito de Azure.\\
+
+\textbf{Traducción de los bloques ``pintados''} \\
+
+Al empezar a traducir la plataforma a otros idiomas me encontré con un problema 
+que no se había detectado anteriormente: los bloques que se muestran en las 
+páginas para aprender más y poder mejorar en las distintas habilidades no se
+traducían correctamente a idiomas que no fueran el español o el inglés.
+
+Esto tiene una explicación: mi compañera Eva había tratado de obtener el idioma
+para traducir los bloques con JavaScript con la función mostrada en la
+\textit{Figura~\ref{figure:javascript-blocks}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth]{img/javascript-blocks}
+        \caption{Traducción fallida de los bloques de ScratchBlocks}
+        \label{figure:javascript-blocks}
+    \end{figure}
+ 
+Al observar por consola cuál era la salida de la línea que detecta el idioma
+vi que siempre era la misma: \textit{es(español)}.
+
+Lo que estaba pasando era que cuando el idioma del navegador era inglés(en),
+Django no activaba el mecanismo de traducción, por lo que funcionaba perfectamente.
+Y cuando el idioma era español (es), se activaba el mecanismo de traducción de
+Django y dicha línea obtenía algo coherente. Pero cuando se implementó para 
+el catalán, se activaba el mecanismo de traducción pero esa línea devolvía español (es).
+
+Tuve que cambiar la función por otra que utiliza AJAX, para poder llamar 
+en segundo plano a una función que implementé en nuestro servidor. Esta
+función llamada \texttt{blocks()} devuelve correctamente el idioma en el que se realiza la petición para
+que la traducción funcione. El cambio puede apreciarse en la
+\textit{Figura~\ref{figure:ajax-blocks}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{img/ajax-blocks}
+        \caption{Traducción de los bloques de ScratchBlocks mediante AJAX}
+        \label{figure:ajax-blocks}
+    \end{figure}
+
+En el servidor añadí al fichero \texttt{urls.py} una línea para que se admitiera el
+recurso /blocks el cual esta asociado a la función \texttt{blocks()}.  Esta función cambia
+el contenido de la variable \texttt{headers['Accept-Language']} por lo  almacenado
+en \texttt{request.LANGUAGE\_CODE} que es el idioma en el que está configurado el navegador
+que realiza la petición.\\
+ 
+\textbf{Registro de usuarios} \\
+
+Una vez que se había realizado el registro de organizaciones, parecía que el 
+registro de usuarios iba a ser fácil. Y lo que es el registro es idéntico al
+de organizaciones. Por lo que ahora mismo en nuestro servidor tenemos \textbf{organizations}
+y \textbf{coders}. Se eligió la palabra \textit{coder} en lugar de \textit{user}, porque en Django ya 
+hay un objeto user que nos ha sido muy útil. Ya que tanto organizaciones como 
+programadores extienden de este objeto usuario con campos extras mediante 
+\textbf{herencia}. 
+
+Pero además tuve que añadir más código en todo el servidor
+para controlar constantemente si el usuario que estaba registrado era 
+una organización
+o un programador. Esto lo he hecho mediante una función que se llama
+\texttt{segmentation()} y que es llamada en numerosas partes del código para decidir qué
+página es mostrada y el contenido de la misma.
+
+El objeto user de Django tiene campos y funciones implementadas que 
+hemos utilizado tales como:
+
+\begin {itemize}
+    \item User.objects.filter(username = username)
+    \item request.user.is\_authenticated()
+    \item request.user.username
+    \item user.set\_password
+\end {itemize}
+
+
+
+
+Lo próximo será tener \textbf{students}, \textbf{teachers} y 
+\textbf{classroms}, que se extenderán de coder con los
+campos añadidos que sean necesarios, quedando el árbol de objetos como muestra
+la \textit{Figura~\ref{figure:usuarios}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\textwidth]{img/usuarios}
+        \caption{Árbol de usuarios de Dr. Scratch}
+        \label{figure:usuarios}
+    \end{figure}
+
+De esta forma, \textit{tenemos en la base de datos los distintos tipos de usuarios
+clasificados y es más fácil realizar un control de los mismos}.\\
+
+\textbf{Traducción dinámica: bola del mundo} \\
+
+Otra de las peticiones que nos realizaron fue la posibilidad de cambiar de 
+idioma sin necesidad de modificar la configuración del navegador.
+
+Incluí en la página principal de Dr. Scratch el icono de una bola del mundo
+que al pulsar en ella muestra un desplegable con los idiomas que están disponibles
+actualmente. Esto puede verse en la \textit{Figura~\ref{figure:bola-mundo}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{img/bola-mundo}
+        \caption{Traducción dinámica de la web: bola del mundo}
+        \label{figure:bola-mundo}
+    \end{figure}
+
+ 
+Para implementar esta funcionalidad he utilizado la vista de redirección
+\texttt{set\_language}.
+
+Al elegir un idioma y pulsar en el botón \textbf{``Cambiar idioma''} se pide al servidor
+el recurso \texttt{/i18n/setlang/} y se observa en el fichero \texttt{urls.py} la siguiente línea:\\
+\texttt{url(r'\^i18n/', include('django.conf.urls.i18n'))}, la cual activa la vista.
+
+Una curiosidad es que aunque es un formulario, la vista \texttt{set\_language} espera 
+ser llamada con un \textbf{método GET} y no POST como es común en los formularios.\\
+
+El mecanismo interno que realiza la vista es el siguiente:
+\begin{enumerate}
+    \item Fija la preferencia de idioma al que se ha seleccionado en el parámetro
+            \textit{language}.
+    \item La vista guarda dicho idioma en la sesión del usuario.
+    \item Redirecciona al usuario a la misma página.\\
+\end{enumerate}
+
+
+\textbf{Extensión para Chrome} \\
+
+Como ya hemos visto, los niños a veces tienen problemas para identificar cuál
+es la URL que deben introducir en el cuadro de análisis o cómo descargarse el
+proyecto a su ordenador para subirlo después a Dr. Scratch y analizarlo.
+
+Para poder facilitar esta tarea, tanto a niños pequeños como a personas con
+ discapacidad intelectual, pensamos en realizar un \textbf{plugin} que permitiera realizar
+el análisis desde la propia página de Scratch.
+
+El plugin que he realizado es una \textit{extensión para el navegador Chrome}, que una
+vez instalado, como puede verse en la 
+\textit{Figura~\ref{figure:plugin-bombilla}}, se ve en la esquina superior 
+derecha del navegador con el símbolo característico de Dr. Scratch:
+ la bombilla.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{img/plugin-bombilla}
+        \caption{Botón de la extensión}
+        \label{figure:plugin-bombilla}
+    \end{figure}
+
+
+Al pulsar en el icono, nos muestra el desplegable que vemos en la 
+\textit{Figura~\ref{figure:plugin-desplegable}}, en el cual ya se ha insertado
+la URL actual sin la parte final (\#editor). Nos permite pulsar 
+directamente en el botón \texttt{ANALYZE!} que abrirá otra pestaña y nos mostrará el 
+resultado del análisis.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{img/plugin-desplegable}
+        \caption{Extensión de Dr. Scratch para Chrome}
+        \label{figure:plugin-desplegable}
+    \end{figure}
+
+Destacar que se ha dejado la \textit{opción de poder modificar el contenido de la URL
+por si se quiere utilizar el plugin para analizar} diversos proyectos, en lugar 
+de utilizar la página principal. \\
+
+
+\textbf{Traducción de los contenidos a más idiomas} \\
+
+Para lograr la traducción de más idiomas, intentamos motivar a los 
+usuarios de Dr. Scratch a ser los propios traductores. A aquellos 
+usuarios que han querido participar en la traducción, se les envió 
+el fichero \textit{django.po} de su respectivo idioma, que fue 
+generado ejecutando en la shell:\\
+\textbf{\~\$ python manage.py makemessage -l [código\_idioma]}
+
+Donde el código del idioma ha sido:
+\begin{itemize}
+    \item   es: para español.
+    \item   ca: para el catalán.
+    \item   gl: en el caso del gallego.
+    \item   pt: para el portugués.
+    \item   el: ha sido utilizado para el griego que estará
+             próximamente en producción.   
+\end{itemize}
+
+Y el fichero settings.py ha sido modificado para añadir todos ellos, como
+puede observarse en la \textit{Figura~\ref{figure:idiomas}}.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.45\textwidth]{img/idiomas}
+        \caption{Modificación en settings.py para traducir a más idiomas}
+        \label{figure:idiomas}
+    \end{figure}
+
+\textbf{Página de agradecimientos} \\
+
+Para agradecer a todos los colaboradores, tanto en las traducciones, como a los
+colegios que nos han permitido realizar talleres en sus centros, diseñé una página de 
+agradecimientos, con las siguientes secciones:
+
+\begin{itemize}
+    \item \textbf{Principal:} en la que se muestra el logo de Dr. Scratch y damos
+            las gracias y explicamos la finalidad de esta página, la cual puede
+            verse en la \textit{Figura~\ref{figure:gracias}}.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{img/gracias}
+        \caption{Agradecimiento a todos nuestros colaboradores}
+        \label{figure:gracias}
+    \end{figure}
+
+
+    \item \textbf{Quiénes somos:} tratando de ser cercanos, para invitar a que todo el
+            mundo siga participando en la creación de la web.
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{img/equipo}
+        \caption{Quiénes somos}
+        \label{figure:equipo}
+    \end{figure}
+
+    \item \textbf{Traducciones:} como se ve en la \textit{Figura~\ref{figure:traducciones}}
+            se muestra una foto de aquellos colaboradores que quieren aparecer
+            en la web, indicando sus nombres y a qué idioma han realizado la traducción, 
+            así como una pequeña biografía.
+ 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{img/traducciones}
+        \caption{Colaboradores que han participado en la traducción de Dr. Scratch}
+        \label{figure:traducciones}
+    \end{figure}
+    
+    \item \textbf{Talleres:} como se ve en la \textit{Figura~\ref{figure:talleres}}
+            se muestra una foto de aquellos colegios en los que se ha realizado
+            algún taller para poder realizar test de usabilidad con alumnos de
+            5º y 6º de primaria.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{img/talleres}
+        \caption{Colegios colaboradores}
+        \label{figure:talleres}
+    \end{figure}
+
+\end{itemize}
+
+\textbf{Botones en la página principal: estadísticas, colaboradores y blog} \\
+
+Debido a que se implementaron nuevas páginas y no había forma de acceder a ellas.
+Se añadieron a la página principal, en la sección de contacto, tres botones para
+poder visualizarlas. La \textit{Figura~\ref{figure:botones}} 
+muestra como queda dicha sección tras la modificación.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{img/botones}
+        \caption{Acceso a las páginas de estadísticas, colaboradores y al blog}
+        \label{figure:botones}
+    \end{figure}
+
+Los botones de estadísticas y colaboradores redireccionan a las 
+páginas \texttt{/statistics} y \texttt{/collaborators}, 
+respectivamente. Y el fichero \texttt{urls.py} indica que se 
+encuentran enlazadas con las funciones \texttt{statistics()} y 
+\texttt{collaborators()} que muestran las páginas
+\texttt{statics.html} y \texttt{collaborators}.
+
+Pero la redirección al blog se realiza mediante un mecanismo especial de Django.
+Para ello se añadió al fichero \texttt{urls.py} la siguiente línea:\\
+
+    \texttt{url(r'\^} \texttt{blog\$',}
+ 
+        \texttt{RedirectView.as\_view (url='https://drscratchblog.wordpress.com'))}\\
+
+
+\textbf{Modificación del procesador del plugin Dead Code} \\
+
+Como ya he comentado, en la Fase I se reprogramaron todos los procesadores
+de los plugins de Hairball. Cabe recordar que entonces la salida
+del plugin Dead Code era la mostrada en la \textit{Figura~\ref{figure:dead-code1}}. 
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{img/dead-code1}
+        \caption{Salida antigua del plugin Dead Code}
+        \label{figure:dead-code1}
+    \end{figure}
+
+Pero se realizaron algunos cambios en el plugin y la salida ha
+pasado a ser la que se observa en la \textit{Figura~\ref{figure:dead-code2}}. 
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{img/dead-code2}
+        \caption{Salida actual del plugin Dead Code}
+        \label{figure:dead-code2}
+    \end{figure}
+
+Por este motivo, el procesamiento que realicé en la función
+\texttt{proc\_dead\_code()} quedó obsoleto. 
+
+Mi compañera Eva
+intentó solucionarlo, pero para ello hizo uso de la función
+\texttt{ast.literal eval()}. Esta función lo que hace es convertir
+líneas en conjuntos \textbf{clave:valor} de un diccionario. Esto estaría 
+bien si la salida de Dead Code pudiera convertirse en todos los
+casos, pero no es así. Cuando en un mismo objeto hay varios 
+conjuntos de bloques que no se ejecutan nunca, hay líneas en la
+salida que no muestran el objeto, tal como puede verse en el 
+caso del \textit{Contenedor verde}. \\
+
+La forma que en un principio propuse para solucionarlo y poder
+contabilizar los bloques que no se ejecutaban era haciendo
+uso de la función \texttt{split()} pasándole como parámetros
+las cadenas claves \texttt{kurt.Block} y \texttt{kurt.Script}.\\
+
+Como estas cadenas ya no aparecen en la salida he tenido que modificar el procedimiento inicial, diferenciando entre:
+
+\begin{itemize}
+    \item Líneas en las que aparece el caracter \textbf{:} en las
+    cuales utilizo \texttt{split()} con los argumentos: \textbf{'}, \textbf{[[} y \textbf{]}.
+    \item Líneas en las que no está el caracter \textbf{:} 
+    que se puede obtener la información utilizando \texttt{split()}
+    pasándole como parámetros: \textbf{[} y \textbf{]]}.
+\end{itemize}
+
+Todos esto se introduce en un \texttt{for} que recorre todas 
+las líneas de la salida del plugin y va contabilizando mediante
+contadores el número de bloques que no se ejecutan. Y además,
+también se va creando un lista de cadenas en las que se indica
+qué objetos tienen bloques que no tienen ningún evento que provoque
+que se ejecuten y cuáles son esos bloques.
+
+Toda la información procesada es guardada, tal como se hacía ya,
+en el diccionario que se pasa a la correspondiente plantilla HTML
+que muestra cada uno de los 3 dashboards.\\
+
+\textbf{Formulario de registro para usuarios} \\
+
+La forma de registro de las organizaciones fue muy controlada 
+mediante un \textbf{hashkey} que debían solicitarnos por correo 
+electrónico y que nosotros introducíamos en la base de datos con 
+la ayuda de una página muy primitiva.
+
+Pero esta forma de registro no es la ideal y ya solventados los 
+problemas de registro, he diseñado un formulario del 
+mismo estilo que el que se realiza en Scratch, ya que hay que 
+tener en cuenta que los usuarios pueden ser menores de edad.
+
+
+La apariencia del formulario se puede ver en la \textit{Figura~\ref{figure:registro-coder}}. 
+
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{img/registro-coder}
+        \caption{Formulario para el registro de usuarios}
+        \label{figure:registro-coder}
+    \end{figure}
+
+Cuando un usuario pulsa en el botón \textit{Regístrate} se 
+hace una \textbf{petición POST} con el recurso 
+\texttt{/sign\_up\_coder}. Entonces, el fichero \texttt{urls.py} enlaza con la función \texttt{sign\_up\_coder()}.
+
+En la \texttt{sign\_up\_coder()} se hace uso del mecanismo de 
+formularios de Django para validar el formulario. Esto se ha
+realizado en todos los formularios utilizados en la plataforma, 
+pero no se ha explicado hasta ahora para no repetir información.
+Esto consiste en indicar en el fichero \texttt{forms.py} los
+campos que debe tener un formulario para ser correcto, si 
+alguno de los campos no coincide la función \texttt{form.is\_valid()} devolverá \texttt{FALSE}.
+
+Si el formulario es válido, obtendremos la información del mismo
+para comprobar que los campos de \texttt{email} y \texttt{email\_confirm} coinciden, 
+del mismo modo que \texttt{password} con \texttt{password\_confirm}. En caso 
+contrario, se mostrará una página indicando el error cometido. Esto
+último se realiza mediante distintos flags. Lo mismo ocurre si el
+nombre de usuario ya existe o intenta utilizar una dirección de
+correo que ya ha sido registrada.
+
+Si el registro se realiza con éxito, se realiza la autenticación 
+y login del usuario de forma automática y se le redirige al
+recurso \texttt{/coder/(username)} que será su propio espacio que puede verse en la \textit{Figura~\ref{figure:dashboard-coder}}. 
+
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{img/dashboard-coder}
+        \caption{Dashboard de programadores}
+        \label{figure:dashboard-coder}
+    \end{figure}
+
+Este dashboard aún está en desarrollo. La idea es que el usuario
+pueda ver más información de la mostrada sobre los proyectos que 
+ha analizado con anterioridad, además de incluir mecanismos de
+gamificación.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RESULTADOS %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\chapter{Resultados}
+
+A lo largo de todo este documento se ha recalcado la importancia del trabajo
+en equipo en este proyecto. En él hemos estado trabajando varias personas
+ coordinadas a través de las herramientas \textbf{Trello} y \textbf{Github}.
+
+\textbf{Trello} nos ayudó a tener presentes cuáles eran los objetivos a 
+conseguir, clasificándolos en el largo, medio y corto plazo.
+
+\textbf{GitHub}, por su parte, es una plataforma de desarrollo 
+colaborativo, en la que creamos un repositorio y hemos ido gestionando las 
+diferentes versiones de Dr. Scratch. Además, creamos ramas diferentes para 
+cada entorno, lo cual ha sido muy útil. 
+Para conocer la aportación de los programadores de un 
+equipo a los repositorios de GitHub se puede utilizar \textbf{CVSAnalY}, 
+la cual contabiliza los \textit{commits} realizados por usuarios. Y 
+utilizándola se pueden observar la salida de la 
+\textit{Figura~\ref{figure:commits}}.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.7\textwidth]{img/commits}
+                \caption{Salida del programa CVSAnalY}
+                \label{figure:commits}
+            \end{figure}
+
+Esta salida ha sido recogida en la gráfica mostrada en la 
+\textit{Figura~\ref{figure:grafica}}.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=1.0\textwidth]{img/grafica}
+                \caption{Commits por usuario en el repositorio de Dr. Scratch}
+                \label{figure:grafica}
+            \end{figure}
+
+Conociendo el proyecto por completo, es el momento de indicar cuáles han sido
+los resultados que hemos logrado con la herramienta. Y para ello es de gran 
+utilidad \textbf{Google Analytics}, donde podemos observar cuáles son el número 
+de sesiones que se han realizado, además de cuántos usuarios han visitado la 
+web. En la \textit{Figura~\ref{figure:numeros}} se pueden observar los números
+más destacables para los meses de abril a septiembre de 2015.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=1.0\textwidth]{img/numeros}
+                \caption{Algunos números de Dr. Scratch en Google Analytics}
+                \label{figure:numeros}
+            \end{figure}
+
+Además, se ha de destacar que Dr. Scratch no ha sido utilizado sólo en España, sino que
+es un proyecto internacional. Hemos recibido realimentación de usuarios de todo el 
+planeta y en la \textit{Figura~\ref{figure:mapamundi}} se puede observar qué
+países son los que más utilizan la herramienta.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=1.0\textwidth]{img/mapamundi}
+                \caption{Mapa de los países que utilizan Dr. Scratch}
+                \label{figure:mapamundi}
+            \end{figure}
+
+Pero además, ha sido desarrollado para poder ser utilizado en cualquier navegador
+y se puede ver en la \textit{Figura~\ref{figure:navegadores}} cuál es el número
+de sesiones con cada uno de ellos.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\textwidth]{img/navegadores}
+                \caption{Navegadores}
+                \label{figure:navegadores}
+            \end{figure}
+ 
+
+En los talleres que hemos realizado en varios colegios, hemos podido observar
+cómo al utilizar Dr. Scratch, los alumnos mejoraban su puntuación. 
+En concreto, en la \textit{Figura~\ref{figure:mejora}} se pueden ver la mejoría
+de los alumnos de 6º de primaria del Colegio Lope de Vega de Madrid.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\textwidth]{img/mejora}
+                \caption{Mejora de los alumnos en uno de los talleres de Dr. Scratch}
+                \label{figure:mejora}
+            \end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONCLUSIONES %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\chapter{Conclusiones}
+\label{chap:conclusiones}
+
+En este capítulo quiero realizar un análisis de cuáles han sido los 
+\textbf{objetivos alcanzados} y cuáles no han podido realizarse por algún motivo
+particular. Además, realizaré una reflexión de cómo lo aprendido durante
+mis años en la universidad me han ayudado en la realización de este PFC y
+también lo que he aprendido con el desarrollo del mismo.
+Finalmente, indicaré cuales son las líneas futuras que pueden ser 
+seguidas para la mejora de Dr. Scratch y una valoración personal de
+qué es lo que me ha aportado este año y medio.
+
+
+\section{Consecución de objetivos}
+\label{sec:consecucion-objetivos}
+
+Al ser un proyecto tan grande, multidisciplinar y con tantas personas involucradas,
+ hay que tener en cuenta el esfuerzo de coordinación que esto supone, además de otras tareas
+realizadas sumadas al desarrollo de la plataforma.
+
+En primer lugar, el \textbf{objetivo general} era tener una plataforma web en 
+producción 24x7 (todos los días del año, a todas horas funcionando).
+Además, era importante que no presentara problemas y realizara la funcionalidad básica.
+
+Dicho objetivo ha sido alcanzada con creces. En los 6 meses de julio a diciembre de 2015, la
+plataforma únicamente ha estado caída unas 2 horas. Y estas horas en las que
+no ha estado funcionando ha sido debido a que se estaban realizando cambios,
+para añadir implementaciones al entorno de producción.
+
+Además, puede concluirse que 
+como se ha ido viendo a lo largo de este documento, los \textbf{objetivos 
+específicos} que se marcaron en cada una de las diferentes fases han sido 
+alcanzados, teniendo Dr. Scratch numerosas funcionalidades que lo hacen
+atractivo para el usuario.
+
+Cabe destacar de nuevo la importancia de los talleres y jornadas que hemos ido
+realizando a lo largo del proyecto, lo que nos ha ido haciendo pivotar según
+las necesidades reales observadas. A estas necesidades han sido a las que se
+ha ido dando prioridad una vez logrado el prototipo inicial.
+
+Se ha de señalar la importancia de colaboración para la \textbf{traducción} de la plataforma, lo
+que nos permite tener la web en varios idiomas gracias al mecanismo que implementé
+y que ha sido uno de los objetivos más destacables. 
+
+Y hemos podido observar, de forma muy gratificante, que Dr. Scratch es una 
+herramienta muy útil para numerosos docentes y alumnos. Se han  
+\textbf{analizado más de 80.000 proyectos}, como puede verse en  
+\textit{Figura~\ref{figure:proyectos}}. En el caso de los 
+docentes hemos recibido una gran cantidad de correos dándonos las gracias por el 
+desarrollo de la herramienta, y algunos han querido participar en la traducción.
+
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.4\textwidth]{img/proyectos}
+                \caption{Número de proyectos analizados}
+                \label{figure:proyectos}
+            \end{figure}
+
+Aún así Dr. Scratch es aún un proyecto vivo al que estamos añadiendo más 
+funcionalidades y en el que todavía tenemos el reto de añadir gamificación para
+motivar a los usuarios.
+
+
+\section{Aplicación de lo aprendido}
+\label{sec:aplicacion}
+
+Durante el desarrollo de este proyecto he podido tomar conciencia de la 
+importancia de muchos \textit{conocimientos adquiridos durante la carrera} que me han
+permitido llevarlo a cabo. No me había dado cuenta de todo lo que realmente
+he aprendido estos años hasta que poco a poco he necesitado algunos de los 
+conocimientos adquiridos.
+
+
+\begin{enumerate}[label=\textbf{\arabic{*}.}]
+  \item \textbf{Fundamentos de programación:} Esta asignatura fue la primera que
+    cursé de programación y me permitió aprender lo que era un bucle, una condición,
+    una función... Es decir, los conceptos básicos de programación que se 
+    utilizan siempre, sea cual sea el lenguaje.
+  \item \textbf{Sistemas Telemáticos I:} Me permitió aprender conceptos básicos
+    de redes que me han sido útiles para la configuración de Apache y Azure. 
+    Además, de ser en la primera asignatura en la que necesité programar una
+    funcionalidad amplia que permitiera a un usuario obtener una ventaja utilizando
+    mi programa.
+  \item \textbf{Sistemas Telemáticos II:} Fue en esta asignatura donde di el 
+    salto a la programación orientada a objetos y aprendí cuáles eran los distintas
+    características que debe tener un servidor, así como el paradigma 
+    Cliente-Servidor que Dr. Scratch sigue.
+  \item \textbf{IARO:} Gracias a la cual empecé a programar en Python, entendiendo
+    completamente como se pueden gestionar peticiones HTTP en el lado del servidor
+    para parsear la información, analizarla y dar una respuesta al cliente.
+  \item \textbf{SAT:} Sin duda, la más importante para la realización de este
+    Proyecto Fin de Carrera, donde aprendí a realizar páginas webs con el 
+    framework Django. Además de familiarizarme con las páginas HTML con estilo
+    mediante CSS.
+\end{enumerate}
+
+Además de todas estas asignaturas, a lo largo de mi doble titulación he adquirido
+otras aptitudes que me han ayudado, como la capacidad de análisis y observación
+de las necesidades de los usuarios. Y he podido utilizar mi capacidad comunicativa,
+que he desarrollado con la realización de numerosas presentaciones, 
+para motivar a los chicos en los talleres realizados.
+
+\section{Lecciones aprendidas}
+\label{sec:lecciones_aprendidas}
+
+Con este proyecto he podido ampliar conocimientos sobre algunos de los aspectos
+mencionados anteriormente y adquirir otros nuevos.
+
+\begin{enumerate}
+  \item He aumentado mi conocimiento sobre Python, Django y el diseño de páginas
+        con HTML y CSS.
+  \item He podido aprender más tecnologías de diseño web: Bootstrap, JavaScript,
+        CSS3, AJAX y JQuery.
+  \item He probado la experiencia de poner en producción una web en la 
+        plataforma cloud Azure y la configuración de Apache. Lo cuál ha 
+        sido una de las cosas que más trabajo me ha supuesto pero también en 
+        la que más he aprendido y que ha sido más gratificante.
+  \item También he aprendido a gestionar bases de datos MySQL, que nunca antes
+        había utilizado.  
+  \item Ha sido muy importante la realización de eventos, lo cual he disfrutado
+        enormemente y me he sentido muy cómoda.
+     
+\end{enumerate}
+
+
+\section{Trabajos futuros}
+\label{sec:trabajos_futuros}
+
+El mayor reto actual de Dr. Scratch es conseguir cuentas de usuarios diferenciadas
+que permita distinguir entre alumnos y docentes, para que estos últimos puedan
+llevar un seguimiento de sus clases. Esto es muy interesante, ya que es lo que 
+añadirá valor a la experiencia utilizando Dr. Scratch permitiendo al docente
+saber qué alumnos de sus clases están poco motivados o cuáles necesitan trabajos
+extra porque superan con mucha facilidad los que ya han realizado. Esto permitiría
+de forma fácil ayudar al maestro a poder desarrollar las aptitudes de sus alumnos
+al máximo. 
+
+En el caso de los alumnos, nos encantaría añadir aspectos de gamificación mediante
+medallas o algo similar que les permita tener un incentivo extra para programar
+y así hacer más amena la frustración que se siente hasta que el programa hace
+lo que queremos exactamente. Además de poder crear una red social en la que ellos
+interactúen para tomar conciencia que no son los únicos que lo hacen y se ayuden
+unos a otros en sus proyectos fomentando el trabajo colaborativo.
+
+También sería estupendo poder realizar una aplicación móvil que permita utilizar
+Dr. Scratch sea donde sea  desde nuestro dispositivo sin la necesidad de tener
+un ordenador delante.
+
+
+
+
+\section{Valoración personal}
+\label{sec:valoracion}
+
+Me gustaría añadir a todo lo comentado en este documento, que el desarrollo de Dr. Scratch me ha
+motivado personalmente muchísimo a crear aplicaciones y webs que sean utilizadas
+por personas. 
+
+Durante la carrera había realizado numerosas prácticas similares
+en conceptos y otras más difíciles. Pero no había podido sentir la inmensa
+gratificación de ver utilizarlo a personas, especialmente a niños, para
+aprender algo que a mí me apasiona: la programación.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APÉNDICE(S) %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+\appendix
+\chapter{Concurso Dr. Scratch}
+\label{app:concurso}
+
+Para poner la guinda al pastel a este gran proyecto, se realizó en los meses de
+noviembre y diciembre un concurso el primer concurso a nivel nacional de 
+programación con Scratch. Hubo dos categorías, una para alumnos de primaria y otra para 
+secundaría y se debía realizar un proyecto con Scratch en el que se explicara algún 
+concepto científico. Una vez realizado el proyecto, debía analizarse con 
+Dr. Scratch y tratar de mejorar la puntuación siguiendo los consejos para
+mejorar las diferentes habilidades relacionadas con el Pensamiento Computacional.
+
+Los proyectos fueron votados por 16 expertos, conociendo únicamente el 
+identificador del proyecto, sin conocer el nombre del concursante ni ningún
+otro dato. Y fue curioso porque en ambas categorías, las ganadoras fueron chicas.
+
+La entrega de premios se realizó el día 10 de diciembre de 2015 en Campus Madrid de Google. 
+Como puede verse en \textit{Figura~\ref{figure:concurso}} asistieron los 
+ganadores del concurso y además chicos de colegios que habían participado. 
+Pasamos una 
+tarde realmente agradable y muy enriquecedora entorno a la programación.
+
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\textwidth]{img/concurso}
+                \caption{Entrega de premios del concurso Dr. Scratch}
+                \label{figure:concurso}
+            \end{figure}
+
+\cleardoublepage
+\chapter{Diagramas de flujo}
+\label{app:diagramas}
+
+
+Con el objetivo de clarificar cómo es el interior del servidor y
+cuál es el flujo entre las distintas funciones implementadas, se
+muestran tres diagramas de flujo para explicar los distintos tipos de análisis.
+
+\textbf{Análisis subiendo el proyecto: \_upload} \\
+
+En el diagrama de flujo de
+la \textit{Figura~\ref{figure:diagrama-upload}} se explica el uso y la 
+interconexión de las funciones que intervienen en el análisis de proyectos
+de Scratch mediante la opción de subida del archivo SB2 desde nuestro propio 
+ordenador.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{img/diagrama-upload}
+        \caption{Diagrama de flujo del análisis \_upload}
+        \label{figure:diagrama-upload}
+    \end{figure}
+
+Vamos a ir viendo cada parte del diagrama por separado para facilitar su 
+comprensión y evitar repetir explicaciones en las siguientes implementaciones:
+
+\begin{enumerate}
+    \item La función \texttt{show\_dashboard()} es la función a la que se llama
+            cuando se elige un proyecto y se pulsa en el botón de analizar.            Su lógica se presenta en la \textit{Figura~\ref{figure:show-dashboard}} y se encarga de mostrar al usuario la información referente al análisis:
+             \begin{itemize}
+                \item Si se ha encontrado algún problema en el análisis muestra
+                páginas en las que se detalle el error.
+                \item Si el análisis se realiza correctamente, muestra los 
+                diferentes dashboards acorde al nivel de Pensamiento Computacional
+                del usuario.
+            \end{itemize}
+
+
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=1.0\textwidth]{img/show-dashboard}
+                \caption{Lógica de la función \texttt{show\_dashboard()}}
+                \label{figure:show-dashboard}
+            \end{figure}
+
+
+            Y las tareas que realiza son las siguientes:
+            \begin{itemize}
+                \item Comprobar si el método de la petición es
+                      POST realizará el análisis. En caso contrario
+                      redirige a la página principal.
+                \item Al comenzar el análisis lo primero que hace es 
+                      inicializar los flags de error a \texttt{false} y 
+                        llama a la función \texttt{selector()} que es la
+                        que se encarga en distinguir entre análisis por
+                        subida de proyecto o por URL.
+                \item Como en este caso el análisis es por subida
+                     de proyecto, \texttt{selector()} llama a la función 
+                        \texttt{\_upload()}. Esta función es
+                    la que se encarga de guardar toda la información del 
+                    análisis en la base de datos: proyecto y análisis. Y
+                    además llama a las funciones \texttt{check\_version()}
+                    y \texttt{change\_version()} para comprobar si el 
+                    proyecto es de la versión 1.4 de Scratch, y en caso 
+                    afirmativo cambiarla a la versión 2.0 antes del 
+                    análisis.
+                \item Cuando todo lo anterior ha sido realizado y se ha
+                        gestionado la subida del proyecto a nuestro
+                        servidor mediante la función \texttt{handler\_upload()},
+                        se llama a \texttt{analyze\_project()}, que se explica
+                        a continuación.               
+            \end{itemize}
+
+
+    \item La función \texttt{analyze\_project()} es llamada para realizar el 
+            análisis de Hairball y procesar su información. 
+
+            En el diagrama de
+            flujo de la \textit{Figura~\ref{figure:analyze-project}} podemos ver
+            que hace uso de distintos procesadores para obtener la información
+            que nos interesa del análisis y la almacena en un diccionario que
+            es el que se renderiza en los dashboard que se muestran al usuario.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.92\textwidth]{img/analyze-project}
+                \caption{Lógica de la función \texttt{analyze\_project()}}
+                \label{figure:analyze-project}
+            \end{figure}
+
+\end{enumerate}
+
+
+\textbf{Análisis con la URL: \_url} \\
+
+En este caso nos vamos a centrar en la función \texttt{show\_dashboard()},
+ya que, como se puede entender, \texttt{analyze\_project()} sigue teniendo
+la misma forma.
+
+En este análisis hay algunas modificaciones en la
+lógica, que se observan en la \textit{Figura~\ref{figure:show-dashboard2}} y 
+la principal es que ahora la función llamada es \texttt{\_url()}.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=1.0\textwidth]{img/show-dashboard2}
+                \caption{Lógica de la función \texttt{\_url()}}
+                \label{figure:show-dashboard2}
+            \end{figure}
+
+
+La función \texttt{\_url()} se encarga de llamar a 
+\texttt{process\_string\_url()} para poder obtener el número de identificador
+del proyecto a través de la URL. Cuando lo tiene, se llama a
+\texttt{generator\_dic()} que realiza las siguientes tareas:
+    \begin{itemize}
+        \item Lo primero que hace es descargar el archivo JSON 
+mediante la función \texttt{send\_request\_getSb2()}. Esta función, 
+además de descargar el archivo, guarda en la base de datos y en el
+log toda la información relevante. 
+        \item Cuando ya tiene el archivo lo analiza llamando a
+            \texttt{analyze\_project()}.\\
+    \end{itemize}
+
+\textbf{Análisis de múltiples proyectos con un fichero: \_csv} \\
+
+Cuando utilizamos el cuadro de análisis específico para organizaciones, el 
+mecanismo cambia. Al pulsar en el botón de análisis se llamará a la función 
+\texttt{analyze\_CSV()} y la lógica del método es la que se muestra en 
+\textit{Figura~\ref{figure:analyze-csv}}.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=1.0\textwidth]{img/analyze-csv}
+                \caption{Diagrama de flujo del análisis \_CSV}
+                \label{figure:analyze-csv}
+            \end{figure}
+
+
+Como se observa lo primero que hace es ver si el método con el que se 
+realiza la petición es POST, ya que si no lo es redirige a la página
+principal. En caso afirmativo, pasa a comprobar si se encuentra
+\textbf{\_upload} o \textbf{\_download} en \texttt{request.POST} para 
+distinguir entre los dos casos: subir un nuevo CSV para 
+analizar o descargar el CSV con los resultados del análisis.
+
+\begin{itemize}
+    \item \textbf{\_upload:} Lo primero que hace es guardar el fichero CSV
+                    en nuestro servidor para después procesarlo línea a 
+                    línea obteniendo el identificador de cada 
+                    proyecto. 
+                    Cuando lo tiene, llama a la función \textbf{send\_request\_getSb2()} para realizar la petición al servidor de Scratch y
+    descargar el JSON.
+                    Para guardarlo, gestiona el nombre con el que se va 
+                    a guardar con la ayuda de \texttt{handler\_upload()}
+                    y guarda información del proyecto en el fichero 
+                    \texttt{logFile.txt} y en la base de datos.
+                    Y finalmente, llama a \texttt{analyze\_project()} que
+                    le devuelve el resultado del análisis y lo guarda en
+                    el diccionario.
+                    
+                    Cuando se realizan los análisis de todas las líneas
+                    del fichero CSV subido, \texttt{analyce\_CSV()}                 llamará a \texttt{generator\_CSV()} que es el que se
+                    encarga de pasar la información del diccionario a 
+                    un fichero CSV para ser mostrado al usuario en 
+                    la página mostrada mediante el recurso 
+                    \texttt{/[user]/downloads}.
+    \item \textbf{\_download:} Lo único que ejecuta es un pequeño código,
+                 que hace descargar al ordenador del usuario el CSV 
+                 generado con el resultado del análisis.
+\end{itemize}
+
+
+
+
+
+\cleardoublepage
+\chapter{Principales recursos servidos}
+\label{app:manual}
+
+
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}{| p{2.0cm}| p{3.8cm} |p{5.0cm} |p{5.0cm} |}
+\hline
+\textbf{MÉTODO} & \textbf{RECURSO} & \textbf{FUNCIÓN ASOCIADA} & \textbf{TEMPLATE} \\
+\hline \hline \hline 
+GET & / & main(request) & main/main.html\\ \hline
+GET & /i18n/setlanguage & set\_language & template actual\\ \hline
+GET & /statistics & statistics(request) & main/statistics\\ \hline
+GET & /collaborators & collaborators(request) & main/collaborators\\ \hline
+GET & /blog & \multicolumn{2}{|c|}{RedirectViews.as\_view(url='https://drscratchblog.com')}\\ 
+\hline
+GET & /contest & contest(request) & contest.html\\ \hline
+
+\multirow{3}{1cm}{GET} & \multirow{3}{1cm}{/show\_dashboard} & \multirow{3}{1cm}{show\_dashboard(request)} & dashboard\_master.html\\ \cline{4-4}
+& & & dashboard\_developing.html\\ \cline{4-4}
+& & & dashboard\_basic.html\\ \cline{1-4}
+
+
+GET/POST & /organization\_hash & organization\_hash(request) & organization/organization.html\\ \hline
+
+GET & /sign\_up\_organization & sign\_up\_organization(request) & organization/organization.html\\ \hline
+POST & /sign\_up\_organization & sign\_up\_organization(request) & organization/main.html\\ \hline
+
+GET & /analyze\_CSV & analyze\_CSV(request) & organization/main.html\\ \hline
+POST & /analyze\_CSV & analyze\_CSV(request) & organization/downloads.html\\ \hline
+GET & /change\_pwd & change\_pwd(request) & organization/password.html\\ \hline
+POST & /sign\_up\_coder & sign\_up\_coder(request) & coder/main.html\\ \hline
+GET & /[no servido] & redirect\_main(request) & main/main.html\\ \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLIOGRAFIA %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Las siguientes dos instrucciones es todo lo que necesitas
+% para incluir las citas en la memoria
+\bibliographystyle{abbrv}
+\bibliography{memoria}  % memoria.bib es el nombre del fichero que contiene
+% las referencias bibliográficas. Abre ese fichero y mira el formato que tiene,
+% que se conoce como BibTeX. Hay muchos sitios que exportan referencias en
+% formato BibTeX. Prueba a buscar en http://scholar.google.com por referencias
+% y verás que lo puedes hacer de manera sencilla.
+% Más información: 
+% http://texblog.org/2014/04/22/using-google-scholar-to-download-bibtex-citations/
+
+\end{document}

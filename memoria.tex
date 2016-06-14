@@ -3098,7 +3098,7 @@ La apariencia del formulario se puede ver en la \textit{Figura~\ref{figure:regis
 
      \begin{figure}[H]
         \centering
-        \includegraphics[width=1.0\textwidth]{img/registro-coder}
+        \includegraphics[width=0.8\textwidth]{img/registro-coder}
         \caption{Formulario para el registro de usuarios}
         \label{figure:registro-coder}
     \end{figure}
@@ -3140,177 +3140,6 @@ pueda ver más información de la mostrada sobre los proyectos que
 ha analizado con anterioridad, además de incluir mecanismos de
 gamificación.
 
-\subsection{Diagramas de flujo}
-\label{subsec:diagramas-flujo}
-
-Con el objetivo de clarificar cómo es el interior del servidor y
-cuál es el flujo entre las distintas funciones implementadas, voy a
-mostrar tres diagramas de flujo para explicar los distintos tipos de análisis.
-
-\textbf{Análisis subiendo el proyecto: \_upload} \\
-
-En el diagrama de flujo de
-la \textit{Figura~\ref{figure:diagrama-upload}} se explica el uso y la 
-interconexión de las funciones que intervienen en el análisis de proyectos
-de Scratch mediante la opción de subida del archivo SB2 desde nuestro propio 
-ordenador.
-
-     \begin{figure}[H]
-        \centering
-        \includegraphics[width=1.0\textwidth]{img/diagrama-upload}
-        \caption{Diagrama de flujo del análisis \_upload}
-        \label{figure:diagrama-upload}
-    \end{figure}
-
-Vamos a ir viendo cada parte del diagrama por separado para facilitar su 
-comprensión y evitar repetir explicaciones en las siguientes implementaciones:
-
-\begin{enumerate}
-    \item La función \texttt{show\_dashboard()} es la función a la que se llama
-            cuando se elige un proyecto y se pulsa en el botón de analizar.            Su lógica se presenta en la \textit{Figura~\ref{figure:show-dashboard}} y se encarga de mostrar al usuario la información referente al análisis:
-             \begin{itemize}
-                \item Si se ha encontrado algún problema en el análisis muestra
-                páginas en las que se detalle el error.
-                \item Si el análisis se realiza correctamente, muestra los 
-                diferentes dashboards acorde al nivel de Pensamiento Computacional
-                del usuario.
-            \end{itemize}
-
-
-
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=1.0\textwidth]{img/show-dashboard}
-                \caption{Lógica de la función \texttt{show\_dashboard()}}
-                \label{figure:show-dashboard}
-            \end{figure}
-
-
-            Y las tareas que realiza son las siguientes:
-            \begin{itemize}
-                \item Comprobar si el método de la petición es
-                      POST realizará el análisis. En caso contrario
-                      redirige a la página principal.
-                \item Al comenzar el análisis lo primero que hace es 
-                      inicializar los flags de error a \texttt{false} y 
-                        llama a la función \texttt{selector()} que es la
-                        que se encarga en distinguir entre análisis por
-                        subida de proyecto o por URL.
-                \item Como en este caso el análisis es por subida
-                     de proyecto, \texttt{selector()} llama a la función 
-                        \texttt{\_upload()}. Esta función es
-                    la que se encarga de guardar toda la información del 
-                    análisis en la base de datos: proyecto y análisis. Y
-                    además llama a las funciones \texttt{check\_version()}
-                    y \texttt{change\_version()} para comprobar si el 
-                    proyecto es de la versión 1.4 de Scratch, y en caso 
-                    afirmativo cambiarla a la versión 2.0 antes del 
-                    análisis.
-                \item Cuando todo lo anterior ha sido realizado y se ha
-                        gestionado la subida del proyecto a nuestro
-                        servidor mediante la función \texttt{handler\_upload()},
-                        se llama a \texttt{analyze\_project()}, que se explica
-                        a continuación.               
-            \end{itemize}
-
-
-    \item La función \texttt{analyze\_project()} es llamada para realizar el 
-            análisis de Hairball y procesar su información. 
-
-            En el diagrama de
-            flujo de la \textit{Figura~\ref{figure:analyze-project}} podemos ver
-            que hace uso de distintos procesadores para obtener la información
-            que nos interesa del análisis y la almacena en un diccionario que
-            es el que se renderiza en los dashboard que se muestran al usuario.
-
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=0.92\textwidth]{img/analyze-project}
-                \caption{Lógica de la función \texttt{analyze\_project()}}
-                \label{figure:analyze-project}
-            \end{figure}
-
-\end{enumerate}
-
-
-\textbf{Análisis con la URL: \_url} \\
-
-En este caso nos vamos a centrar en la función \texttt{show\_dashboard()},
-ya que, como se puede entender, \texttt{analyze\_project()} sigue teniendo
-la misma forma.
-
-En este análisis hay algunas modificaciones en la
-lógica, que se observan en la \textit{Figura~\ref{figure:show-dashboard2}} y 
-la principal es que ahora la función llamada es \texttt{\_url()}.
-
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=1.0\textwidth]{img/show-dashboard2}
-                \caption{Lógica de la función \texttt{\_url()}}
-                \label{figure:show-dashboard2}
-            \end{figure}
-
-
-La función \texttt{\_url()} se encarga de llamar a 
-\texttt{process\_string\_url()} para poder obtener el número de identificador
-del proyecto a través de la URL. Cuando lo tiene, se llama a
-\texttt{generator\_dic()} que realiza las siguientes tareas:
-    \begin{itemize}
-        \item Lo primero que hace es descargar el archivo JSON 
-mediante la función \texttt{send\_request\_getSb2()}. Esta función, 
-además de descargar el archivo, guarda en la base de datos y en el
-log toda la información relevante. 
-        \item Cuando ya tiene el archivo lo analiza llamando a
-            \texttt{analyze\_project()}.\\
-    \end{itemize}
-
-\textbf{Análisis de múltiples proyectos con un fichero: \_csv} \\
-
-Cuando utilizamos el cuadro de análisis específico para organizaciones, el 
-mecanismo cambia. Al pulsar en el botón de análisis se llamará a la función 
-\texttt{analyze\_CSV()} y la lógica del método es la que se muestra en 
-\textit{Figura~\ref{figure:analyze-csv}}.
-
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=1.0\textwidth]{img/analyze-csv}
-                \caption{Diagrama de flujo del análisis \_CSV}
-                \label{figure:analyze-csv}
-            \end{figure}
-
-
-Como se observa lo primero que hace es ver si el método con el que se 
-realiza la petición es POST, ya que si no lo es redirige a la página
-principal. En caso afirmativo, pasa a comprobar si se encuentra
-\textbf{\_upload} o \textbf{\_download} en \texttt{request.POST} para 
-distinguir entre los dos casos: subir un nuevo CSV para 
-analizar o descargar el CSV con los resultados del análisis.
-
-\begin{itemize}
-    \item \textbf{\_upload:} Lo primero que hace es guardar el fichero CSV
-                    en nuestro servidor para después procesarlo línea a 
-                    línea obteniendo el identificador de cada 
-                    proyecto. 
-                    Cuando lo tiene, llama a la función \textbf{send\_request\_getSb2()} para realizar la petición al servidor de Scratch y
-    descargar el JSON.
-                    Para guardarlo, gestiona el nombre con el que se va 
-                    a guardar con la ayuda de \texttt{handler\_upload()}
-                    y guarda información del proyecto en el fichero 
-                    \texttt{logFile.txt} y en la base de datos.
-                    Y finalmente, llama a \texttt{analyze\_project()} que
-                    le devuelve el resultado del análisis y lo guarda en
-                    el diccionario.
-                    
-                    Cuando se realizan los análisis de todas las líneas
-                    del fichero CSV subido, \texttt{analyce\_CSV()}                 llamará a \texttt{generator\_CSV()} que es el que se
-                    encarga de pasar la información del diccionario a 
-                    un fichero CSV para ser mostrado al usuario en 
-                    la página mostrada mediante el recurso 
-                    \texttt{/[user]/downloads}.
-    \item \textbf{\_download:} Lo único que ejecuta es un pequeño código,
-                 que hace descargar al ordenador del usuario el CSV 
-                 generado con el resultado del análisis.
-\end{itemize}
 
 
 
@@ -3582,9 +3411,216 @@ aprender algo que a mí me apasiona: la programación.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % APÉNDICE(S) %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \cleardoublepage
 \appendix
+\chapter{Concurso Dr. Scratch}
+\label{app:concurso}
+
+Para poner la guinda al pastel a este gran proyecto, se realizó en los meses de
+noviembre y diciembre un concurso el primer concurso a nivel nacional de 
+programación con Scratch. Hubo dos categorías, una para alumnos de primaria y otra para 
+secundaría y se debía realizar un proyecto con Scratch en el que se explicara algún 
+concepto científico. Una vez realizado el proyecto, debía analizarse con 
+Dr. Scratch y tratar de mejorar la puntuación siguiendo los consejos para
+mejorar las diferentes habilidades relacionadas con el Pensamiento Computacional.
+
+Los proyectos fueron votados por 16 expertos, conociendo únicamente el 
+identificador del proyecto, sin conocer el nombre del concursante ni ningún
+otro dato. Y fue curioso porque en ambas categorías, las ganadoras fueron chicas.
+
+La entrega de premios se realizó el día 10 de diciembre de 2015 en Campus Madrid de Google. 
+Como puede verse en \textit{Figura~\ref{figure:concurso}} asistieron los 
+ganadores del concurso y además chicos de colegios que habían participado. 
+Pasamos una 
+tarde realmente agradable y muy enriquecedora entorno a la programación.
+
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\textwidth]{img/concurso}
+                \caption{Entrega de premios del concurso Dr. Scratch}
+                \label{figure:concurso}
+            \end{figure}
+
+\cleardoublepage
+\chapter{Diagramas de flujo}
+\label{app:diagramas}
+
+
+Con el objetivo de clarificar cómo es el interior del servidor y
+cuál es el flujo entre las distintas funciones implementadas, se
+muestran tres diagramas de flujo para explicar los distintos tipos de análisis.
+
+\textbf{Análisis subiendo el proyecto: \_upload} \\
+
+En el diagrama de flujo de
+la \textit{Figura~\ref{figure:diagrama-upload}} se explica el uso y la 
+interconexión de las funciones que intervienen en el análisis de proyectos
+de Scratch mediante la opción de subida del archivo SB2 desde nuestro propio 
+ordenador.
+
+     \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{img/diagrama-upload}
+        \caption{Diagrama de flujo del análisis \_upload}
+        \label{figure:diagrama-upload}
+    \end{figure}
+
+Vamos a ir viendo cada parte del diagrama por separado para facilitar su 
+comprensión y evitar repetir explicaciones en las siguientes implementaciones:
+
+\begin{enumerate}
+    \item La función \texttt{show\_dashboard()} es la función a la que se llama
+            cuando se elige un proyecto y se pulsa en el botón de analizar.            Su lógica se presenta en la \textit{Figura~\ref{figure:show-dashboard}} y se encarga de mostrar al usuario la información referente al análisis:
+             \begin{itemize}
+                \item Si se ha encontrado algún problema en el análisis muestra
+                páginas en las que se detalle el error.
+                \item Si el análisis se realiza correctamente, muestra los 
+                diferentes dashboards acorde al nivel de Pensamiento Computacional
+                del usuario.
+            \end{itemize}
+
+
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=1.0\textwidth]{img/show-dashboard}
+                \caption{Lógica de la función \texttt{show\_dashboard()}}
+                \label{figure:show-dashboard}
+            \end{figure}
+
+
+            Y las tareas que realiza son las siguientes:
+            \begin{itemize}
+                \item Comprobar si el método de la petición es
+                      POST realizará el análisis. En caso contrario
+                      redirige a la página principal.
+                \item Al comenzar el análisis lo primero que hace es 
+                      inicializar los flags de error a \texttt{false} y 
+                        llama a la función \texttt{selector()} que es la
+                        que se encarga en distinguir entre análisis por
+                        subida de proyecto o por URL.
+                \item Como en este caso el análisis es por subida
+                     de proyecto, \texttt{selector()} llama a la función 
+                        \texttt{\_upload()}. Esta función es
+                    la que se encarga de guardar toda la información del 
+                    análisis en la base de datos: proyecto y análisis. Y
+                    además llama a las funciones \texttt{check\_version()}
+                    y \texttt{change\_version()} para comprobar si el 
+                    proyecto es de la versión 1.4 de Scratch, y en caso 
+                    afirmativo cambiarla a la versión 2.0 antes del 
+                    análisis.
+                \item Cuando todo lo anterior ha sido realizado y se ha
+                        gestionado la subida del proyecto a nuestro
+                        servidor mediante la función \texttt{handler\_upload()},
+                        se llama a \texttt{analyze\_project()}, que se explica
+                        a continuación.               
+            \end{itemize}
+
+
+    \item La función \texttt{analyze\_project()} es llamada para realizar el 
+            análisis de Hairball y procesar su información. 
+
+            En el diagrama de
+            flujo de la \textit{Figura~\ref{figure:analyze-project}} podemos ver
+            que hace uso de distintos procesadores para obtener la información
+            que nos interesa del análisis y la almacena en un diccionario que
+            es el que se renderiza en los dashboard que se muestran al usuario.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.92\textwidth]{img/analyze-project}
+                \caption{Lógica de la función \texttt{analyze\_project()}}
+                \label{figure:analyze-project}
+            \end{figure}
+
+\end{enumerate}
+
+
+\textbf{Análisis con la URL: \_url} \\
+
+En este caso nos vamos a centrar en la función \texttt{show\_dashboard()},
+ya que, como se puede entender, \texttt{analyze\_project()} sigue teniendo
+la misma forma.
+
+En este análisis hay algunas modificaciones en la
+lógica, que se observan en la \textit{Figura~\ref{figure:show-dashboard2}} y 
+la principal es que ahora la función llamada es \texttt{\_url()}.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=1.0\textwidth]{img/show-dashboard2}
+                \caption{Lógica de la función \texttt{\_url()}}
+                \label{figure:show-dashboard2}
+            \end{figure}
+
+
+La función \texttt{\_url()} se encarga de llamar a 
+\texttt{process\_string\_url()} para poder obtener el número de identificador
+del proyecto a través de la URL. Cuando lo tiene, se llama a
+\texttt{generator\_dic()} que realiza las siguientes tareas:
+    \begin{itemize}
+        \item Lo primero que hace es descargar el archivo JSON 
+mediante la función \texttt{send\_request\_getSb2()}. Esta función, 
+además de descargar el archivo, guarda en la base de datos y en el
+log toda la información relevante. 
+        \item Cuando ya tiene el archivo lo analiza llamando a
+            \texttt{analyze\_project()}.\\
+    \end{itemize}
+
+\textbf{Análisis de múltiples proyectos con un fichero: \_csv} \\
+
+Cuando utilizamos el cuadro de análisis específico para organizaciones, el 
+mecanismo cambia. Al pulsar en el botón de análisis se llamará a la función 
+\texttt{analyze\_CSV()} y la lógica del método es la que se muestra en 
+\textit{Figura~\ref{figure:analyze-csv}}.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=1.0\textwidth]{img/analyze-csv}
+                \caption{Diagrama de flujo del análisis \_CSV}
+                \label{figure:analyze-csv}
+            \end{figure}
+
+
+Como se observa lo primero que hace es ver si el método con el que se 
+realiza la petición es POST, ya que si no lo es redirige a la página
+principal. En caso afirmativo, pasa a comprobar si se encuentra
+\textbf{\_upload} o \textbf{\_download} en \texttt{request.POST} para 
+distinguir entre los dos casos: subir un nuevo CSV para 
+analizar o descargar el CSV con los resultados del análisis.
+
+\begin{itemize}
+    \item \textbf{\_upload:} Lo primero que hace es guardar el fichero CSV
+                    en nuestro servidor para después procesarlo línea a 
+                    línea obteniendo el identificador de cada 
+                    proyecto. 
+                    Cuando lo tiene, llama a la función \textbf{send\_request\_getSb2()} para realizar la petición al servidor de Scratch y
+    descargar el JSON.
+                    Para guardarlo, gestiona el nombre con el que se va 
+                    a guardar con la ayuda de \texttt{handler\_upload()}
+                    y guarda información del proyecto en el fichero 
+                    \texttt{logFile.txt} y en la base de datos.
+                    Y finalmente, llama a \texttt{analyze\_project()} que
+                    le devuelve el resultado del análisis y lo guarda en
+                    el diccionario.
+                    
+                    Cuando se realizan los análisis de todas las líneas
+                    del fichero CSV subido, \texttt{analyce\_CSV()}                 llamará a \texttt{generator\_CSV()} que es el que se
+                    encarga de pasar la información del diccionario a 
+                    un fichero CSV para ser mostrado al usuario en 
+                    la página mostrada mediante el recurso 
+                    \texttt{/[user]/downloads}.
+    \item \textbf{\_download:} Lo único que ejecuta es un pequeño código,
+                 que hace descargar al ordenador del usuario el CSV 
+                 generado con el resultado del análisis.
+\end{itemize}
+
+
+
+
+
+\cleardoublepage
 \chapter{Principales recursos servidos}
 \label{app:manual}
 
@@ -3622,35 +3658,7 @@ GET & /[no servido] & redirect\_main(request) & main/main.html\\ \hline
 \end{center}
 \end{table}
 
-\cleardoublepage
-\chapter{Concurso Dr. Scratch}
-\label{app:concurso}
 
-Para poner la guinda al pastel a este gran proyecto, se realizó en los meses de
-noviembre y diciembre un concurso el primer concurso a nivel nacional de 
-programación con Scratch. Hubo dos categorías, una para alumnos de primaria y otra para 
-secundaría y se debía realizar un proyecto con Scratch en el que se explicara algún 
-concepto científico. Una vez realizado el proyecto, debía analizarse con 
-Dr. Scratch y tratar de mejorar la puntuación siguiendo los consejos para
-mejorar las diferentes habilidades relacionadas con el Pensamiento Computacional.
-
-Los proyectos fueron votados por 16 expertos, conociendo únicamente el 
-identificador del proyecto, sin conocer el nombre del concursante ni ningún
-otro dato. Y fue curioso porque en ambas categorías, las ganadoras fueron chicas.
-
-La entrega de premios se realizó el día 10 de diciembre de 2015 en Campus Madrid de Google. 
-Como puede verse en \textit{Figura~\ref{figure:concurso}} asistieron los 
-ganadores del concurso y además chicos de colegios que habían participado. 
-Pasamos una 
-tarde realmente agradable y muy enriquecedora entorno a la programación.
-
-
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=0.8\textwidth]{img/concurso}
-                \caption{Entrega de premios del concurso Dr. Scratch}
-                \label{figure:concurso}
-            \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
